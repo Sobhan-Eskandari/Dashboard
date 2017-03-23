@@ -18,7 +18,8 @@ class CreateDocumentsTable extends Migration
             $table->string('address');
             $table->string('place');
             $table->bigInteger('created_by');
-            $table->timestampsTz();
+            $table->dateTime('created_at');
+            $table->dateTime('updated_at');
         });
     }
 

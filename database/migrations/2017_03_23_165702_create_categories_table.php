@@ -20,7 +20,8 @@ class CreateCategoriesTable extends Migration
             $table->dateTimeTz('uploaded_at');
             $table->bigInteger('uploaded_by');
             $table->integer('revisions');
-            $table->timestampsTz();
+            $table->dateTime('created_at');
+            $table->dateTime('updated_at');
         });
     }
 

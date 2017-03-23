@@ -26,8 +26,9 @@ class CreateMessagesTable extends Migration
             $table->dateTimeTz('answered_at')->nullable();
             $table->bigInteger('answered_by')->nullable();
             $table->bigInteger('seen_by')->nullable();
-            $table->softDeletes();
-            $table->timestampsTz();
+            $table->dateTime('soft_delete')->nullable();
+            $table->dateTime('created_at');
+            $table->dateTime('updated_at');
         });
     }
 
