@@ -37,3 +37,17 @@ $factory->define(App\Category::class, function (Faker\Generator $faker) {
         'updated_at' => $faker->dateTime($max = 'now'),
     ];
 });
+
+$factory->define(App\Post::class, function (Faker\Generator $faker) {
+    // Creating local faker for our factories.
+    $persianFaker = Faker\Factory::create("fa_IR");
+
+    return [
+        'title' => $persianFaker->realText(10, 1),
+        'body' => $persianFaker->realText(10, 1),
+        'created_by' => rand(0, 50),
+        'revisions' => rand(0, 50),
+        'created_at' => $faker->dateTime($max = 'now'),
+        'updated_at' => $faker->dateTime($max = 'now'),
+    ];
+});
