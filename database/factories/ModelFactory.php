@@ -51,3 +51,18 @@ $factory->define(App\Post::class, function (Faker\Generator $faker) {
         'updated_at' => $faker->dateTime($max = 'now'),
     ];
 });
+
+$factory->define(App\Message::class, function (Faker\Generator $faker) {
+    // Creating local faker for our factories.
+    $persianFaker = Faker\Factory::create("fa_IR");
+
+    return [
+        'full_name' => $persianFaker->firstNameMale + ' ' + $persianFaker->lastName,
+        'email' => $faker->unique()->safeEmail,
+        'subject' => $persianFaker->realText(10, 1),
+        'message' => $persianFaker->realText(10, 1),
+        'tracking_code' => rand(0, 50),
+        'created_at' => $faker->dateTime($max = 'now'),
+        'updated_at' => $faker->dateTime($max = 'now'),
+    ];
+});

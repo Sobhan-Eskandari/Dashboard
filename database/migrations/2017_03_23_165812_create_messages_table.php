@@ -15,6 +15,18 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('full_name');
+            $table->string('email');
+            $table->string('subject');
+            $table->text('message');
+            $table->boolean('seen')->default(false);
+            $table->enum('status', ['not-checked', 'checking', 'checked'])->default('not-checked');
+            $table->bigInteger('tracking_code');
+            $table->text('answer')->nullable();
+            $table->dateTime('answered_at')->nullable();
+            $table->bigInteger('answered_by')->nullable();
+            $table->bigInteger('seen_by')->nullable();
+            $table->dateTime('soft_delete')->nullable();
             $table->timestamps();
         });
     }
