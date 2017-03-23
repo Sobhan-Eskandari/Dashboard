@@ -23,9 +23,9 @@ class CreatePostsTable extends Migration
             $table->bigInteger('created_by');
             $table->bigInteger('updated_by')->nullable();
             $table->bigInteger('locked_by')->nullable();
-            $table->dateTime('soft_delete')->nullable();
+            $table->softDeletes();
             $table->integer('revisions')->default(0);
-            $table->timestamps();
+            $table->timestampsTz();
         });
     }
 

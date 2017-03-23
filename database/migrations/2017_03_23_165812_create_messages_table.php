@@ -21,13 +21,13 @@ class CreateMessagesTable extends Migration
             $table->text('message');
             $table->boolean('seen')->default(false);
             $table->enum('status', ['not-checked', 'checking', 'checked'])->default('not-checked');
-            $table->bigInteger('tracking_code');
+            $table->uuid('tracking_code');
             $table->text('answer')->nullable();
-            $table->dateTime('answered_at')->nullable();
+            $table->dateTimeTz('answered_at')->nullable();
             $table->bigInteger('answered_by')->nullable();
             $table->bigInteger('seen_by')->nullable();
-            $table->dateTime('soft_delete')->nullable();
-            $table->timestamps();
+            $table->softDeletes();
+            $table->timestampsTz();
         });
     }
 
