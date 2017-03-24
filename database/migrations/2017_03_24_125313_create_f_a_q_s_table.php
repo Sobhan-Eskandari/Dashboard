@@ -18,8 +18,8 @@ class CreateFAQsTable extends Migration
             $table->text('question');
             $table->text('answer');
             $table->integer('revisions')->default(0);
-            $table->bigInteger('created_by');
-            $table->bigInteger('updated_by')->nullable();
+            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('updated_by')->nullable();
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
             $table->dateTime('deleted_at')->nullable();
