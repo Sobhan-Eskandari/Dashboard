@@ -21,7 +21,7 @@ class CreateTodosTable extends Migration
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
             $table->dateTime('done_at')->nullable();
-            $table->softDeletes();
+            $table->dateTime('deleted_at');
         });
     }
 
