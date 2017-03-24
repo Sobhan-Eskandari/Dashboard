@@ -6,18 +6,27 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CategoryTableSeeder' => $baseDir . '/database/seeds/CategoryTableSeeder.php',
-    'CreateCategoriesTable' => $baseDir . '/database/migrations/2017_03_23_165702_create_categories_table.php',
-    'CreateDocumentsTable' => $baseDir . '/database/migrations/2017_03_23_165906_create_documents_table.php',
-    'CreateMessagesTable' => $baseDir . '/database/migrations/2017_03_23_165812_create_messages_table.php',
+    'CreateAudioablesTable' => $baseDir . '/database/migrations/2017_03_23_154454_create_audioables_table.php',
+    'CreateAudiosTable' => $baseDir . '/database/migrations/2017_03_23_154434_create_audios_table.php',
+    'CreateFriendsTable' => $baseDir . '/database/migrations/2017_03_23_123916_create_friends_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
-    'CreatePostsTable' => $baseDir . '/database/migrations/2017_03_23_165747_create_posts_table.php',
+    'CreateSettingsTable' => $baseDir . '/database/migrations/2017_03_23_155901_create_settings_table.php',
+    'CreateTaggablesTable' => $baseDir . '/database/migrations/2017_03_23_140211_create_taggables_table.php',
+    'CreateTagsTable' => $baseDir . '/database/migrations/2017_03_23_134802_create_tags_table.php',
+    'CreateTodosTable' => $baseDir . '/database/migrations/2017_03_23_131218_create_todos_table.php',
+    'CreateFAQsTable' => $baseDir . '/database/migrations/2017_03_24_125313_create_f_a_q_s_table.php',
+    'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreatePhotoablesTable' => $baseDir . '/database/migrations/2017_03_24_135830_create_photoables_table.php',
+    'CreatePhotosTable' => $baseDir . '/database/migrations/2017_03_24_133945_create_photos_table.php',
+
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
-    'CreateVideosTable' => $baseDir . '/database/migrations/2017_03_23_165900_create_videos_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/src/Factory.php',
+
+    'FriendsSeeder' => $baseDir . '/database/seeds/FriendsSeeder.php',
+
     'Hamcrest\\Arrays\\IsArray' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
     'Hamcrest\\Arrays\\IsArrayContaining' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
     'Hamcrest\\Arrays\\IsArrayContainingInAnyOrder' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingInAnyOrder.php',
@@ -114,7 +123,6 @@ return array(
     'Maatwebsite\\Excel\\Readers\\LaravelExcelReader' => $vendorDir . '/maatwebsite/excel/src/Maatwebsite/Excel/Readers/LaravelExcelReader.php',
     'Maatwebsite\\Excel\\Writers\\CellWriter' => $vendorDir . '/maatwebsite/excel/src/Maatwebsite/Excel/Writers/CellWriter.php',
     'Maatwebsite\\Excel\\Writers\\LaravelExcelWriter' => $vendorDir . '/maatwebsite/excel/src/Maatwebsite/Excel/Writers/LaravelExcelWriter.php',
-    'MessageTableSeeder' => $baseDir . '/database/seeds/MessageTableSeeder.php',
     'PHPUnit\\Framework\\Assert' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
     'PHPUnit\\Framework\\BaseTestListener' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
     'PHPUnit\\Framework\\TestCase' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
@@ -494,7 +502,6 @@ return array(
     'PHP_Token_XOR_EQUAL' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD_FROM' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
-    'PostTableSeeder' => $baseDir . '/database/seeds/PostTableSeeder.php',
     'SebastianBergmann\\CodeCoverage\\CodeCoverage' => $vendorDir . '/phpunit/php-code-coverage/src/CodeCoverage.php',
     'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
     'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => $vendorDir . '/phpunit/php-code-coverage/src/Driver/Driver.php',
@@ -574,7 +581,15 @@ return array(
     'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => $vendorDir . '/sebastian/recursion-context/src/InvalidArgumentException.php',
     'SebastianBergmann\\ResourceOperations\\ResourceOperations' => $vendorDir . '/sebastian/resource-operations/src/ResourceOperations.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
+
+    'TagSeeder' => $baseDir . '/database/seeds/TagSeeder.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+    'TodoSeeder' => $baseDir . '/database/seeds/TodoSeeder.php',
+
+    'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+    'UserTableSeeder' => $baseDir . '/database/seeds/UserTableSeeder.php',
+    'faqTableSeeder' => $baseDir . '/database/seeds/faqTableSeeder.php',
+
     'nusoap_base' => $vendorDir . '/zarinpal/zarinpal/src/Drivers/lib/nusoap.php',
     'nusoap_client' => $vendorDir . '/zarinpal/zarinpal/src/Drivers/lib/nusoap.php',
     'soapclient' => $vendorDir . '/zarinpal/zarinpal/src/Drivers/lib/nusoap.php',
