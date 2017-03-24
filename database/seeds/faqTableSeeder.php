@@ -5,7 +5,6 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
 
-
 class faqTableSeeder extends Seeder
 {
     /**
@@ -17,10 +16,10 @@ class faqTableSeeder extends Seeder
     {
         DB::table('f_a_q_s')->truncate();
         $faker = Faker::create('fa_IR');
-        foreach (range(1,10) as $index){
+        foreach (range(1,20) as $index){
             FAQ::create([
-                'question'=>$faker->paragraph,
-                'answer'=>$faker->paragraph,
+                'question'=>$faker->realText(150),
+                'answer'=>$faker->realText(500),
                 'created_by'=>'1'
             ]);
         }

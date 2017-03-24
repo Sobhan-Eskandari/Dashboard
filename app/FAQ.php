@@ -11,7 +11,6 @@ class FAQ extends Model
 
     protected $dates = ['deleted_at'];
 
-
     protected $fillable = [
         'question',
         'answer',

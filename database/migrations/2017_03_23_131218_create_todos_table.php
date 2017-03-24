@@ -20,8 +20,8 @@ class CreateTodosTable extends Migration
             $table->unsignedBigInteger('user_id')->nullable(false);
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
-            $table->dateTime('done_at')->nullable();
-            $table->dateTime('deleted_at');
+            $table->dateTime('done_at')->nullable(true);
+            $table->dateTime('deleted_at')->nullable(true);
         });
     }
 

@@ -9,12 +9,12 @@ class Photo extends Model
 {
     use SoftDeletes;
 
-     protected $dates = ['deleted_at'];
+    protected $dates = ['deleted_at'];
 
     protected $fillable = [
         'path',
         'positions',
-        'oreder',
+        'order',
         'created_by'
     ];
 
