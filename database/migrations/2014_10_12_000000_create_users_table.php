@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('gender')->nullable();
             $table->string('occupation')->nullable();
             $table->tinyInteger('verified')->default(0);
-            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('created_by')->nullable(false);
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->string('email_token')->nullable();
             $table->rememberToken();

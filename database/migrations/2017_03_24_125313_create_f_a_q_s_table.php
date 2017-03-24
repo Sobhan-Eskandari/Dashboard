@@ -15,13 +15,13 @@ class CreateFAQsTable extends Migration
     {
         Schema::create('f_a_q_s', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('question');
-            $table->text('answer');
+            $table->text('question')->nullable(false);;
+            $table->text('answer')->nullable(false);;
             $table->integer('revisions')->default(0);
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
+            $table->dateTime('created_at')->nullable(false);;
+            $table->dateTime('updated_at')->nullable();
             $table->dateTime('deleted_at')->nullable();
         });
     }
