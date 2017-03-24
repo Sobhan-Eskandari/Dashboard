@@ -361,12 +361,20 @@ class ComposerStaticInitbd95230086835dd9af2e18ebe53b53a6
         'CreateTaggablesTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_23_140211_create_taggables_table.php',
         'CreateTagsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_23_134802_create_tags_table.php',
         'CreateTodosTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_23_131218_create_todos_table.php',
+
+        'CreateFAQsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_24_125313_create_f_a_q_s_table.php',
+        'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreatePhotoablesTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_24_135830_create_photoables_table.php',
+        'CreatePhotosTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_24_133945_create_photos_table.php',
+
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
+
         'FriendsSeeder' => __DIR__ . '/../..' . '/database/seeds/FriendsSeeder.php',
+
         'Hamcrest\\Arrays\\IsArray' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
         'Hamcrest\\Arrays\\IsArrayContaining' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
         'Hamcrest\\Arrays\\IsArrayContainingInAnyOrder' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingInAnyOrder.php',
@@ -921,9 +929,15 @@ class ComposerStaticInitbd95230086835dd9af2e18ebe53b53a6
         'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => __DIR__ . '/..' . '/sebastian/recursion-context/src/InvalidArgumentException.php',
         'SebastianBergmann\\ResourceOperations\\ResourceOperations' => __DIR__ . '/..' . '/sebastian/resource-operations/src/ResourceOperations.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+
         'TagSeeder' => __DIR__ . '/../..' . '/database/seeds/TagSeeder.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
         'TodoSeeder' => __DIR__ . '/../..' . '/database/seeds/TodoSeeder.php',
+
+        'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'UserTableSeeder' => __DIR__ . '/../..' . '/database/seeds/UserTableSeeder.php',
+        'faqTableSeeder' => __DIR__ . '/../..' . '/database/seeds/faqTableSeeder.php',
+
         'nusoap_base' => __DIR__ . '/..' . '/zarinpal/zarinpal/src/Drivers/lib/nusoap.php',
         'nusoap_client' => __DIR__ . '/..' . '/zarinpal/zarinpal/src/Drivers/lib/nusoap.php',
         'soapclient' => __DIR__ . '/..' . '/zarinpal/zarinpal/src/Drivers/lib/nusoap.php',

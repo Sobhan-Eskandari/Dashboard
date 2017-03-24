@@ -14,12 +14,19 @@ return array(
     'CreateTaggablesTable' => $baseDir . '/database/migrations/2017_03_23_140211_create_taggables_table.php',
     'CreateTagsTable' => $baseDir . '/database/migrations/2017_03_23_134802_create_tags_table.php',
     'CreateTodosTable' => $baseDir . '/database/migrations/2017_03_23_131218_create_todos_table.php',
+    'CreateFAQsTable' => $baseDir . '/database/migrations/2017_03_24_125313_create_f_a_q_s_table.php',
+    'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreatePhotoablesTable' => $baseDir . '/database/migrations/2017_03_24_135830_create_photoables_table.php',
+    'CreatePhotosTable' => $baseDir . '/database/migrations/2017_03_24_133945_create_photos_table.php',
+
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/src/Factory.php',
+
     'FriendsSeeder' => $baseDir . '/database/seeds/FriendsSeeder.php',
+
     'Hamcrest\\Arrays\\IsArray' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
     'Hamcrest\\Arrays\\IsArrayContaining' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
     'Hamcrest\\Arrays\\IsArrayContainingInAnyOrder' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingInAnyOrder.php',
@@ -574,9 +581,15 @@ return array(
     'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => $vendorDir . '/sebastian/recursion-context/src/InvalidArgumentException.php',
     'SebastianBergmann\\ResourceOperations\\ResourceOperations' => $vendorDir . '/sebastian/resource-operations/src/ResourceOperations.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
+
     'TagSeeder' => $baseDir . '/database/seeds/TagSeeder.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
     'TodoSeeder' => $baseDir . '/database/seeds/TodoSeeder.php',
+
+    'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+    'UserTableSeeder' => $baseDir . '/database/seeds/UserTableSeeder.php',
+    'faqTableSeeder' => $baseDir . '/database/seeds/faqTableSeeder.php',
+
     'nusoap_base' => $vendorDir . '/zarinpal/zarinpal/src/Drivers/lib/nusoap.php',
     'nusoap_client' => $vendorDir . '/zarinpal/zarinpal/src/Drivers/lib/nusoap.php',
     'soapclient' => $vendorDir . '/zarinpal/zarinpal/src/Drivers/lib/nusoap.php',
