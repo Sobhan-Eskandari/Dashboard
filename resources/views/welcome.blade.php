@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Testing permission
+                    Testing permission Hi Vps
                 </div>
 
                 <div class="links">
