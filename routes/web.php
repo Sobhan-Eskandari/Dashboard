@@ -22,3 +22,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/aboutUs', function () {
     return view('mersede.about');
 });
+
+Route::get('/layout', function () {
+    return view('layouts.main');
+});

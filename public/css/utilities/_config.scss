@@ -3,8 +3,16 @@
 // ==========================================================================
 
 // Font Stacks
-
-$font-url--google        : 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900';
+@import url(../../public/Resources/css/Font/fontiran.css); /* لینک فایلی که وظیفه بارگذاری فونت ها را برعهده دارد */
+body {
+  font-family: IRANSans !important;
+  font-weight: 300;
+  direction: rtl;
+  margin: 0;
+}
+h1, h2, h3, h4, h5, h6,input, textarea,button {
+  font-family: IRANSans !important;
+}
 $font-family--primary    : 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-family--secondary  : 'Helvetica Neue', Helvetica, Arial, sans-serif;
 

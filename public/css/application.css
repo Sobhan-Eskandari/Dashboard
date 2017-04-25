@@ -1,3 +1,35 @@
+@charset "UTF-8";
+/* ============[ Css Import ]=========== */
+@import url(../../public/Resources/css/Font/fontiran.css);
+/* لینک فایلی که وظیفه بارگذاری فونت ها را برعهده دارد */
+body {
+  font-family: IRANSans !important;
+  font-weight: 300;
+  direction: rtl;
+  margin: 0; }
 
+h1, h2, h3, h4, h5, h6, input, textarea, button {
+  font-family: IRANSans !important; }
+
+body, html {
+  height: 100%; }
+
+.srt {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+.centered {
+  float: none;
+  margin-left: auto;
+  margin-right: auto; }
+
+/* ============[ Components Css Import ]=========== */
+/* ============[ Layouts Css Import ]=========== */
 
 /*# sourceMappingURL=application.css.map */
