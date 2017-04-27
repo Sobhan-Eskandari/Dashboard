@@ -5,7 +5,6 @@
 body {
   font-family: IRANSans !important;
   font-weight: 300;
-  direction: rtl;
   margin: 0; }
 
 h1, h2, h3, h4, h5, h6, input, textarea, button {
@@ -31,5 +30,77 @@ body, html {
 
 /* ============[ Components Css Import ]=========== */
 /* ============[ Layouts Css Import ]=========== */
+/* ============[ Top Bar ]=========== */
+.Topbar {
+  background-color: #3B4452; }
+
+.Topbar_paddings {
+  padding: 13px 25px; }
+
+.Topbar_rowOfItems {
+  direction: rtl !important; }
+
+.Topbar_button {
+  margin-top: auto;
+  margin-bottom: auto; }
+
+.Topbar_avatar_container {
+  margin-right: -20px; }
+
+.Topbar_avatar {
+  border-radius: 50%;
+  background-color: white;
+  width: 50px;
+  height: 50px; }
+
+.Topbar_dropdown_container {
+  padding-top: 10px;
+  padding-right: 0;
+  margin-right: -50px; }
+
+.Topbar_dropdown #dropdownMenuButton {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-weight: bold;
+  border: transparent;
+  color: ghostwhite;
+  transition: none;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important; }
+  .Topbar_dropdown #dropdownMenuButton:hover {
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    -webkit-filter: brightness(120%); }
+.Topbar_dropdown .dropdown-toggle {
+  background-color: transparent !important;
+  color: whitesmoke !important;
+  border: none !important;
+  outline: none; }
+.Topbar_dropdown .dropdown-toggle::after {
+  font-family: "FontAwesome";
+  content: "\f078";
+  border: none;
+  margin-right: 10px;
+  margin-top: -15px; }
+.Topbar_dropdown .dropdown-item {
+  font-weight: 300;
+  font-size: 13px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: black; }
+  .Topbar_dropdown .dropdown-item:active {
+    background-color: transparent !important;
+    outline: none; }
+.Topbar_dropdown .dropdown-menu {
+  border: transparent; }
+.Topbar_dropdown .dropdown-divider {
+  background-color: grey; }
+
+.Sidebar {
+  background-color: #1F232C; }
+
+.Sidebar__paddings {
+  padding: 26px 46px; }
 
 /*# sourceMappingURL=application.css.map */

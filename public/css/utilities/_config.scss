@@ -7,7 +7,7 @@
 body {
   font-family: IRANSans !important;
   font-weight: 300;
-  direction: rtl;
+  //direction: rtl;
   margin: 0;
 }
 h1, h2, h3, h4, h5, h6,input, textarea,button {
@@ -26,51 +26,8 @@ $font-weight--ultra-bold : 900;
 
 // Descriptive Base Colors
 
-$white : #fff;
-$black : #0b0b0b;
-$grey  : #797e83;
-
-$fountain-blue  : #52bab3;
-$emerald        : #5ece7f;
-$sunglo         : #e67478;
-$coral          : #ff784f;
-$purple-majesty : #9279c3;
-$scooter        : #39add1;
-
-// Color Usage
-
-$color-primary   : $fountain-blue;
-$color-secondary : $scooter;
-$color-accent    : $emerald;
-$color-shadow    : rgba($black, .2);
-
-// Color Palette Modifiers
-
-$color-palettes: (
-  grey: (
-    xx-light : lighten($grey, 43%),
-    x-light  : lighten($grey, 35%),
-    light    : lighten($grey, 12%),
-    base     : $grey,
-    dark     : darken($grey, 8%),
-    x-dark   : darken($grey, 16%)
-  ),
-  black: (
-    light    : lighten($black, 10%),
-    base     : $black,
-    dark     : darken($black, 10%)
-  )
-);
-
-// UI Colors
-
-$ui-colors: (
-  default : $fountain-blue,
-  success : $emerald,
-  error   : $sunglo,
-  warning : $coral,
-  info    : $purple-majesty
-);
+$sormeieRoshan  : #3B4452;
+$sormeieTire    : #1F232C;
 
 // Text
 
