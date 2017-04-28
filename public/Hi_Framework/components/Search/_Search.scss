@@ -4,7 +4,6 @@
 //</div>
 .hi-search-1{
   padding: 5px 20px;
-  //background-color: $topBar_searchColor;
   border-radius: 20px;
 
   .hi-search_field{
@@ -12,5 +11,11 @@
     border: none;
     color: white;
     outline: none;
+    width: 85%;
   }
+}
+
+/* ============[ Firefox Only Styles ]=========== */
+@-moz-document url-prefix() {
+
 }

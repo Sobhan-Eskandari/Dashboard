@@ -319,8 +319,11 @@ select.selectpicker {
     background-color: transparent;
     border: none;
     color: white;
-    outline: none; }
+    outline: none;
+    width: 85%; }
 
+/* ============[ Firefox Only St ]=========== */
+@-moz-document url-prefix() {}
 /* ============[ css import ]=========== */
 /* ============[ Waves Library Import ]=========== */
 /*!

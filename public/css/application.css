@@ -131,11 +131,19 @@ body, html {
   margin-top: 5px; }
 
 /* ============[ Top Bar Notifications ]=========== */
-.Topbar_notificationBtn .badge {
-  z-index: 100;
-  margin-left: -10px;
-  margin-top: -7px; }
-
+.Topbar_notificationBtn {
+  /* ============[ Fixing Firefox ]=========== */ }
+  .Topbar_notificationBtn .badge {
+    z-index: 100;
+    margin-left: -10px;
+    margin-top: -7px;
+    height: 20px;
+    position: relative; }
+@-moz-document url-prefix() {
+  .Topbar_notificationBtn i {
+    margin-top: -10px; }
+  .Topbar_notificationBtn .badge {
+    margin-left: 10px; } }
 .Sidebar {
   background-color: #1F232C; }
 
