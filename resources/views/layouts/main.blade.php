@@ -62,7 +62,7 @@
                     </div>
 
                     {{--============[ Search in topbar ]===========--}}
-                    <div class="col-4 pull-3 pt-2">
+                    <div class="col-3 pull-4  pt-2">
                         <div class="hi-search-1">
                             <input placeholder="جست و جو کنید..." class="hi-search_field" type="text">
                             <button class="hi-button-btn1 pull-left"><i class="fa fa-search white-text hi-fontSize-19" aria-hidden="true"></i></button>
@@ -70,7 +70,7 @@
                     </div>
 
                     {{--============[ Notifications with Badge in topbar ]===========--}}
-                    <div class="col-1 pull-3 pt-0">
+                    <div class="col-1 pull-4 pt-0">
                         <button class="hi-button-btn1 Topbar_notificationBtn pull-left pt-3 px-2">
                             <span class="badge badge-pill badge-danger">۱۰۰</span>
                             <i class="fa fa-envelope-o white-text hi-fontSize-23" aria-hidden="true"></i>
@@ -78,7 +78,7 @@
                     </div>
 
                     {{--============[ Logout in topbar ]===========--}}
-                    <div class="col-1 pull-3 pt-2">
+                    <div class="col-1 pull-4 pt-2">
                         <button class="hi-button-btn1 Topbar_logoutBtn py-1 px-2">
                             <i class="fa fa-power-off white-text hi-fontSize-23" aria-hidden="true"></i>
                         </button>
