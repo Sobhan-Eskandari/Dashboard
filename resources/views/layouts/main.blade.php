@@ -69,7 +69,7 @@
                         </div>
                     </div>
 
-                    {{--============[ Notifications in topbar ]===========--}}
+                    {{--============[ Notifications with Badge in topbar ]===========--}}
                     <div class="col-1 pull-3 pt-0">
                         <button class="hi-button-btn1 Topbar_notificationBtn pull-left pt-3 px-2">
                             <span class="badge badge-pill badge-danger">۱۰۰</span>
