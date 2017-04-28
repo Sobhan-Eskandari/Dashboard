@@ -1,0 +1,14 @@
+.hi-button-btn1{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  -webkit-box-shadow: none !important;
+  box-shadow:none !important;
+  outline: none;
+  display: flex !important;
+
+  &:focus{
+    outline: none;
+  }
+}

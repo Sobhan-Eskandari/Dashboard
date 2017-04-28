@@ -33,26 +33,59 @@
         <div class="col-10 Topbar px-0 hi-shadow-2">
             <div class="Topbar_paddings">
                 <div class="row Topbar_rowOfItems">
+
+                    {{--============[ navbar button in topbar ]===========--}}
                     <div class="col-1 Topbar_button pl-0">
                         <i class="fa fa-bars fa-2x text-white" aria-hidden="true"></i>
                     </div>
+
+                    {{--============[ Profile icon in topbar ]===========--}}
                     <div class="col-1 text-right Topbar_avatar_container px-0">
                         <img class="rounded-circle Topbar_avatar" src="{{ asset('images/avatar.png') }}">
                     </div>
+
+                    {{--============[ Profile dropdown in topbar ]===========--}}
                     <div class="col-2 Topbar_dropdown_container">
                         <div class="Topbar_dropdown dropdown">
-                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 حمید وتر
                             </button>
-                            <div data-dropdown-in="bounceIn" data-dropdown-out="bounceOut"  class="dropdown-menu text-right mt-3 hi-shadow-2" aria-labelledby="dropdownMenuButton">
-                                <button class="dropdown-item" href="#"> <i class="ml-2 fa fa-user" aria-hidden="true"></i> پروفایل من </button>
-                                <button class="dropdown-item" href="#"><i class="ml-2 fa fa-file-text-o" aria-hidden="true"></i> مدیران </button>
-                                <button class="dropdown-item" href="#"><i class="ml-2 fa fa-download" aria-hidden="true"></i> نسخه پشتیبانی </button>
+                            <div data-dropdown-in="bounceIn" data-dropdown-out="bounceOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-user ml-2" aria-hidden="true"></i> پروفایل من</a>
+                                <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-file-text-o ml-2" aria-hidden="true"></i> مدیران</a>
+                                <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-download ml-2" aria-hidden="true"></i> نسخه پشتیبانی</a>
                                 <div class="dropdown-divider"></div>
-                                <button class="dropdown-item" href="#"><i class="ml-2 fa fa-power-off" aria-hidden="true"></i> خروج </button>
+                                <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-power-off ml-2" aria-hidden="true"></i>خروج</a>
                             </div>
                         </div>
+
                     </div>
+
+                    {{--============[ Search in topbar ]===========--}}
+                    <div class="col-4 pull-3 pt-2">
+                        <div class="hi-search-1">
+                            <input placeholder="جست و جو کنید..." class="hi-search_field" type="text">
+                            <button class="hi-button-btn1 pull-left"><i class="fa fa-search white-text hi-fontSize-19" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
+                    {{--============[ Notifications in topbar ]===========--}}
+                    <div class="col-1 pull-3 pt-0">
+                        <button class="hi-button-btn1 Topbar_notificationBtn pull-left pt-3 px-2">
+                            <span class="badge badge-pill badge-danger">۱۰۰</span>
+                            <i class="fa fa-envelope-o white-text hi-fontSize-23" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    {{--============[ Logout in topbar ]===========--}}
+                    <div class="col-1 pull-3 pt-2">
+                        <button class="hi-button-btn1 Topbar_logoutBtn py-1 px-2">
+                            <i class="fa fa-power-off white-text hi-fontSize-23" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+
+
                 </div>
             </div>
         </div>
@@ -77,6 +110,7 @@
 
 <script type="text/javascript">
     Waves.attach('#dropdownMenuButton',['waves-button', 'waves-float', 'waves-light']);
+    Waves.attach('button',['waves-float', 'waves-light']);
     Waves.attach('.dropdown-item');
     Waves.init();
 </script>

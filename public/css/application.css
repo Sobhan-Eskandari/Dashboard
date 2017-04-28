@@ -10,6 +10,26 @@ body {
 h1, h2, h3, h4, h5, h6, input, textarea, button {
   font-family: IRANSans !important; }
 
+::-webkit-input-placeholder {
+  /* Chrome */
+  color: white;
+  opacity: 0.6; }
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: white;
+  opacity: 0.6; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+  opacity: 0.6; }
+
+:-moz-placeholder {
+  /* Firefox 4 - 18 */
+  color: white;
+  opacity: 0.6; }
+
 body, html {
   height: 100%; }
 
@@ -44,6 +64,7 @@ body, html {
   margin-top: auto;
   margin-bottom: auto; }
 
+/* ============[ Top Bar Avatar ]=========== */
 .Topbar_avatar_container {
   margin-right: -20px; }
 
@@ -53,6 +74,7 @@ body, html {
   width: 50px;
   height: 50px; }
 
+/* ============[ Top Bar Dropdown ]=========== */
 .Topbar_dropdown_container {
   padding-top: 10px;
   padding-right: 0;
@@ -96,6 +118,20 @@ body, html {
   border: transparent; }
 .Topbar_dropdown .dropdown-divider {
   background-color: grey; }
+
+/* ============[ Top Bar Search ]=========== */
+.hi-search-1 {
+  background-color: #656c76; }
+
+/* ============[ Top Bar logout ]=========== */
+.Topbar_logoutBtn {
+  margin-top: 5px; }
+
+/* ============[ Top Bar Notifications ]=========== */
+.Topbar_notificationBtn .badge {
+  z-index: 100;
+  margin-left: -10px;
+  margin-top: -7px; }
 
 .Sidebar {
   background-color: #1F232C; }
