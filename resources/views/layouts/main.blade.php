@@ -30,70 +30,80 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-10 Topbar px-0 hi-shadow-2">
-            <div class="Topbar_paddings">
-                <div class="row Topbar_rowOfItems">
 
-                    {{--============[ navbar button in topbar ]===========--}}
-                    <div class="col-1 Topbar_button pl-0">
-                        <i class="fa fa-bars fa-2x text-white" aria-hidden="true"></i>
-                    </div>
+        <div class="col-10">
+            <div class="row">
+                <div class="col-12 Topbar px-0 hi-shadow-2">
+                    <div class="Topbar_paddings">
+                        <div class="row Topbar_rowOfItems">
 
-                    {{--============[ Profile icon in topbar ]===========--}}
-                    <div class="col-1 text-right Topbar_avatar_container px-0">
-                        <img class="rounded-circle Topbar_avatar" src="{{ asset('images/avatar.png') }}">
-                    </div>
-
-                    {{--============[ Profile dropdown in topbar ]===========--}}
-                    <div class="col-2 Topbar_dropdown_container">
-                        <div class="Topbar_dropdown dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                حمید وتر
-                            </button>
-                            <div data-dropdown-in="bounceIn" data-dropdown-out="bounceOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-user ml-2" aria-hidden="true"></i> پروفایل من</a>
-                                <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-file-text-o ml-2" aria-hidden="true"></i> مدیران</a>
-                                <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-download ml-2" aria-hidden="true"></i> نسخه پشتیبانی</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-power-off ml-2" aria-hidden="true"></i>خروج</a>
+                            {{--============[ navbar button in topbar ]===========--}}
+                            <div class="col-1 Topbar_button pl-0">
+                                <i class="fa fa-bars fa-2x text-white" aria-hidden="true"></i>
                             </div>
+
+                            {{--============[ Profile icon in topbar ]===========--}}
+                            <div class="col-1 text-right Topbar_avatar_container px-0">
+                                <img class="rounded-circle Topbar_avatar" src="{{ asset('images/avatar.png') }}">
+                            </div>
+
+                            {{--============[ Profile dropdown in topbar ]===========--}}
+                            <div class="col-2 Topbar_dropdown_container">
+                                <div class="Topbar_dropdown dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        حمید وتر
+                                    </button>
+                                    <div data-dropdown-in="bounceIn" data-dropdown-out="bounceOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-user ml-2" aria-hidden="true"></i> پروفایل من</a>
+                                        <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-file-text-o ml-2" aria-hidden="true"></i> مدیران</a>
+                                        <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-download ml-2" aria-hidden="true"></i> نسخه پشتیبانی</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-power-off ml-2" aria-hidden="true"></i>خروج</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            {{--============[ Search in topbar ]===========--}}
+                            <div class="col-3 pull-4  pt-2">
+                                <div class="hi-search-1">
+                                    <input placeholder="جست و جو کنید..." class="hi-search_field" type="text">
+                                    <button class="hi-button-btn1 pull-left"><i class="fa fa-search white-text hi-fontSize-19" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+
+                            {{--============[ Notifications with Badge in topbar ]===========--}}
+                            <div class="col-1 pull-4 pt-0">
+                                <button class="hi-button-btn1 Topbar_notificationBtn pull-left pt-3 px-2">
+                                    <span class="badge badge-pill badge-danger">۱۰۰</span>
+                                    <i class="fa fa-envelope-o white-text hi-fontSize-23" aria-hidden="true"></i>
+                                </button>
+                            </div>
+
+                            {{--============[ Logout in topbar ]===========--}}
+                            <div class="col-1 pull-4 pt-2">
+                                <button class="hi-button-btn1 Topbar_logoutBtn py-1 px-2">
+                                    <i class="fa fa-power-off white-text hi-fontSize-23" aria-hidden="true"></i>
+                                </button>
+                            </div>
+
+
+
                         </div>
-
                     </div>
-
-                    {{--============[ Search in topbar ]===========--}}
-                    <div class="col-3 pull-4  pt-2">
-                        <div class="hi-search-1">
-                            <input placeholder="جست و جو کنید..." class="hi-search_field" type="text">
-                            <button class="hi-button-btn1 pull-left"><i class="fa fa-search white-text hi-fontSize-19" aria-hidden="true"></i></button>
-                        </div>
-                    </div>
-
-                    {{--============[ Notifications with Badge in topbar ]===========--}}
-                    <div class="col-1 pull-4 pt-0">
-                        <button class="hi-button-btn1 Topbar_notificationBtn pull-left pt-3 px-2">
-                            <span class="badge badge-pill badge-danger">۱۰۰</span>
-                            <i class="fa fa-envelope-o white-text hi-fontSize-23" aria-hidden="true"></i>
-                        </button>
-                    </div>
-
-                    {{--============[ Logout in topbar ]===========--}}
-                    <div class="col-1 pull-4 pt-2">
-                        <button class="hi-button-btn1 Topbar_logoutBtn py-1 px-2">
-                            <i class="fa fa-power-off white-text hi-fontSize-23" aria-hidden="true"></i>
-                        </button>
-                    </div>
-
-
-
                 </div>
             </div>
+
+            <div class="row">
+                <h1 class="display-4">hi</h1>
+            </div>
         </div>
-        <div class="col-2 Sidebar">
+
+        <main class="col-2 Sidebar">
             <div class="Sidebar__paddings">
 
             </div>
-        </div>
+        </main>
 
     </div>
 </div>
