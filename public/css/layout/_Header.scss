@@ -1,6 +1,8 @@
 /* ============[ Top Bar ]=========== */
 .Topbar{
   background-color: $sormeieRoshan;
+  position: fixed;
+  z-index: 1000;
 }
 .Topbar_paddings{
   padding: 7px 25px;

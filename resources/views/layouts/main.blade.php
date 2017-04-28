@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <title>Dashboard</title>
     {{--<link rel="icon" href="../../favicon.ico">--}}
 
     <title>Cover Template for Bootstrap</title>
@@ -33,7 +34,7 @@
 
         <div class="col-10">
             <div class="row">
-                <div class="col-12 Topbar px-0 hi-shadow-2">
+                <div class="col-10 Topbar px-0 hi-shadow-2">
                     <div class="Topbar_paddings">
                         <div class="row Topbar_rowOfItems">
 
@@ -94,16 +95,208 @@
                 </div>
             </div>
 
-            <div class="row">
-                <h1 class="display-4">hi</h1>
-            </div>
+            <main class="row">
+                <div class="col-12">
+                    <h1>helloo</h1>
+                    <h1>dadyyy</h1>
+                    <h1>mumyyyy</h1>
+                    <h1>hi</h1>
+                    <h1>hi</h1>
+                    <h1>hi</h1>
+                    <h1>hi</h1>
+                    <h1>hi</h1>
+                    <h1>hi</h1>
+                    <h1>hi</h1>
+                    <h1>hi</h1>
+                    <h1>hi</h1>
+                    <h1>hi</h1>
+                    <h1>hi</h1>
+                    <h1>hi</h1>
+                    <h1>hi</h1>
+                    <h1>hi</h1>
+                    <h1>hi</h1>
+                    <h1>hi</h1>
+                    <h1>hi</h1>
+                    <h1>hi</h1>
+                </div>
+            </main>
         </div>
 
-        <main class="col-2 Sidebar">
-            <div class="Sidebar__paddings">
+        <nav class="col-2 Sidebar">
+            <div class="Sidebar_logo">
+                <a href="#">
+                    <h1 class="white-text">داشبرد مدیریتی</h1>
+                    <img class="img-fluid hi-size-4" src="{{ asset('images/logo.png') }}">
+                </a>
+            </div>
+
+            <div class="Sidebar_menu">
+
+                <div class="text-right" id="accordion" role="tablist" aria-multiselectable="true">
+
+                    {{--============[ Home Menu of dashboard ]===========--}}
+                    <h5 role="tab" class="mb-4" id="headingOne">
+                        <a class="Sidebar_menu_link" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            صفحه اول<i class="fa fa-tachometer ml-4" aria-hidden="true"></i>
+                        </a>
+                    </h5>
+
+                    {{--============[ Posts Menu of dashboard ]===========--}}
+                    <h5 role="tab" class="mb-4" id="posts">
+                        <a class="Sidebar_menu_link" data-toggle="collapse" data-parent="#accordion" href="#postsMenu" aria-expanded="false" aria-controls="postsMenu">
+                            <i class="fa fa-chevron-left mr-5 hi-fontSize-14" aria-hidden="true"></i>پست ها<i class="fa fa-tachometer ml-4" aria-hidden="true"></i>
+                        </a>
+                    </h5>
+
+                    {{--============[ Gallery Menu of dashboard ]===========--}}
+                    <div id="postsMenu" class="collapse white-text" role="tabpanel" aria-labelledby="posts">
+                        <ul>
+                            <li class="subMenu">
+                                <a>همه پست ها</a>
+                            </li>
+                            <li class="subMenu">
+                                <a>پست جدید</a>
+                            </li>
+                            <li class="subMenu">
+                                <a>پیش نویس ها</a>
+                            </li>
+                            <li class="subMenu">
+                                <a>دسته بندی ها</a>
+                            </li>
+                            <li class="subMenu">
+                                <a>تگ ها</a>
+                            </li>
+                            <li class="subMenu">
+                                <a>نسخه پشتیبانی</a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <h5 role="tab" class="mb-4" id="gallery">
+                        <a class="Sidebar_menu_link" data-toggle="collapse" data-parent="#accordion" href="#galleryMenu" aria-expanded="false" aria-controls="galleryMenu">
+                            <i class="fa fa-chevron-left mr-5 hi-fontSize-14" aria-hidden="true"></i>گالری<i class="fa fa-picture-o ml-4" aria-hidden="true"></i>
+                        </a>
+                    </h5>
+
+                    <div id="galleryMenu" class="collapse white-text" role="tabpanel" aria-labelledby="gallery">
+                        <ul>
+                            <li class="subMenu">
+                                <a>همه فایل ها</a>
+                            </li>
+                            <li class="subMenu">
+                                <a>فایل جدید</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {{--============[ Messages Menu of dashboard ]===========--}}
+                    <h5 role="tab" class="mb-4" id="messages">
+                        <a class="Sidebar_menu_link" data-toggle="collapse" data-parent="#accordion" href="#messagesMenu" aria-expanded="false" aria-controls="messagesMenu">
+                            <i class="fa fa-chevron-left mr-5 hi-fontSize-14" aria-hidden="true"></i>پیام ها<i class="fa fa-envelope-o ml-4" aria-hidden="true"></i>
+                        </a>
+                    </h5>
+
+                    <div id="messagesMenu" class="collapse white-text" role="tabpanel" aria-labelledby="messages">
+                        <ul>
+                            <li class="subMenu">
+                                <a>صندوق ورودی</a>
+                            </li>
+                            <li class="subMenu">
+                                <a>صندوق خروجی</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {{--============[ Users Menu of dashboard ]===========--}}
+                    <h5 role="tab" class="mb-4" id="users">
+                        <a class="Sidebar_menu_link" data-toggle="collapse" data-parent="#accordion" href="#usersMenu" aria-expanded="false" aria-controls="usersMenu">
+                            <i class="fa fa-chevron-left mr-5 hi-fontSize-14" aria-hidden="true"></i>کاربران<i class="fa fa-user-o ml-4" aria-hidden="true"></i>
+                        </a>
+                    </h5>
+
+                    <div id="usersMenu" class="collapse white-text" role="tabpanel" aria-labelledby="users">
+                        <ul>
+                            <li class="subMenu">
+                                <a>همه کاربران</a>
+                            </li>
+                            <li class="subMenu">
+                                <a>کاربر جدید</a>
+                            </li>
+                            <li class="subMenu">
+                                <a>نسخه پشتیبانی</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {{--============[ Comments page of dashboard ]===========--}}
+                    <h5 role="tab" class="mb-4" id="comments">
+                        <a class="Sidebar_menu_link" data-parent="#accordion" href="#comments">
+                            <button class="">۷</button>نظرات<i class="fa fa-commenting-o ml-4" aria-hidden="true"></i>
+                        </a>
+                    </h5>
+
+                    {{--============[ Admin Menu of dashboard ]===========--}}
+                    <h5 role="tab" class="mb-4" id="admins">
+                        <a class="Sidebar_menu_link" data-toggle="collapse" data-parent="#accordion" href="#adminsMenu" aria-expanded="false" aria-controls="adminsMenu">
+                            <i class="fa fa-chevron-left mr-5 hi-fontSize-14" aria-hidden="true"></i>مدیران<i class="fa fa-user-circle-o ml-4" aria-hidden="true"></i>
+                        </a>
+                    </h5>
+
+                    <div id="adminsMenu" class="collapse white-text" role="tabpanel" aria-labelledby="admins">
+                        <ul>
+                            <li class="subMenu">
+                                <a>همه مدیران</a>
+                            </li>
+                            <li class="subMenu">
+                                <a>مدیر جدید</a>
+                            </li>
+                            <li class="subMenu">
+                                <a>پروفایل من</a>
+                            </li>
+                            <li class="subMenu">
+                                <a>نسخه پشتیبانی</a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    {{--============[ Settings Menu of dashboard ]===========--}}
+                    <h5 role="tab" class="mb-4" id="settings">
+                        <a class="Sidebar_menu_link" data-toggle="collapse" data-parent="#accordion" href="#settingsMenu" aria-expanded="false" aria-controls="settingsMenu">
+                            <i class="fa fa-chevron-left mr-5 hi-fontSize-14" aria-hidden="true"></i>تنظیمات<i class="fa fa-cog ml-4" aria-hidden="true"></i>
+                        </a>
+                    </h5>
+
+                    <div id="settingsMenu" class="collapse white-text" role="tabpanel" aria-labelledby="settings">
+                        <ul>
+                            <li class="subMenu">
+                                <a>تنظیمات سایت</a>
+                            </li>
+                            <li class="subMenu">
+                                <a>اسلایدر اول</a>
+                            </li>
+                            <li class="subMenu">
+                                <a>اسلایدر دوم</a>
+                            </li>
+                            <li class="subMenu">
+                                <a>سوالات متداول</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {{--============[ Backup Menu of dashboard ]===========--}}
+                    <h5 role="tab" class="mb-4" id="backup">
+                        <a class="Sidebar_menu_link" data-parent="#accordion" href="#backup">
+                             پشتیبانی<i class="fa fa-download ml-4" aria-hidden="true"></i>
+                        </a>
+                    </h5>
+
+
+                </div>
 
             </div>
-        </main>
+        </nav>
 
     </div>
 </div>

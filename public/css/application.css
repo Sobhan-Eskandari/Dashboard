@@ -52,7 +52,9 @@ body, html {
 /* ============[ Layouts Css Import ]=========== */
 /* ============[ Top Bar ]=========== */
 .Topbar {
-  background-color: #3B4452; }
+  background-color: #3B4452;
+  position: fixed;
+  z-index: 1000; }
 
 .Topbar_paddings {
   padding: 7px 25px; }
@@ -145,9 +147,61 @@ body, html {
   .Topbar_notificationBtn .badge {
     margin-left: 10px; } }
 .Sidebar {
-  background-color: #1F232C; }
+  background-color: #1F232C;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-right: 1px solid #eee; }
 
-.Sidebar__paddings {
-  padding: 26px 46px; }
+.Sidebar_logo {
+  display: flex;
+  border-bottom: 1px solid grey;
+  height: 64px;
+  transition: all 0.3s ease; }
+  .Sidebar_logo h1 {
+    font-size: 20px;
+    text-align: right;
+    font-weight: 300;
+    line-height: 60px;
+    position: absolute;
+    right: 95px; }
+  .Sidebar_logo img {
+    width: 55px;
+    height: 50px;
+    position: absolute;
+    top: 5px;
+    right: 30px; }
+  .Sidebar_logo:hover {
+    -webkit-filter: brightness(150%); }
+
+.Sidebar_menu {
+  padding: 35px 25px 5px 20px; }
+
+.Sidebar_menu_link {
+  color: whitesmoke;
+  text-decoration: none;
+  text-align: right;
+  transition: color 0.3s ease;
+  font-weight: 100; }
+  .Sidebar_menu_link:hover, .Sidebar_menu_link:focus {
+    color: #12a3d9;
+    text-decoration: none; }
+
+.subMenu {
+  color: #b0b7c7;
+  padding-right: 40px;
+  font-size: 15px;
+  cursor: pointer;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  list-style: none; }
+  .subMenu:hover, .subMenu:focus {
+    color: #12a3d9 !important;
+    text-decoration: none !important; }
 
 /*# sourceMappingURL=application.css.map */

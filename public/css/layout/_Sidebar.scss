@@ -1,6 +1,70 @@
 .Sidebar{
   background-color: $sormeieTire;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-right: 1px solid #eee;
 }
-.Sidebar__paddings{
-  padding: 26px 46px;
+
+.Sidebar_logo{
+  display: flex;
+  border-bottom: 1px solid grey;
+  height: 64px;
+  transition: all 0.3s ease;
+
+  h1{
+    font-size: 20px;
+    text-align: right;
+    font-weight: $font-weight--light;
+    line-height: 60px;
+    position: absolute;
+    right: 95px;
+  }
+  img{
+    width: 55px;
+    height: 50px;
+    position: absolute;
+    top: 5px;
+    right: 30px;
+  }
+
+  &:hover{
+    -webkit-filter: brightness(150%);
+  }
+}
+.Sidebar_menu{
+  padding: 35px 25px 5px 20px;
+}
+.Sidebar_menu_link{
+  color: whitesmoke;
+  text-decoration: none;
+  text-align: right;
+  transition: color 0.3s ease;
+  font-weight: $font-weight--thin;
+
+  &:hover,&:focus{
+    color: #12a3d9;
+    text-decoration: none;
+  }
+}
+.subMenu{
+  color: #b0b7c7;
+  padding-right: 40px;
+  font-size: 15px;
+  cursor: pointer;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  list-style: none;
+
+  &:hover, &:focus{
+    color: #12a3d9 !important;
+    text-decoration: none !important;
+  }
+  //margin-top: 13px;
+  //margin-bottom: 13px;
 }
