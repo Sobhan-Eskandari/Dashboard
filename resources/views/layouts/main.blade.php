@@ -89,39 +89,40 @@
                             </div>
 
 
-
                         </div>
                     </div>
                 </div>
             </div>
 
-            <main class="row">
+            {{--============[ This is the main content ]===========--}}
+            <main class="row" id="MainBody">
                 <div class="col-12">
-                    <h1>helloo</h1>
-                    <h1>dadyyy</h1>
-                    <h1>mumyyyy</h1>
-                    <h1>hi</h1>
-                    <h1>hi</h1>
-                    <h1>hi</h1>
-                    <h1>hi</h1>
-                    <h1>hi</h1>
-                    <h1>hi</h1>
-                    <h1>hi</h1>
-                    <h1>hi</h1>
-                    <h1>hi</h1>
-                    <h1>hi</h1>
-                    <h1>hi</h1>
-                    <h1>hi</h1>
-                    <h1>hi</h1>
-                    <h1>hi</h1>
-                    <h1>hi</h1>
-                    <h1>hi</h1>
-                    <h1>hi</h1>
-                    <h1>hi</h1>
+                    <h1>Sobhan</h1>
+                    <h1>Is</h1>
+                    <h1>Great</h1>
+                    <h1>All </h1>
+                    <h1>Hail</h1>
+                    <h1>To</h1>
+                    <h1>Me</h1>
+                    <h1>The</h1>
+                    <h1>Majesty</h1>
+                    <h1>Holy</h1>
+                    <h1>Royal</h1>
+                    <h1>King</h1>
+                    <h1>The</h1>
+                    <h1>Best</h1>
+                    <h1>Among</h1>
+                    <h1>The</h1>
+                    <h1>Everyone</h1>
+                    <h1>I</h1>
+                    <h1>Am</h1>
+                    <h1>The</h1>
+                    <h1>King</h1>
                 </div>
             </main>
         </div>
 
+        {{--============[ This is the Navigation Menu of dashboard ]===========--}}
         <nav class="col-2 Sidebar">
             <div class="Sidebar_logo">
                 <a href="#">
@@ -130,25 +131,25 @@
                 </a>
             </div>
 
+            {{--============[ Navigation Menu ]===========--}}
             <div class="Sidebar_menu">
 
                 <div class="text-right" id="accordion" role="tablist" aria-multiselectable="true">
 
                     {{--============[ Home Menu of dashboard ]===========--}}
-                    <h5 role="tab" class="mb-4" id="headingOne">
+                    <h5 role="tab" class="pt-2 mt-4" id="home">
                         <a class="Sidebar_menu_link" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                             صفحه اول<i class="fa fa-tachometer ml-4" aria-hidden="true"></i>
                         </a>
                     </h5>
 
                     {{--============[ Posts Menu of dashboard ]===========--}}
-                    <h5 role="tab" class="mb-4" id="posts">
-                        <a class="Sidebar_menu_link" data-toggle="collapse" data-parent="#accordion" href="#postsMenu" aria-expanded="false" aria-controls="postsMenu">
-                            <i class="fa fa-chevron-left mr-5 hi-fontSize-14" aria-hidden="true"></i>پست ها<i class="fa fa-tachometer ml-4" aria-hidden="true"></i>
+                    <h5 role="tab" class="pt-2" id="posts" data-toggle="collapse" data-parent="#accordion" href="#postsMenu" aria-expanded="false" aria-controls="postsMenu">
+                        <a class="Sidebar_menu_link">
+                            <i class="fa fa-chevron-left hi-fontSize-14" aria-hidden="true"></i>پست ها<i class="fa fa-tachometer ml-4" aria-hidden="true"></i>
                         </a>
                     </h5>
 
-                    {{--============[ Gallery Menu of dashboard ]===========--}}
                     <div id="postsMenu" class="collapse white-text" role="tabpanel" aria-labelledby="posts">
                         <ul>
                             <li class="subMenu">
@@ -173,9 +174,10 @@
 
                     </div>
 
-                    <h5 role="tab" class="mb-4" id="gallery">
-                        <a class="Sidebar_menu_link" data-toggle="collapse" data-parent="#accordion" href="#galleryMenu" aria-expanded="false" aria-controls="galleryMenu">
-                            <i class="fa fa-chevron-left mr-5 hi-fontSize-14" aria-hidden="true"></i>گالری<i class="fa fa-picture-o ml-4" aria-hidden="true"></i>
+                    {{--============[ Gallery Menu of dashboard ]===========--}}
+                    <h5 role="tab" class="pt-2" id="gallery" data-toggle="collapse" data-parent="#accordion" href="#galleryMenu" aria-expanded="false" aria-controls="galleryMenu">
+                        <a class="Sidebar_menu_link">
+                            <i class="fa fa-chevron-left hi-fontSize-14" aria-hidden="true"></i>گالری<i class="fa fa-picture-o ml-4" aria-hidden="true"></i>
                         </a>
                     </h5>
 
@@ -191,9 +193,9 @@
                     </div>
 
                     {{--============[ Messages Menu of dashboard ]===========--}}
-                    <h5 role="tab" class="mb-4" id="messages">
-                        <a class="Sidebar_menu_link" data-toggle="collapse" data-parent="#accordion" href="#messagesMenu" aria-expanded="false" aria-controls="messagesMenu">
-                            <i class="fa fa-chevron-left mr-5 hi-fontSize-14" aria-hidden="true"></i>پیام ها<i class="fa fa-envelope-o ml-4" aria-hidden="true"></i>
+                    <h5 role="tab" class="pt-3" id="messages" data-toggle="collapse" data-parent="#accordion" href="#messagesMenu" aria-expanded="false" aria-controls="messagesMenu">
+                        <a class="Sidebar_menu_link">
+                            <i class="fa fa-chevron-left hi-fontSize-14" aria-hidden="true"></i><span class="badge badge-pill badge-default mr-2 countBadge">۷۳</span>پیام ها<i class="fa fa-envelope-o ml-4" aria-hidden="true"></i>
                         </a>
                     </h5>
 
@@ -209,9 +211,9 @@
                     </div>
 
                     {{--============[ Users Menu of dashboard ]===========--}}
-                    <h5 role="tab" class="mb-4" id="users">
-                        <a class="Sidebar_menu_link" data-toggle="collapse" data-parent="#accordion" href="#usersMenu" aria-expanded="false" aria-controls="usersMenu">
-                            <i class="fa fa-chevron-left mr-5 hi-fontSize-14" aria-hidden="true"></i>کاربران<i class="fa fa-user-o ml-4" aria-hidden="true"></i>
+                    <h5 role="tab" class="pt-2" id="users" data-toggle="collapse" data-parent="#accordion" href="#usersMenu" aria-expanded="false" aria-controls="usersMenu">
+                        <a class="Sidebar_menu_link">
+                            <i class="fa fa-chevron-left hi-fontSize-14" aria-hidden="true"></i>کاربران<i class="fa fa-user-o ml-4" aria-hidden="true"></i>
                         </a>
                     </h5>
 
@@ -230,19 +232,17 @@
                     </div>
 
                     {{--============[ Comments page of dashboard ]===========--}}
-                    <h5 role="tab" class="mb-4" id="comments">
+                    <h5 role="tab" class="pt-2" id="comments">
                         <a class="Sidebar_menu_link" data-parent="#accordion" href="#comments">
-                            <button class="">۷</button>نظرات<i class="fa fa-commenting-o ml-4" aria-hidden="true"></i>
+                            <span class="badge badge-pill badge-default mr-2 countBadge">۷۳</span>نظرات<i class="fa fa-commenting-o ml-4" aria-hidden="true"></i>
                         </a>
                     </h5>
-
                     {{--============[ Admin Menu of dashboard ]===========--}}
-                    <h5 role="tab" class="mb-4" id="admins">
-                        <a class="Sidebar_menu_link" data-toggle="collapse" data-parent="#accordion" href="#adminsMenu" aria-expanded="false" aria-controls="adminsMenu">
-                            <i class="fa fa-chevron-left mr-5 hi-fontSize-14" aria-hidden="true"></i>مدیران<i class="fa fa-user-circle-o ml-4" aria-hidden="true"></i>
+                    <h5 role="tab" class="pt-2" id="admins" data-toggle="collapse" data-parent="#accordion" href="#adminsMenu" aria-expanded="false" aria-controls="adminsMenu">
+                        <a class="Sidebar_menu_link">
+                            <i class="fa fa-chevron-left hi-fontSize-14" aria-hidden="true"></i>مدیران<i class="fa fa-user-circle-o ml-4" aria-hidden="true"></i>
                         </a>
                     </h5>
-
                     <div id="adminsMenu" class="collapse white-text" role="tabpanel" aria-labelledby="admins">
                         <ul>
                             <li class="subMenu">
@@ -262,8 +262,8 @@
                     </div>
 
                     {{--============[ Settings Menu of dashboard ]===========--}}
-                    <h5 role="tab" class="mb-4" id="settings">
-                        <a class="Sidebar_menu_link" data-toggle="collapse" data-parent="#accordion" href="#settingsMenu" aria-expanded="false" aria-controls="settingsMenu">
+                    <h5 role="tab" class="pt-2" id="settings" data-toggle="collapse" data-parent="#accordion" href="#settingsMenu" aria-expanded="false" aria-controls="settingsMenu">
+                        <a class="Sidebar_menu_link">
                             <i class="fa fa-chevron-left mr-5 hi-fontSize-14" aria-hidden="true"></i>تنظیمات<i class="fa fa-cog ml-4" aria-hidden="true"></i>
                         </a>
                     </h5>
@@ -286,7 +286,7 @@
                     </div>
 
                     {{--============[ Backup Menu of dashboard ]===========--}}
-                    <h5 role="tab" class="mb-4" id="backup">
+                    <h5 role="tab" class="pt-3" id="backup">
                         <a class="Sidebar_menu_link" data-parent="#accordion" href="#backup">
                              پشتیبانی<i class="fa fa-download ml-4" aria-hidden="true"></i>
                         </a>
@@ -310,10 +310,21 @@
 <script src="{{ asset('Hi_Framework/components/Dropdown/Other Libraries/bootstrap-select/bootstrap-select.js') }}"></script>
 <script src="{{ asset('Hi_Framework/css/Animation/Other Libraries/Waves/waves.min.js') }}"></script>
 <script src="{{ asset('Hi_Framework/css/Animation/Other Libraries/Animate/tutorial.js') }}"></script>
+<script src="{{ asset('js/layout/sidebar.js') }}"></script>
 
 <script type="text/javascript">
     Waves.attach('#dropdownMenuButton',['waves-button', 'waves-float', 'waves-light']);
     Waves.attach('button',['waves-float', 'waves-light']);
+
+    Waves.attach('#home',['waves-float', 'waves-light','waves-button']);
+    Waves.attach('#posts',['waves-float', 'waves-light','waves-button']);
+    Waves.attach('#gallery',['waves-float', 'waves-light','waves-button']);
+    Waves.attach('#messages',['waves-float', 'waves-light','waves-button']);
+    Waves.attach('#users',['waves-float', 'waves-light','waves-button']);
+    Waves.attach('#admins',['waves-float', 'waves-light','waves-button']);
+    Waves.attach('#settings',['waves-float', 'waves-light','waves-button']);
+    Waves.attach('#comments',['waves-float', 'waves-light','waves-button']);
+    Waves.attach('#backup',['waves-float', 'waves-light','waves-button']);
     Waves.attach('.dropdown-item');
     Waves.init();
 </script>

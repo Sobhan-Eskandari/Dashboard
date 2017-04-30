@@ -146,6 +146,11 @@ body, html {
     margin-top: -10px; }
   .Topbar_notificationBtn .badge {
     margin-left: 10px; } }
+/* ============[ Main Body ]=========== */
+#MainBody {
+  margin-top: 80px; }
+
+/* ============[ Side Bar ]=========== */
 .Sidebar {
   background-color: #1F232C;
   position: fixed;
@@ -158,6 +163,7 @@ body, html {
   overflow-y: auto;
   border-right: 1px solid #eee; }
 
+/* ============[ Sidebar Logo ]=========== */
 .Sidebar_logo {
   display: flex;
   border-bottom: 1px solid grey;
@@ -179,27 +185,45 @@ body, html {
   .Sidebar_logo:hover {
     -webkit-filter: brightness(150%); }
 
-.Sidebar_menu {
-  padding: 35px 25px 5px 20px; }
+/* ============[ Fixing the menu styles after adding wave jquery ]=========== */
+#home, #posts, #gallery, #messages, #users, #comments, #admins, #settings, #backup {
+  width: 100%;
+  box-shadow: none;
+  text-align: right;
+  transition: all 0.3s ease;
+  padding-left: 30px;
+  padding-right: 20px; }
+  #home:hover .Sidebar_menu_link, #home:focus .Sidebar_menu_link, #posts:hover .Sidebar_menu_link, #posts:focus .Sidebar_menu_link, #gallery:hover .Sidebar_menu_link, #gallery:focus .Sidebar_menu_link, #messages:hover .Sidebar_menu_link, #messages:focus .Sidebar_menu_link, #users:hover .Sidebar_menu_link, #users:focus .Sidebar_menu_link, #comments:hover .Sidebar_menu_link, #comments:focus .Sidebar_menu_link, #admins:hover .Sidebar_menu_link, #admins:focus .Sidebar_menu_link, #settings:hover .Sidebar_menu_link, #settings:focus .Sidebar_menu_link, #backup:hover .Sidebar_menu_link, #backup:focus .Sidebar_menu_link {
+    color: #12a3d9 !important;
+    text-decoration: none !important; }
 
+/* ============[ Submenu styling of navigation menu ]=========== */
 .Sidebar_menu_link {
-  color: whitesmoke;
+  color: whitesmoke !important;
   text-decoration: none;
   text-align: right;
   transition: color 0.3s ease;
-  font-weight: 100; }
+  font-weight: 100;
+  font-size: 17px; }
   .Sidebar_menu_link:hover, .Sidebar_menu_link:focus {
-    color: #12a3d9;
-    text-decoration: none; }
+    color: #12a3d9 !important;
+    text-decoration: none !important; }
+  .Sidebar_menu_link .fa-chevron-left {
+    float: left; }
+  .Sidebar_menu_link .countBadge {
+    font-weight: 100;
+    padding-top: 6px; }
 
+/* ============[ Submenu styling of navigation menu ]=========== */
 .subMenu {
   color: #b0b7c7;
-  padding-right: 40px;
+  padding-right: 65px;
   font-size: 15px;
   cursor: pointer;
   padding-top: 5px;
   padding-bottom: 5px;
-  list-style: none; }
+  list-style: none;
+  transition: all 0.3s ease; }
   .subMenu:hover, .subMenu:focus {
     color: #12a3d9 !important;
     text-decoration: none !important; }
