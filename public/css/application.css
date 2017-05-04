@@ -49,6 +49,105 @@ body, html {
   margin-right: auto; }
 
 /* ============[ Components Css Import ]=========== */
+/* ============[ Global Table Stykes ]=========== */
+.table {
+  direction: rtl;
+  text-align: right;
+  /* ==========[ Table Header Style ]========= */
+  /* ==========[ Each Table Row Style ]========= */ }
+  .table th {
+    text-align: center;
+    font-weight: 400; }
+  .table .table_tableHeader {
+    background-color: #3B4452 !important; }
+  .table td {
+    text-align: center;
+    font-weight: 100;
+    vertical-align: middle;
+    border-top: transparent;
+    /* ==========[ More button right border ]========= */ }
+    .table td:last-child {
+      border-right: 1px solid #C6CBD0; }
+  .table tr {
+    border: 1px solid #C6CBD0; }
+    .table tr:nth-child(2n) {
+      background-color: #D7DFE8; }
+
+/* ==========[ Table Dropdown Style ]========= */
+.table_dropDown .dropdown-menu {
+  min-width: 7rem !important; }
+.table_dropDown .dropdown-toggle::after {
+  content: ' ' !important;
+  display: none; }
+
+/* ==========[ Users Table Style ]========= */
+.userInfoPlace {
+  display: flex; }
+
+.username {
+  margin: auto 10px; }
+
+.userConfirmTick {
+  width: 30px;
+  height: 20px; }
+
+/* ============[ Pagination ]=========== */
+.pagination {
+  border-radius: 10px; }
+
+/* ============[ Each pagination number item ]=========== */
+.page-link {
+  color: #1F232C;
+  font-weight: 400;
+  border: 1px solid #3B4452; }
+  .page-link:focus {
+    background-color: #3B4452;
+    color: whitesmoke;
+    border: 1px solid #3B4452; }
+  .page-link:hover {
+    border: 1px solid #3B4452; }
+
+/* ============[ Next and Prev buttons of Pagination ]=========== */
+.nextBtn, .prevBtn {
+  background-color: #EAEBEC; }
+
+.nextBtn {
+  border-top-left-radius: 9px !important;
+  border-bottom-left-radius: 9px !important; }
+
+.prevBtn {
+  border-top-right-radius: 9px !important;
+  border-bottom-right-radius: 9px !important; }
+
+.adminCard {
+  border-radius: 10px; }
+
+.adminCard_btn {
+  background-color: #3B4452;
+  color: whitesmoke;
+  border-radius: 20px;
+  border: transparent;
+  box-shadow: none !important;
+  font-size: 12px;
+  padding-right: 20px;
+  padding-left: 20px;
+  transition: all 0.3s ease; }
+  .adminCard_btn:hover {
+    background-color: #3B4452; }
+  .adminCard_btn:focus {
+    background-color: #3B4452;
+    color: whitesmoke !important; }
+
+.adminCard_dropdown {
+  font-size: 13px;
+  border-radius: 10px;
+  text-align: right;
+  font-weight: 100;
+  min-width: inherit !important; }
+
+.hvr-sweep-to-top:before {
+  background: #1F232C !important; }
+
 /* ============[ Layouts Css Import ]=========== */
 /* ============[ Top Bar ]=========== */
 .Topbar {
@@ -227,5 +326,14 @@ body, html {
   .subMenu:hover, .subMenu:focus {
     color: #12a3d9 !important;
     text-decoration: none !important; }
+
+/* ==========[ Background card stle in pages ]========= */
+.bgCard {
+  border-radius: 10px;
+  padding: 20px 50px; }
+
+/* ============[ Main pages Style ]=========== */
+#MainBody {
+  padding: 20px 30px; }
 
 /*# sourceMappingURL=application.css.map */

@@ -97,27 +97,7 @@
             {{--============[ This is the main content ]===========--}}
             <main class="row" id="MainBody">
                 <div class="col-12">
-                    <h1>Sobhan</h1>
-                    <h1>Is</h1>
-                    <h1>Great</h1>
-                    <h1>All </h1>
-                    <h1>Hail</h1>
-                    <h1>To</h1>
-                    <h1>Me</h1>
-                    <h1>The</h1>
-                    <h1>Majesty</h1>
-                    <h1>Holy</h1>
-                    <h1>Royal</h1>
-                    <h1>King</h1>
-                    <h1>The</h1>
-                    <h1>Best</h1>
-                    <h1>Among</h1>
-                    <h1>The</h1>
-                    <h1>Everyone</h1>
-                    <h1>I</h1>
-                    <h1>Am</h1>
-                    <h1>The</h1>
-                    <h1>King</h1>
+                    @yield('content')
                 </div>
             </main>
         </div>
@@ -311,6 +291,7 @@
 <script src="{{ asset('Hi_Framework/css/Animation/Other Libraries/Waves/waves.min.js') }}"></script>
 <script src="{{ asset('Hi_Framework/css/Animation/Other Libraries/Animate/tutorial.js') }}"></script>
 <script src="{{ asset('js/layout/sidebar.js') }}"></script>
+<script src="{{ asset('js/application.js') }}"></script>
 
 <script type="text/javascript">
     Waves.attach('#dropdownMenuButton',['waves-button', 'waves-float', 'waves-light']);
