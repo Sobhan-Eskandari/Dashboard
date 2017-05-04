@@ -1,3 +1,4 @@
+/* ==========[ Transparent FA Button ]========= */
 .hi-button-btn1{
   background-color: transparent;
   border: none;
@@ -8,7 +9,25 @@
   outline: none;
   display: flex !important;
 
+  i{
+    margin: auto !important;
+  }
+
   &:focus{
     outline: none;
+  }
+}
+
+/* ==========[ Simple button ]========= */
+.hi-button-simple{
+  color: white;
+  border: transparent;
+  border-radius: 5px;
+  padding: 5px 20px;
+  text-align: center;
+  font-weight: 200;
+
+  &:focus{
+    outline: none !important;
   }
 }

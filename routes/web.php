@@ -26,3 +26,7 @@ Route::get('/aboutUs', function () {
 Route::get('/layout', function () {
     return view('layouts.main');
 });
+
+Route::get('/users', function () {
+    return view('dashboard.users.index');
+});
