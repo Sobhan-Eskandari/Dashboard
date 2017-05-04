@@ -30,3 +30,7 @@ Route::get('/layout', function () {
 Route::get('/users', function () {
     return view('dashboard.users.index');
 });
+
+Route::get('/admins', function () {
+    return view('dashboard.admins.index');
+});

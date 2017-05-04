@@ -119,6 +119,35 @@ body, html {
   border-top-right-radius: 9px !important;
   border-bottom-right-radius: 9px !important; }
 
+.adminCard {
+  border-radius: 10px; }
+
+.adminCard_btn {
+  background-color: #3B4452;
+  color: whitesmoke;
+  border-radius: 20px;
+  border: transparent;
+  box-shadow: none !important;
+  font-size: 12px;
+  padding-right: 20px;
+  padding-left: 20px;
+  transition: all 0.3s ease; }
+  .adminCard_btn:hover {
+    background-color: #3B4452; }
+  .adminCard_btn:focus {
+    background-color: #3B4452;
+    color: whitesmoke !important; }
+
+.adminCard_dropdown {
+  font-size: 13px;
+  border-radius: 10px;
+  text-align: right;
+  font-weight: 100;
+  min-width: inherit !important; }
+
+.hvr-sweep-to-top:before {
+  background: #1F232C !important; }
+
 /* ============[ Layouts Css Import ]=========== */
 /* ============[ Top Bar ]=========== */
 .Topbar {
