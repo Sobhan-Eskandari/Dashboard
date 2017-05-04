@@ -1,0 +1,149 @@
+body {
+  height: 100%;
+  font-family: IRANSans !important;
+  font-weight: 300;
+  direction: rtl;
+  word-spacing: normal;
+  background-color: $main-background;
+  color: $dark-text;
+
+}
+
+.hi-subjectDashboardAdminProfile_h5 {
+  color: $light-text;
+}
+
+.hi-confirmButtonDashboard {
+  width: 100px;
+  font-weight: 500;
+  box-shadow: 0px 0px 5px $darkGray;
+  border-radius: 8px;
+  background-color: $darkGreen2;
+  color: white;
+  font-size: larger;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.hi-confirmButtonDashboard:focus {
+  border: 1px solid $darkGreen2;
+}
+
+.hi-confirmButtonDashboard:active,
+.hi-confirmButtonDashboard:focus,
+.hi-confirmButtonDashboard.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* ============[ category ]=========== */
+
+.hi-whiteCategoryDashboardBox {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px $darkGray;
+}
+
+.hi-roundedDashboardTagsTable_thead{
+  background-color: $navyBlue;
+}
+.hi-roundedDashboardTagsTable_thead_tr_td_r{
+  border-top-right-radius: 10px;
+  color: white;
+}
+
+.hi-roundedDashboardTagsTable_thead_tr_td_l{
+  border-top-left-radius: 10px;
+}
+
+
+.hi-roundedDashboardTagsTable tbody {
+  padding: 0px;
+}
+
+.hi-roundedDashboardTagsTable {
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px $darkGray;
+}
+
+/* ============[ delete button ]=========== */
+
+.hi-roundedDashboardTagsTable_thead_tr_td_button {
+  border-color: $delete;
+  font-weight: 500;
+  font-family: IRANSans;
+  background-color: $delete;
+  color: white;
+}
+
+.hi-roundedDashboardTagsTable_thead_tr_td_button:focus {
+  box-shadow: 0 0 0 2px rgba($delete, .5);
+}
+
+/* ============[ input ]=========== */
+
+.hi-whiteCategoryDashboardBox_input{
+  border-radius: 8px;
+  border: 1px solid $light-text;
+  height: 50px;
+  width: 280px;
+}
+.hi-whiteCategoryDashboardBox_input:focus{
+  border: 1px solid $darkGreen2;
+}
+
+/* ============[ confirm button ]=========== */
+.hi-whiteCategoryDashboardBox_button{
+  width: 90px;
+  font-weight: 400;
+  box-shadow: 0px 0px 5px $darkGray;
+  border-radius: 8px;
+  background-color: $darkBlue;
+  color: white;
+  font-size: larger;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.hi-whiteCategoryDashboardBox_button:active,
+.hi-whiteCategoryDashboardBox_button:focus,
+.hi-whiteCategoryDashboardBox_button.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* ============[ pagination]=========== */
+
+.dashboardPaginatinBs > ul.pagination > li:last-child > a{
+  border-radius: 5px 0 0 5px;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  background-color: $lightGray2;
+}
+
+.dashboardPaginatinBs > ul.pagination > li:first-child > a{
+  border-radius:0 5px 5px 0;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  background-color: $lightGray2;
+}
+
+.dashboardPaginatinBs > ul.pagination > li.active > a{
+  border: 1px solid $navyBlue !important;
+  border-right: 1px solid transparent !important;
+  background-color: $navyBlue !important;
+
+}
+
+.dashboardPaginatinBs > ul.pagination > li > a{
+  color: $navyBlue;
+  font-weight: 500;
+}
+
+.dashboardPaginatinBs > ul.pagination > li > a , nav > ul.pagination > li > a:hover , nav > ul.pagination > li > a:focus{
+  border: 1px solid $navyBlue;
+  color: $navyBlue;
+}

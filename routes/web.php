@@ -23,6 +23,19 @@ Route::get('/aboutUs', function () {
     return view('mersede.about');
 });
 
+Route::get('/adminProfile', function () {
+    return view('mersede.adminProfile');
+});
+
+Route::get('/createAdmin', function () {
+    return view('mersede.createAdmin');
+});
+
+Route::get('/category', function () {
+    return view('mersede.category');
+});
+
+
 Route::get('/layout', function () {
     return view('layouts.main');
 });
