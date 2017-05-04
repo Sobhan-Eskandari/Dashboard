@@ -1,3 +1,5 @@
+/* ============[ For loop to create font size css ]=========== */
+
 @for $i from 1 to 10 {
   .hi-size-#{$i} {
     width: #{$i*10}px;
@@ -9,6 +11,7 @@
   }
 }
 
+/* ============[ For loop to create font size css ]=========== */
 @for $i from 10 to 30 {
   .hi-fontSize-#{$i} {
     font-size: #{$i}px;
