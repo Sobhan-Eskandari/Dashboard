@@ -50,182 +50,140 @@
                                 <tbody>
                                 {{--==========[ Table Row ]========= --}}
                                 <tr>
-                                    {{--==========[ Table Row items ]========= --}}
-                                    <td><input type="checkbox"></td>
-                                    <td class="py-1 text-right userInfoPlace">
-                                        <img class="rounded-circle Topbar_avatar" src="{{ asset('images/avatar.png') }}">
-                                        <p class="username">CyrusGreat</p>
-                                    </td>
-                                    <td>سبحان اسکندری</td>
-                                    <td>serprofessional@gmail.com</td>
-                                    <td>۰۹۲۲۲۲۲۲۲۲۲</td>
-                                    <td><img class="img-fluid userConfirmTick" src="{{ asset('images/tick.png') }}"></td>
+                                    @component('components.UsersTableRow')
 
-                                    {{--==========[ More Button Dropdown ]========= --}}
-                                    <td>
-                                        <div class="Topbar_dropdown dropdown table_dropDown">
-                                            <button class="btn btn-secondary dropdown-toggle py-1 px-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fa fa-ellipsis-v black-text hi-fontSize-20" aria-hidden="true"></i>
-                                            </button>
-                                            {{--==========[ Dropdown Menu ]========= --}}
-                                            <div data-dropdown-in="bounceIn" data-dropdown-out="bounceOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-eye ml-2" aria-hidden="true"></i>مشاهده</a>
-                                                <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-pencil ml-2" aria-hidden="true"></i> ویرایش</a>
-                                                <div class="dropdown-divider my-1"></div>
-                                                <a class="dropdown-item text-right py-0 mt-1" href="#"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</a>
-                                            </div>
-                                        </div>
-                                    </td>
+                                        @slot('user_username')
+                                            Serpro
+                                        @endslot
+
+                                        @slot('user_fullname')
+                                            سبحان اسکندری
+                                        @endslot
+
+                                        @slot('user_email')
+                                            serprofessional@gmail.com
+                                        @endslot
+
+                                        @slot('user_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
+                                        @endslot
+
+                                    @endcomponent
                                 </tr>
 
                                 {{--==========[ Table Row ]========= --}}
                                 <tr>
-                                    {{--==========[ Table Row items ]========= --}}
-                                    <td><input type="checkbox"></td>
-                                    <td class="py-1 text-right userInfoPlace">
-                                        <img class="rounded-circle Topbar_avatar" src="{{ asset('images/avatar.png') }}">
-                                        <p class="username">CyrusGreat</p>
-                                    </td>
-                                    <td>سبحان اسکندری</td>
-                                    <td>serprofessional@gmail.com</td>
-                                    <td>۰۹۲۲۲۲۲۲۲۲۲</td>
-                                    <td><img class="img-fluid userConfirmTick" src="{{ asset('images/tick.png') }}"></td>
+                                    @component('components.UsersTableRow')
 
-                                    {{--==========[ More Button Dropdown ]========= --}}
-                                    <td>
-                                        <div class="Topbar_dropdown dropdown table_dropDown">
-                                            <button class="btn btn-secondary dropdown-toggle py-1 px-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fa fa-ellipsis-v black-text hi-fontSize-20" aria-hidden="true"></i>
-                                            </button>
-                                            {{--==========[ Dropdown Menu ]========= --}}
-                                            <div data-dropdown-in="bounceIn" data-dropdown-out="bounceOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-eye ml-2" aria-hidden="true"></i>مشاهده</a>
-                                                <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-pencil ml-2" aria-hidden="true"></i> ویرایش</a>
-                                                <div class="dropdown-divider my-1"></div>
-                                                <a class="dropdown-item text-right py-0 mt-1" href="#"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</a>
-                                            </div>
-                                        </div>
-                                    </td>
+                                        @slot('user_username')
+                                            Serpro
+                                        @endslot
+
+                                        @slot('user_fullname')
+                                            سبحان اسکندری
+                                        @endslot
+
+                                        @slot('user_email')
+                                            serprofessional@gmail.com
+                                        @endslot
+
+                                        @slot('user_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
+                                        @endslot
+
+                                    @endcomponent
                                 </tr>
 
                                 {{--==========[ Table Row ]========= --}}
                                 <tr>
-                                    {{--==========[ Table Row items ]========= --}}
-                                    <td><input type="checkbox"></td>
-                                    <td class="py-1 text-right userInfoPlace">
-                                        <img class="rounded-circle Topbar_avatar" src="{{ asset('images/avatar.png') }}">
-                                        <p class="username">CyrusGreat</p>
-                                    </td>
-                                    <td>سبحان اسکندری</td>
-                                    <td>serprofessional@gmail.com</td>
-                                    <td>۰۹۲۲۲۲۲۲۲۲۲</td>
-                                    <td><img class="img-fluid userConfirmTick" src="{{ asset('images/tick.png') }}"></td>
+                                    @component('components.UsersTableRow')
 
-                                    {{--==========[ More Button Dropdown ]========= --}}
-                                    <td>
-                                        <div class="Topbar_dropdown dropdown table_dropDown">
-                                            <button class="btn btn-secondary dropdown-toggle py-1 px-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fa fa-ellipsis-v black-text hi-fontSize-20" aria-hidden="true"></i>
-                                            </button>
-                                            {{--==========[ Dropdown Menu ]========= --}}
-                                            <div data-dropdown-in="bounceIn" data-dropdown-out="bounceOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-eye ml-2" aria-hidden="true"></i>مشاهده</a>
-                                                <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-pencil ml-2" aria-hidden="true"></i> ویرایش</a>
-                                                <div class="dropdown-divider my-1"></div>
-                                                <a class="dropdown-item text-right py-0 mt-1" href="#"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</a>
-                                            </div>
-                                        </div>
-                                    </td>
+                                        @slot('user_username')
+                                            Serpro
+                                        @endslot
+
+                                        @slot('user_fullname')
+                                            سبحان اسکندری
+                                        @endslot
+
+                                        @slot('user_email')
+                                            serprofessional@gmail.com
+                                        @endslot
+
+                                        @slot('user_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
+                                        @endslot
+
+                                    @endcomponent
                                 </tr>
 
                                 {{--==========[ Table Row ]========= --}}
                                 <tr>
-                                    {{--==========[ Table Row items ]========= --}}
-                                    <td><input type="checkbox"></td>
-                                    <td class="py-1 text-right userInfoPlace">
-                                        <img class="rounded-circle Topbar_avatar" src="{{ asset('images/avatar.png') }}">
-                                        <p class="username">CyrusGreat</p>
-                                    </td>
-                                    <td>سبحان اسکندری</td>
-                                    <td>serprofessional@gmail.com</td>
-                                    <td>۰۹۲۲۲۲۲۲۲۲۲</td>
-                                    <td><img class="img-fluid userConfirmTick" src="{{ asset('images/tick.png') }}"></td>
+                                    @component('components.UsersTableRow')
 
-                                    {{--==========[ More Button Dropdown ]========= --}}
-                                    <td>
-                                        <div class="Topbar_dropdown dropdown table_dropDown">
-                                            <button class="btn btn-secondary dropdown-toggle py-1 px-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fa fa-ellipsis-v black-text hi-fontSize-20" aria-hidden="true"></i>
-                                            </button>
-                                            {{--==========[ Dropdown Menu ]========= --}}
-                                            <div data-dropdown-in="bounceIn" data-dropdown-out="bounceOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-eye ml-2" aria-hidden="true"></i>مشاهده</a>
-                                                <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-pencil ml-2" aria-hidden="true"></i> ویرایش</a>
-                                                <div class="dropdown-divider my-1"></div>
-                                                <a class="dropdown-item text-right py-0 mt-1" href="#"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</a>
-                                            </div>
-                                        </div>
-                                    </td>
+                                        @slot('user_username')
+                                            Serpro
+                                        @endslot
+
+                                        @slot('user_fullname')
+                                            سبحان اسکندری
+                                        @endslot
+
+                                        @slot('user_email')
+                                            serprofessional@gmail.com
+                                        @endslot
+
+                                        @slot('user_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
+                                        @endslot
+
+                                    @endcomponent
                                 </tr>
 
                                 {{--==========[ Table Row ]========= --}}
                                 <tr>
-                                    {{--==========[ Table Row items ]========= --}}
-                                    <td><input type="checkbox"></td>
-                                    <td class="py-1 text-right userInfoPlace">
-                                        <img class="rounded-circle Topbar_avatar" src="{{ asset('images/avatar.png') }}">
-                                        <p class="username">CyrusGreat</p>
-                                    </td>
-                                    <td>سبحان اسکندری</td>
-                                    <td>serprofessional@gmail.com</td>
-                                    <td>۰۹۲۲۲۲۲۲۲۲۲</td>
-                                    <td><img class="img-fluid userConfirmTick" src="{{ asset('images/tick.png') }}"></td>
+                                    @component('components.UsersTableRow')
 
-                                    {{--==========[ More Button Dropdown ]========= --}}
-                                    <td>
-                                        <div class="Topbar_dropdown dropdown table_dropDown">
-                                            <button class="btn btn-secondary dropdown-toggle py-1 px-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fa fa-ellipsis-v black-text hi-fontSize-20" aria-hidden="true"></i>
-                                            </button>
-                                            {{--==========[ Dropdown Menu ]========= --}}
-                                            <div data-dropdown-in="bounceIn" data-dropdown-out="bounceOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-eye ml-2" aria-hidden="true"></i>مشاهده</a>
-                                                <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-pencil ml-2" aria-hidden="true"></i> ویرایش</a>
-                                                <div class="dropdown-divider my-1"></div>
-                                                <a class="dropdown-item text-right py-0 mt-1" href="#"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</a>
-                                            </div>
-                                        </div>
-                                    </td>
+                                        @slot('user_username')
+                                            Serpro
+                                        @endslot
+
+                                        @slot('user_fullname')
+                                            سبحان اسکندری
+                                        @endslot
+
+                                        @slot('user_email')
+                                            serprofessional@gmail.com
+                                        @endslot
+
+                                        @slot('user_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
+                                        @endslot
+
+                                    @endcomponent
                                 </tr>
 
                                 {{--==========[ Table Row ]========= --}}
                                 <tr>
-                                    {{--==========[ Table Row items ]========= --}}
-                                    <td><input type="checkbox"></td>
-                                    <td class="py-1 text-right userInfoPlace">
-                                        <img class="rounded-circle Topbar_avatar" src="{{ asset('images/avatar.png') }}">
-                                        <p class="username">CyrusGreat</p>
-                                    </td>
-                                    <td>سبحان اسکندری</td>
-                                    <td>serprofessional@gmail.com</td>
-                                    <td>۰۹۲۲۲۲۲۲۲۲۲</td>
-                                    <td><img class="img-fluid userConfirmTick" src="{{ asset('images/tick.png') }}"></td>
+                                    @component('components.UsersTableRow')
 
-                                    {{--==========[ More Button Dropdown ]========= --}}
-                                    <td>
-                                        <div class="Topbar_dropdown dropdown table_dropDown">
-                                            <button class="btn btn-secondary dropdown-toggle py-1 px-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fa fa-ellipsis-v black-text hi-fontSize-20" aria-hidden="true"></i>
-                                            </button>
-                                            {{--==========[ Dropdown Menu ]========= --}}
-                                            <div data-dropdown-in="bounceIn" data-dropdown-out="bounceOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-eye ml-2" aria-hidden="true"></i>مشاهده</a>
-                                                <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-pencil ml-2" aria-hidden="true"></i> ویرایش</a>
-                                                <div class="dropdown-divider my-1"></div>
-                                                <a class="dropdown-item text-right py-0 mt-1" href="#"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</a>
-                                            </div>
-                                        </div>
-                                    </td>
+                                        @slot('user_username')
+                                            Serpro
+                                        @endslot
+
+                                        @slot('user_fullname')
+                                            سبحان اسکندری
+                                        @endslot
+
+                                        @slot('user_email')
+                                            serprofessional@gmail.com
+                                        @endslot
+
+                                        @slot('user_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
+                                        @endslot
+
+                                    @endcomponent
                                 </tr>
 
                                 </tbody>
