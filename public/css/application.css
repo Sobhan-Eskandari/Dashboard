@@ -57,7 +57,7 @@ body, html {
   /* ==========[ Each Table Row Style ]========= */ }
   .table th {
     text-align: center;
-    font-weight: 400; }
+    font-weight: 700; }
   .table .table_tableHeader {
     background-color: #3B4452 !important; }
   .table td {

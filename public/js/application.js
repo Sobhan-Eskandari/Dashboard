@@ -7,3 +7,9 @@
 $(".dismissAdminCardBtn").click(function () {
     $(this).parent().parent().parent().fadeOut();
 });
+
+// ============[ Table Row Delete ]===========
+
+$(".deleteRowBtn").click(function () {
+     $(this).parent().parent().fadeOut();
+});

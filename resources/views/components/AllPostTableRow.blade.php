@@ -11,7 +11,7 @@
 <td class="py-1">
     <p class="my-1 text-right hi-fontSize-12"><i class="fa fa-calendar" aria-hidden="true"></i> {{$post_date}}</p>
     <p class="my-1 text-right hi-fontSize-12"><i class="fa fa-comments" aria-hidden="true"></i> {{$post_commentsCount}}</p>
-    <p class="my-1 text-right hi-fontSize-12"><i class="fa fa-user-o" aria-hidden="true"></i> {{$post_views}}</p>
+    <p class="my-1 text-right hi-fontSize-12"><i class="fa fa-eye" aria-hidden="true"></i> {{$post_views}}</p>
 </td>
 
 {{--==========[ More Button Dropdown ]========= --}}
@@ -24,7 +24,6 @@
         <div data-dropdown-in="bounceIn" data-dropdown-out="bounceOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-eye ml-2" aria-hidden="true"></i>مشاهده</a>
             <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-pencil ml-2" aria-hidden="true"></i> ویرایش</a>
-            <div class="dropdown-divider my-1"></div>
             <a class="dropdown-item text-right py-0 mt-1" href="#"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</a>
             <a class="dropdown-item text-right py-0 mt-1" href="#"><i class="fa fa-lock ml-2" aria-hidden="true"></i>قفل پست</a>
         </div>

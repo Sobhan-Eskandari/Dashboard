@@ -46,3 +46,7 @@ Route::get('/admins', function () {
 Route::get('/posts', function () {
     return view('dashboard.posts.index');
 });
+
+Route::get('/files', function () {
+    return view('dashboard.media.index');
+});
