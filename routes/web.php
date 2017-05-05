@@ -50,3 +50,7 @@ Route::get('/posts', function () {
 Route::get('/files', function () {
     return view('dashboard.media.index');
 });
+
+Route::get('/comments', function () {
+    return view('dashboard.comments.index');
+});
