@@ -47,3 +47,7 @@ Route::get('/users', function () {
 Route::get('/admins', function () {
     return view('dashboard.admins.index');
 });
+
+Route::get('/posts', function () {
+    return view('dashboard.posts.index');
+});

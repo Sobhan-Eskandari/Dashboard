@@ -62,7 +62,6 @@
                                         <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-power-off ml-2" aria-hidden="true"></i>خروج</a>
                                     </div>
                                 </div>
-
                             </div>
 
                             {{--============[ Search in topbar ]===========--}}

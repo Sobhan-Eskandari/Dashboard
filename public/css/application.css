@@ -148,6 +148,17 @@ body, html {
 .hvr-sweep-to-top:before {
   background: #1F232C !important; }
 
+.posts_dropdown #dropdownMenuButton {
+  color: #1F232C !important;
+  border: 1px solid #1F232C !important;
+  border-radius: 10px;
+  font-weight: 400 !important;
+  direction: rtl;
+  font-size: 12px !important;
+  padding-left: 20px; }
+.posts_dropdown .dropdown-item {
+  direction: rtl !important; }
+
 /* ============[ Layouts Css Import ]=========== */
 /* ============[ Top Bar ]=========== */
 .Topbar {

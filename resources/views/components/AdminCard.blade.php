@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-12 text-center">
             <img class="rounded-circle hi-size-9 mb-3" src="{{ asset('images/avatar.png') }}">
-            <h3 class="hi-fontSize-16">{{$admin_name}}</h3>
+            <h3 class="hi-fontSize-16"><b>{{$admin_name}}</b></h3>
             <p  class="hi-fontSize-12 grey-text mb-2">{{$admin_mail}}</p>
             <p class="hi-fontSize-10 grey-text">{{$admin_desc}}</p>
         </div>

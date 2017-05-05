@@ -1,0 +1,16 @@
+//============[ Posts Dropdown ]===========
+.posts_dropdown{
+  #dropdownMenuButton{
+    color: $sormeieTire !important;
+    border: 1px solid $sormeieTire !important;
+    border-radius: 10px;
+    font-weight: $font-weight--medium !important;
+    direction: rtl;
+    font-size: 12px !important;
+    padding-left: 20px;
+  }
+
+  .dropdown-item{
+    direction: rtl !important;
+  }
+}
