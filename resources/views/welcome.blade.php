@@ -84,15 +84,7 @@
                     <a href="/users">Users</a>
                     <a href="/category">Category</a>
                     <a href="/adminProfile">Admin Profile</a>
-                    <a href="/layout">Layout</a>
-                </div>
-
-                <div class="links">
-                    <a href="/admins">Admins</a>
-                    <a href="/posts">Posts</a>
-                    <a href="/users">Users</a>
-                    <a href="/category">Category</a>
-                    <a href="/adminProfile">Admin Profile</a>
+                    <a href="/createAdmin">CreateAdmin</a>
                     <a href="/layout">Layout</a>
                 </div>
             </div>
