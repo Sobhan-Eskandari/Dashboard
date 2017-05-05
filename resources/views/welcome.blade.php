@@ -78,16 +78,22 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Testing permission Hi Vps
+                <div class="links">
+                    <a href="/admins">Admins</a>
+                    <a href="/posts">Posts</a>
+                    <a href="/users">Users</a>
+                    <a href="/category">Category</a>
+                    <a href="/adminProfile">Admin Profile</a>
+                    <a href="/layout">Layout</a>
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="/admins">Admins</a>
+                    <a href="/posts">Posts</a>
+                    <a href="/users">Users</a>
+                    <a href="/category">Category</a>
+                    <a href="/adminProfile">Admin Profile</a>
+                    <a href="/layout">Layout</a>
                 </div>
             </div>
         </div>

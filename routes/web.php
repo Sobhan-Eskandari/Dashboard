@@ -19,10 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/aboutUs', function () {
-    return view('mersede.about');
-});
-
 Route::get('/adminProfile', function () {
     return view('mersede.adminProfile');
 });
@@ -34,7 +30,6 @@ Route::get('/createAdmin', function () {
 Route::get('/category', function () {
     return view('mersede.category');
 });
-
 
 Route::get('/layout', function () {
     return view('layouts.main');
