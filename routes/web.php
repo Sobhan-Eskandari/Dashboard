@@ -58,3 +58,7 @@ Route::get('/comments', function () {
 Route::get('/messages/outbox', function () {
     return view('dashboard.messages.outbox.index');
 });
+
+Route::get('/sliders', function () {
+    return view('dashboard.sliders.index');
+});
