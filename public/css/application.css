@@ -72,6 +72,8 @@ body, html {
     border: 1px solid #C6CBD0; }
     .table tr:nth-child(2n) {
       background-color: #D7DFE8; }
+  .table .active_row {
+    background-color: #D7DFE8; }
 
 /* ==========[ Table Dropdown Style ]========= */
 .table_dropDown .dropdown-menu {

@@ -54,3 +54,7 @@ Route::get('/files', function () {
 Route::get('/comments', function () {
     return view('dashboard.comments.index');
 });
+
+Route::get('/messages/outbox', function () {
+    return view('dashboard.messages.outbox.index');
+});
