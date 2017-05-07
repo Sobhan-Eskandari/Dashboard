@@ -291,6 +291,7 @@
 <script src="{{ asset('Hi_Framework/css/Animation/Other Libraries/Animate/tutorial.js') }}"></script>
 <script src="{{ asset('js/layout/sidebar.js') }}"></script>
 <script src="{{ asset('js/application.js') }}"></script>
+<script src="{{ asset('js/jquery.easydropdown.js') }}"></script>
 
 <script type="text/javascript">
     Waves.attach('#dropdownMenuButton',['waves-button', 'waves-float', 'waves-light']);
