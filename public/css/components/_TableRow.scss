@@ -47,6 +47,22 @@
     display: none;
   }
 }
+.slider_table_dropDown{
+  line-height: 1.0 !important;
+
+  #dropdownMenuButton{
+    color: black !important;
+    border: 1px solid lightgray !important;
+    border-radius: 0px !important;
+  }
+  .dropdown-menu{
+    min-width: 3rem !important;
+  }
+  .dropdown-toggle::after{
+    font-family: "FontAwesome";
+    display: none;
+  }
+}
 
 /* ==========[ Users Table Style ]========= */
 .userInfoPlace{

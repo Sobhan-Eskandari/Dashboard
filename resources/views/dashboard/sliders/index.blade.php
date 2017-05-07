@@ -35,6 +35,7 @@
                                     <th><input type="checkbox"></th>
                                     <th class="text-right">علامت زدن همه</th>
                                     <th></th>
+                                    <th></th>
                                 </tr>
 
                                 </thead>
@@ -54,7 +55,27 @@
                                         </div>
                                     </td>
 
-                                    {{--==========[ Delete Button ]========= --}}
+                                    {{--==========[ More Button ]========= --}}
+                                    <td class="px-1">
+                                        <div class="Topbar_dropdown dropdown slider_table_dropDown">
+
+                                            <button class="btn btn-secondary dropdown-toggle py-0 px-0 pr-2 black-text" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                ۴
+                                                <i class="fa fa-chevron-down white-text grey py-1 px-1 mr-1 hi-fontSize-15" aria-hidden="true"></i>
+                                            </button>
+
+                                            {{--==========[ Dropdown Menu ]========= --}}
+                                            <div class="dropdown-menu hi-shadow-2 py-1" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item text-right mt-1 py-0" href="#">۴</a>
+                                                <div class="dropdown-divider mb-1 mt-1"></div>
+                                                <a class="dropdown-item text-right my-0 py-0" href="#">۴</a>
+                                                <div class="dropdown-divider mb-1 mt-1"></div>
+                                                <a class="dropdown-item text-right my-0 py-0" href="#">۴</a>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    {{--==========[ More Button ]========= --}}
                                     <td class="px-1">
                                         <div class="Topbar_dropdown dropdown table_dropDown">
                                             <button class="btn btn-secondary dropdown-toggle py-1 px-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

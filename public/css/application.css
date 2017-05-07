@@ -511,6 +511,18 @@ a:focus, a:hover, a {
   content: ' ' !important;
   display: none; }
 
+.slider_table_dropDown {
+  line-height: 1.0 !important; }
+  .slider_table_dropDown #dropdownMenuButton {
+    color: black !important;
+    border: 1px solid lightgray !important;
+    border-radius: 0px !important; }
+  .slider_table_dropDown .dropdown-menu {
+    min-width: 3rem !important; }
+  .slider_table_dropDown .dropdown-toggle::after {
+    font-family: "FontAwesome";
+    display: none; }
+
 /* ==========[ Users Table Style ]========= */
 .userInfoPlace {
   display: flex; }
@@ -590,35 +602,6 @@ a:focus, a:hover, a {
 .posts_dropdown .dropdown-item {
   direction: rtl !important; }
 
-/* ============[ Layouts Css Import ]=========== */
-/* ============[ Top Bar ]=========== */
-.Topbar {
-  background-color: #3B4452;
-  position: fixed;
-  z-index: 1000; }
-
-.Topbar_paddings {
-  padding: 7px 25px; }
-
-.Topbar_rowOfItems {
-  direction: rtl !important; }
-
-.Topbar_button {
-  margin-top: auto;
-  margin-bottom: auto; }
-
-/* ============[ Top Bar Avatar ]=========== */
-.Topbar_avatar_container {
-  margin-right: -20px; }
-
-.Topbar_avatar {
-  border-radius: 50%;
-  background-color: white;
-  width: 45px;
-  height: 45px;
-  margin-top: 2px;
-  margin-bottom: 2px; }
-
 /* ============[ Top Bar Dropdown ]=========== */
 .Topbar_dropdown_container {
   padding-top: 10px;
@@ -664,6 +647,35 @@ a:focus, a:hover, a {
   border: transparent; }
 .Topbar_dropdown .dropdown-divider {
   background-color: grey; }
+
+/* ============[ Layouts Css Import ]=========== */
+/* ============[ Top Bar ]=========== */
+.Topbar {
+  background-color: #3B4452;
+  position: fixed;
+  z-index: 1000; }
+
+.Topbar_paddings {
+  padding: 7px 25px; }
+
+.Topbar_rowOfItems {
+  direction: rtl !important; }
+
+.Topbar_button {
+  margin-top: auto;
+  margin-bottom: auto; }
+
+/* ============[ Top Bar Avatar ]=========== */
+.Topbar_avatar_container {
+  margin-right: -20px; }
+
+.Topbar_avatar {
+  border-radius: 50%;
+  background-color: white;
+  width: 45px;
+  height: 45px;
+  margin-top: 2px;
+  margin-bottom: 2px; }
 
 /* ============[ Top Bar Search ]=========== */
 .hi-search-1 {
