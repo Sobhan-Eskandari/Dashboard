@@ -12,7 +12,7 @@
     <!-- Font CSS -->
     <link rel="stylesheet" href="Resources/css/Font/fontiran.css">
     <!-- CSS Files -->
-    <link rel="stylesheet" href="Mersede/css/application.css">
+    <link rel="stylesheet" href="css/application.css">
 
 </head>
 <body class="px-5 pt-5">
@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-4  mt-3">
 
-                @component('Mersede/profileCard')
+                @component('components.profileCard')
                 @slot('characterName')
                 حمید وتر
                 @endslot
@@ -37,7 +37,7 @@
             <!-- about me -->
             <div class="col-8 mt-3">
 
-                @component('Mersede/personalInformationCard')
+                @component('components.personalInformationCard')
                 @slot('cardSubject')
                 درباره من:
                 @endslot
@@ -56,7 +56,7 @@
 <script src="Resources/js/Jquery/jquery-3.2.0.min.js"></script>
 <script src="Resources/js/Bootstrap/tether.min.js"></script>
 <script src="Resources/js/Bootstrap/bootstrap.min.js"></script>
-<script src="Mersede/js/jquery.easydropdown.js"></script>
+<script src="js/jquery.easydropdown.js"></script>
 
 </body>
 </html>

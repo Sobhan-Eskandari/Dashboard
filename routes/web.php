@@ -20,15 +20,15 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/adminProfile', function () {
-    return view('mersede.adminProfile');
+    return view('dashboard.adminProfile.index');
 });
 
 Route::get('/createAdmin', function () {
-    return view('mersede.createAdmin');
+    return view('dashboard.createAdmin.index');
 });
 
 Route::get('/category', function () {
-    return view('mersede.category');
+    return view('dashboard.category.index');
 });
 
 Route::get('/layout', function () {
