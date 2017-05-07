@@ -18,7 +18,7 @@
             <div class="col-4 px-2 hi-profileCard_PictureSelectorBox_pictureBox">
                 <div class="hi-profileCard_PictureSelectorBox_pictureBox_hover">
                     <figure>
-                        <img src="Mersede/images/nobody_m.original.jpg"
+                        <img src="{{ asset('images/nobody_m.original.jpg') }}"
                              class="hi-profileCard_PictureSelectorBox_picture img-fluid"
                              alt="Responsive image"></figure>
                 </div>
