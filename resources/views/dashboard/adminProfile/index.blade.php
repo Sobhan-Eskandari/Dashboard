@@ -12,7 +12,7 @@
             <!-- about me -->
             <div class="col-8 mt-3">
 
-                @component('components.personalInformationCard')
+                @component('components.PersonalInfoCard')
                     @slot('cardSubject')
                         : درباره من
                     @endslot
@@ -22,7 +22,7 @@
 
             <div class="col-4 mt-3">
 
-                @component('components.profileCard')
+                @component('components.AdminInfoCard')
                 @slot('characterName')
                 حمید وتر
                 @endslot

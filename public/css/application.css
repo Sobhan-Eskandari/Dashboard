@@ -49,7 +49,8 @@ body, html {
   margin-right: auto; }
 
 .hi-subjectDashboardAdminProfile_h5 {
-  color: #a7a7a7; }
+  color: #a7a7a7;
+  background-color: #00acc0; }
 
 .hi-confirmButtonDashboard {
   width: 100px;
