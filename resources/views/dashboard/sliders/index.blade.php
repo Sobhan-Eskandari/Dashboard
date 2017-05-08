@@ -43,54 +43,54 @@
 
                                 <tr>
                                     {{--==========[ Gallery Table Row items ]========= --}}
-                                    <td><input type="checkbox"></td>
-                                    <td class="py-1 text-center">
-                                        <div class="userInfoPlace">
-                                            <img class="rounded img-fluid hi-size-7" src="{{ asset('images/avatar.png') }}">
-                                            <div>
-                                                <p class="username mt-3"> این بخش نسبتا کوچک در میان سطح داخلی نئوکورتکس در مرکز مغز پنهان شده </p>
-                                                <p class="grey-text hi-fontSize-12 text-right pr-2">توسط حمید وتر ایجاد شده در : ۹۶/۶/۶</p>
-                                            </div>
+                                    @component('components.SlidersTableRow')
+                                        @slot('slider_text')
+                                            این بخش نسبتا کوچک در میان سطح داخلی نئوکورتکس در مرکز مغز پنهان شده
+                                        @endslot
 
-                                        </div>
-                                    </td>
+                                        @slot('slider_edited')
+                                            توسط حمید وتر ایجاد شده در : ۹۶/۶/۶
+                                        @endslot
+                                    @endcomponent
+                                </tr>
 
-                                    {{--==========[ More Button ]========= --}}
-                                    <td class="px-1">
-                                        <div class="Topbar_dropdown dropdown slider_table_dropDown">
+                                <tr>
+                                    {{--==========[ Gallery Table Row items ]========= --}}
+                                    @component('components.SlidersTableRow')
+                                        @slot('slider_text')
+                                            این بخش نسبتا کوچک در میان سطح داخلی نئوکورتکس در مرکز مغز پنهان شده
+                                        @endslot
 
-                                            <button class="btn btn-secondary dropdown-toggle py-0 px-0 pr-2 black-text" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                ۴
-                                                <i class="fa fa-chevron-down white-text grey py-1 px-1 mr-1 hi-fontSize-15" aria-hidden="true"></i>
-                                            </button>
+                                        @slot('slider_edited')
+                                                توسط حمید وتر ایجاد شده در : ۹۶/۶/۶
+                                        @endslot
+                                    @endcomponent
+                                </tr>
 
-                                            {{--==========[ Dropdown Menu ]========= --}}
-                                            <div class="dropdown-menu hi-shadow-2 py-0 ml-2" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item text-right mt-1 py-1" href="#">۱</a>
-                                                <div class="dropdown-divider mb-1 mt-1"></div>
-                                                <a class="dropdown-item text-right my-0 py-1" href="#">۲</a>
-                                                <div class="dropdown-divider mb-1 mt-1"></div>
-                                                <a class="dropdown-item text-right my-0 py-1" href="#">۳</a>
-                                                <div class="dropdown-divider mb-1 mt-1"></div>
-                                                <a class="dropdown-item text-right my-0 py-1" href="#">۴</a>
-                                            </div>
-                                        </div>
-                                    </td>
+                                <tr>
+                                    {{--==========[ Gallery Table Row items ]========= --}}
+                                    @component('components.SlidersTableRow')
+                                        @slot('slider_text')
+                                            این بخش نسبتا کوچک در میان سطح داخلی نئوکورتکس در مرکز مغز پنهان شده
+                                        @endslot
 
-                                    {{--==========[ More Button ]========= --}}
-                                    <td class="px-1">
-                                        <div class="Topbar_dropdown dropdown table_dropDown">
-                                            <button class="btn btn-secondary dropdown-toggle py-1 px-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fa fa-ellipsis-v black-text hi-fontSize-20" aria-hidden="true"></i>
-                                            </button>
-                                            {{--==========[ Dropdown Menu ]========= --}}
-                                            <div data-dropdown-in="bounceIn" data-dropdown-out="bounceOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-pencil ml-2" aria-hidden="true"></i>ویرایش</a>
-                                                <div class="dropdown-divider my-1"></div>
-                                                <a class="dropdown-item text-right py-0 mt-1" href="#"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</a>
-                                            </div>
-                                        </div>
-                                    </td>
+                                        @slot('slider_edited')
+                                            توسط حمید وتر ایجاد شده در : ۹۶/۶/۶
+                                        @endslot
+                                    @endcomponent
+                                </tr>
+
+                                <tr>
+                                    {{--==========[ Gallery Table Row items ]========= --}}
+                                    @component('components.SlidersTableRow')
+                                        @slot('slider_text')
+                                            این بخش نسبتا کوچک در میان سطح داخلی نئوکورتکس در مرکز مغز پنهان شده
+                                        @endslot
+
+                                        @slot('slider_edited')
+                                            توسط حمید وتر ایجاد شده در : ۹۶/۶/۶
+                                        @endslot
+                                    @endcomponent
                                 </tr>
 
                                 </tbody>
@@ -98,6 +98,14 @@
                         </div>
                     </div>
 
+                    {{--==========[ Submit Button ]========= --}}
+                    <div class="row">
+                        <div class="col-12 text-right">
+                            <button class="btn btn-primary hi-shadow-1">
+                                تاییید
+                            </button>
+                        </div>
+                    </div>
 
                 </div>
             </div>
