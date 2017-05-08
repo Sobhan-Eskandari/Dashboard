@@ -27,7 +27,7 @@
                                 serprofessional@gmail.com
                         @endslot
                         @slot('admin_desc')توسط حمید وتر در ۹۲/۲/۲@endslot
-                        @slot('trash')@endslot
+                        @slot('trash')yes@endslot
                     @endcomponent
                 </div>
 
@@ -39,7 +39,7 @@
                             serprofessional@gmail.com
                         @endslot
                         @slot('admin_desc')توسط حمید وتر در ۹۲/۲/۲@endslot
-                        @slot('trash')@endslot
+                        @slot('trash')yes@endslot
                     @endcomponent
                 </div>
 
@@ -51,7 +51,7 @@
                             serprofessional@gmail.com
                         @endslot
                         @slot('admin_desc')توسط حمید وتر در ۹۲/۲/۲@endslot
-                        @slot('trash')@endslot
+                        @slot('trash')yes@endslot
                     @endcomponent
                 </div>
 
@@ -63,7 +63,7 @@
                             serprofessional@gmail.com
                         @endslot
                         @slot('admin_desc')توسط حمید وتر در ۹۲/۲/۲@endslot
-                        @slot('trash')@endslot
+                        @slot('trash')yes@endslot
                     @endcomponent
                 </div>
             </div>

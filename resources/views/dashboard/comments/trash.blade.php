@@ -86,7 +86,7 @@
                                                 ۹۵/۳/۴
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
 
                                     @endcomponent
                                 </tr>
@@ -115,7 +115,35 @@
                                             ۹۵/۳/۴
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
+                                    @endcomponent
+                                </tr>
+
+                                {{--==========[ Table Row ]========= --}}
+                                <tr>
+                                    @component('components.CommentsTableRow')
+
+                                        @slot('comment_author')
+                                            حمید وتر
+                                        @endslot
+
+                                        @slot('comment_text')
+                                            جهت دسترسی به قابلیت های پیشرفته مانند پخش ویدئو، شبکه های مورد علاقه و شناسه های کاربری، ...
+                                        @endslot
+
+                                        @slot('comment_content')
+                                            داده کاوی
+                                        @endslot
+
+                                        @slot('comment_time')
+                                            ۲۲:۳۰
+                                        @endslot
+
+                                        @slot('comment_date')
+                                            ۹۵/۳/۴
+                                        @endslot
+
+                                        @slot('trash')yes@endslot
 
                                     @endcomponent
                                 </tr>
@@ -144,7 +172,7 @@
                                             ۹۵/۳/۴
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
 
                                     @endcomponent
                                 </tr>
@@ -173,7 +201,7 @@
                                             ۹۵/۳/۴
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
 
                                     @endcomponent
                                 </tr>
@@ -202,36 +230,7 @@
                                             ۹۵/۳/۴
                                         @endslot
 
-                                        @slot('trash')@endslot
-
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.CommentsTableRow')
-
-                                        @slot('comment_author')
-                                            حمید وتر
-                                        @endslot
-
-                                        @slot('comment_text')
-                                            جهت دسترسی به قابلیت های پیشرفته مانند پخش ویدئو، شبکه های مورد علاقه و شناسه های کاربری، ...
-                                        @endslot
-
-                                        @slot('comment_content')
-                                            داده کاوی
-                                        @endslot
-
-                                        @slot('comment_time')
-                                            ۲۲:۳۰
-                                        @endslot
-
-                                        @slot('comment_date')
-                                            ۹۵/۳/۴
-                                        @endslot
-
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
 
                                     @endcomponent
                                 </tr>

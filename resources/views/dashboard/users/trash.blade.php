@@ -15,13 +15,17 @@
                             </button>
                         </div>
 
-                        <div class="col-auto offset-9 text-right mr-2">
+                        <div class="col-auto offset-8 text-right mr-2">
                             <button class="hi-button-simple hi-shadow-0 red darken-3 text-right">حذف</button>
                         </div>
 
-                        <div class="col-auto ml-2 text-right">
+                         <div class="col-auto text-right">
+                            <button class="hi-button-simple hi-shadow-0 blue darken-1">ویرایش</button>
+                         </div>
+
+                         <div class="col-auto ml-2 text-right">
                             <button class="hi-button-simple hi-shadow-0 green darken-3">ایجاد</button>
-                        </div>
+                         </div>
                     </div>
 
                     {{--==========[ Table Of Users ]========= --}}
@@ -34,153 +38,162 @@
                                 <tr>
                                     <th><input type="checkbox"></th>
                                     <th class="text-right">علامت زدن همه</th>
-                                    <th>توسط</th>
-                                    <th>محتوا</th>
-                                    <th>تاریخ</th>
-                                    <th></th>
+                                    <th>نام</th>
+                                    <th>پست الکترونیکی</th>
+                                    <th>تلفن همراه</th>
+                                    <th>وضعیت</th>
+                                    <th>
+                                    </th>
                                 </tr>
 
                                 </thead>
                                 <tbody>
                                 {{--==========[ Table Row ]========= --}}
                                 <tr>
-                                    @component('components.GalleryTableRow')
-                                        @slot('file_name')
-                                            file_of_library.png
+                                    @component('components.UsersTableRow')
+
+                                        @slot('user_username')
+                                            Serpro
                                         @endslot
 
-                                        @slot('file_uploader')
-                                           حمید وتر
+                                        @slot('user_fullname')
+                                            سبحان اسکندری
                                         @endslot
 
-                                        @slot('file_content')
-آموزش کلی
+                                        @slot('user_email')
+                                            serprofessional@gmail.com
                                         @endslot
 
-                                        @slot('file_date')
-۹۵/۵/۵
+                                        @slot('user_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
+
                                     @endcomponent
                                 </tr>
 
                                 {{--==========[ Table Row ]========= --}}
                                 <tr>
-                                    @component('components.GalleryTableRow')
-                                        @slot('file_name')
-                                            file_of_library.png
+                                    @component('components.UsersTableRow')
+
+                                        @slot('user_username')
+                                            Serpro
                                         @endslot
 
-                                        @slot('file_uploader')
-                                            حمید وتر
+                                        @slot('user_fullname')
+                                            سبحان اسکندری
                                         @endslot
 
-                                        @slot('file_content')
-                                            آموزش کلی
+                                        @slot('user_email')
+                                            serprofessional@gmail.com
                                         @endslot
 
-                                        @slot('file_date')
-                                            ۹۵/۵/۵
+                                        @slot('user_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
                                     @endcomponent
                                 </tr>
 
-
                                 {{--==========[ Table Row ]========= --}}
                                 <tr>
-                                    @component('components.GalleryTableRow')
-                                        @slot('file_name')
-                                            file_of_library.png
+                                    @component('components.UsersTableRow')
+
+                                        @slot('user_username')
+                                            Serpro
                                         @endslot
 
-                                        @slot('file_uploader')
-                                            حمید وتر
+                                        @slot('user_fullname')
+                                            سبحان اسکندری
                                         @endslot
 
-                                        @slot('file_content')
-                                            آموزش کلی
+                                        @slot('user_email')
+                                            serprofessional@gmail.com
                                         @endslot
 
-                                        @slot('file_date')
-                                            ۹۵/۵/۵
+                                        @slot('user_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
+
                                     @endcomponent
                                 </tr>
 
-
                                 {{--==========[ Table Row ]========= --}}
                                 <tr>
-                                    @component('components.GalleryTableRow')
-                                        @slot('file_name')
-                                            file_of_library.png
+                                    @component('components.UsersTableRow')
+
+                                        @slot('user_username')
+                                            Serpro
                                         @endslot
 
-                                        @slot('file_uploader')
-                                            حمید وتر
+                                        @slot('user_fullname')
+                                            سبحان اسکندری
                                         @endslot
 
-                                        @slot('file_content')
-                                            آموزش کلی
+                                        @slot('user_email')
+                                            serprofessional@gmail.com
                                         @endslot
 
-                                        @slot('file_date')
-                                            ۹۵/۵/۵
+                                        @slot('user_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
+
                                     @endcomponent
                                 </tr>
 
-
                                 {{--==========[ Table Row ]========= --}}
                                 <tr>
-                                    @component('components.GalleryTableRow')
-                                        @slot('file_name')
-                                            file_of_library.png
+                                    @component('components.UsersTableRow')
+
+                                        @slot('user_username')
+                                            Serpro
                                         @endslot
 
-                                        @slot('file_uploader')
-                                            حمید وتر
+                                        @slot('user_fullname')
+                                            سبحان اسکندری
                                         @endslot
 
-                                        @slot('file_content')
-                                            آموزش کلی
+                                        @slot('user_email')
+                                            serprofessional@gmail.com
                                         @endslot
 
-                                        @slot('file_date')
-                                            ۹۵/۵/۵
+                                        @slot('user_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
+
                                     @endcomponent
                                 </tr>
 
-
                                 {{--==========[ Table Row ]========= --}}
                                 <tr>
-                                    @component('components.GalleryTableRow')
-                                        @slot('file_name')
-                                            file_of_library.png
+                                    @component('components.UsersTableRow')
+
+                                        @slot('user_username')
+                                            Serpro
                                         @endslot
 
-                                        @slot('file_uploader')
-                                            حمید وتر
+                                        @slot('user_fullname')
+                                            سبحان اسکندری
                                         @endslot
 
-                                        @slot('file_content')
-                                            آموزش کلی
+                                        @slot('user_email')
+                                            serprofessional@gmail.com
                                         @endslot
 
-                                        @slot('file_date')
-                                            ۹۵/۵/۵
+                                        @slot('user_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
+
                                     @endcomponent
                                 </tr>
 
