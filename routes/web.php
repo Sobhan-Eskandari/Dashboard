@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Mail;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -65,4 +67,8 @@ Route::get('/messages/inbox', function () {
 
 Route::get('/sliders', function () {
     return view('dashboard.sliders.index');
+});
+
+Route::get('/email', function (){
+    Mail::to('hamid.vetr@gmail.com')->send(new \App\Mail\TestMail());
 });
