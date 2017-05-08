@@ -54,6 +54,10 @@
     color: black !important;
     border: 1px solid lightgray !important;
     border-radius: 0px !important;
+
+    &:hover{
+      -webkit-filter: brightness(100%) !important;
+    }
   }
   .dropdown-menu{
     min-width: 3rem !important;
@@ -61,6 +65,9 @@
   .dropdown-toggle::after{
     font-family: "FontAwesome";
     display: none;
+  }
+  .dropdown-divider{
+    margin-top: -5px !important;
   }
 }
 

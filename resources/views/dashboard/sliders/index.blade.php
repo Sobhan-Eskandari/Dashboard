@@ -65,12 +65,14 @@
                                             </button>
 
                                             {{--==========[ Dropdown Menu ]========= --}}
-                                            <div class="dropdown-menu hi-shadow-2 py-1" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item text-right mt-1 py-0" href="#">۴</a>
+                                            <div class="dropdown-menu hi-shadow-2 py-0 ml-2" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item text-right mt-1 py-1" href="#">۱</a>
                                                 <div class="dropdown-divider mb-1 mt-1"></div>
-                                                <a class="dropdown-item text-right my-0 py-0" href="#">۴</a>
+                                                <a class="dropdown-item text-right my-0 py-1" href="#">۲</a>
                                                 <div class="dropdown-divider mb-1 mt-1"></div>
-                                                <a class="dropdown-item text-right my-0 py-0" href="#">۴</a>
+                                                <a class="dropdown-item text-right my-0 py-1" href="#">۳</a>
+                                                <div class="dropdown-divider mb-1 mt-1"></div>
+                                                <a class="dropdown-item text-right my-0 py-1" href="#">۴</a>
                                             </div>
                                         </div>
                                     </td>

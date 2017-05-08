@@ -517,11 +517,15 @@ a:focus, a:hover, a {
     color: black !important;
     border: 1px solid lightgray !important;
     border-radius: 0px !important; }
+    .slider_table_dropDown #dropdownMenuButton:hover {
+      -webkit-filter: brightness(100%) !important; }
   .slider_table_dropDown .dropdown-menu {
     min-width: 3rem !important; }
   .slider_table_dropDown .dropdown-toggle::after {
     font-family: "FontAwesome";
     display: none; }
+  .slider_table_dropDown .dropdown-divider {
+    margin-top: -5px !important; }
 
 /* ==========[ Users Table Style ]========= */
 .userInfoPlace {
