@@ -114,7 +114,7 @@
                                             ۱۰۰
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
 
                                     @endcomponent
                                 </tr>
@@ -155,7 +155,7 @@
                                             ۱۰۰
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
 
 
                                     @endcomponent
@@ -197,7 +197,7 @@
                                             ۱۰۰
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
 
                                     @endcomponent
                                 </tr>
@@ -238,7 +238,7 @@
                                             ۱۰۰
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
 
                                     @endcomponent
                                 </tr>
@@ -279,7 +279,7 @@
                                             ۱۰۰
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
 
                                     @endcomponent
                                 </tr>
@@ -320,7 +320,7 @@
                                             ۱۰۰
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
 
                                     @endcomponent
                                 </tr>
@@ -361,7 +361,7 @@
                                             ۱۰۰
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
 
                                     @endcomponent
                                 </tr>

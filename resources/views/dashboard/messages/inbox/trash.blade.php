@@ -18,7 +18,7 @@
                         <div class="col-2">
                             <div class="Topbar_dropdown posts_dropdown dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    همه ی دسته بندی ها
+                                    همه ی زمان ها
                                 </button>
                                 <div data-dropdown-in="bounceIn" data-dropdown-out="bounceOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-user ml-2" aria-hidden="true"></i> پروفایل من</a>
@@ -30,17 +30,10 @@
                             </div>
                         </div>
 
-                        <div class="col-auto offset-6 text-right mr-2">
+                        <div class="col-auto offset-8 text-right mr-2">
                             <button class="hi-button-simple hi-shadow-0 red darken-3 text-right">حذف</button>
                         </div>
 
-                        <div class="col-auto text-right">
-                            <button class="hi-button-simple hi-shadow-0 blue darken-1">ویرایش</button>
-                        </div>
-
-                        <div class="col-auto ml-2 text-right">
-                            <button class="hi-button-simple hi-shadow-0 green darken-3">ایجاد</button>
-                        </div>
                     </div>
 
                     {{--==========[ Table Of Users ]========= --}}
@@ -53,8 +46,7 @@
                                 <tr>
                                     <th><input type="checkbox"></th>
                                     <th class="text-right">علامت زدن همه</th>
-                                    <th width="30%">متن</th>
-                                    <th>محتوا</th>
+                                    <th width="50%">صندوق ورودی</th>
                                     <th>زمان</th>
                                     <th>وضعیت</th>
                                     <th></th>
@@ -64,178 +56,154 @@
                                 <tbody>
                                 {{--==========[ Table Row ]========= --}}
                                 <tr>
-                                    @component('components.CommentsTableRow')
+                                    @component('components.MessagesInboxTableRow')
 
-                                        @slot('comment_author')
+                                        @slot('sender_name')
                                             حمید وتر
                                         @endslot
 
-                                        @slot('comment_text')
-                                                جهت دسترسی به قابلیت های پیشرفته مانند پخش ویدئو، شبکه های مورد علاقه و شناسه های کاربری، ...
+                                        @slot('sender_text')
+                                                هواپیمای فضایی بدون سرنشین نیروی هوایی آمریکا به نام X-37B دیروز صبح در مرکز فضایی کِنِدی ناسا به زمین نشست،
                                         @endslot
 
-                                        @slot('comment_content')
-                                                داده کاوی
+                                        @slot('sender_time')
+۲۲:۳۰
                                         @endslot
 
-                                        @slot('comment_time')
-                                                ۲۲:۳۰
+                                        @slot('sender_date')
+۱۳۹۶/۵/۴
                                         @endslot
 
-                                        @slot('comment_date')
-                                                ۹۵/۳/۴
-                                        @endslot
-
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
 
                                     @endcomponent
                                 </tr>
 
                                 {{--==========[ Table Row ]========= --}}
                                 <tr>
-                                    @component('components.CommentsTableRow')
+                                    @component('components.MessagesInboxTableRow')
 
-                                        @slot('comment_author')
+                                        @slot('sender_name')
                                             حمید وتر
                                         @endslot
 
-                                        @slot('comment_text')
-                                            جهت دسترسی به قابلیت های پیشرفته مانند پخش ویدئو، شبکه های مورد علاقه و شناسه های کاربری، ...
+                                        @slot('sender_text')
+                                            هواپیمای فضایی بدون سرنشین نیروی هوایی آمریکا به نام X-37B دیروز صبح در مرکز فضایی کِنِدی ناسا به زمین نشست،
                                         @endslot
 
-                                        @slot('comment_content')
-                                            داده کاوی
-                                        @endslot
-
-                                        @slot('comment_time')
+                                        @slot('sender_time')
                                             ۲۲:۳۰
                                         @endslot
 
-                                        @slot('comment_date')
-                                            ۹۵/۳/۴
+                                        @slot('sender_date')
+                                            ۱۳۹۶/۵/۴
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
+
+                                    @endcomponent
+                                </tr>
+
+
+                                {{--==========[ Table Row ]========= --}}
+                                <tr>
+                                    @component('components.MessagesInboxTableRow')
+
+                                        @slot('sender_name')
+                                            حمید وتر
+                                        @endslot
+
+                                        @slot('sender_text')
+                                            هواپیمای فضایی بدون سرنشین نیروی هوایی آمریکا به نام X-37B دیروز صبح در مرکز فضایی کِنِدی ناسا به زمین نشست،
+                                        @endslot
+
+                                        @slot('sender_time')
+                                            ۲۲:۳۰
+                                        @endslot
+
+                                        @slot('sender_date')
+                                            ۱۳۹۶/۵/۴
+                                        @endslot
+
+                                        @slot('trash')yes@endslot
 
                                     @endcomponent
                                 </tr>
 
                                 {{--==========[ Table Row ]========= --}}
                                 <tr>
-                                    @component('components.CommentsTableRow')
+                                    @component('components.MessagesInboxTableRow')
 
-                                        @slot('comment_author')
+                                        @slot('sender_name')
                                             حمید وتر
                                         @endslot
 
-                                        @slot('comment_text')
-                                            جهت دسترسی به قابلیت های پیشرفته مانند پخش ویدئو، شبکه های مورد علاقه و شناسه های کاربری، ...
+                                        @slot('sender_text')
+                                            هواپیمای فضایی بدون سرنشین نیروی هوایی آمریکا به نام X-37B دیروز صبح در مرکز فضایی کِنِدی ناسا به زمین نشست،
                                         @endslot
 
-                                        @slot('comment_content')
-                                            داده کاوی
-                                        @endslot
-
-                                        @slot('comment_time')
+                                        @slot('sender_time')
                                             ۲۲:۳۰
                                         @endslot
 
-                                        @slot('comment_date')
-                                            ۹۵/۳/۴
+                                        @slot('sender_date')
+                                            ۱۳۹۶/۵/۴
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
 
                                     @endcomponent
                                 </tr>
 
                                 {{--==========[ Table Row ]========= --}}
                                 <tr>
-                                    @component('components.CommentsTableRow')
+                                    @component('components.MessagesInboxTableRow')
 
-                                        @slot('comment_author')
+                                        @slot('sender_name')
                                             حمید وتر
                                         @endslot
 
-                                        @slot('comment_text')
-                                            جهت دسترسی به قابلیت های پیشرفته مانند پخش ویدئو، شبکه های مورد علاقه و شناسه های کاربری، ...
+                                        @slot('sender_text')
+                                            هواپیمای فضایی بدون سرنشین نیروی هوایی آمریکا به نام X-37B دیروز صبح در مرکز فضایی کِنِدی ناسا به زمین نشست،
                                         @endslot
 
-                                        @slot('comment_content')
-                                            داده کاوی
-                                        @endslot
-
-                                        @slot('comment_time')
+                                        @slot('sender_time')
                                             ۲۲:۳۰
                                         @endslot
 
-                                        @slot('comment_date')
-                                            ۹۵/۳/۴
+                                        @slot('sender_date')
+                                            ۱۳۹۶/۵/۴
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
 
                                     @endcomponent
                                 </tr>
 
                                 {{--==========[ Table Row ]========= --}}
                                 <tr>
-                                    @component('components.CommentsTableRow')
+                                    @component('components.MessagesInboxTableRow')
 
-                                        @slot('comment_author')
+                                        @slot('sender_name')
                                             حمید وتر
                                         @endslot
 
-                                        @slot('comment_text')
-                                            جهت دسترسی به قابلیت های پیشرفته مانند پخش ویدئو، شبکه های مورد علاقه و شناسه های کاربری، ...
+                                        @slot('sender_text')
+                                            هواپیمای فضایی بدون سرنشین نیروی هوایی آمریکا به نام X-37B دیروز صبح در مرکز فضایی کِنِدی ناسا به زمین نشست،
                                         @endslot
 
-                                        @slot('comment_content')
-                                            داده کاوی
-                                        @endslot
-
-                                        @slot('comment_time')
+                                        @slot('sender_time')
                                             ۲۲:۳۰
                                         @endslot
 
-                                        @slot('comment_date')
-                                            ۹۵/۳/۴
+                                        @slot('sender_date')
+                                            ۱۳۹۶/۵/۴
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
 
                                     @endcomponent
                                 </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.CommentsTableRow')
-
-                                        @slot('comment_author')
-                                            حمید وتر
-                                        @endslot
-
-                                        @slot('comment_text')
-                                            جهت دسترسی به قابلیت های پیشرفته مانند پخش ویدئو، شبکه های مورد علاقه و شناسه های کاربری، ...
-                                        @endslot
-
-                                        @slot('comment_content')
-                                            داده کاوی
-                                        @endslot
-
-                                        @slot('comment_time')
-                                            ۲۲:۳۰
-                                        @endslot
-
-                                        @slot('comment_date')
-                                            ۹۵/۳/۴
-                                        @endslot
-
-                                        @slot('trash')@endslot
-
-                                    @endcomponent
-                                </tr>
-
 
                                 </tbody>
                             </table>

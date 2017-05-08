@@ -68,28 +68,7 @@
                                             ۰۹۱۱۲۳۴۴۴۴۴
                                         @endslot
 
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.UsersTableRow')
-
-                                        @slot('user_username')
-                                            Serpro
-                                        @endslot
-
-                                        @slot('user_fullname')
-                                            سبحان اسکندری
-                                        @endslot
-
-                                        @slot('user_email')
-                                            serprofessional@gmail.com
-                                        @endslot
-
-                                        @slot('user_number')
-                                            ۰۹۱۱۲۳۴۴۴۴۴
-                                        @endslot
+                                        @slot('trash')@endslot
 
                                     @endcomponent
                                 </tr>
@@ -114,6 +93,7 @@
                                             ۰۹۱۱۲۳۴۴۴۴۴
                                         @endslot
 
+                                        @slot('trash')@endslot
                                     @endcomponent
                                 </tr>
 
@@ -137,28 +117,7 @@
                                             ۰۹۱۱۲۳۴۴۴۴۴
                                         @endslot
 
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.UsersTableRow')
-
-                                        @slot('user_username')
-                                            Serpro
-                                        @endslot
-
-                                        @slot('user_fullname')
-                                            سبحان اسکندری
-                                        @endslot
-
-                                        @slot('user_email')
-                                            serprofessional@gmail.com
-                                        @endslot
-
-                                        @slot('user_number')
-                                            ۰۹۱۱۲۳۴۴۴۴۴
-                                        @endslot
+                                        @slot('trash')@endslot
 
                                     @endcomponent
                                 </tr>
@@ -182,6 +141,58 @@
                                         @slot('user_number')
                                             ۰۹۱۱۲۳۴۴۴۴۴
                                         @endslot
+
+                                        @slot('trash')@endslot
+
+                                    @endcomponent
+                                </tr>
+
+                                {{--==========[ Table Row ]========= --}}
+                                <tr>
+                                    @component('components.UsersTableRow')
+
+                                        @slot('user_username')
+                                            Serpro
+                                        @endslot
+
+                                        @slot('user_fullname')
+                                            سبحان اسکندری
+                                        @endslot
+
+                                        @slot('user_email')
+                                            serprofessional@gmail.com
+                                        @endslot
+
+                                        @slot('user_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
+                                        @endslot
+
+                                        @slot('trash')@endslot
+
+                                    @endcomponent
+                                </tr>
+
+                                {{--==========[ Table Row ]========= --}}
+                                <tr>
+                                    @component('components.UsersTableRow')
+
+                                        @slot('user_username')
+                                            Serpro
+                                        @endslot
+
+                                        @slot('user_fullname')
+                                            سبحان اسکندری
+                                        @endslot
+
+                                        @slot('user_email')
+                                            serprofessional@gmail.com
+                                        @endslot
+
+                                        @slot('user_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
+                                        @endslot
+
+                                        @slot('trash')@endslot
 
                                     @endcomponent
                                 </tr>

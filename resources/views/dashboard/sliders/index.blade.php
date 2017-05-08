@@ -51,6 +51,7 @@
                                         @slot('slider_edited')
                                             توسط حمید وتر ایجاد شده در : ۹۶/۶/۶
                                         @endslot
+
                                     @endcomponent
                                 </tr>
 

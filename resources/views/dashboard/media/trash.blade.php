@@ -61,7 +61,7 @@
 ۹۵/۵/۵
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
                                     @endcomponent
                                 </tr>
 
@@ -84,31 +84,7 @@
                                             ۹۵/۵/۵
                                         @endslot
 
-                                        @slot('trash')@endslot
-                                    @endcomponent
-                                </tr>
-
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.GalleryTableRow')
-                                        @slot('file_name')
-                                            file_of_library.png
-                                        @endslot
-
-                                        @slot('file_uploader')
-                                            حمید وتر
-                                        @endslot
-
-                                        @slot('file_content')
-                                            آموزش کلی
-                                        @endslot
-
-                                        @slot('file_date')
-                                            ۹۵/۵/۵
-                                        @endslot
-
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
                                     @endcomponent
                                 </tr>
 
@@ -132,7 +108,7 @@
                                             ۹۵/۵/۵
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
                                     @endcomponent
                                 </tr>
 
@@ -156,7 +132,7 @@
                                             ۹۵/۵/۵
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
                                     @endcomponent
                                 </tr>
 
@@ -180,7 +156,31 @@
                                             ۹۵/۵/۵
                                         @endslot
 
-                                        @slot('trash')@endslot
+                                        @slot('trash')yes@endslot
+                                    @endcomponent
+                                </tr>
+
+
+                                {{--==========[ Table Row ]========= --}}
+                                <tr>
+                                    @component('components.GalleryTableRow')
+                                        @slot('file_name')
+                                            file_of_library.png
+                                        @endslot
+
+                                        @slot('file_uploader')
+                                            حمید وتر
+                                        @endslot
+
+                                        @slot('file_content')
+                                            آموزش کلی
+                                        @endslot
+
+                                        @slot('file_date')
+                                            ۹۵/۵/۵
+                                        @endslot
+
+                                        @slot('trash')yes@endslot
                                     @endcomponent
                                 </tr>
 

@@ -79,32 +79,7 @@
                                                 مجتبی موسوی
                                         @endslot
 
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.MessageOutBoxTableRow')
-
-                                        @slot('msg_sender')
-                                            حمید وتر
-                                        @endslot
-
-                                        @slot('msg_text')
-                                            کلاستروم به قدری به طور متراکم به چندیدن بخش حیاتی از مغر متصل شده است که فرانسیس کریک، ...
-                                        @endslot
-
-                                        @slot('msg_time')
-                                            ۲۲:۳۰
-                                        @endslot
-
-                                        @slot('msg_date')
-                                            ۱۳۹۶/۵/۶
-                                        @endslot
-
-                                        @slot('msg_receiver')
-                                            مجتبی موسوی
-                                        @endslot
+                                        @slot('trash')@endslot
 
                                     @endcomponent
                                 </tr>
@@ -133,32 +108,7 @@
                                             مجتبی موسوی
                                         @endslot
 
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.MessageOutBoxTableRow')
-
-                                        @slot('msg_sender')
-                                            حمید وتر
-                                        @endslot
-
-                                        @slot('msg_text')
-                                            کلاستروم به قدری به طور متراکم به چندیدن بخش حیاتی از مغر متصل شده است که فرانسیس کریک، ...
-                                        @endslot
-
-                                        @slot('msg_time')
-                                            ۲۲:۳۰
-                                        @endslot
-
-                                        @slot('msg_date')
-                                            ۱۳۹۶/۵/۶
-                                        @endslot
-
-                                        @slot('msg_receiver')
-                                            مجتبی موسوی
-                                        @endslot
+                                        @slot('trash')@endslot
 
                                     @endcomponent
                                 </tr>
@@ -187,6 +137,8 @@
                                             مجتبی موسوی
                                         @endslot
 
+                                        @slot('trash')@endslot
+
                                     @endcomponent
                                 </tr>
 
@@ -213,6 +165,66 @@
                                         @slot('msg_receiver')
                                             مجتبی موسوی
                                         @endslot
+
+                                        @slot('trash')@endslot
+
+                                    @endcomponent
+                                </tr>
+
+                                {{--==========[ Table Row ]========= --}}
+                                <tr>
+                                    @component('components.MessageOutBoxTableRow')
+
+                                        @slot('msg_sender')
+                                            حمید وتر
+                                        @endslot
+
+                                        @slot('msg_text')
+                                            کلاستروم به قدری به طور متراکم به چندیدن بخش حیاتی از مغر متصل شده است که فرانسیس کریک، ...
+                                        @endslot
+
+                                        @slot('msg_time')
+                                            ۲۲:۳۰
+                                        @endslot
+
+                                        @slot('msg_date')
+                                            ۱۳۹۶/۵/۶
+                                        @endslot
+
+                                        @slot('msg_receiver')
+                                            مجتبی موسوی
+                                        @endslot
+
+                                        @slot('trash')@endslot
+
+                                    @endcomponent
+                                </tr>
+
+                                {{--==========[ Table Row ]========= --}}
+                                <tr>
+                                    @component('components.MessageOutBoxTableRow')
+
+                                        @slot('msg_sender')
+                                            حمید وتر
+                                        @endslot
+
+                                        @slot('msg_text')
+                                            کلاستروم به قدری به طور متراکم به چندیدن بخش حیاتی از مغر متصل شده است که فرانسیس کریک، ...
+                                        @endslot
+
+                                        @slot('msg_time')
+                                            ۲۲:۳۰
+                                        @endslot
+
+                                        @slot('msg_date')
+                                            ۱۳۹۶/۵/۶
+                                        @endslot
+
+                                        @slot('msg_receiver')
+                                            مجتبی موسوی
+                                        @endslot
+
+                                        @slot('trash')@endslot
 
                                     @endcomponent
                                 </tr>
