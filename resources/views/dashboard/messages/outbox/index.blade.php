@@ -46,7 +46,7 @@
                                 <tr>
                                     <th><input type="checkbox"></th>
                                     <th class="text-right">علامت زدن همه</th>
-                                    <th width="40%">صندوق خروجی</th>
+                                    <th width="50%">صندوق خروجی</th>
                                     <th>زمان</th>
                                     <th>گیرنده</th>
                                     <th></th>

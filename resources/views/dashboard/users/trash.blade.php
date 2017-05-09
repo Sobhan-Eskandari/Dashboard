@@ -9,23 +9,9 @@
 
                     {{--==========[ Row of buttons abpve table ]========= --}}
                     <div class="row">
-                        <div class="col-1 pl-0">
-                            <button class="hi-button-btn1 orange darken-2 hi-shadow-1 hi-size-4">
-                                <i class="fa fa-trash white-text hi-fontSize-20" aria-hidden="true"></i>
-                            </button>
+                        <div class="col-1 push-11 ml-2 text-right">
+                            <button class="hi-button-simple hi-shadow-0 yellow darken-3">زباله</button>
                         </div>
-
-                        <div class="col-auto offset-8 text-right mr-2">
-                            <button class="hi-button-simple hi-shadow-0 red darken-3 text-right">حذف</button>
-                        </div>
-
-                         <div class="col-auto text-right">
-                            <button class="hi-button-simple hi-shadow-0 blue darken-1">ویرایش</button>
-                         </div>
-
-                         <div class="col-auto ml-2 text-right">
-                            <button class="hi-button-simple hi-shadow-0 green darken-3">ایجاد</button>
-                         </div>
                     </div>
 
                     {{--==========[ Table Of Users ]========= --}}
@@ -68,7 +54,9 @@
                                             ۰۹۱۱۲۳۴۴۴۴۴
                                         @endslot
 
-                                        @slot('trash')yes@endslot
+                                        @slot('trash')
+                                                yes
+                                        @endslot
 
                                     @endcomponent
                                 </tr>
@@ -93,7 +81,66 @@
                                             ۰۹۱۱۲۳۴۴۴۴۴
                                         @endslot
 
-                                        @slot('trash')yes@endslot
+                                        @slot('trash')
+                                            yes
+                                        @endslot
+
+                                    @endcomponent
+                                </tr>
+
+
+                                {{--==========[ Table Row ]========= --}}
+                                <tr>
+                                    @component('components.UsersTableRow')
+
+                                        @slot('user_username')
+                                            Serpro
+                                        @endslot
+
+                                        @slot('user_fullname')
+                                            سبحان اسکندری
+                                        @endslot
+
+                                        @slot('user_email')
+                                            serprofessional@gmail.com
+                                        @endslot
+
+                                        @slot('user_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
+                                        @endslot
+
+                                        @slot('trash')
+                                            yes
+                                        @endslot
+
+                                    @endcomponent
+                                </tr>
+
+
+                                {{--==========[ Table Row ]========= --}}
+                                <tr>
+                                    @component('components.UsersTableRow')
+
+                                        @slot('user_username')
+                                            Serpro
+                                        @endslot
+
+                                        @slot('user_fullname')
+                                            سبحان اسکندری
+                                        @endslot
+
+                                        @slot('user_email')
+                                            serprofessional@gmail.com
+                                        @endslot
+
+                                        @slot('user_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
+                                        @endslot
+
+                                        @slot('trash')
+                                            yes
+                                        @endslot
+
                                     @endcomponent
                                 </tr>
 
@@ -117,85 +164,13 @@
                                             ۰۹۱۱۲۳۴۴۴۴۴
                                         @endslot
 
-                                        @slot('trash')yes@endslot
+                                        @slot('trash')
+                                            yes
+                                        @endslot
 
                                     @endcomponent
                                 </tr>
 
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.UsersTableRow')
-
-                                        @slot('user_username')
-                                            Serpro
-                                        @endslot
-
-                                        @slot('user_fullname')
-                                            سبحان اسکندری
-                                        @endslot
-
-                                        @slot('user_email')
-                                            serprofessional@gmail.com
-                                        @endslot
-
-                                        @slot('user_number')
-                                            ۰۹۱۱۲۳۴۴۴۴۴
-                                        @endslot
-
-                                        @slot('trash')yes@endslot
-
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.UsersTableRow')
-
-                                        @slot('user_username')
-                                            Serpro
-                                        @endslot
-
-                                        @slot('user_fullname')
-                                            سبحان اسکندری
-                                        @endslot
-
-                                        @slot('user_email')
-                                            serprofessional@gmail.com
-                                        @endslot
-
-                                        @slot('user_number')
-                                            ۰۹۱۱۲۳۴۴۴۴۴
-                                        @endslot
-
-                                        @slot('trash')yes@endslot
-
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.UsersTableRow')
-
-                                        @slot('user_username')
-                                            Serpro
-                                        @endslot
-
-                                        @slot('user_fullname')
-                                            سبحان اسکندری
-                                        @endslot
-
-                                        @slot('user_email')
-                                            serprofessional@gmail.com
-                                        @endslot
-
-                                        @slot('user_number')
-                                            ۰۹۱۱۲۳۴۴۴۴۴
-                                        @endslot
-
-                                        @slot('trash')yes@endslot
-
-                                    @endcomponent
-                                </tr>
 
                                 </tbody>
                             </table>

@@ -1,73 +1,218 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="adminsSection">
 
-        {{--==========[ Row of buttons abpve table ]=========--}}
-        <div class="container-fluid">
-            <div class="row mt-4">
-                <div class="col-1 push-9 ml-5">
-                    <button class="hi-button-btn1 orange ml-5 darken-2 hi-shadow-1 hi-size-4">
-                        <i class="fa fa-trash white-text  hi-fontSize-20" aria-hidden="true"></i>
-                    </button>
-                </div>
+    <section class="usersSection">
+        <div class="row">
+            <div class="col-12 bgCard hi-shadow-2">
+                <div class="container-fluid">
 
-                <div class="col-1 push-9">
-                    <button class="hi-button-simple hi-shadow-0 ml-4 green darken-3">ایجاد</button>
-                </div>
-            </div>
+                    {{--==========[ Row of buttons abpve table ]========= --}}
+                    <div class="row">
+                        <div class="col-1 push-11 ml-2 text-right">
+                            <button class="hi-button-simple hi-shadow-0 yellow darken-3">زباله</button>
+                        </div>
+                    </div>
 
-            {{--==========[ Row of Admin Cards ]========= --}}
-            <div class="row mt-4">
-                <div class="col-3">
-                    {{--==========[ Admin Card ]========= --}}
-                    @component('components.AdminCard')
-                        @slot('admin_name')سبحان اسکندری@endslot
-                        @slot('admin_mail')
-                                serprofessional@gmail.com
-                        @endslot
-                        @slot('admin_desc')توسط حمید وتر در ۹۲/۲/۲@endslot
-                        @slot('trash')yes@endslot
-                    @endcomponent
-                </div>
+                    {{--==========[ Table Of Users ]========= --}}
+                    <div class="row mt-3">
+                        <div class="col-12 px-0">
+                            <table class="table">
+                                <thead class="table_tableHeader white-text">
 
-                <div class="col-3">
-                    {{--==========[ Admin Card ]========= --}}
-                    @component('components.AdminCard')
-                        @slot('admin_name')سبحان اسکندری@endslot
-                        @slot('admin_mail')
-                            serprofessional@gmail.com
-                        @endslot
-                        @slot('admin_desc')توسط حمید وتر در ۹۲/۲/۲@endslot
-                        @slot('trash')yes@endslot
-                    @endcomponent
-                </div>
+                                {{--==========[ Table Headers ]========= --}}
+                                <tr>
+                                    <th><input type="checkbox"></th>
+                                    <th class="text-right">علامت زدن همه</th>
+                                    <th>نام</th>
+                                    <th>پست الکترونیکی</th>
+                                    <th>تلفن همراه</th>
+                                    <th>نقش</th>
+                                    <th></th>
+                                </tr>
 
-                <div class="col-3">
-                    {{--==========[ Admin Card ]========= --}}
-                    @component('components.AdminCard')
-                        @slot('admin_name')سبحان اسکندری@endslot
-                        @slot('admin_mail')
-                            serprofessional@gmail.com
-                        @endslot
-                        @slot('admin_desc')توسط حمید وتر در ۹۲/۲/۲@endslot
-                        @slot('trash')yes@endslot
-                    @endcomponent
-                </div>
+                                </thead>
+                                <tbody>
 
-                <div class="col-3">
-                    {{--==========[ Admin Card ]========= --}}
-                    @component('components.AdminCard')
-                        @slot('admin_name')سبحان اسکندری@endslot
-                        @slot('admin_mail')
-                            serprofessional@gmail.com
-                        @endslot
-                        @slot('admin_desc')توسط حمید وتر در ۹۲/۲/۲@endslot
-                        @slot('trash')yes@endslot
-                    @endcomponent
+                                {{--==========[ Table Row ]========= --}}
+                                <tr>
+                                    @component('components.AdminTrashTableRow')
+
+                                        @slot('admin_username')
+                                            Serpro
+                                        @endslot
+
+                                        @slot('admin_fullname')
+                                            سبحان اسکندری
+                                        @endslot
+
+                                        @slot('admin_email')
+                                            serprofessional@gmail.com
+                                        @endslot
+
+                                        @slot('admin_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
+                                        @endslot
+
+                                        @slot('admin_role')
+                                            مدیر کل
+                                        @endslot
+
+                                        @slot('trash')
+                                            yes
+                                        @endslot
+
+                                    @endcomponent
+                                </tr>
+
+                                {{--==========[ Table Row ]========= --}}
+                                <tr>
+                                    @component('components.AdminTrashTableRow')
+
+                                        @slot('admin_username')
+                                            Serpro
+                                        @endslot
+
+                                        @slot('admin_fullname')
+                                            سبحان اسکندری
+                                        @endslot
+
+                                        @slot('admin_email')
+                                            serprofessional@gmail.com
+                                        @endslot
+
+                                        @slot('admin_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
+                                        @endslot
+
+                                        @slot('admin_role')
+                                            مدیر کل
+                                        @endslot
+
+                                        @slot('trash')
+                                            yes
+                                        @endslot
+
+                                    @endcomponent
+                                </tr>
+
+                                {{--==========[ Table Row ]========= --}}
+                                <tr>
+                                    @component('components.AdminTrashTableRow')
+
+                                        @slot('admin_username')
+                                            Serpro
+                                        @endslot
+
+                                        @slot('admin_fullname')
+                                            سبحان اسکندری
+                                        @endslot
+
+                                        @slot('admin_email')
+                                            serprofessional@gmail.com
+                                        @endslot
+
+                                        @slot('admin_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
+                                        @endslot
+
+                                        @slot('admin_role')
+                                            مدیر کل
+                                        @endslot
+
+                                        @slot('trash')
+                                            yes
+                                        @endslot
+
+                                    @endcomponent
+                                </tr>
+
+                                {{--==========[ Table Row ]========= --}}
+                                <tr>
+                                    @component('components.AdminTrashTableRow')
+
+                                        @slot('admin_username')
+                                            Serpro
+                                        @endslot
+
+                                        @slot('admin_fullname')
+                                            سبحان اسکندری
+                                        @endslot
+
+                                        @slot('admin_email')
+                                            serprofessional@gmail.com
+                                        @endslot
+
+                                        @slot('admin_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
+                                        @endslot
+
+                                        @slot('admin_role')
+                                            مدیر کل
+                                        @endslot
+
+                                        @slot('trash')
+                                            yes
+                                        @endslot
+
+                                    @endcomponent
+                                </tr>
+
+                                {{--==========[ Table Row ]========= --}}
+                                <tr>
+                                    @component('components.AdminTrashTableRow')
+
+                                        @slot('admin_username')
+                                            Serpro
+                                        @endslot
+
+                                        @slot('admin_fullname')
+                                            سبحان اسکندری
+                                        @endslot
+
+                                        @slot('admin_email')
+                                            serprofessional@gmail.com
+                                        @endslot
+
+                                        @slot('admin_number')
+                                            ۰۹۱۱۲۳۴۴۴۴۴
+                                        @endslot
+
+                                        @slot('admin_role')
+                                            مدیر کل
+                                        @endslot
+
+                                        @slot('trash')
+                                            yes
+                                        @endslot
+
+                                    @endcomponent
+                                </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    {{--============[ Pagination of Page ]===========--}}
+                    <div class="row mt-4">
+                        <div class="col-auto">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link nextBtn" href="#">بعدی</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">۱</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">۲</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">۳</a></li>
+                                    <li class="page-item"><a class="page-link prevBtn" href="#">قبلی</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-
     </section>
+
 @endsection

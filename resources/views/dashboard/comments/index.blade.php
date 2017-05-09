@@ -53,7 +53,7 @@
                                 <tr>
                                     <th><input type="checkbox"></th>
                                     <th class="text-right">علامت زدن همه</th>
-                                    <th width="30%">متن</th>
+                                    <th width="50%">متن</th>
                                     <th>محتوا</th>
                                     <th>زمان</th>
                                     <th>وضعیت</th>

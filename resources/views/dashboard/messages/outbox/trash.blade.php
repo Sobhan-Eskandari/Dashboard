@@ -9,30 +9,10 @@
 
                     {{--==========[ Row of buttons abpve table ]========= --}}
                     <div class="row">
-                        <div class="col-1 pl-0">
-                            <button class="hi-button-btn1 orange darken-2 hi-shadow-1 hi-size-4">
-                                <i class="fa fa-trash white-text hi-fontSize-20" aria-hidden="true"></i>
-                            </button>
+                        <div class="col-1 push-11 ml-2 text-right">
+                            <button class="hi-button-simple hi-shadow-0 yellow darken-3">زباله</button>
                         </div>
-
-                        <div class="col-2">
-                            <div class="Topbar_dropdown posts_dropdown dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    همه ی زمان ها
-                                </button>
-                                <div data-dropdown-in="bounceIn" data-dropdown-out="bounceOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-user ml-2" aria-hidden="true"></i> پروفایل من</a>
-                                    <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-file-text-o ml-2" aria-hidden="true"></i> مدیران</a>
-                                    <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-download ml-2" aria-hidden="true"></i> نسخه پشتیبانی</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-power-off ml-2" aria-hidden="true"></i>خروج</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-auto offset-8 text-right mr-2">
-                            <button class="hi-button-simple hi-shadow-0 red darken-3 text-right">حذف</button>
-                        </div>
+                    </div>
 
                     </div>
 
@@ -46,7 +26,7 @@
                                 <tr>
                                     <th><input type="checkbox"></th>
                                     <th class="text-right">علامت زدن همه</th>
-                                    <th width="40%">صندوق خروجی</th>
+                                    <th width="50%">صندوق خروجی</th>
                                     <th>زمان</th>
                                     <th>گیرنده</th>
                                     <th></th>
@@ -79,7 +59,9 @@
                                                 مجتبی موسوی
                                         @endslot
 
-                                        @slot('trash')yes@endslot
+                                        @slot('trash')
+                                                yes
+                                        @endslot
 
                                     @endcomponent
                                 </tr>
@@ -108,7 +90,9 @@
                                             مجتبی موسوی
                                         @endslot
 
-                                        @slot('trash')yes@endslot
+                                        @slot('trash')
+                                            yes
+                                        @endslot
 
                                     @endcomponent
                                 </tr>
@@ -137,7 +121,9 @@
                                             مجتبی موسوی
                                         @endslot
 
-                                        @slot('trash')yes@endslot
+                                        @slot('trash')
+                                            yes
+                                        @endslot
 
                                     @endcomponent
                                 </tr>
@@ -166,7 +152,9 @@
                                             مجتبی موسوی
                                         @endslot
 
-                                        @slot('trash')yes@endslot
+                                        @slot('trash')
+                                            yes
+                                        @endslot
 
                                     @endcomponent
                                 </tr>
@@ -195,7 +183,9 @@
                                             مجتبی موسوی
                                         @endslot
 
-                                        @slot('trash')yes@endslot
+                                        @slot('trash')
+                                            yes
+                                        @endslot
 
                                     @endcomponent
                                 </tr>
@@ -224,10 +214,13 @@
                                             مجتبی موسوی
                                         @endslot
 
-                                        @slot('trash')yes@endslot
+                                        @slot('trash')
+                                            yes
+                                        @endslot
 
                                     @endcomponent
                                 </tr>
+
                                 </tbody>
                             </table>
                         </div>
