@@ -98,3 +98,5 @@ Route::get('/sliders/trash', function () {
 Route::get('/email', function (){
     Mail::to('hamid.vetr@gmail.com')->send(new \App\Mail\TestMail());
 });
+
+Route::resource('/textboxio', 'TextboxioController');
