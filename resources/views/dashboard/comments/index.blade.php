@@ -46,7 +46,7 @@
                     {{--==========[ Table Of Users ]========= --}}
                     <div class="row mt-3">
                         <div class="col-12 px-0">
-                            <table class="table">
+                            <table class="comments_table">
                                 <thead class="table_tableHeader white-text">
 
                                 {{--==========[ Table Headers ]========= --}}

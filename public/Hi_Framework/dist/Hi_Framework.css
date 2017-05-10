@@ -1,5 +1,5 @@
 /* ============[ components import ]=========== */
-/* ==========[ Transparent FA  ]========= */
+/* ==========[ Transparent FA Button ]========= */
 .hi-button-btn1 {
   background-color: transparent;
   border: none;
@@ -326,6 +326,10 @@ select.selectpicker {
 
 /*# sourceMappingURL=bootstrap-select.css.map */
 /* ============[ End Import of Bootstrap-Select library ]=========== */
+.hi-input-simple {
+  border-radius: 5px;
+  border: 1px solid gray; }
+
 .hi-search-1 {
   padding: 5px 20px;
   border-radius: 20px; }

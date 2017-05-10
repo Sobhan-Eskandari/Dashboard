@@ -1,7 +1,11 @@
 /* ============[ Global Table Stykes ]=========== */
-.table{
+.admins_trashTable,.comments_table,.comments_trashTable,
+.media_table,.media_trashTable,.messages_inbox_table,
+.messages_inbox_trashTable,.messages_outbox_trashTable,.messages_outbox_table
+,.posts_table,.posts_trashTable,.sliders_table,.users_table,.users_trashTable{
   direction: rtl;
   text-align: right;
+  width: 100%;
 
   /* ==========[ Table Header Style ]========= */
   th{
@@ -10,6 +14,10 @@
   }
   .table_tableHeader{
     background-color: $sormeieRoshan !important;
+
+    th{
+      padding: 12px;
+    }
   }
 
   td{
