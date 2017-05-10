@@ -95,6 +95,10 @@ Route::get('/sliders/trash', function () {
     return view('dashboard.sliders.trash');
 });
 
+Route::get('/settings', function () {
+    return view('dashboard.settings.index');
+});
+
 Route::get('/email', function (){
     Mail::to('hamid.vetr@gmail.com')->send(new \App\Mail\TestMail());
 });

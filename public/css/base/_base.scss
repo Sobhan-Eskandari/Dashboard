@@ -138,3 +138,23 @@
   border: 1px solid $navyBlue;
   color: $navyBlue;
 }
+
+/* ============[ Settings Page]=========== */
+
+.contactUsInfo_line{
+  width: 104%;
+  margin-left: -2%;
+  border-top: 1px solid lightgray;
+}
+
+.contactUsInfo_textarea{
+  width: 100%;
+  border-radius: 5px;
+}
+.rulesAndGuidesInfo_textarea{
+  width: 70%;
+  border-radius: 5px;
+}
+.rowOfInputs{
+  direction: rtl;
+}

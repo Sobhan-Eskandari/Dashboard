@@ -24,6 +24,7 @@
     <!-- Hi_Frameworkwork Styles -->
     <link rel="stylesheet" href="{{ asset('Hi_Framework/dist/Hi_Framework.css') }}">
 
+
     {{--on pages we wanna user bootstrap-select the following should be included--}}
     {{--<link rel="stylesheet" href="{{ asset('Hi_Framework/components/Dropdown/Other Libraries/bootstrap-select/bootstrap.min.css') }}">--}}
 

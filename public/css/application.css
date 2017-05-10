@@ -164,6 +164,23 @@ body, html {
   border: 1px solid #4d5667;
   color: #4d5667; }
 
+/* ============[ Settings Page]=========== */
+.contactUsInfo_line {
+  width: 104%;
+  margin-left: -2%;
+  border-top: 1px solid lightgray; }
+
+.contactUsInfo_textarea {
+  width: 100%;
+  border-radius: 5px; }
+
+.rulesAndGuidesInfo_textarea {
+  width: 70%;
+  border-radius: 5px; }
+
+.rowOfInputs {
+  direction: rtl; }
+
 /* ============[ Components Css Import ]=========== */
 .hi-profileCard {
   border-radius: 8px;
@@ -480,29 +497,59 @@ a:focus, a:hover, a {
   font-weight: 400; }
 
 /* ============[ Global Table Stykes ]=========== */
-.table {
+.admins_trashTable, .comments_table, .comments_trashTable,
+.media_table, .media_trashTable, .messages_inbox_table,
+.messages_inbox_trashTable, .messages_outbox_trashTable, .messages_outbox_table
+, .posts_table, .posts_trashTable, .sliders_table, .users_table, .users_trashTable {
   direction: rtl;
   text-align: right;
+  width: 100%;
   /* ==========[ Table Header Style ]========= */
   /* ==========[ Each Table Row Style ]========= */ }
-  .table th {
+  .admins_trashTable th, .comments_table th, .comments_trashTable th,
+  .media_table th, .media_trashTable th, .messages_inbox_table th,
+  .messages_inbox_trashTable th, .messages_outbox_trashTable th, .messages_outbox_table
+  th, .posts_table th, .posts_trashTable th, .sliders_table th, .users_table th, .users_trashTable th {
     text-align: center;
     font-weight: 700; }
-  .table .table_tableHeader {
+  .admins_trashTable .table_tableHeader, .comments_table .table_tableHeader, .comments_trashTable .table_tableHeader,
+  .media_table .table_tableHeader, .media_trashTable .table_tableHeader, .messages_inbox_table .table_tableHeader,
+  .messages_inbox_trashTable .table_tableHeader, .messages_outbox_trashTable .table_tableHeader, .messages_outbox_table
+  .table_tableHeader, .posts_table .table_tableHeader, .posts_trashTable .table_tableHeader, .sliders_table .table_tableHeader, .users_table .table_tableHeader, .users_trashTable .table_tableHeader {
     background-color: #3B4452 !important; }
-  .table td {
+    .admins_trashTable .table_tableHeader th, .comments_table .table_tableHeader th, .comments_trashTable .table_tableHeader th,
+    .media_table .table_tableHeader th, .media_trashTable .table_tableHeader th, .messages_inbox_table .table_tableHeader th,
+    .messages_inbox_trashTable .table_tableHeader th, .messages_outbox_trashTable .table_tableHeader th, .messages_outbox_table
+    .table_tableHeader th, .posts_table .table_tableHeader th, .posts_trashTable .table_tableHeader th, .sliders_table .table_tableHeader th, .users_table .table_tableHeader th, .users_trashTable .table_tableHeader th {
+      padding: 12px; }
+  .admins_trashTable td, .comments_table td, .comments_trashTable td,
+  .media_table td, .media_trashTable td, .messages_inbox_table td,
+  .messages_inbox_trashTable td, .messages_outbox_trashTable td, .messages_outbox_table
+  td, .posts_table td, .posts_trashTable td, .sliders_table td, .users_table td, .users_trashTable td {
     text-align: center;
     font-weight: 100;
     vertical-align: middle;
     border-top: transparent;
     /* ==========[ More button right border ]========= */ }
-    .table td:last-child {
+    .admins_trashTable td:last-child, .comments_table td:last-child, .comments_trashTable td:last-child,
+    .media_table td:last-child, .media_trashTable td:last-child, .messages_inbox_table td:last-child,
+    .messages_inbox_trashTable td:last-child, .messages_outbox_trashTable td:last-child, .messages_outbox_table
+    td:last-child, .posts_table td:last-child, .posts_trashTable td:last-child, .sliders_table td:last-child, .users_table td:last-child, .users_trashTable td:last-child {
       border-right: 1px solid #C6CBD0; }
-  .table tr {
+  .admins_trashTable tr, .comments_table tr, .comments_trashTable tr,
+  .media_table tr, .media_trashTable tr, .messages_inbox_table tr,
+  .messages_inbox_trashTable tr, .messages_outbox_trashTable tr, .messages_outbox_table
+  tr, .posts_table tr, .posts_trashTable tr, .sliders_table tr, .users_table tr, .users_trashTable tr {
     border: 1px solid #C6CBD0; }
-    .table tr:nth-child(2n) {
+    .admins_trashTable tr:nth-child(2n), .comments_table tr:nth-child(2n), .comments_trashTable tr:nth-child(2n),
+    .media_table tr:nth-child(2n), .media_trashTable tr:nth-child(2n), .messages_inbox_table tr:nth-child(2n),
+    .messages_inbox_trashTable tr:nth-child(2n), .messages_outbox_trashTable tr:nth-child(2n), .messages_outbox_table
+    tr:nth-child(2n), .posts_table tr:nth-child(2n), .posts_trashTable tr:nth-child(2n), .sliders_table tr:nth-child(2n), .users_table tr:nth-child(2n), .users_trashTable tr:nth-child(2n) {
       background-color: #D7DFE8; }
-  .table .active_row {
+  .admins_trashTable .active_row, .comments_table .active_row, .comments_trashTable .active_row,
+  .media_table .active_row, .media_trashTable .active_row, .messages_inbox_table .active_row,
+  .messages_inbox_trashTable .active_row, .messages_outbox_trashTable .active_row, .messages_outbox_table
+  .active_row, .posts_table .active_row, .posts_trashTable .active_row, .sliders_table .active_row, .users_table .active_row, .users_trashTable .active_row {
     background-color: #D7DFE8; }
 
 /* ==========[ Table Dropdown Style ]========= */
