@@ -21,17 +21,21 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/adminProfile', function () {
-    return view('dashboard.adminProfile.index');
+/* mersede */
+
+Route::get('/profile', function () {
+    return view('dashboard.admins.profile');
 });
 
-Route::get('/createAdmin', function () {
-    return view('dashboard.createAdmin.index');
+Route::get('/create', function () {
+    return view('dashboard.admins.create');
 });
 
 Route::get('/category', function () {
     return view('dashboard.category.index');
 });
+
+/* mersede */
 
 Route::get('/layout', function () {
     return view('layouts.main');

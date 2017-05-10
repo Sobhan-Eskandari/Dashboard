@@ -4,14 +4,12 @@
     </div>
     <div class="hi-profileCard_PictureSelectorBox">
         <div class="row">
-            <div class="col-4 pt-5">
+            <div class="col-4 pr-0 pt-5">
                 <div class="hi-profileCard_PictureSelectorBox_selector mt-4">
-                    <select class="dropdown" data-settings='{"wrapperClass":"metro"}'>
-                        <option value="1">ادمین اصلی</option>
-                        <option value="2">ادمین دوم</option>
-                        <option value="3">ادمین سوم</option>
-                        <option value="4">ادمین چهارم</option>
-                        <option value="5">ادمین پنجم</option>
+                    <select class="dropdown " data-settings='{"wrapperClass":"metro"}'>
+                        <option value="1">جنسیت</option>
+                        <option value="2">مرد</option>
+                        <option value="3">زن</option>
                     </select>
                 </div>
             </div>
@@ -23,18 +21,22 @@
                              alt="Responsive image"></figure>
                 </div>
             </div>
-            <div class="col-4 pr-0 pt-5">
-                <div class="hi-profileCard_PictureSelectorBox_selector mt-4">
-                    <select class="dropdown " data-settings='{"wrapperClass":"metro"}'>
-                        <option value="1">جنسیت</option>
-                        <option value="2">مرد</option>
-                        <option value="3">زن</option>
+            <div class="col-4 pt-5">
+                <div class="hi-profileCard_PictureSelectorBox_selector hi-profileCard_PictureSelectorBox_selector_first mt-4">
+                    <select class="dropdown" data-settings='{"wrapperClass":"metro"}'>
+                        <option value="1">ادمین اصلی</option>
+                        <option value="2">ادمین دوم</option>
+                        <option value="3">ادمین سوم</option>
+                        <option value="4">ادمین چهارم</option>
+                        <option value="5">ادمین پنجم</option>
                     </select>
                 </div>
             </div>
+
+
         </div>
     </div>
-    <div class="card-block pt-0 hi-profileCard_formBox">
+    <div class="card-block pt-0 hi-profileCard_formBox pb-4">
         <h4 class="card-title text-center">{{$characterName}}</h4>
         <fieldset class="form-group px-3 pt-3">
             <div class="form-group row">

@@ -49,19 +49,20 @@ body, html {
   margin-right: auto; }
 
 .hi-subjectDashboardAdminProfile_h5 {
-  color: #a7a7a7;
-  background-color: #00acc0; }
+  color: #a7a7a7; }
 
+/* ============[ confirm button admin ]=========== */
 .hi-confirmButtonDashboard {
   width: 100px;
   font-weight: 500;
-  box-shadow: 0px 0px 5px #a7a7a7;
+  box-shadow: 0 0 5px #a7a7a7;
   border-radius: 8px;
   background-color: #09686a;
   color: white;
   font-size: larger;
   padding-top: 10px;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  margin-left: 4.5px; }
 
 .hi-confirmButtonDashboard:focus {
   border: 1px solid #09686a; }
@@ -75,10 +76,13 @@ body, html {
   box-shadow: none; }
 
 /* ============[ category ]=========== */
+.categoryRightDirection {
+  direction: rtl; }
+
 .hi-whiteCategoryDashboardBox {
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0px 0px 8px #a7a7a7; }
+  box-shadow: 0 0 8px #a7a7a7; }
 
 .hi-roundedDashboardTagsTable_thead {
   background-color: #4d5667; }
@@ -91,11 +95,11 @@ body, html {
   border-top-left-radius: 10px; }
 
 .hi-roundedDashboardTagsTable tbody {
-  padding: 0px; }
+  padding: 0; }
 
 .hi-roundedDashboardTagsTable {
   border-radius: 10px;
-  box-shadow: 0px 0px 5px #a7a7a7; }
+  box-shadow: 0 0 5px #a7a7a7; }
 
 /* ============[ delete button ]=========== */
 .hi-roundedDashboardTagsTable_thead_tr_td_button {
@@ -116,13 +120,13 @@ body, html {
   width: 280px; }
 
 .hi-whiteCategoryDashboardBox_input:focus {
-  border: 1px solid #09686a; }
+  border: 1px solid #4d5667; }
 
 /* ============[ confirm button ]=========== */
 .hi-whiteCategoryDashboardBox_button {
   width: 90px;
   font-weight: 400;
-  box-shadow: 0px 0px 5px #a7a7a7;
+  box-shadow: 0 0 5px #a7a7a7;
   border-radius: 8px;
   background-color: #027398;
   color: white;
@@ -139,16 +143,20 @@ body, html {
   box-shadow: none; }
 
 /* ============[ pagination]=========== */
+.dashboardPaginatinBs {
+  direction: rtl;
+  margin: 0 auto; }
+
 .dashboardPaginatinBs > ul.pagination > li:last-child > a {
   border-radius: 5px 0 0 5px;
-  border-top-right-radius: 0px !important;
-  border-bottom-right-radius: 0px !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
   background-color: #ebebeb; }
 
 .dashboardPaginatinBs > ul.pagination > li:first-child > a {
   border-radius: 0 5px 5px 0;
-  border-top-left-radius: 0px !important;
-  border-bottom-left-radius: 0px !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
   background-color: #ebebeb; }
 
 .dashboardPaginatinBs > ul.pagination > li.active > a {
@@ -175,8 +183,8 @@ body, html {
 
 .hi-profileCard_cardHeader {
   height: auto;
-  padding-top: 44px;
-  padding-bottom: 44px;
+  padding-top: 44.8px;
+  padding-bottom: 44.8px;
   background-color: #2b4748; }
 
 .hi-profileCard_PictureSelectorBox {
@@ -196,6 +204,9 @@ body, html {
 .hi-profileCard_PictureSelectorBox_pictureBox_hover figure:hover img {
   -webkit-transform: scale(1.03);
   transform: scale(1.03); }
+
+.hi-profileCard_PictureSelectorBox_selector_first {
+  margin-left: -17px; }
 
 .hi-profileCard_PictureSelectorBox_selector {
   /* --- RESET --- */
@@ -224,14 +235,16 @@ body, html {
     -ms-transition: all 150ms ease-in-out;
     transition: all 150ms ease-in-out;
     position: relative;
-    width: 160px;
     border: 1px solid #ccc;
     cursor: pointer;
-    background: #fff;
+    width: 200px;
     border-radius: 3px;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none; }
+  .hi-profileCard_PictureSelectorBox_selector .col-4 {
+    border: 1px solid red;
+    background-color: #00acc1; }
   .hi-profileCard_PictureSelectorBox_selector .dropdown:hover {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); }
   .hi-profileCard_PictureSelectorBox_selector .dropdown select {
@@ -259,7 +272,7 @@ body, html {
     pointer-events: none; }
   .hi-profileCard_PictureSelectorBox_selector .metro {
     position: relative;
-    width: 125px;
+    width: 103px;
     cursor: pointer;
     margin-bottom: 30px;
     font-weight: 200;
@@ -332,12 +345,12 @@ body, html {
     font-size: 14px;
     line-height: 1;
     color: #000;
-    padding: 9px 15px;
+    padding: 9px;
     overflow: hidden;
     white-space: nowrap;
     font-weight: 500; }
   .hi-profileCard_PictureSelectorBox_selector .metro span {
-    text-align: center; }
+    text-align: right; }
   .hi-profileCard_PictureSelectorBox_selector .metro .selected::after {
     content: '';
     position: absolute;
@@ -398,62 +411,10 @@ body, html {
     color: #fff; }
 
 .hi-profileCard_formBox_input {
-  border-radius: 0;
   border: 1px solid #a7a7a7; }
 
 .hi-profileCard_formBox_input:focus {
   border: 1px solid #2b4748; }
-
-.hi-roundedDashboardTagsTable td {
-  border-top: 1px solid black;
-  font-weight: 500; }
-
-.hi-roundedDashboardTagsTable tr {
-  border-radius: 8px; }
-
-a:focus, a:hover, a {
-  color: transparent;
-  text-decoration: none; }
-
-.hi-roundedDashboardTagsTable thead td {
-  border-top: 1px solid transparent; }
-
-/* ============[ edit & delete]=========== */
-.hi-roundedDashboardTagsTable_tbody_tr_td_edit a {
-  color: #2e98b3; }
-
-.hi-roundedDashboardTagsTable_tbody_tr_td_delete a {
-  color: #b32e2e; }
-
-/* ============[ check box ]=========== */
-.hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox {
-  cursor: pointer; }
-
-.hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox span {
-  line-height: 24px; }
-
-.hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox span::before {
-  margin-right: 4px;
-  padding-left: 1px;
-  width: 21px;
-  height: 21px;
-  border: 2px solid grey;
-  display: inline-block;
-  line-height: 14px;
-  content: '';
-  float: right;
-  border-radius: 5px; }
-
-.hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox input[type="checkbox"] {
-  display: none; }
-
-.hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox input[type="checkbox"]:checked + span::before {
-  font-family: FontAwesome;
-  content: "\f00c";
-  color: #4d5667; }
-
-.hi-roundedDashboardTagsTable_tbody_tr_td_li {
-  list-style-type: none; }
 
 .hi-aboutMePanelCard {
   border-radius: 8px;
@@ -472,7 +433,6 @@ a:focus, a:hover, a {
   resize: none; }
 
 .hi-aboutMePanelCard_textarea, .hi-aboutMePanelCard_input {
-  border-radius: 0;
   border: 1px solid #a7a7a7;
   text-align: right; }
 
@@ -652,6 +612,65 @@ a:focus, a:hover, a {
   border: transparent; }
 .Topbar_dropdown .dropdown-divider {
   background-color: grey; }
+
+.hi-roundedDashboardTagsTable td {
+  border-left: 1px solid transparent;
+  border-top: 1px solid black;
+  font-weight: 500; }
+
+.hi-roundedDashboardTagsTable tr {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding-right: 0; }
+
+.hi-roundedDashboardTagsTable tr:nth-child(2n) {
+  background-color: #d9dfe9;
+  border: 1px solid #d9dfe9; }
+
+a:focus, a:hover, a {
+  color: transparent;
+  text-decoration: none; }
+
+.hi-roundedDashboardTagsTable thead td {
+  border-top: 1px solid transparent; }
+
+/* ============[ edit & delete]=========== */
+.hi-roundedDashboardTagsTable_tbody_tr_td_edit a {
+  color: #2e98b3; }
+
+.hi-roundedDashboardTagsTable_tbody_tr_td_delete a {
+  color: #b32e2e;
+  margin-left: 10px; }
+
+/* ============[ check box ]=========== */
+.hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox {
+  cursor: pointer; }
+
+.hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox span {
+  line-height: 24px; }
+
+.hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox span::before {
+  margin-right: 4px;
+  padding-left: 1px;
+  width: 21px;
+  height: 21px;
+  border: 2px solid grey;
+  display: inline-block;
+  line-height: 14px;
+  content: '';
+  float: right;
+  border-radius: 5px; }
+
+.hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox input[type="checkbox"] {
+  display: none; }
+
+.hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox input[type="checkbox"]:checked + span::before {
+  font-family: FontAwesome;
+  content: "\f00c";
+  color: #4d5667; }
+
+.hi-roundedDashboardTagsTable_tbody_tr_td_li {
+  list-style-type: none; }
 
 /* ============[ Layouts Css Import ]=========== */
 /* ============[ Top Bar ]=========== */

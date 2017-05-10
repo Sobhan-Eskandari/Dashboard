@@ -1,19 +1,18 @@
-
 .hi-subjectDashboardAdminProfile_h5 {
   color: $light-text;
-  background-color: #00acc0;
 }
-
+/* ============[ confirm button admin ]=========== */
 .hi-confirmButtonDashboard {
   width: 100px;
   font-weight: 500;
-  box-shadow: 0px 0px 5px $darkGray;
+  box-shadow: 0 0 5px $darkGray;
   border-radius: 8px;
   background-color: $darkGreen2;
   color: white;
   font-size: larger;
   padding-top: 10px;
   padding-bottom: 10px;
+  margin-left: 4.5px;
 }
 
 .hi-confirmButtonDashboard:focus {
@@ -31,10 +30,14 @@
 
 /* ============[ category ]=========== */
 
+.categoryRightDirection{
+  direction: rtl;
+}
+
 .hi-whiteCategoryDashboardBox {
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0px 0px 8px $darkGray;
+  box-shadow: 0 0 8px $darkGray;
 }
 
 .hi-roundedDashboardTagsTable_thead{
@@ -51,12 +54,12 @@
 
 
 .hi-roundedDashboardTagsTable tbody {
-  padding: 0px;
+  padding: 0;
 }
 
 .hi-roundedDashboardTagsTable {
   border-radius: 10px;
-  box-shadow: 0px 0px 5px $darkGray;
+  box-shadow: 0 0 5px $darkGray;
 }
 
 /* ============[ delete button ]=========== */
@@ -82,14 +85,14 @@
   width: 280px;
 }
 .hi-whiteCategoryDashboardBox_input:focus{
-  border: 1px solid $darkGreen2;
+  border: 1px solid $navyBlue;
 }
 
 /* ============[ confirm button ]=========== */
 .hi-whiteCategoryDashboardBox_button{
   width: 90px;
   font-weight: 400;
-  box-shadow: 0px 0px 5px $darkGray;
+  box-shadow: 0 0 5px $darkGray;
   border-radius: 8px;
   background-color: $darkBlue;
   color: white;
@@ -107,18 +110,21 @@
 }
 
 /* ============[ pagination]=========== */
-
+.dashboardPaginatinBs{
+  direction: rtl;
+  margin: 0 auto;
+}
 .dashboardPaginatinBs > ul.pagination > li:last-child > a{
   border-radius: 5px 0 0 5px;
-  border-top-right-radius: 0px !important;
-  border-bottom-right-radius: 0px !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
   background-color: $lightGray2;
 }
 
 .dashboardPaginatinBs > ul.pagination > li:first-child > a{
   border-radius:0 5px 5px 0;
-  border-top-left-radius: 0px !important;
-  border-bottom-left-radius: 0px !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
   background-color: $lightGray2;
 }
 

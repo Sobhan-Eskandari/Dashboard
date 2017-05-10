@@ -1,7 +1,7 @@
-<tr style="{{ $style }}">
+<tr>
     <td style="{{ $style2 }}">
 
-        <li class="hi-roundedDashboardTagsTable_tbody_tr_td_li">
+        <li class="hi-roundedDashboardTagsTable_tbody_tr_td_li text-right">
             <label class='hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox'>
                 <input type='checkbox' class="pull-right">
                 &nbsp;
@@ -11,6 +11,6 @@
 
     </td>
     <td class="hi-roundedDashboardTagsTable_tbody_tr_td_edit text-center"><a href="#">ویرایش</a></td>
-    <td class="hi-roundedDashboardTagsTable_tbody_tr_td_delete text-left pl-5" style="{{ $style3 }}"><a href="#">حذف</a></td>
+    <td class="hi-roundedDashboardTagsTable_tbody_tr_td_delete text-left pl-4" style="{{ $style3 }}"><a href="#">حذف</a></td>
 </tr>
 

@@ -14,7 +14,7 @@
 
                 @component('components.PersonalInfoCard')
                     @slot('cardSubject')
-                        : درباره من
+                        :درباره ادمین
                     @endslot
                 @endcomponent
 
@@ -23,15 +23,17 @@
             <div class="col-4 mt-3">
 
                 @component('components.AdminInfoCard')
-                @slot('characterName')
-                حمید وتر
-                @endslot
+                    @slot('characterName')
+                      سبحان اسکندری
+                    @endslot
                 @endcomponent
 
             </div>
         </div>
     </form>
-    <div class="row pr-3 mt-5">
-        <button class="btn hi-confirmButtonDashboard" type="submit">تایید</button>
+    <div class="row pr-5 mt-5">
+        <div class="col-3 push-11">
+            <button class="btn hi-confirmButtonDashboard " type="submit">تایید</button>
+        </div>
     </div>
 @endsection
