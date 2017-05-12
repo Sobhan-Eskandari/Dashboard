@@ -14,6 +14,10 @@ $(".deleteRowBtn").click(function () {
      $(this).parent().parent().fadeOut();
 });
 
+// ============[ Persian Date Picker ]===========
+$(document).ready(function() {
+    $(".example1").pDatepicker();
+});
 
 // ============[ Translate English digits to farsi ]===========
 var translate = function (englishNumber) {

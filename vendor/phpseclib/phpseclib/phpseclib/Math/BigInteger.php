@@ -1633,7 +1633,7 @@ class BigInteger
      *    the product of two odd numbers is odd), but what about when RSA isn't used?
      *
      *    In contrast, Barrett reduction has no such constraint.  As such, some bigint implementations perform a
-     *    Barrett reduction after every operation in the modpow function.  Others perform Barrett reductions when the
+     *    Barrett reduction after every operation in the modpow function.  others perform Barrett reductions when the
      *    modulo is even and Montgomery reductions when the modulo is odd.  BigInteger.java's modPow method, however,
      *    uses a trick involving the Chinese Remainder Theorem to factor the even modulo into two numbers - one odd and
      *    the other, a power of two - and recombine them, later.  This is the method that this modPow function uses.
