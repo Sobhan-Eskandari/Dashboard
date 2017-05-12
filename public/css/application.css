@@ -181,6 +181,19 @@ body, html {
 .rowOfInputs {
   direction: rtl; }
 
+/* ============[ Home Page]=========== */
+.card_simple {
+  border-radius: 10px; }
+
+/* ==========[ Background card stle in pages ]========= */
+.bgCard {
+  border-radius: 10px;
+  padding: 20px 50px; }
+
+/* ============[ Main pages Style ]=========== */
+#MainBody {
+  padding: 20px 30px; }
+
 /* ============[ Components Css Import ]=========== */
 .hi-profileCard {
   border-radius: 8px;
@@ -471,6 +484,43 @@ a:focus, a:hover, a {
 
 .hi-roundedDashboardTagsTable_tbody_tr_td_li {
   list-style-type: none; }
+
+.horizentalStat {
+  height: 100%; }
+
+/* ==========[ Stats Progress Part ]========= */
+.horizentalStat_circular {
+  background-color: #2F3031;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 10px; }
+
+/* ==========[ Circular Progress ]========= */
+#stat1, #stat2, #stat3, #stat4 {
+  width: 70%;
+  height: 70%;
+  margin: auto auto; }
+
+/* ==========[ Stats Text Part ]========= */
+.horizentalStat_stat {
+  background-color: #757677;
+  text-align: center;
+  color: whitesmoke;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px; }
+  .horizentalStat_stat h5 {
+    margin: auto auto;
+    font-size: 20px; }
+
+/* ==========[ Statistic Number ]========= */
+.statNumber {
+  right: -210% !important;
+  color: whitesmoke !important;
+  top: 70% !important;
+  font-weight: 700;
+  font-size: 19px; }
 
 .hi-aboutMePanelCard {
   border-radius: 8px;
@@ -833,13 +883,57 @@ a:focus, a:hover, a {
     color: #12a3d9 !important;
     text-decoration: none !important; }
 
-/* ==========[ Background card stle in pages ]========= */
-.bgCard {
-  border-radius: 10px;
-  padding: 20px 50px; }
+* {
+  box-sizing: border-box; }
 
-/* ============[ Main pages Style ]=========== */
-#MainBody {
-  padding: 20px 30px; }
+/* ---- grid ---- */
+.grid, .grid2 {
+  width: 100%; }
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+/* ---- .element-item ---- */
+/* 5 columns, percentage width */
+.grid-item {
+  float: left;
+  width: 24.9%;
+  height: 100px;
+  padding: 10px; }
+
+.grid-item--width2 {
+  width: 49.9%; }
+
+.grid-item--height2 {
+  height: 200px; }
+
+.grid-item--width3 {
+  width: 33.2%; }
+
+.grid-item:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  cursor: move; }
+
+.grid-item.is-dragging,
+.grid-item.is-positioning-post-drag {
+  z-index: 200; }
+  .grid-item.is-dragging .homeCard,
+  .grid-item.is-positioning-post-drag .homeCard {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important; }
+
+.packery-drop-placeholder {
+  outline: 3px dashed rgba(0, 0, 0, 0.5);
+  outline-offset: -6px;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: transform 0.2s; }
+
+/* ---- Cards style in grid items of home page ---- */
+.homeCard {
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+  height: 100%; }
 
 /*# sourceMappingURL=application.css.map */
