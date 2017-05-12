@@ -99,8 +99,14 @@ Route::get('/settings', function () {
     return view('dashboard.settings.index');
 });
 
+Route::get('/home', function (){
+    return view('dashboard.home.index');
+});
+
 Route::get('/email', function (){
     Mail::to('hamid.vetr@gmail.com')->send(new \App\Mail\TestMail());
 });
+
+
 
 Route::resource('/textboxio', 'TextboxioController');
