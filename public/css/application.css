@@ -1,61 +1,3 @@
-
-/*
-Error: File to import not found or unreadable: base/inde.
-        on line 4 of application.scss
-
-1: /* ============[ Css Import ]=========== *\/
-2: 
-3: @import "utilities/index";
-4: @import "base/inde";
-5: @import "components/index";
-6: @import "layout/index";
-
-Backtrace:
-application.scss:4
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/import_node.rb:67:in `rescue in import'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/import_node.rb:45:in `import'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/import_node.rb:28:in `imported_file'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/import_node.rb:37:in `css_import?'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:313:in `visit_import'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:159:in `visit'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:8:in `visit'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/engine.rb:381:in `_render_with_sourcemap'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/engine.rb:298:in `render_with_sourcemap'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `each'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin.rb:82:in `update_stylesheets'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:51:in `process_result'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/exec/base.rb:52:in `parse'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/exec/base.rb:19:in `parse!'
-C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.23/bin/scss:13:in `<top (required)>'
-C:/RailsInstaller/Ruby2.2.0/bin/scss:23:in `load'
-C:/RailsInstaller/Ruby2.2.0/bin/scss:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: base/inde.\A         on line 4 of application.scss\A \A 1: /* ============[ Css Import ]=========== */\A 2: \A 3: @import \"utilities/index\";\A 4: @import \"base/inde\";\A 5: @import \"components/index\";\A 6: @import \"layout/index\";"; }
-
 @charset "UTF-8";
 /* ============[ Css Import ]=========== */
 @import url(../../public/Resources/css/Font/fontiran.css);
@@ -346,19 +288,20 @@ body, html {
   background: rgba(255, 255, 255, 0.4); }
 
 .hi-subjectDashboardAdminProfile_h5 {
-  color: #a7a7a7;
-  background-color: #00acc0; }
+  color: #a7a7a7; }
 
+/* ============[ confirm button admin ]=========== */
 .hi-confirmButtonDashboard {
   width: 100px;
   font-weight: 500;
-  box-shadow: 0px 0px 5px #a7a7a7;
+  box-shadow: 0 0 5px #a7a7a7;
   border-radius: 8px;
   background-color: #09686a;
   color: white;
   font-size: larger;
   padding-top: 10px;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  margin-left: 4.5px; }
 
 .hi-confirmButtonDashboard:focus {
   border: 1px solid #09686a; }
@@ -372,10 +315,13 @@ body, html {
   box-shadow: none; }
 
 /* ============[ category ]=========== */
+.categoryRightDirection {
+  direction: rtl; }
+
 .hi-whiteCategoryDashboardBox {
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0px 0px 8px #a7a7a7; }
+  box-shadow: 0 0 8px #a7a7a7; }
 
 .hi-roundedDashboardTagsTable_thead {
   background-color: #4d5667; }
@@ -388,11 +334,11 @@ body, html {
   border-top-left-radius: 10px; }
 
 .hi-roundedDashboardTagsTable tbody {
-  padding: 0px; }
+  padding: 0; }
 
 .hi-roundedDashboardTagsTable {
   border-radius: 10px;
-  box-shadow: 0px 0px 5px #a7a7a7; }
+  box-shadow: 0 0 5px #a7a7a7; }
 
 /* ============[ delete button ]=========== */
 .hi-roundedDashboardTagsTable_thead_tr_td_button {
@@ -413,13 +359,13 @@ body, html {
   width: 280px; }
 
 .hi-whiteCategoryDashboardBox_input:focus {
-  border: 1px solid #09686a; }
+  border: 1px solid #4d5667; }
 
 /* ============[ confirm button ]=========== */
 .hi-whiteCategoryDashboardBox_button {
   width: 90px;
   font-weight: 400;
-  box-shadow: 0px 0px 5px #a7a7a7;
+  box-shadow: 0 0 5px #a7a7a7;
   border-radius: 8px;
   background-color: #027398;
   color: white;
@@ -436,16 +382,20 @@ body, html {
   box-shadow: none; }
 
 /* ============[ pagination]=========== */
+.dashboardPaginatinBs {
+  direction: rtl;
+  margin: 0 auto; }
+
 .dashboardPaginatinBs > ul.pagination > li:last-child > a {
   border-radius: 5px 0 0 5px;
-  border-top-right-radius: 0px !important;
-  border-bottom-right-radius: 0px !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
   background-color: #ebebeb; }
 
 .dashboardPaginatinBs > ul.pagination > li:first-child > a {
   border-radius: 0 5px 5px 0;
-  border-top-left-radius: 0px !important;
-  border-bottom-left-radius: 0px !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
   background-color: #ebebeb; }
 
 .dashboardPaginatinBs > ul.pagination > li.active > a {
@@ -491,6 +441,24 @@ body, html {
 #MainBody {
   padding: 20px 30px; }
 
+/* ============[ create post]=========== */
+.createPostBox {
+  direction: rtl; }
+
+#panel, #flip {
+  padding: 0px;
+  text-align: center;
+  background-color: #e5eecc;
+  border: solid 1px #c3c3c3;
+  width: 260px; }
+
+#flip {
+  padding: 5px; }
+
+#panel {
+  padding: 0px;
+  display: none; }
+
 /* ============[ Components Css Import ]=========== */
 .hi-profileCard {
   border-radius: 8px;
@@ -502,8 +470,8 @@ body, html {
 
 .hi-profileCard_cardHeader {
   height: auto;
-  padding-top: 44px;
-  padding-bottom: 44px;
+  padding-top: 44.8px;
+  padding-bottom: 44.8px;
   background-color: #2b4748; }
 
 .hi-profileCard_PictureSelectorBox {
@@ -523,6 +491,9 @@ body, html {
 .hi-profileCard_PictureSelectorBox_pictureBox_hover figure:hover img {
   -webkit-transform: scale(1.03);
   transform: scale(1.03); }
+
+.hi-profileCard_PictureSelectorBox_selector_first {
+  margin-left: -17px; }
 
 .hi-profileCard_PictureSelectorBox_selector {
   /* --- RESET --- */
@@ -551,14 +522,16 @@ body, html {
     -ms-transition: all 150ms ease-in-out;
     transition: all 150ms ease-in-out;
     position: relative;
-    width: 160px;
     border: 1px solid #ccc;
     cursor: pointer;
-    background: #fff;
+    width: 200px;
     border-radius: 3px;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none; }
+  .hi-profileCard_PictureSelectorBox_selector .col-4 {
+    border: 1px solid red;
+    background-color: #00acc1; }
   .hi-profileCard_PictureSelectorBox_selector .dropdown:hover {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); }
   .hi-profileCard_PictureSelectorBox_selector .dropdown select {
@@ -586,7 +559,7 @@ body, html {
     pointer-events: none; }
   .hi-profileCard_PictureSelectorBox_selector .metro {
     position: relative;
-    width: 125px;
+    width: 103px;
     cursor: pointer;
     margin-bottom: 30px;
     font-weight: 200;
@@ -659,12 +632,12 @@ body, html {
     font-size: 14px;
     line-height: 1;
     color: #000;
-    padding: 9px 15px;
+    padding: 9px;
     overflow: hidden;
     white-space: nowrap;
     font-weight: 500; }
   .hi-profileCard_PictureSelectorBox_selector .metro span {
-    text-align: center; }
+    text-align: right; }
   .hi-profileCard_PictureSelectorBox_selector .metro .selected::after {
     content: '';
     position: absolute;
@@ -725,62 +698,10 @@ body, html {
     color: #fff; }
 
 .hi-profileCard_formBox_input {
-  border-radius: 0;
   border: 1px solid #a7a7a7; }
 
 .hi-profileCard_formBox_input:focus {
   border: 1px solid #2b4748; }
-
-.hi-roundedDashboardTagsTable td {
-  border-top: 1px solid black;
-  font-weight: 500; }
-
-.hi-roundedDashboardTagsTable tr {
-  border-radius: 8px; }
-
-a:focus, a:hover, a {
-  color: transparent;
-  text-decoration: none; }
-
-.hi-roundedDashboardTagsTable thead td {
-  border-top: 1px solid transparent; }
-
-/* ============[ edit & delete]=========== */
-.hi-roundedDashboardTagsTable_tbody_tr_td_edit a {
-  color: #2e98b3; }
-
-.hi-roundedDashboardTagsTable_tbody_tr_td_delete a {
-  color: #b32e2e; }
-
-/* ============[ check box ]=========== */
-.hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox {
-  cursor: pointer; }
-
-.hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox span {
-  line-height: 24px; }
-
-.hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox span::before {
-  margin-right: 4px;
-  padding-left: 1px;
-  width: 21px;
-  height: 21px;
-  border: 2px solid grey;
-  display: inline-block;
-  line-height: 14px;
-  content: '';
-  float: right;
-  border-radius: 5px; }
-
-.hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox input[type="checkbox"] {
-  display: none; }
-
-.hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox input[type="checkbox"]:checked + span::before {
-  font-family: FontAwesome;
-  content: "\f00c";
-  color: #4d5667; }
-
-.hi-roundedDashboardTagsTable_tbody_tr_td_li {
-  list-style-type: none; }
 
 .horizentalStat {
   height: 100%; }
@@ -836,7 +757,6 @@ a:focus, a:hover, a {
   resize: none; }
 
 .hi-aboutMePanelCard_textarea, .hi-aboutMePanelCard_input {
-  border-radius: 0;
   border: 1px solid #a7a7a7;
   text-align: right; }
 
@@ -1047,6 +967,65 @@ a:focus, a:hover, a {
 .Topbar_dropdown .dropdown-divider {
   background-color: grey; }
 
+.hi-roundedDashboardTagsTable td {
+  border-left: 1px solid transparent;
+  border-top: 1px solid black;
+  font-weight: 500; }
+
+.hi-roundedDashboardTagsTable tr {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding-right: 0; }
+
+.hi-roundedDashboardTagsTable tr:nth-child(2n) {
+  background-color: #d9dfe9;
+  border: 1px solid #d9dfe9; }
+
+a:focus, a:hover, a {
+  color: transparent;
+  text-decoration: none; }
+
+.hi-roundedDashboardTagsTable thead td {
+  border-top: 1px solid transparent; }
+
+/* ============[ edit & delete]=========== */
+.hi-roundedDashboardTagsTable_tbody_tr_td_edit a {
+  color: #2e98b3; }
+
+.hi-roundedDashboardTagsTable_tbody_tr_td_delete a {
+  color: #b32e2e;
+  margin-left: 10px; }
+
+/* ============[ check box ]=========== */
+.hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox {
+  cursor: pointer; }
+
+.hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox span {
+  line-height: 24px; }
+
+.hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox span::before {
+  margin-right: 4px;
+  padding-left: 1px;
+  width: 21px;
+  height: 21px;
+  border: 2px solid grey;
+  display: inline-block;
+  line-height: 14px;
+  content: '';
+  float: right;
+  border-radius: 5px; }
+
+.hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox input[type="checkbox"] {
+  display: none; }
+
+.hi-roundedDashboardTagsTable_tbody_tr_td_li_square-checkbox input[type="checkbox"]:checked + span::before {
+  font-family: FontAwesome;
+  content: "\f00c";
+  color: #4d5667; }
+
+.hi-roundedDashboardTagsTable_tbody_tr_td_li {
+  list-style-type: none; }
+
 /* ============[ Layouts Css Import ]=========== */
 /* ============[ Top Bar ]=========== */
 .Topbar {
@@ -1238,4 +1217,3 @@ a:focus, a:hover, a {
   background-color: black; }
 
 /*# sourceMappingURL=application.css.map */
-

@@ -303,6 +303,7 @@
 <script src="{{ asset('js/moment.min.js') }}"></script>
 <script src="{{ asset('js/clock.js') }}"></script>
 <script src="{{ asset('js/jquery.easydropdown.js') }}"></script>
+<script src="{{ asset('js/public.js') }}"></script>
 
 <script type="text/javascript">
     Waves.attach('#dropdownMenuButton',['waves-button', 'waves-float', 'waves-light']);

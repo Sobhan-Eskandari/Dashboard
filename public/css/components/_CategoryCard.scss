@@ -1,9 +1,18 @@
 .hi-roundedDashboardTagsTable td {
+  border-left: 1px solid transparent;
   border-top: 1px solid black;
   font-weight: 500;
 }
-.hi-roundedDashboardTagsTable tr{
+
+.hi-roundedDashboardTagsTable tr {
   border-radius: 8px;
+  border: 1px solid transparent;
+  padding-right: 0;
+}
+
+.hi-roundedDashboardTagsTable tr:nth-child(2n) {
+  background-color: $light-row-table;
+  border: 1px solid $light-row-table;
 }
 
 a:focus, a:hover, a {
@@ -23,6 +32,7 @@ a:focus, a:hover, a {
 
 .hi-roundedDashboardTagsTable_tbody_tr_td_delete a {
   color: $delete;
+  margin-left: 10px;
 }
 
 /* ============[ check box ]=========== */
