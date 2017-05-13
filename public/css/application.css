@@ -172,6 +172,24 @@ body, html {
   border: 1px solid #4d5667;
   color: #4d5667; }
 
+/* ============[ create post]=========== */
+.createPostBox {
+  direction: rtl; }
+
+#panel, #flip {
+  padding: 0px;
+  text-align: center;
+  background-color: #e5eecc;
+  border: solid 1px #c3c3c3;
+  width: 260px; }
+
+#flip {
+  padding: 5px; }
+
+#panel {
+  padding: 0px;
+  display: none; }
+
 /* ============[ Components Css Import ]=========== */
 .hi-profileCard {
   border-radius: 8px;

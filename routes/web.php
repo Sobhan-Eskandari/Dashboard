@@ -35,6 +35,10 @@ Route::get('/category', function () {
     return view('dashboard.category.index');
 });
 
+Route::get('/createPost', function () {
+    return view('dashboard.posts.createPost');
+});
+
 /* mersede */
 
 Route::get('/layout', function () {
