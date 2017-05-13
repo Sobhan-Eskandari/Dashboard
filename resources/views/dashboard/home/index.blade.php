@@ -83,6 +83,7 @@
                     </div>
                 </div>
 
+                {{--==========[Calender Widget in Home Page ]=========--}}
                 <div class="grid-item">
                     <div class="homeCard">
                         <div id="inlineDatepicker" class="col-xs-12 no-padding-side">
@@ -203,6 +204,7 @@
                         </div>
                     </div>
                 </div>
+
                 {{--==========[Clock Widget in Home Page ]=========--}}
                 <div class="grid-item">
                     <div class="homeCard clockCard">
@@ -246,17 +248,65 @@
                     {{--<div class="homeCard"></div>--}}
                 {{--</div>--}}
             </div>
-            {{--<div class="grid2">--}}
-                {{--<div class="grid-item grid-item--width3">--}}
-                    {{--<div class="homeCard"></div>--}}
-                {{--</div>--}}
-                {{--<div class="grid-item grid-item--width3">--}}
-                    {{--<div class="homeCard"></div>--}}
-                {{--</div>--}}
-                {{--<div class="grid-item grid-item--width3">--}}
-                    {{--<div class="homeCard"></div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
+            <div class="grid2">
+                <div class="grid-item grid-item--width3">
+                    <div class="homeCard">
+                        <div class="Card-Box Card-Box_dayMode hi-shadow-1">
+                            <h4 class="Card-Box_nightMode_cardTitle Card-Box_nightMode_title mb-4 text-right"> صندوق پیام ها</h4>
+                            <!-------- Start of Cell Block -------->
+                            <div class="ListCellWithIcon">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <p class="Card-Box__text Card-Box_nightMode_text text-right">11:15 pm</p>
+                                            </div>
+                                            <div class="col-8">
+                                                <p class="Card-Box__text Card-Box_nightMode_title text-right">سبحان اسکندری</p>
+                                            </div>
+                                        </div>
+
+                                        <p class="Card-Box__text Card-Box_nightMode_text text-right">ما در اینجا یک باکس اطلااعات داریم که پیغام ها در آن میاید</p>
+                                    </div>
+                                    <div class="col-2 ListCellWithIcon__Icon">
+                                        <img alt="در حال بارگزاری عکس" class="rounded-circle" src="Blocks/ListCellWithIcon/images/avatar-4.jpg">
+                                    </div>
+                                </div>
+                                <hr class="nightMode_line">
+                            </div>
+                            <!--******* End of Cell Block *******-->
+                            <!-------- Start of Cell Block -------->
+                            <div class="ListCellWithIcon">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <p class="Card-Box__text Card-Box_nightMode_text text-right">11:15 pm</p>
+                                            </div>
+                                            <div class="col-8">
+                                                <p class="Card-Box__text Card-Box_nightMode_title text-right">سبحان اسکندری</p>
+                                            </div>
+                                        </div>
+
+                                        <p class="Card-Box__text Card-Box_nightMode_text text-right">ما در اینجا یک باکس اطلااعات داریم که پیغام ها در آن میاید</p>
+                                    </div>
+                                    <div class="col-2 ListCellWithIcon__Icon">
+                                        <img alt="در حال بارگزاری عکس" class="rounded-circle" src="Blocks/ListCellWithIcon/images/avatar-4.jpg">
+                                    </div>
+                                </div>
+                                <hr class="nightMode_line">
+                            </div>
+                            <!--******* End of Cell Block *******-->
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item grid-item--width3">
+                    <div class="homeCard"></div>
+                </div>
+                <div class="grid-item grid-item--width3">
+                    <div class="homeCard"></div>
+                </div>
+            </div>
 
         </div>
     </section>
