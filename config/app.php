@@ -172,6 +172,7 @@ return [
         Morilog\Jalali\JalaliServiceProvider::class,
         Zarinpal\Laravel\ZarinpalServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
 
         /*
          * Application Service Providers...
