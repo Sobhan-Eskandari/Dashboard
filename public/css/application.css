@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* ============[ Css Import ]=========== */
-@import url("../../public/Resources/css/Font/fontiran.css");
+@import url("../../Resources/css/Font/fontiran.css");
 /* لینک فایلی که وظیفه بارگذاری فونت ها را برعهده دارد */
 body {
   font-family: IRANSans !important;
