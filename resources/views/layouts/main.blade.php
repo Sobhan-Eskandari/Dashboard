@@ -298,6 +298,8 @@
 <script src="{{ asset('Hi_Framework/javascript/Time And Date Picker/Other Libraries/PersianDatePicker/persian-date.js') }}"></script>
 <script src="{{ asset('Hi_Framework/javascript/Time And Date Picker/Other Libraries/PersianDatePicker/persian-datepicker-0.4.5.js') }}"></script>
 <script src="{{ asset('Hi_Framework/css/Grid/Other Libraries/Packery/packery.pkgd.min.js') }}"></script>
+<script src="{{ asset('js/jquery.simpleWeather.min.js') }}"></script>
+<script src="{{ asset('js/weather.js') }}"></script>
 <script src="{{ asset('js/layout/sidebar.js') }}"></script>
 <script src="{{ asset('js/application.js') }}"></script>
 <script src="{{ asset('js/moment.min.js') }}"></script>
