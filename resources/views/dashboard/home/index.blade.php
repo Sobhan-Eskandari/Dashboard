@@ -251,60 +251,233 @@
             <div class="grid2">
                 <div class="grid-item grid-item--width3">
                     <div class="homeCard">
-                        <div class="Card-Box Card-Box_dayMode hi-shadow-1">
-                            <h4 class="Card-Box_nightMode_cardTitle Card-Box_nightMode_title mb-4 text-right"> صندوق پیام ها</h4>
-                            <!-------- Start of Cell Block -------->
-                            <div class="ListCellWithIcon">
-                                <div class="row">
-                                    <div class="col-10">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <p class="Card-Box__text Card-Box_nightMode_text text-right">11:15 pm</p>
-                                            </div>
-                                            <div class="col-8">
-                                                <p class="Card-Box__text Card-Box_nightMode_title text-right">سبحان اسکندری</p>
-                                            </div>
-                                        </div>
 
-                                        <p class="Card-Box__text Card-Box_nightMode_text text-right">ما در اینجا یک باکس اطلااعات داریم که پیغام ها در آن میاید</p>
-                                    </div>
-                                    <div class="col-2 ListCellWithIcon__Icon">
-                                        <img alt="در حال بارگزاری عکس" class="rounded-circle" src="Blocks/ListCellWithIcon/images/avatar-4.jpg">
-                                    </div>
-                                </div>
-                                <hr class="nightMode_line">
-                            </div>
-                            <!--******* End of Cell Block *******-->
-                            <!-------- Start of Cell Block -------->
-                            <div class="ListCellWithIcon">
-                                <div class="row">
-                                    <div class="col-10">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <p class="Card-Box__text Card-Box_nightMode_text text-right">11:15 pm</p>
-                                            </div>
-                                            <div class="col-8">
-                                                <p class="Card-Box__text Card-Box_nightMode_title text-right">سبحان اسکندری</p>
-                                            </div>
-                                        </div>
-
-                                        <p class="Card-Box__text Card-Box_nightMode_text text-right">ما در اینجا یک باکس اطلااعات داریم که پیغام ها در آن میاید</p>
-                                    </div>
-                                    <div class="col-2 ListCellWithIcon__Icon">
-                                        <img alt="در حال بارگزاری عکس" class="rounded-circle" src="Blocks/ListCellWithIcon/images/avatar-4.jpg">
-                                    </div>
-                                </div>
-                                <hr class="nightMode_line">
-                            </div>
-                            <!--******* End of Cell Block *******-->
-                        </div>
                     </div>
                 </div>
                 <div class="grid-item grid-item--width3">
-                    <div class="homeCard"></div>
+                    <div class="homeCard">
+                        <div class="Card-Box Card-Box_dayMode hi-shadow-1">
+                            {{--==========[ Header Of Card ]=========--}}
+                            <div class="container-fluid">
+                                <div class="row indigo Card_Header mb-2">
+                                    <div class="col-6">
+                                        <button class="inbox_btn">مشاهده همه</button>
+                                    </div>
+                                    <div class="col-6">
+                                        <h3 class="Card-Box_dayMode_cardTitle Card-Box_dayMode_title pt-4 pb-3 px-3 text-right"> آخرین پیام ها</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-------- Start of Cell Block -------->
+                            <div class="ListCellWithIcon">
+                                <div class="row">
+                                    <div class="col-10">
+                                        {{--==========[ Title Of List ]=========--}}
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p class="Card-Box__text text-right hi-fontSize-14">سبحان اسکندری</p>
+                                            </div>
+                                        </div>
+
+                                        {{--==========[ Text Of List ]=========--}}
+                                        <p class="Card-Box__text Card-Box_dayMode_text text-right">ما در اینجا یک باکس اطلااعات داریم که پیغام ها در آن میاید</p>
+                                        <p class="Card-Box__text Card-Box_dayMode_text indigo-text hi-fontSize-11 text-right"><i class="fa fa-clock-o" aria-hidden="true"></i> ۳ ساعت پیش </p>
+                                    </div>
+                                    {{--==========[ Avatar of List ]=========--}}
+                                    <div class="col-2 ListCellWithIcon__Icon">
+                                        <img alt="در حال بارگزاری عکس" class="rounded-circle" src="{{asset('images/avatar.png')}}">
+                                    </div>
+                                </div>
+                                <hr class="dayMode_line">
+                            </div>
+                            <!--******* End of Cell Block *******-->
+
+                            <!-------- Start of Cell Block -------->
+                            <div class="ListCellWithIcon">
+                                <div class="row">
+                                    <div class="col-10">
+                                        {{--==========[ Title Of List ]=========--}}
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p class="Card-Box__text text-right hi-fontSize-14">سبحان اسکندری</p>
+                                            </div>
+                                        </div>
+
+                                        {{--==========[ Text Of List ]=========--}}
+                                        <p class="Card-Box__text Card-Box_dayMode_text text-right">ما در اینجا یک باکس اطلااعات داریم که پیغام ها در آن میاید</p>
+                                        <p class="Card-Box__text Card-Box_dayMode_text indigo-text hi-fontSize-11 text-right"><i class="fa fa-clock-o" aria-hidden="true"></i> ۳ ساعت پیش </p>
+                                    </div>
+                                    {{--==========[ Avatar of List ]=========--}}
+                                    <div class="col-2 ListCellWithIcon__Icon">
+                                        <img alt="در حال بارگزاری عکس" class="rounded-circle" src="{{asset('images/avatar.png')}}">
+                                    </div>
+                                </div>
+                                <hr class="dayMode_line">
+                            </div>
+                            <!--******* End of Cell Block *******-->
+
+                            <!-------- Start of Cell Block -------->
+                            <div class="ListCellWithIcon">
+                                <div class="row">
+                                    <div class="col-10">
+                                        {{--==========[ Title Of List ]=========--}}
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p class="Card-Box__text text-right hi-fontSize-14">سبحان اسکندری</p>
+                                            </div>
+                                        </div>
+
+                                        {{--==========[ Text Of List ]=========--}}
+                                        <p class="Card-Box__text Card-Box_dayMode_text text-right">ما در اینجا یک باکس اطلااعات داریم که پیغام ها در آن میاید</p>
+                                        <p class="Card-Box__text Card-Box_dayMode_text indigo-text hi-fontSize-11 text-right"><i class="fa fa-clock-o" aria-hidden="true"></i> ۳ ساعت پیش </p>
+                                    </div>
+                                    {{--==========[ Avatar of List ]=========--}}
+                                    <div class="col-2 ListCellWithIcon__Icon">
+                                        <img alt="در حال بارگزاری عکس" class="rounded-circle" src="{{asset('images/avatar.png')}}">
+                                    </div>
+                                </div>
+                                <hr class="dayMode_line">
+                            </div>
+                            <!--******* End of Cell Block *******-->
+
+                            <!-------- Start of Cell Block -------->
+                            <div class="ListCellWithIcon">
+                                <div class="row">
+                                    <div class="col-10">
+                                        {{--==========[ Title Of List ]=========--}}
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p class="Card-Box__text text-right hi-fontSize-14">سبحان اسکندری</p>
+                                            </div>
+                                        </div>
+
+                                        {{--==========[ Text Of List ]=========--}}
+                                        <p class="Card-Box__text Card-Box_dayMode_text text-right">ما در اینجا یک باکس اطلااعات داریم که پیغام ها در آن میاید</p>
+                                        <p class="Card-Box__text Card-Box_dayMode_text indigo-text hi-fontSize-11 text-right"><i class="fa fa-clock-o" aria-hidden="true"></i> ۳ ساعت پیش </p>
+                                    </div>
+                                    {{--==========[ Avatar of List ]=========--}}
+                                    <div class="col-2 ListCellWithIcon__Icon">
+                                        <img alt="در حال بارگزاری عکس" class="rounded-circle" src="{{asset('images/avatar.png')}}">
+                                    </div>
+                                </div>
+                                <hr class="dayMode_line">
+                            </div>
+                            <!--******* End of Cell Block *******-->
+
+                        </div>
+                    </div>
                 </div>
+
+                {{--==========[ Akharin Faaliat ha Widget ]=========--}}
                 <div class="grid-item grid-item--width3">
-                    <div class="homeCard"></div>
+                    <div class="homeCard">
+                        <div class="Card-Box Card-Box_dayMode hi-shadow-1">
+                            {{--==========[ Header Of Card ]=========--}}
+                            <div class="container-fluid">
+                                <div class="row teal darken-3 Card_Header mb-2">
+                                    <div class="col-12">
+                                        <h3 class="Card-Box_dayMode_cardTitle Card-Box_dayMode_title pt-4 pb-3 px-3 text-right"> آخرین فعالیت ها</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-------- Start of Cell Block -------->
+                            <div class="ListCellWithIcon">
+                                <div class="row">
+                                    <div class="col-10">
+                                        {{--==========[ Title Of List ]=========--}}
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p class="Card-Box__text text-right hi-fontSize-14">سبحان اسکندری</p>
+                                            </div>
+                                        </div>
+
+                                        {{--==========[ Text Of List ]=========--}}
+                                        <p class="Card-Box__text Card-Box_dayMode_text text-right">ما در اینجا یک باکس اطلااعات داریم که پیغام ها در آن میاید</p>
+                                        <p class="Card-Box__text Card-Box_dayMode_text teal-text text-darken-3 hi-fontSize-11 text-right"><i class="fa fa-clock-o" aria-hidden="true"></i> ۳ ساعت پیش </p>
+                                    </div>
+                                    {{--==========[ Avatar of List ]=========--}}
+                                    <div class="col-2 ListCellWithIcon__Icon">
+                                        <img alt="در حال بارگزاری عکس" class="rounded-circle" src="{{asset('images/avatar.png')}}">
+                                    </div>
+                                </div>
+                                <hr class="dayMode_line">
+                            </div>
+                            <!--******* End of Cell Block *******-->
+
+                            <!-------- Start of Cell Block -------->
+                            <div class="ListCellWithIcon">
+                                <div class="row">
+                                    <div class="col-10">
+                                        {{--==========[ Title Of List ]=========--}}
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p class="Card-Box__text text-right hi-fontSize-14">سبحان اسکندری</p>
+                                            </div>
+                                        </div>
+
+                                        {{--==========[ Text Of List ]=========--}}
+                                        <p class="Card-Box__text Card-Box_dayMode_text text-right">ما در اینجا یک باکس اطلااعات داریم که پیغام ها در آن میاید</p>
+                                        <p class="Card-Box__text Card-Box_dayMode_text teal-text text-darken-3 hi-fontSize-11 text-right"><i class="fa fa-clock-o" aria-hidden="true"></i> ۳ ساعت پیش </p>
+                                    </div>
+                                    {{--==========[ Avatar of List ]=========--}}
+                                    <div class="col-2 ListCellWithIcon__Icon">
+                                        <img alt="در حال بارگزاری عکس" class="rounded-circle" src="{{asset('images/avatar.png')}}">
+                                    </div>
+                                </div>
+                                <hr class="dayMode_line">
+                            </div>
+                            <!--******* End of Cell Block *******-->
+
+                            <!-------- Start of Cell Block -------->
+                            <div class="ListCellWithIcon">
+                                <div class="row">
+                                    <div class="col-10">
+                                        {{--==========[ Title Of List ]=========--}}
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p class="Card-Box__text text-right hi-fontSize-14">سبحان اسکندری</p>
+                                            </div>
+                                        </div>
+
+                                        {{--==========[ Text Of List ]=========--}}
+                                        <p class="Card-Box__text Card-Box_dayMode_text text-right">ما در اینجا یک باکس اطلااعات داریم که پیغام ها در آن میاید</p>
+                                        <p class="Card-Box__text Card-Box_dayMode_text teal-text text-darken-3 hi-fontSize-11 text-right"><i class="fa fa-clock-o" aria-hidden="true"></i> ۳ ساعت پیش </p>
+                                    </div>
+                                    {{--==========[ Avatar of List ]=========--}}
+                                    <div class="col-2 ListCellWithIcon__Icon">
+                                        <img alt="در حال بارگزاری عکس" class="rounded-circle" src="{{asset('images/avatar.png')}}">
+                                    </div>
+                                </div>
+                                <hr class="dayMode_line">
+                            </div>
+                            <!--******* End of Cell Block *******-->
+
+                            <!-------- Start of Cell Block -------->
+                            <div class="ListCellWithIcon">
+                                <div class="row">
+                                    <div class="col-10">
+                                        {{--==========[ Title Of List ]=========--}}
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p class="Card-Box__text text-right hi-fontSize-14">سبحان اسکندری</p>
+                                            </div>
+                                        </div>
+
+                                        {{--==========[ Text Of List ]=========--}}
+                                        <p class="Card-Box__text Card-Box_dayMode_text text-right">ما در اینجا یک باکس اطلااعات داریم که پیغام ها در آن میاید</p>
+                                        <p class="Card-Box__text Card-Box_dayMode_text teal-text text-darken-3 hi-fontSize-11 text-right"><i class="fa fa-clock-o" aria-hidden="true"></i> ۳ ساعت پیش </p>
+                                    </div>
+                                    {{--==========[ Avatar of List ]=========--}}
+                                    <div class="col-2 ListCellWithIcon__Icon">
+                                        <img alt="در حال بارگزاری عکس" class="rounded-circle" src="{{asset('images/avatar.png')}}">
+                                    </div>
+                                </div>
+                                <hr class="dayMode_line">
+                            </div>
+                            <!--******* End of Cell Block *******-->
+
+                        </div>
+                    </div>
                 </div>
             </div>
 
