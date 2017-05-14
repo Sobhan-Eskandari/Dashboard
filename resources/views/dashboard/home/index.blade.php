@@ -254,7 +254,7 @@
                                 <div class="img-area-mask"></div>
                                 <img src="{{asset('images/paris-sm.jpg')}}" alt="">
                                 <div class="img-area-front">
-                                    <h5 class="location">Paris</h5>
+                                    <h5 class="location">رشت</h5>
                                     <div class="weather-desc">
                                         <span>Cloudy, rain</span>
                                     </div>
