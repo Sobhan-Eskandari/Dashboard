@@ -286,7 +286,9 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 
-<script src="{{ asset('Resources/js/Jquery/jquery-3.2.0.min.js') }}"></script>
+{{--<script src="{{ asset('Resources/js/Jquery/jquery-3.2.0.min.js') }}"></script>--}}
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
 <script src="{{ asset('Resources/js/Bootstrap/tether.min.js') }}"></script>
 <script src="{{ asset('Resources/js/Bootstrap/bootstrap.min.js') }}"></script>
 <script src="{{ asset('Hi_Framework/components/Dropdown/Other Libraries/bootstrap-select/bootstrap-select.js') }}"></script>
@@ -300,12 +302,18 @@
 <script src="{{ asset('Hi_Framework/css/Grid/Other Libraries/Packery/packery.pkgd.min.js') }}"></script>
 <script src="{{ asset('js/jquery.simpleWeather.min.js') }}"></script>
 <script src="{{ asset('js/weather.js') }}"></script>
+<script src="{{ asset('Hi_Framework/javascript/Chart/Other Libraries/Chartjs/Chart.min.js') }}"></script>
+<script src="{{ asset('js/chartjs.js') }}"></script>
 <script src="{{ asset('js/layout/sidebar.js') }}"></script>
 <script src="{{ asset('js/application.js') }}"></script>
 <script src="{{ asset('js/moment.min.js') }}"></script>
 <script src="{{ asset('js/clock.js') }}"></script>
 <script src="{{ asset('js/jquery.easydropdown.js') }}"></script>
 <script src="{{ asset('js/public.js') }}"></script>
+
+<script>
+
+</script>
 
 <script type="text/javascript">
     Waves.attach('#dropdownMenuButton',['waves-button', 'waves-float', 'waves-light']);

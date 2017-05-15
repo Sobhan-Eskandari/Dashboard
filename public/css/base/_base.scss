@@ -179,6 +179,12 @@
 #MainBody{
   padding: 20px 30px;
 }
+.homeCard canvas{
+  width: 470px !important;
+  height: 90% !important;
+  padding: 10px 20px 5px 20px;
+  margin: 5px;
+}
 /* ============[ create post]=========== */
 .createPostBox{
   direction: rtl;

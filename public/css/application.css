@@ -5724,6 +5724,12 @@ g, path, circle, rect {
 #MainBody {
   padding: 20px 30px; }
 
+.homeCard canvas {
+  width: 470px !important;
+  height: 90% !important;
+  padding: 10px 20px 5px 20px;
+  margin: 5px; }
+
 /* ============[ create post]=========== */
 .createPostBox {
   direction: rtl; }
@@ -6549,7 +6555,7 @@ a:focus, a:hover, a {
   width: 49.9%; }
 
 .grid-item--height2 {
-  height: 200px; }
+  height: 545px; }
 
 .grid-item--width3 {
   width: 33.2%; }

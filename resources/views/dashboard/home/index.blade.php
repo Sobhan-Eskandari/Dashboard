@@ -242,10 +242,28 @@
 
                 <div class="grid-item grid-item--width2 grid-item--height2">
                     <div class="homeCard">
-
+                        <div class="carousel" data-flickity>
+                            <div class="carousel-cell">
+                                <p class="text-right pr-1 pt-2 mb-0">آمار فروش ماهیانه</p>
+                                <canvas id="doughnutChart"></canvas>
+                            </div>
+                            <div class="carousel-cell">
+                                <p class="text-right pr-1 pt-2 mb-0">آمار فروش هفلگی</p>
+                                <canvas id="polarChart"></canvas>
+                            </div>
+                            <div class="carousel-cell">
+                                <p class="text-right pr-1 pt-2 mb-02">آمار درخواست ها</p>
+                                <canvas id="pieChart"></canvas>
+                            </div>
+                            <div class="carousel-cell">
+                                <p class="text-right pr-1 pt-2 mb-0">آمار لغوها</p>
+                                <canvas id="radarChart"></canvas>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                {{--==========[Weather Widget in Home Page ]=========--}}
                 <div class="grid-item grid-item--width2">
                     <div class="homeCard">
                         <div class="widget-block">
@@ -260,7 +278,7 @@
                                     </div>
                                     <ul class="weather-block-info">
                                         <li>
-                                            <p class="temperature" id="weather">25<span class="temperature-feels">+20 feels</span></p>
+                                            <p class="temperature" id="weather">25<span class="temperature-feels"></span></p>
                                         </li>
                                         <li>
                                             <!-- MAIN ANIMATED SVG WEATHER ICON -->
@@ -355,9 +373,9 @@
                                         </li>
                                         <li>
                                             <ul class="weather-params">
-                                                <li><i class="climacon thermometer medium-high"></i> <span>743 mm Hg</span></li>
-                                                <li><i class="climacon moon full"></i> <span>46% humidity</span></li>
-                                                <li><i class="climacon wind"></i> <span>2m/s NW</span></li>
+                                                <li><i class="climacon thermometer medium-high"></i> <span id="pressure">در حال دریافت</span></li>
+                                                <li><i class="climacon moon full"></i> <span id="humidity">در حال دریافت</span></li>
+                                                <li><i class="climacon wind"></i> <span id="wind">در حال دریافت</span></li>
                                             </ul>
                                         </li>
                                     </ul>
