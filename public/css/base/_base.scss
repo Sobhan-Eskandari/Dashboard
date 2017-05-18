@@ -181,9 +181,16 @@
 }
 .homeCard canvas{
   width: 470px !important;
-  height: 90% !important;
-  padding: 10px 20px 5px 20px;
+  height: 80% !important;
+  padding: 0 20px 5px 20px;
   margin: 5px;
+}
+.homeCard{
+  .flickity-page-dots{
+    margin-top: 0;
+    margin-bottom: 10px;
+    position: sticky !important;
+  }
 }
 /* ============[ create post]=========== */
 .createPostBox{

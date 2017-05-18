@@ -33,10 +33,14 @@ var translate = function (englishNumber) {
 
 // ============[ Home page Grid System ]===========
 // external js: packery.pkgd.js, draggabilly.pkgd.js
-var width = window.innerWidth - 300;
+// var width = window.innerWidth - 300;
+var widthofFirstCols = document.querySelector ('#firstCols')
+        .getBoundingClientRect(),
+    width = widthofFirstCols.right - widthofFirstCols.left;
+
 var $grid = $('.grid').packery({
     itemSelector: '.grid-item',
-    columnWidth: width/4,
+    columnWidth: widthofFirstCols.width,
     percentPosition: true,
 });
 
@@ -47,14 +51,18 @@ $grid.find('.grid-item').each( function( i, gridItem ) {
     $grid.packery( 'bindDraggabillyEvents', draggie );
 });
 
-var $grid2 = $('.grid2').packery({
-    itemSelector: '.grid-item',
-    columnWidth: width/3,
+var widthOfCols = document.querySelector ('#gridWith')
+        .getBoundingClientRect(),
+    width = widthOfCols.right - widthOfCols.left;
+
+var $grid2 = $('.gridOfNotif').packery({
+    itemSelector: '.grid-notif',
+    columnWidth: '#gridWith',
     percentPosition: true,
 });
 
 // make all grid-items draggable
-$grid2.find('.grid-item').each( function( i, gridItem ) {
+$grid2.find('.grid-notif').each( function( i, gridItem ) {
     var draggie = new Draggabilly( gridItem );
     // bind drag events to Packery
     $grid2.packery( 'bindDraggabillyEvents', draggie );

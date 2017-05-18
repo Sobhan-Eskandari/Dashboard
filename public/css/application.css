@@ -5570,6 +5570,110 @@ g, path, circle, rect {
     transform: translateX(-4.998px); }
   100% {
     transform: translateX(0); } }
+* {
+  box-sizing: border-box; }
+
+.list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  max-width: 500px;
+  border-radius: 6px;
+  list-style: none;
+  overflow: hidden;
+  direction: rtl; }
+  .list .list-item {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #ecf0f1;
+    position: relative; }
+    .list .list-item:last-child {
+      border: 0; }
+
+.hidden-box {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  opacity: 0;
+  display: none; }
+
+.check--label {
+  font-size: 16px;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center; }
+
+.check--label-box {
+  display: flex;
+  align-self: center;
+  position: relative;
+  height: 20px;
+  width: 20px;
+  margin: 0 20px;
+  border: 2px solid #3AAF51;
+  border-radius: 5px;
+  cursor: pointer; }
+
+.check--label-text {
+  display: flex;
+  align-self: center;
+  position: relative;
+  cursor: pointer;
+  padding: 14.2px; }
+  .check--label-text:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #AAAAAA;
+    position: absolute;
+    top: 50%;
+    left: 7.5%;
+    transform: translateY(-50%);
+    transition: width 100ms ease-in-out; }
+
+.hidden-box:checked + .check--label .check--label-box {
+  background-color: #3AAF51; }
+  .hidden-box:checked + .check--label .check--label-box:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: 4px;
+    width: 6px;
+    height: 12px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg); }
+.hidden-box:checked + .check--label .check--label-text:after {
+  width: 85%; }
+
+#addTodo {
+  margin: 10px auto; }
+
+#addTodo_addBtn {
+  border: none;
+  background-color: #7E53C5;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px; }
+  #addTodo_addBtn img {
+    width: 100%;
+    height: 100%; }
+
+#todoText {
+  background-color: #EBEBEB;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-align: right;
+  border: none; }
+
 .hi-subjectDashboardAdminProfile_h5 {
   color: #a7a7a7; }
 
@@ -5726,9 +5830,14 @@ g, path, circle, rect {
 
 .homeCard canvas {
   width: 470px !important;
-  height: 90% !important;
-  padding: 10px 20px 5px 20px;
+  height: 80% !important;
+  padding: 0 20px 5px 20px;
   margin: 5px; }
+
+.homeCard .flickity-page-dots {
+  margin-top: 0;
+  margin-bottom: 10px;
+  position: sticky !important; }
 
 /* ============[ create post]=========== */
 .createPostBox {
@@ -6544,22 +6653,6 @@ a:focus, a:hover, a {
   clear: both; }
 
 /* ---- .element-item ---- */
-/* 5 columns, percentage width */
-.grid-item {
-  float: left;
-  width: 24.9%;
-  min-height: 100px;
-  padding: 10px; }
-
-.grid-item--width2 {
-  width: 49.9%; }
-
-.grid-item--height2 {
-  height: 545px; }
-
-.grid-item--width3 {
-  width: 33.2%; }
-
 .grid-item:hover {
   border-color: rgba(255, 255, 255, 0.5);
   cursor: move; }

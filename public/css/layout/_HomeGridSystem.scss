@@ -16,19 +16,6 @@
 
 /* ---- .element-item ---- */
 
-/* 5 columns, percentage width */
-.grid-item {
-  float: left;
-  width: 24.9%;
-  min-height: 100px;
-  padding: 10px;
-}
-
-.grid-item--width2 { width: 49.9%; }
-.grid-item--height2 { height: 545px; }
-
-.grid-item--width3 { width: 33.2%; }
-
 .grid-item:hover {
   border-color: hsla(0, 0%, 100%, 0.5);
   cursor: move;
