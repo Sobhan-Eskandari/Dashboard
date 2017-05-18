@@ -6128,7 +6128,7 @@ g, path, circle, rect {
   border-bottom-left-radius: 10px; }
   .horizentalStat_stat h5 {
     margin: auto auto;
-    font-size: 20px; }
+    font-size: 17px; }
 
 /* ==========[ Statistic Number ]========= */
 .statNumber {
@@ -6136,7 +6136,7 @@ g, path, circle, rect {
   color: whitesmoke !important;
   top: 70% !important;
   font-weight: 700;
-  font-size: 19px; }
+  font-size: 16px; }
 
 .hi-aboutMePanelCard {
   border-radius: 8px;

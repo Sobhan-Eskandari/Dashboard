@@ -5,12 +5,12 @@
     <section class="usersSection">
         <div class="row grid">
             {{--==========[ Stats Progress Part One Left ]=========--}}
-            <div class="col-12 col-md-3 grid-item" id="firstCols">
+            <div class="col-12 col-md-3 col-lg-6 col-xl-3 mt-4 grid-item" id="firstCols">
                 <div class="homeCard">
                     <div class="container-fluid">
                         {{--==========[ Horizental Stat Contains two parts of circular and text ]=========--}}
                         <div class="row horizentalStat">
-                            <div class="col-7 horizentalStat_stat" id="stat1Container">
+                            <div class="col-7 horizentalStat_stat px-0" id="stat1Container">
                                 <h5>ثبت نام ها</h5>
                                 <br>
                             </div>
@@ -23,13 +23,13 @@
             </div>
 
             {{--==========[ Stats Progress Part Second Left ]=========--}}
-            <div class="col-12 col-md-3 grid-item">
+            <div class="col-12 col-md-3 col-lg-6 col-xl-3 mt-4 grid-item">
                 <div class="homeCard">
                     <div class="homeCard">
                         <div class="container-fluid">
                             {{--==========[ Horizental Stat Contains two parts of circular and text ]=========--}}
                             <div class="row horizentalStat">
-                                <div class="col-7 horizentalStat_stat" id="stat2Container">
+                                <div class="col-7 horizentalStat_stat px-0" id="stat2Container">
                                     <h5>بازدید سالانه</h5>
                                     <br>
                                 </div>
@@ -43,13 +43,13 @@
             </div>
 
             {{--==========[ Stats Progress Part Third Left ]=========--}}
-            <div class="col-12 col-md-3 grid-item">
+            <div class="col-12 col-md-3 col-lg-6 col-xl-3 mt-4 grid-item">
                 <div class="homeCard">
                     <div class="homeCard">
                         <div class="container-fluid">
                             {{--==========[ Horizental Stat Contains two parts of circular and text ]=========--}}
                             <div class="row horizentalStat">
-                                <div class="col-7 horizentalStat_stat" id="stat3Container">
+                                <div class="col-7 horizentalStat_stat px-0" id="stat3Container">
                                     <h5>بازدید ماهانه</h5>
                                     <br>
                                 </div>
@@ -63,13 +63,13 @@
             </div>
 
             {{--==========[ Stats Progress Part Fourth Left ]=========--}}
-            <div class="col-12 col-md-3 grid-item">
+            <div class="col-12 col-md-3 col-lg-6 col-xl-3 mt-4 grid-item">
                 <div class="homeCard">
                     <div class="homeCard">
                         <div class="container-fluid">
                             {{--==========[ Horizental Stat Contains two parts of circular and text ]=========--}}
                             <div class="row horizentalStat">
-                                <div class="col-7 horizentalStat_stat" id="stat4Container">
+                                <div class="col-7 horizentalStat_stat px-0" id="stat4Container">
                                     <h5>بازدید هفتگی</h5>
                                     <br>
                                 </div>
@@ -83,7 +83,7 @@
             </div>
 
             {{--==========[ Calender Widget in Home Page ]=========--}}
-            <div class="col-12 col-md-3 grid-item mt-4">
+            <div class="col-12 col-md-3 col-lg-6 col-xl-3 grid-item mt-4">
                 <div class="homeCard">
                     <div id="inlineDatepicker" class="col-xs-12 no-padding-side">
                         <div class="datepicker-plot-area datepicker-plot-area-inline-view">
@@ -205,7 +205,7 @@
             </div>
 
             {{--==========[ Clock Widget in Home Page ]=========--}}
-            <div class="col-12 col-md-3 grid-item mt-4">
+            <div class="col-12 col-md-3 col-lg-6 col-xl-3 grid-item mt-4">
                 <div class="homeCard clockCard">
                     <div class="fill">
                         <div class="clock
@@ -240,7 +240,7 @@
             </div>
 
             {{--==========[ Chat js Widget in Home Page ]=========--}}
-            <div class="col-12 col-md-6 grid-item mt-4" style="height: 519px">
+            <div class="col-12 col-md-6 col-lg-12 col-xl-6 grid-item mt-4" style="height: 519px">
                 <div class="homeCard">
                     <div class="carousel pt-2" data-flickity>
                         <div class="carousel-cell">
@@ -264,7 +264,7 @@
             </div>
 
             {{--==========[ Weather Widget in Home Page ]=========--}}
-            <div class="col-12 col-md-6 grid-item mt-4">
+            <div class="col-12 col-md-6 col-lg-12 col-xl-6 grid-item mt-4">
                 <div class="homeCard">
                     <div class="widget-block">
                         <!-- MAIN AREA -->

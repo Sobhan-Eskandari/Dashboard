@@ -40,7 +40,7 @@ var widthofFirstCols = document.querySelector ('#firstCols')
 
 var $grid = $('.grid').packery({
     itemSelector: '.grid-item',
-    columnWidth: widthofFirstCols.width,
+    columnWidth: '#firstCols',
     percentPosition: true,
 });
 
@@ -119,7 +119,7 @@ var stat1 = new ProgressBar.Circle('#stat1', {
 });
 stat1.animate(fakeValueofStat1);  // Number from 0.0 to 1.0
 // =======[ Moving Stat number to its container ]========
-var sat1Numb = $("#stat1 .registerNum");
+var sat1Numb = $("#stat1 .statNumber");
 $("#stat1Container").append(sat1Numb);
 
 // ============[ Home page Stat2 Circular Progress ]===========
@@ -169,7 +169,7 @@ var stat2 = new ProgressBar.Circle('#stat2', {
 });
 stat2.animate(fakeValueofStat2);  // Number from 0.0 to 1.0
 // =======[ Moving Stat number to its container ]========
-var sat2Numb = $("#stat2 .registerNum");
+var sat2Numb = $("#stat2 .statNumber");
 $("#stat2Container").append(sat2Numb);
 
 // ============[ Home page Stat3 Circular Progress ]===========
@@ -219,7 +219,7 @@ var stat3 = new ProgressBar.Circle('#stat3', {
 });
 stat3.animate(fakeValueofStat3);  // Number from 0.0 to 1.0
 // =======[ Moving Stat number to its container ]========
-var sat3Numb = $("#stat3 .registerNum");
+var sat3Numb = $("#stat3 .statNumber");
 $("#stat3Container").append(sat3Numb);
 
 
@@ -270,5 +270,5 @@ var stat4 = new ProgressBar.Circle('#stat4', {
 });
 stat4.animate(fakeValueofStat4);  // Number from 0.0 to 1.0
 // =======[ Moving Stat number to its container ]========
-var sat4Numb = $("#stat4 .registerNum");
+var sat4Numb = $("#stat4 .statNumber");
 $("#stat4Container").append(sat4Numb);
