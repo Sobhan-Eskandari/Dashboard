@@ -1,5 +1,10 @@
 {{--==========[ Table Row items ]========= --}}
-<td><input type="checkbox"></td>
+<td>
+    <div class="pure-checkbox mt-2">
+        <input id="checkbox1" name="checkbox" type="checkbox" checked="checked">
+        <label for="checkbox1"></label>
+    </div>
+</td>
 <td class="py-1 text-right userInfoPlace">
     <img class="rounded-circle Topbar_avatar" src="{{ asset('images/avatar.png') }}">
     <p class="username">{{$user_username}}</p>

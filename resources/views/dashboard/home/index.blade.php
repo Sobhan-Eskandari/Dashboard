@@ -3,9 +3,9 @@
 @section('content')
 
     <section class="usersSection">
-        <div class="row grid">
+        <div class="grid">
             {{--==========[ Stats Progress Part One Left ]=========--}}
-            <div class="col-12 col-md-3 col-lg-6 col-xl-3 mt-4 grid-item" id="firstCols">
+            <div class="col-12 col-md-3 col-lg-6 col-xl-3 grid-item" id="firstCols">
                 <div class="homeCard">
                     <div class="container-fluid">
                         {{--==========[ Horizental Stat Contains two parts of circular and text ]=========--}}
@@ -23,7 +23,7 @@
             </div>
 
             {{--==========[ Stats Progress Part Second Left ]=========--}}
-            <div class="col-12 col-md-3 col-lg-6 col-xl-3 mt-4 grid-item">
+            <div class="col-12 col-md-3 col-lg-6 col-xl-3 grid-item">
                 <div class="homeCard">
                     <div class="homeCard">
                         <div class="container-fluid">
@@ -43,7 +43,7 @@
             </div>
 
             {{--==========[ Stats Progress Part Third Left ]=========--}}
-            <div class="col-12 col-md-3 col-lg-6 col-xl-3 mt-4 grid-item">
+            <div class="col-12 col-md-3 col-lg-6 col-xl-3 grid-item">
                 <div class="homeCard">
                     <div class="homeCard">
                         <div class="container-fluid">
@@ -63,7 +63,7 @@
             </div>
 
             {{--==========[ Stats Progress Part Fourth Left ]=========--}}
-            <div class="col-12 col-md-3 col-lg-6 col-xl-3 mt-4 grid-item">
+            <div class="col-12 col-md-3 col-lg-6 col-xl-3 grid-item">
                 <div class="homeCard">
                     <div class="homeCard">
                         <div class="container-fluid">
@@ -389,7 +389,7 @@
 
         <div class="row gridOfNotif mt-4">
             {{--==========[ To-Do Widget ]=========--}}
-            <div class="col-12 col-md-4 grid-notif" id="gridWith">
+            <div class="col-12 col-md-4 grid-notif TodoWidget" id="gridWith">
                 <div class="homeCard">
                     <div class="Card-Box Card-Box_dayMode hi-shadow-1">
                         {{--==========[ Header Of Card ]=========--}}
@@ -399,47 +399,47 @@
                                     <h3 class="Card-Box_dayMode_cardTitle Card-Box_dayMode_title pt-4 pb-3 px-3 text-right"> آخرین پیام ها</h3>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row" id="listOfTodos">
                                 <div class="col-md-12">
                                     <ul class="list">
                                         <li class="list-item">
-                                            <input type="checkbox" class="hidden-box" id="first"/>
-                                            <label for="first" class="check--label">
+                                            <input type="checkbox" class="hidden-box" id="todo[0]"/>
+                                            <label for="todo[0]" class="check--label">
                                                 <span class="check--label-box"></span>
                                                 <span class="check--label-text">چک کردن متن</span>
                                             </label>
                                         </li>
                                         <li class="list-item">
-                                            <input type="checkbox" class="hidden-box" id="second"/>
-                                            <label for="second" class="check--label">
+                                            <input type="checkbox" class="hidden-box" id="todo[1]"/>
+                                            <label for="todo[1]" class="check--label">
                                                 <span class="check--label-box"></span>
                                                 <span class="check--label-text">چک کردن متن</span>
                                             </label>
                                         </li>
                                         <li class="list-item">
-                                            <input type="checkbox" class="hidden-box" id="third"/>
-                                            <label for="third" class="check--label">
+                                            <input type="checkbox" class="hidden-box" id="todo[2]"/>
+                                            <label for="todo[2]" class="check--label">
                                                 <span class="check--label-box"></span>
                                                 <span class="check--label-text">چک کردن متن</span>
                                             </label>
                                         </li>
                                         <li class="list-item">
-                                            <input type="checkbox" class="hidden-box" id="third"/>
-                                            <label for="third" class="check--label">
+                                            <input type="checkbox" class="hidden-box" id="todo[3]"/>
+                                            <label for="todo[3]" class="check--label">
                                                 <span class="check--label-box"></span>
                                                 <span class="check--label-text">چک کردن متن</span>
                                             </label>
                                         </li>
                                         <li class="list-item">
-                                            <input type="checkbox" class="hidden-box" id="third"/>
-                                            <label for="third" class="check--label">
+                                            <input type="checkbox" class="hidden-box" id="todo[4]"/>
+                                            <label for="todo[4]" class="check--label">
                                                 <span class="check--label-box"></span>
                                                 <span class="check--label-text">چک کردن متن</span>
                                             </label>
                                         </li>
                                         <li class="list-item">
-                                            <input type="checkbox" class="hidden-box" id="third"/>
-                                            <label for="third" class="check--label">
+                                            <input type="checkbox" class="hidden-box" id="todo[5]"/>
+                                            <label for="todo[5]" class="check--label">
                                                 <span class="check--label-box"></span>
                                                 <span class="check--label-text">چک کردن متن</span>
                                             </label>
@@ -455,6 +455,7 @@
                                             <button type="button" id="addTodo_addBtn"><img class="img-fluid" src="{{asset('images/Add-icone.png')}}"></button>
                                             <input type="text" class="form-control" id="todoText" placeholder="یادداشت جدید">
                                         </div>
+                                        <button type="submit" id="hiddenSubmitBtn">Sign in</button>
                                     </form>
                                 </div>
                             </div>

@@ -272,3 +272,76 @@ stat4.animate(fakeValueofStat4);  // Number from 0.0 to 1.0
 // =======[ Moving Stat number to its container ]========
 var sat4Numb = $("#stat4 .statNumber");
 $("#stat4Container").append(sat4Numb);
+
+
+// =================[ To-do Button  ]=====================
+
+$.fn.extend({
+    animateCss: function (animationName) {
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        this.addClass('animated ' + animationName).one(animationEnd, function() {
+            $(this).removeClass('animated ' + animationName);
+        });
+    }
+});
+
+$('body').on('keydown', 'input, select, textarea', function(e) {
+    var self = $(this)
+        , form = self.parents('form:eq(0)')
+        , focusable
+        , next
+    ;
+    if (e.keyCode == 13) {
+        focusable = form.find('input,a,select,button,textarea').filter(':visible');
+        next = focusable.eq(focusable.index(this)+1);
+        if (next.length) {
+            next.focus();
+        } else {
+            form.submit();
+        }
+        return false;
+    }
+});
+
+$.fn.pressEnter = function(fn) {
+
+    return this.each(function() {
+        $(this).bind('enterPress', fn);
+        $(this).keyup(function(e){
+            if(e.keyCode == 13)
+            {
+                $(this).trigger("enterPress");
+            }
+        })
+    });
+};
+
+
+var numberofTodos = 6;
+$("#addTodo_addBtn").click(function () {
+    var textOfTodo = $("#todoText").val();
+    $("#listOfTodos ul").prepend(`
+        <li class="list-item">
+            <input type="checkbox" class="hidden-box" id="todo[`+(numberofTodos)+`]"/>
+           <label for="todo[`+(numberofTodos)+`]" class="check--label">
+              <span class="check--label-box"></span>
+              <span class="check--label-text">`+textOfTodo+`</span>
+           </label>
+        </li>
+    `);
+    $(".list-item").animateCss('slideInDown');
+});
+$('#todoText').pressEnter(function(){
+    var textOfTodo = $("#todoText").val();
+    $("#listOfTodos ul").prepend(`
+        <li class="list-item">
+            <input type="checkbox" class="hidden-box" id="todo[`+(numberofTodos)+`]"/>
+           <label for="todo[`+(numberofTodos)+`]" class="check--label">
+              <span class="check--label-box"></span>
+              <span class="check--label-text">`+textOfTodo+`</span>
+           </label>
+        </li>
+    `);
+    $(".list-item").animateCss('slideInDown');
+});
+
