@@ -1,5 +1,10 @@
 {{--==========[ Table Row items ]========= --}}
-<td><input type="checkbox"></td>
+<td>
+    <div class="pure-checkbox mt-2 mr-2">
+        <input id="cmnt_checkbox-{{$chk_name}}-" onclick="selectCmntCheckbox(event)" name="cmnt_checkbox-{{$chk_name}}-" type="checkbox" >
+        <label for="cmnt_checkbox-{{$chk_name}}-"></label>
+    </div>
+</td>
 <td class="text-right"><b>{{$comment_author}}</b></td>
 <td class="text-right py-2">{{$comment_text}}</td>
 <td>{{$comment_content}}</td>

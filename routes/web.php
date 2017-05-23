@@ -11,7 +11,9 @@
 |
 */
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+//use Illuminate\Support\Facades\Request;
 
 Route::get('/', function () {
     return view('welcome');
@@ -115,6 +117,9 @@ Route::get('/email', function (){
     Mail::to('hamid.vetr@gmail.com')->send(new \App\Mail\TestMail());
 });
 
-
+Route::post('/tiny', function (Request $request){
+    $input = $request->all();
+    dd($input);
+});
 
 Route::resource('/textboxio', 'TextboxioController');

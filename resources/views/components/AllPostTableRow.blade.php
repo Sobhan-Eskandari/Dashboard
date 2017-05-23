@@ -1,5 +1,10 @@
 {{--==========[ Table Row items ]========= --}}
-<td><input type="checkbox"></td>
+<td>
+    <div class="pure-checkbox mt-2">
+        <input id="checkbox1" name="checkbox" type="checkbox" checked="checked">
+        <label for="checkbox1"></label>
+    </div>
+</td>
 <td class="text-right py-1">
     <p class="my-1">{{$post_name}}</p>
     <p class="grey-text my-1 hi-fontSize-12">{{$post_editedBy}}</p>

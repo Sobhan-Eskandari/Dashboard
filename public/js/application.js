@@ -34,9 +34,7 @@ var translate = function (englishNumber) {
 // ============[ Home page Grid System ]===========
 // external js: packery.pkgd.js, draggabilly.pkgd.js
 // var width = window.innerWidth - 300;
-var widthofFirstCols = document.querySelector ('#firstCols')
-        .getBoundingClientRect(),
-    width = widthofFirstCols.right - widthofFirstCols.left;
+
 
 var $grid = $('.grid').packery({
     itemSelector: '.grid-item',
@@ -50,10 +48,6 @@ $grid.find('.grid-item').each( function( i, gridItem ) {
     // bind drag events to Packery
     $grid.packery( 'bindDraggabillyEvents', draggie );
 });
-
-var widthOfCols = document.querySelector ('#gridWith')
-        .getBoundingClientRect(),
-    width = widthOfCols.right - widthOfCols.left;
 
 var $grid2 = $('.gridOfNotif').packery({
     itemSelector: '.grid-notif',
@@ -319,19 +313,12 @@ $.fn.pressEnter = function(fn) {
 
 var numberofTodos = 6;
 $("#addTodo_addBtn").click(function () {
-    var textOfTodo = $("#todoText").val();
-    $("#listOfTodos ul").prepend(`
-        <li class="list-item">
-            <input type="checkbox" class="hidden-box" id="todo[`+(numberofTodos)+`]"/>
-           <label for="todo[`+(numberofTodos)+`]" class="check--label">
-              <span class="check--label-box"></span>
-              <span class="check--label-text">`+textOfTodo+`</span>
-           </label>
-        </li>
-    `);
-    $(".list-item").animateCss('slideInDown');
+    addTodo();
 });
 $('#todoText').pressEnter(function(){
+   addTodo();
+});
+function addTodo() {
     var textOfTodo = $("#todoText").val();
     $("#listOfTodos ul").prepend(`
         <li class="list-item">
@@ -343,5 +330,67 @@ $('#todoText').pressEnter(function(){
         </li>
     `);
     $(".list-item").animateCss('slideInDown');
-});
+    $("#todoText").val('');
+}
 
+// =================[ Select All Buttons  ]=====================
+function selectAllCmnt() {
+    if($("#selectAllComments").attr( "checked" ) === 'checked'){
+        $("#selectAllComments").removeAttr("checked");
+        for (var i = 0; i < 8;i++){
+            var selectorCmnt = "#cmnt_checkbox-"+i+"-";
+            $(selectorCmnt).click();
+            $(selectorCmnt).removeAttr("checked");
+        }
+    }else{
+        $("#selectAllComments").attr( "checked","checked" )
+        for (var i = 0; i < 8;i++){
+            var selector = "#cmnt_checkbox-"+i+"-";
+            $(selector).click();
+            $(selector).attr("checked","checked");
+        }
+    }
+}
+function selectCmntCheckbox(ev) {
+    // ev.preventDefault();
+    // $(ev.target.id).attr("checked","checked");
+    console.log(ev.target.nodeName);
+}
+
+
+// =================[ Calender  ]=====================
+
+window.pd = $("#inlineDatepicker").persianDatepicker({
+    timePicker: {
+        enabled: false
+    },
+    altField: '#inlineDatepickerAlt',
+    altFormat: "YYYY MM DD HH:mm:ss",
+//            minDate:1258675200000,
+//            maxDate:1358675200000,
+    checkDate: function (unix) {
+        var output = true;
+        var d = new persianDate(unix);
+        if (d.date() == 20) {
+            output = false;
+        }
+        return output;
+    },
+    checkMonth: function (month) {
+        var output = true;
+        if (month == 1) {
+            output = false;
+        }
+        return output;
+
+    }, checkYear: function (year) {
+        var output = true;
+        if (year == 1396) {
+            output = false;
+        }
+        return output;
+    }
+
+}).data('datepicker');
+
+// $("#inlineDatepicker").pDatepicker("setDate", [1391, 12, 1, 11, 14]);

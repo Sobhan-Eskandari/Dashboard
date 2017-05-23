@@ -24,6 +24,9 @@
     <!-- Hi_Frameworkwork Styles -->
     <link rel="stylesheet" href="{{ asset('Hi_Framework/dist/Hi_Framework.css') }}">
 
+    {{--<script src="{{asset('js/ckeditor.js')}}"></script>--}}
+    <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>
+
 
     {{--on pages we wanna user bootstrap-select the following should be included--}}
     {{--<link rel="stylesheet" href="{{ asset('Hi_Framework/components/Dropdown/Other Libraries/bootstrap-select/bootstrap.min.css') }}">--}}
@@ -128,7 +131,7 @@
                     {{--============[ Posts Menu of dashboard ]===========--}}
                     <h5 role="tab" class="pt-2" id="posts" data-toggle="collapse" data-parent="#accordion" href="#postsMenu" aria-expanded="false" aria-controls="postsMenu">
                         <a class="Sidebar_menu_link">
-                            <i class="fa fa-chevron-left hi-fontSize-14" aria-hidden="true"></i>پست ها<i class="fa fa-tachometer ml-4" aria-hidden="true"></i>
+                            <i class="fa fa-chevron-left hi-fontSize-14" aria-hidden="true"></i>پست ها<i class="fa fa-pencil-square-o ml-4" aria-hidden="true"></i>
                         </a>
                     </h5>
 
@@ -309,6 +312,7 @@
 <script src="{{ asset('js/clock.js') }}"></script>
 <script src="{{ asset('js/jquery.easydropdown.js') }}"></script>
 <script src="{{ asset('js/public.js') }}"></script>
+
 
 <script>
 

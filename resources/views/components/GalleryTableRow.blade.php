@@ -1,5 +1,10 @@
 {{--==========[ Gallery Table Row items ]========= --}}
-<td><input type="checkbox"></td>
+<td>
+    <div class="pure-checkbox mt-2">
+        <input id="checkbox1" name="checkbox" type="checkbox" checked="checked">
+        <label for="checkbox1"></label>
+    </div>
+</td>
 <td class="py-1 text-center userInfoPlace">
     <img class="rounded img-fluid hi-size-5" src="{{ asset('images/avatar.png') }}">
     <p class="username">{{$file_name}}</p>
