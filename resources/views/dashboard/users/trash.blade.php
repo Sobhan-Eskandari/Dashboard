@@ -22,7 +22,12 @@
 
                                 {{--==========[ Table Headers ]========= --}}
                                 <tr>
-                                    <th><input type="checkbox"></th>
+                                    <th class="pl-0">
+                                        <div class="pure-checkbox mt-2">
+                                            <input id="selectAllUsers" class="selectAllCheckboxes" name="checkbox" type="checkbox" onclick="selectAllCmnt()">
+                                            <label for="selectAllUsers"></label>
+                                        </div>
+                                    </th>
                                     <th class="text-right">علامت زدن همه</th>
                                     <th>نام</th>
                                     <th>پست الکترونیکی</th>
@@ -34,9 +39,15 @@
 
                                 </thead>
                                 <tbody>
+
+                                @for ($i = 0; $i < 8; $i++)
                                 {{--==========[ Table Row ]========= --}}
                                 <tr>
                                     @component('components.UsersTableRow')
+
+                                        @slot('chk_name')
+                                            {{ $i }}
+                                        @endslot
 
                                         @slot('user_username')
                                             Serpro
@@ -60,117 +71,7 @@
 
                                     @endcomponent
                                 </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.UsersTableRow')
-
-                                        @slot('user_username')
-                                            Serpro
-                                        @endslot
-
-                                        @slot('user_fullname')
-                                            سبحان اسکندری
-                                        @endslot
-
-                                        @slot('user_email')
-                                            serprofessional@gmail.com
-                                        @endslot
-
-                                        @slot('user_number')
-                                            ۰۹۱۱۲۳۴۴۴۴۴
-                                        @endslot
-
-                                        @slot('trash')
-                                            yes
-                                        @endslot
-
-                                    @endcomponent
-                                </tr>
-
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.UsersTableRow')
-
-                                        @slot('user_username')
-                                            Serpro
-                                        @endslot
-
-                                        @slot('user_fullname')
-                                            سبحان اسکندری
-                                        @endslot
-
-                                        @slot('user_email')
-                                            serprofessional@gmail.com
-                                        @endslot
-
-                                        @slot('user_number')
-                                            ۰۹۱۱۲۳۴۴۴۴۴
-                                        @endslot
-
-                                        @slot('trash')
-                                            yes
-                                        @endslot
-
-                                    @endcomponent
-                                </tr>
-
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.UsersTableRow')
-
-                                        @slot('user_username')
-                                            Serpro
-                                        @endslot
-
-                                        @slot('user_fullname')
-                                            سبحان اسکندری
-                                        @endslot
-
-                                        @slot('user_email')
-                                            serprofessional@gmail.com
-                                        @endslot
-
-                                        @slot('user_number')
-                                            ۰۹۱۱۲۳۴۴۴۴۴
-                                        @endslot
-
-                                        @slot('trash')
-                                            yes
-                                        @endslot
-
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.UsersTableRow')
-
-                                        @slot('user_username')
-                                            Serpro
-                                        @endslot
-
-                                        @slot('user_fullname')
-                                            سبحان اسکندری
-                                        @endslot
-
-                                        @slot('user_email')
-                                            serprofessional@gmail.com
-                                        @endslot
-
-                                        @slot('user_number')
-                                            ۰۹۱۱۲۳۴۴۴۴۴
-                                        @endslot
-
-                                        @slot('trash')
-                                            yes
-                                        @endslot
-
-                                    @endcomponent
-                                </tr>
-
+                                @endfor
 
                                 </tbody>
                             </table>

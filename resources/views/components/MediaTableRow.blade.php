@@ -1,8 +1,8 @@
 {{--==========[ Gallery Table Row items ]========= --}}
 <td>
-    <div class="pure-checkbox mt-2">
-        <input id="checkbox1" name="checkbox" type="checkbox" checked="checked">
-        <label for="checkbox1"></label>
+    <div class="pure-checkbox mt-2 mr-2">
+        <input id="media_checkbox-{{$chk_name}}" class="checkbox-{{$chk_name}}" onclick="selectCmntCheckbox(event)" name="media_checkbox-{{$chk_name}}" type="checkbox" >
+        <label for="media_checkbox-{{$chk_name}}"></label>
     </div>
 </td>
 <td class="py-1 text-center userInfoPlace">

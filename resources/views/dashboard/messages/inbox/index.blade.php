@@ -44,7 +44,12 @@
 
                                 {{--==========[ Table Headers ]========= --}}
                                 <tr>
-                                    <th><input type="checkbox"></th>
+                                    <th class="pl-0">
+                                        <div class="pure-checkbox mt-2">
+                                            <input id="selectAllMsgInbox" class="selectAllCheckboxes" name="checkbox" type="checkbox" onclick="selectAllCmnt()">
+                                            <label for="selectAllMsgInbox"></label>
+                                        </div>
+                                    </th>
                                     <th class="text-right">علامت زدن همه</th>
                                     <th width="50%">صندوق ورودی</th>
                                     <th>زمان</th>
@@ -54,156 +59,37 @@
 
                                 </thead>
                                 <tbody>
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.MessagesInboxTableRow')
+                                @for ($i = 0; $i < 8; $i++)
+                                    {{--==========[ Table Row ]========= --}}
+                                    <tr>
+                                        @component('components.MessagesInboxTableRow')
+
+                                            @slot('chk_name')
+                                                {{ $i }}
+                                            @endslot
+
 
                                         @slot('sender_name')
-                                            حمید وتر
-                                        @endslot
+                                                حمید وتر
+                                            @endslot
 
-                                        @slot('sender_text')
-                                                هواپیمای فضایی بدون سرنشین نیروی هوایی آمریکا به نام X-37B دیروز صبح در مرکز فضایی کِنِدی ناسا به زمین نشست،
-                                        @endslot
+                                            @slot('sender_text')
+                                                    هواپیمای فضایی بدون سرنشین نیروی هوایی آمریکا به نام X-37B دیروز صبح در مرکز فضایی کِنِدی ناسا به زمین نشست،
+                                            @endslot
 
-                                        @slot('sender_time')
-۲۲:۳۰
-                                        @endslot
+                                            @slot('sender_time')
+    ۲۲:۳۰
+                                            @endslot
 
-                                        @slot('sender_date')
-۱۳۹۶/۵/۴
-                                        @endslot
+                                            @slot('sender_date')
+    ۱۳۹۶/۵/۴
+                                            @endslot
 
-                                        @slot('trash')@endslot
+                                            @slot('trash')@endslot
 
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.MessagesInboxTableRow')
-
-                                        @slot('sender_name')
-                                            حمید وتر
-                                        @endslot
-
-                                        @slot('sender_text')
-                                            هواپیمای فضایی بدون سرنشین نیروی هوایی آمریکا به نام X-37B دیروز صبح در مرکز فضایی کِنِدی ناسا به زمین نشست،
-                                        @endslot
-
-                                        @slot('sender_time')
-                                            ۲۲:۳۰
-                                        @endslot
-
-                                        @slot('sender_date')
-                                            ۱۳۹۶/۵/۴
-                                        @endslot
-
-                                        @slot('trash')@endslot
-
-                                    @endcomponent
-                                </tr>
-
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.MessagesInboxTableRow')
-
-                                        @slot('sender_name')
-                                            حمید وتر
-                                        @endslot
-
-                                        @slot('sender_text')
-                                            هواپیمای فضایی بدون سرنشین نیروی هوایی آمریکا به نام X-37B دیروز صبح در مرکز فضایی کِنِدی ناسا به زمین نشست،
-                                        @endslot
-
-                                        @slot('sender_time')
-                                            ۲۲:۳۰
-                                        @endslot
-
-                                        @slot('sender_date')
-                                            ۱۳۹۶/۵/۴
-                                        @endslot
-
-                                        @slot('trash')@endslot
-
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.MessagesInboxTableRow')
-
-                                        @slot('sender_name')
-                                            حمید وتر
-                                        @endslot
-
-                                        @slot('sender_text')
-                                            هواپیمای فضایی بدون سرنشین نیروی هوایی آمریکا به نام X-37B دیروز صبح در مرکز فضایی کِنِدی ناسا به زمین نشست،
-                                        @endslot
-
-                                        @slot('sender_time')
-                                            ۲۲:۳۰
-                                        @endslot
-
-                                        @slot('sender_date')
-                                            ۱۳۹۶/۵/۴
-                                        @endslot
-
-                                        @slot('trash')@endslot
-
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.MessagesInboxTableRow')
-
-                                        @slot('sender_name')
-                                            حمید وتر
-                                        @endslot
-
-                                        @slot('sender_text')
-                                            هواپیمای فضایی بدون سرنشین نیروی هوایی آمریکا به نام X-37B دیروز صبح در مرکز فضایی کِنِدی ناسا به زمین نشست،
-                                        @endslot
-
-                                        @slot('sender_time')
-                                            ۲۲:۳۰
-                                        @endslot
-
-                                        @slot('sender_date')
-                                            ۱۳۹۶/۵/۴
-                                        @endslot
-
-                                        @slot('trash')@endslot
-
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.MessagesInboxTableRow')
-
-                                        @slot('sender_name')
-                                            حمید وتر
-                                        @endslot
-
-                                        @slot('sender_text')
-                                            هواپیمای فضایی بدون سرنشین نیروی هوایی آمریکا به نام X-37B دیروز صبح در مرکز فضایی کِنِدی ناسا به زمین نشست،
-                                        @endslot
-
-                                        @slot('sender_time')
-                                            ۲۲:۳۰
-                                        @endslot
-
-                                        @slot('sender_date')
-                                            ۱۳۹۶/۵/۴
-                                        @endslot
-
-                                        @slot('trash')@endslot
-
-                                    @endcomponent
-                                </tr>
+                                        @endcomponent
+                                    </tr>
+                                @endfor
 
                                 </tbody>
                             </table>

@@ -101,9 +101,7 @@ Route::get('/messages/inbox/trash', function () {
 Route::get('/sliders', function () {
     return view('dashboard.sliders.index');
 });
-Route::get('/sliders/trash', function () {
-    return view('dashboard.sliders.trash');
-});
+
 
 Route::get('/settings', function () {
     return view('dashboard.settings.index');

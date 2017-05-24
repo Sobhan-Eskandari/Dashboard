@@ -66,7 +66,12 @@
 
                                 {{--==========[ Table Headers ]========= --}}
                                 <tr>
-                                    <th><input type="checkbox"></th>
+                                    <th class="pl-0">
+                                        <div class="pure-checkbox mt-2">
+                                            <input id="selectAllPost" class="selectAllCheckboxes" name="checkbox" type="checkbox" onclick="selectAllCmnt()">
+                                            <label for="selectAllPost"></label>
+                                        </div>
+                                    </th>
                                     <th class="text-right">علامت زدن همه</th>
                                     <th>نویسنده</th>
                                     <th>دسته بندی ها</th>
@@ -78,9 +83,14 @@
 
                                 </thead>
                                 <tbody>
+                                @for ($i = 0; $i < 8; $i++)
                                 {{--==========[ Table Row ]========= --}}
                                 <tr>
                                     @component('components.AllPostTableRow')
+
+                                        @slot('chk_name')
+                                            {{ $i }}
+                                        @endslot
 
                                         @slot('post_name')
                                             پرسشنامه هوش مصنوعی
@@ -118,253 +128,7 @@
 
                                     @endcomponent
                                 </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.AllPostTableRow')
-
-                                        @slot('post_name')
-                                            پرسشنامه هوش مصنوعی
-                                        @endslot
-
-                                        @slot('post_editedBy')
-                                            ویرایش شده توسط نیما شیرین زاده در ۹۶/۶/۶
-                                        @endslot
-
-                                        @slot('post_author')
-                                            سبحان اسکندری
-                                        @endslot
-
-                                        @slot('post_category')
-                                            محتوای علمی و ...
-                                        @endslot
-
-                                        @slot('post_tag')
-                                            علمی - هوش مصنوعی - آموزش
-                                        @endslot
-
-                                        @slot('post_date')
-                                            ۱۳۹۶/۳/۳
-                                        @endslot
-
-                                        @slot('post_commentsCount')
-                                            ۲۵
-                                        @endslot
-
-                                        @slot('post_views')
-                                            ۱۰۰
-                                        @endslot
-
-                                        @slot('trash')@endslot
-
-
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.AllPostTableRow')
-
-                                        @slot('post_name')
-                                            پرسشنامه هوش مصنوعی
-                                        @endslot
-
-                                        @slot('post_editedBy')
-                                            ویرایش شده توسط نیما شیرین زاده در ۹۶/۶/۶
-                                        @endslot
-
-                                        @slot('post_author')
-                                            سبحان اسکندری
-                                        @endslot
-
-                                        @slot('post_category')
-                                            محتوای علمی و ...
-                                        @endslot
-
-                                        @slot('post_tag')
-                                            علمی - هوش مصنوعی - آموزش
-                                        @endslot
-
-                                        @slot('post_date')
-                                            ۱۳۹۶/۳/۳
-                                        @endslot
-
-                                        @slot('post_commentsCount')
-                                            ۲۵
-                                        @endslot
-
-                                        @slot('post_views')
-                                            ۱۰۰
-                                        @endslot
-
-                                        @slot('trash')@endslot
-
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.AllPostTableRow')
-
-                                        @slot('post_name')
-                                            پرسشنامه هوش مصنوعی
-                                        @endslot
-
-                                        @slot('post_editedBy')
-                                            ویرایش شده توسط نیما شیرین زاده در ۹۶/۶/۶
-                                        @endslot
-
-                                        @slot('post_author')
-                                            سبحان اسکندری
-                                        @endslot
-
-                                        @slot('post_category')
-                                            محتوای علمی و ...
-                                        @endslot
-
-                                        @slot('post_tag')
-                                            علمی - هوش مصنوعی - آموزش
-                                        @endslot
-
-                                        @slot('post_date')
-                                            ۱۳۹۶/۳/۳
-                                        @endslot
-
-                                        @slot('post_commentsCount')
-                                            ۲۵
-                                        @endslot
-
-                                        @slot('post_views')
-                                            ۱۰۰
-                                        @endslot
-
-                                        @slot('trash')@endslot
-
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.AllPostTableRow')
-
-                                        @slot('post_name')
-                                            پرسشنامه هوش مصنوعی
-                                        @endslot
-
-                                        @slot('post_editedBy')
-                                            ویرایش شده توسط نیما شیرین زاده در ۹۶/۶/۶
-                                        @endslot
-
-                                        @slot('post_author')
-                                            سبحان اسکندری
-                                        @endslot
-
-                                        @slot('post_category')
-                                            محتوای علمی و ...
-                                        @endslot
-
-                                        @slot('post_tag')
-                                            علمی - هوش مصنوعی - آموزش
-                                        @endslot
-
-                                        @slot('post_date')
-                                            ۱۳۹۶/۳/۳
-                                        @endslot
-
-                                        @slot('post_commentsCount')
-                                            ۲۵
-                                        @endslot
-
-                                        @slot('post_views')
-                                            ۱۰۰
-                                        @endslot
-
-                                        @slot('trash')@endslot
-
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.AllPostTableRow')
-
-                                        @slot('post_name')
-                                            پرسشنامه هوش مصنوعی
-                                        @endslot
-
-                                        @slot('post_editedBy')
-                                            ویرایش شده توسط نیما شیرین زاده در ۹۶/۶/۶
-                                        @endslot
-
-                                        @slot('post_author')
-                                            سبحان اسکندری
-                                        @endslot
-
-                                        @slot('post_category')
-                                            محتوای علمی و ...
-                                        @endslot
-
-                                        @slot('post_tag')
-                                            علمی - هوش مصنوعی - آموزش
-                                        @endslot
-
-                                        @slot('post_date')
-                                            ۱۳۹۶/۳/۳
-                                        @endslot
-
-                                        @slot('post_commentsCount')
-                                            ۲۵
-                                        @endslot
-
-                                        @slot('post_views')
-                                            ۱۰۰
-                                        @endslot
-
-                                        @slot('trash')@endslot
-
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.AllPostTableRow')
-
-                                        @slot('post_name')
-                                            پرسشنامه هوش مصنوعی
-                                        @endslot
-
-                                        @slot('post_editedBy')
-                                            ویرایش شده توسط نیما شیرین زاده در ۹۶/۶/۶
-                                        @endslot
-
-                                        @slot('post_author')
-                                            سبحان اسکندری
-                                        @endslot
-
-                                        @slot('post_category')
-                                            محتوای علمی و ...
-                                        @endslot
-
-                                        @slot('post_tag')
-                                            علمی - هوش مصنوعی - آموزش
-                                        @endslot
-
-                                        @slot('post_date')
-                                            ۱۳۹۶/۳/۳
-                                        @endslot
-
-                                        @slot('post_commentsCount')
-                                            ۲۵
-                                        @endslot
-
-                                        @slot('post_views')
-                                            ۱۰۰
-                                        @endslot
-
-                                        @slot('trash')@endslot
-
-                                    @endcomponent
-                                </tr>
+                                @endfor
 
                                 </tbody>
                             </table>

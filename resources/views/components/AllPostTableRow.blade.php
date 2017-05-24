@@ -1,8 +1,8 @@
 {{--==========[ Table Row items ]========= --}}
 <td>
-    <div class="pure-checkbox mt-2">
-        <input id="checkbox1" name="checkbox" type="checkbox" checked="checked">
-        <label for="checkbox1"></label>
+    <div class="pure-checkbox mt-2 mr-2">
+        <input id="posts_checkbox-{{$chk_name}}" class="checkbox-{{$chk_name}}" onclick="selectCmntCheckbox(event)" name="posts_checkbox-{{$chk_name}}" type="checkbox" >
+        <label for="posts_checkbox-{{$chk_name}}"></label>
     </div>
 </td>
 <td class="text-right py-1">

@@ -53,7 +53,7 @@
                                 <tr>
                                     <th class="pl-0">
                                         <div class="pure-checkbox mt-2">
-                                            <input id="selectAllComments" name="checkbox" type="checkbox" onclick="selectAllCmnt()">
+                                            <input id="selectAllComments" class="selectAllCheckboxes" name="checkbox" type="checkbox" onclick="selectAllCmnt()">
                                             <label for="selectAllComments"></label>
                                         </div>
                                     </th>

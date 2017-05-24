@@ -22,7 +22,12 @@
 
                                 {{--==========[ Table Headers ]========= --}}
                                 <tr>
-                                    <th><input type="checkbox"></th>
+                                    <th class="pl-0">
+                                        <div class="pure-checkbox mt-2">
+                                            <input id="selectAllMedia" class="selectAllCheckboxes" name="checkbox" type="checkbox" onclick="selectAllCmnt()">
+                                            <label for="selectAllMedia"></label>
+                                        </div>
+                                    </th>
                                     <th class="text-right">علامت زدن همه</th>
                                     <th>توسط</th>
                                     <th>محتوا</th>
@@ -32,155 +37,37 @@
 
                                 </thead>
                                 <tbody>
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.GalleryTableRow')
-                                        @slot('file_name')
+
+                                @for ($i = 0; $i < 8; $i++)
+                                    {{--==========[ Table Row ]========= --}}
+                                    <tr>
+                                        @component('components.MediaTableRow')
+                                            @slot('chk_name')
+                                                {{ $i }}
+                                            @endslot
+
+                                            @slot('file_name')
                                             file_of_library.png
-                                        @endslot
+                                            @endslot
 
-                                        @slot('file_uploader')
-                                           حمید وتر
-                                        @endslot
-
-                                        @slot('file_content')
-آموزش کلی
-                                        @endslot
-
-                                        @slot('file_date')
-۹۵/۵/۵
-                                        @endslot
-
-                                        @slot('trash')
-                                            yes
-                                        @endslot
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.GalleryTableRow')
-                                        @slot('file_name')
-                                            file_of_library.png
-                                        @endslot
-
-                                        @slot('file_uploader')
+                                            @slot('file_uploader')
                                             حمید وتر
-                                        @endslot
+                                            @endslot
 
-                                        @slot('file_content')
+                                            @slot('file_content')
                                             آموزش کلی
-                                        @endslot
+                                            @endslot
 
-                                        @slot('file_date')
+                                            @slot('file_date')
                                             ۹۵/۵/۵
-                                        @endslot
+                                            @endslot
 
-                                        @slot('trash')
+                                            @slot('trash')
                                             yes
-                                        @endslot
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.GalleryTableRow')
-                                        @slot('file_name')
-                                            file_of_library.png
-                                        @endslot
-
-                                        @slot('file_uploader')
-                                            حمید وتر
-                                        @endslot
-
-                                        @slot('file_content')
-                                            آموزش کلی
-                                        @endslot
-
-                                        @slot('file_date')
-                                            ۹۵/۵/۵
-                                        @endslot
-
-                                        @slot('trash')
-                                            yes
-                                        @endslot
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.GalleryTableRow')
-                                        @slot('file_name')
-                                            file_of_library.png
-                                        @endslot
-
-                                        @slot('file_uploader')
-                                            حمید وتر
-                                        @endslot
-
-                                        @slot('file_content')
-                                            آموزش کلی
-                                        @endslot
-
-                                        @slot('file_date')
-                                            ۹۵/۵/۵
-                                        @endslot
-
-                                        @slot('trash')
-                                            yes
-                                        @endslot
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.GalleryTableRow')
-                                        @slot('file_name')
-                                            file_of_library.png
-                                        @endslot
-
-                                        @slot('file_uploader')
-                                            حمید وتر
-                                        @endslot
-
-                                        @slot('file_content')
-                                            آموزش کلی
-                                        @endslot
-
-                                        @slot('file_date')
-                                            ۹۵/۵/۵
-                                        @endslot
-
-                                        @slot('trash')
-                                            yes
-                                        @endslot
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.GalleryTableRow')
-                                        @slot('file_name')
-                                            file_of_library.png
-                                        @endslot
-
-                                        @slot('file_uploader')
-                                            حمید وتر
-                                        @endslot
-
-                                        @slot('file_content')
-                                            آموزش کلی
-                                        @endslot
-
-                                        @slot('file_date')
-                                            ۹۵/۵/۵
-                                        @endslot
-
-                                        @slot('trash')
-                                            yes
-                                        @endslot
-                                    @endcomponent
-                                </tr>
+                                            @endslot
+                                        @endcomponent
+                                    </tr>
+                                @endfor
 
                                 </tbody>
                             </table>

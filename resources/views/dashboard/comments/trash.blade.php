@@ -22,7 +22,12 @@
 
                                 {{--==========[ Table Headers ]========= --}}
                                 <tr>
-                                    <th><input type="checkbox"></th>
+                                    <th class="pl-0">
+                                        <div class="pure-checkbox mt-2">
+                                            <input id="selectAllComments" class="selectAllCheckboxes" name="checkbox" type="checkbox" onclick="selectAllCmnt()">
+                                            <label for="selectAllComments"></label>
+                                        </div>
+                                    </th>
                                     <th class="text-right">علامت زدن همه</th>
                                     <th width="50%">متن</th>
                                     <th>محتوا</th>
@@ -33,191 +38,46 @@
 
                                 </thead>
                                 <tbody>
+
+
                                 {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.CommentsTableRow')
 
-                                        @slot('comment_author')
-                                            حمید وتر
-                                        @endslot
+                                @for ($i = 0; $i < 8; $i++)
+                                    {{--==========[ Table Row ]========= --}}
+                                    <tr>
+                                        @component('components.CommentsTableRow')
 
-                                        @slot('comment_text')
+                                            @slot('chk_name')
+                                                {{ $i }}
+                                            @endslot
+
+                                            @slot('comment_author')
+                                                حمید وتر
+                                            @endslot
+
+                                            @slot('comment_text')
                                                 جهت دسترسی به قابلیت های پیشرفته مانند پخش ویدئو، شبکه های مورد علاقه و شناسه های کاربری، ...
-                                        @endslot
+                                            @endslot
 
-                                        @slot('comment_content')
+                                            @slot('comment_content')
                                                 داده کاوی
-                                        @endslot
+                                            @endslot
 
-                                        @slot('comment_time')
+                                            @slot('comment_time')
                                                 ۲۲:۳۰
-                                        @endslot
+                                            @endslot
 
-                                        @slot('comment_date')
+                                            @slot('comment_date')
                                                 ۹۵/۳/۴
-                                        @endslot
-
-                                        @slot('trash')
-                                                yes
-                                        @endslot
-
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.CommentsTableRow')
-
-                                        @slot('comment_author')
-                                            حمید وتر
-                                        @endslot
-
-                                        @slot('comment_text')
-                                            جهت دسترسی به قابلیت های پیشرفته مانند پخش ویدئو، شبکه های مورد علاقه و شناسه های کاربری، ...
-                                        @endslot
-
-                                        @slot('comment_content')
-                                            داده کاوی
-                                        @endslot
-
-                                        @slot('comment_time')
-                                            ۲۲:۳۰
-                                        @endslot
-
-                                        @slot('comment_date')
-                                            ۹۵/۳/۴
-                                        @endslot
-
-                                            @slot('trash')
-                                                yes
                                             @endslot
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.CommentsTableRow')
-
-                                        @slot('comment_author')
-                                            حمید وتر
-                                        @endslot
-
-                                        @slot('comment_text')
-                                            جهت دسترسی به قابلیت های پیشرفته مانند پخش ویدئو، شبکه های مورد علاقه و شناسه های کاربری، ...
-                                        @endslot
-
-                                        @slot('comment_content')
-                                            داده کاوی
-                                        @endslot
-
-                                        @slot('comment_time')
-                                            ۲۲:۳۰
-                                        @endslot
-
-                                        @slot('comment_date')
-                                            ۹۵/۳/۴
-                                        @endslot
 
                                             @slot('trash')
                                                 yes
                                             @endslot
 
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.CommentsTableRow')
-
-                                        @slot('comment_author')
-                                            حمید وتر
-                                        @endslot
-
-                                        @slot('comment_text')
-                                            جهت دسترسی به قابلیت های پیشرفته مانند پخش ویدئو، شبکه های مورد علاقه و شناسه های کاربری، ...
-                                        @endslot
-
-                                        @slot('comment_content')
-                                            داده کاوی
-                                        @endslot
-
-                                        @slot('comment_time')
-                                            ۲۲:۳۰
-                                        @endslot
-
-                                        @slot('comment_date')
-                                            ۹۵/۳/۴
-                                        @endslot
-
-                                            @slot('trash')
-                                                yes
-                                            @endslot
-
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.CommentsTableRow')
-
-                                        @slot('comment_author')
-                                            حمید وتر
-                                        @endslot
-
-                                        @slot('comment_text')
-                                            جهت دسترسی به قابلیت های پیشرفته مانند پخش ویدئو، شبکه های مورد علاقه و شناسه های کاربری، ...
-                                        @endslot
-
-                                        @slot('comment_content')
-                                            داده کاوی
-                                        @endslot
-
-                                        @slot('comment_time')
-                                            ۲۲:۳۰
-                                        @endslot
-
-                                        @slot('comment_date')
-                                            ۹۵/۳/۴
-                                        @endslot
-
-                                        @slot('trash')
-                                            yes
-                                        @endslot
-
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.CommentsTableRow')
-
-                                        @slot('comment_author')
-                                            حمید وتر
-                                        @endslot
-
-                                        @slot('comment_text')
-                                            جهت دسترسی به قابلیت های پیشرفته مانند پخش ویدئو، شبکه های مورد علاقه و شناسه های کاربری، ...
-                                        @endslot
-
-                                        @slot('comment_content')
-                                            داده کاوی
-                                        @endslot
-
-                                        @slot('comment_time')
-                                            ۲۲:۳۰
-                                        @endslot
-
-                                        @slot('comment_date')
-                                            ۹۵/۳/۴
-                                        @endslot
-
-                                        @slot('trash')
-                                            yes
-                                        @endslot
-
-                                    @endcomponent
-                                </tr>
-
+                                        @endcomponent
+                                    </tr>
+                                @endfor
 
                                 </tbody>
                             </table>

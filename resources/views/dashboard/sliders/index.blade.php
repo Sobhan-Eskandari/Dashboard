@@ -32,7 +32,12 @@
 
                                 {{--==========[ Table Headers ]========= --}}
                                 <tr>
-                                    <th><input type="checkbox"></th>
+                                    <th class="pl-0">
+                                        <div class="pure-checkbox mt-2">
+                                            <input id="selectAllSliders" class="selectAllCheckboxes" name="checkbox" type="checkbox" onclick="selectAllCmnt()">
+                                            <label for="selectAllSliders"></label>
+                                        </div>
+                                    </th>
                                     <th class="text-right">علامت زدن همه</th>
                                     <th></th>
                                     <th></th>
@@ -41,58 +46,26 @@
                                 </thead>
                                 <tbody>
 
-                                <tr>
-                                    {{--==========[ Gallery Table Row items ]========= --}}
-                                    @component('components.SlidersTableRow')
-                                        @slot('slider_text')
-                                            این بخش نسبتا کوچک در میان سطح داخلی نئوکورتکس در مرکز مغز پنهان شده
-                                        @endslot
+                                @for ($i = 0; $i < 4; $i++)
+                                    <tr>
+                                        {{--==========[ Gallery Table Row items ]========= --}}
+                                        @component('components.SlidersTableRow')
 
-                                        @slot('slider_edited')
-                                            توسط حمید وتر ایجاد شده در : ۹۶/۶/۶
-                                        @endslot
+                                            @slot('chk_name')
+                                                {{ $i }}
+                                            @endslot
 
-                                    @endcomponent
-                                </tr>
+                                            @slot('slider_text')
+                                                این بخش نسبتا کوچک در میان سطح داخلی نئوکورتکس در مرکز مغز پنهان شده
+                                            @endslot
 
-                                <tr>
-                                    {{--==========[ Gallery Table Row items ]========= --}}
-                                    @component('components.SlidersTableRow')
-                                        @slot('slider_text')
-                                            این بخش نسبتا کوچک در میان سطح داخلی نئوکورتکس در مرکز مغز پنهان شده
-                                        @endslot
-
-                                        @slot('slider_edited')
+                                            @slot('slider_edited')
                                                 توسط حمید وتر ایجاد شده در : ۹۶/۶/۶
-                                        @endslot
-                                    @endcomponent
-                                </tr>
+                                            @endslot
 
-                                <tr>
-                                    {{--==========[ Gallery Table Row items ]========= --}}
-                                    @component('components.SlidersTableRow')
-                                        @slot('slider_text')
-                                            این بخش نسبتا کوچک در میان سطح داخلی نئوکورتکس در مرکز مغز پنهان شده
-                                        @endslot
-
-                                        @slot('slider_edited')
-                                            توسط حمید وتر ایجاد شده در : ۹۶/۶/۶
-                                        @endslot
-                                    @endcomponent
-                                </tr>
-
-                                <tr>
-                                    {{--==========[ Gallery Table Row items ]========= --}}
-                                    @component('components.SlidersTableRow')
-                                        @slot('slider_text')
-                                            این بخش نسبتا کوچک در میان سطح داخلی نئوکورتکس در مرکز مغز پنهان شده
-                                        @endslot
-
-                                        @slot('slider_edited')
-                                            توسط حمید وتر ایجاد شده در : ۹۶/۶/۶
-                                        @endslot
-                                    @endcomponent
-                                </tr>
+                                        @endcomponent
+                                    </tr>
+                                @endfor
 
                                 </tbody>
                             </table>
@@ -101,7 +74,7 @@
 
                     {{--==========[ Submit Button ]========= --}}
                     <div class="row">
-                        <div class="col-12 text-right">
+                        <div class="col-12 text-right mt-3 pr-0">
                             <button class="btn btn-primary hi-shadow-1">
                                 تاییید
                             </button>

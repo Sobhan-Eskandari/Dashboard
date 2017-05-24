@@ -333,7 +333,7 @@ function addTodo() {
     $("#todoText").val('');
 }
 
-// =================[ Select All Buttons  ]=====================
+// =================[ Select All Comments Buttons  ]=====================
 function selectAllCmnt() {
     if($("#selectAllComments").attr( "checked" ) === 'checked'){
         $("#selectAllComments").removeAttr("checked");
@@ -346,15 +346,41 @@ function selectAllCmnt() {
         $("#selectAllComments").attr( "checked","checked" )
         for (var i = 0; i < 8;i++){
             var selector = "#cmnt_checkbox-"+i+"-";
-            $(selector).click();
+            if($(selector).attr( "checked" ) !== 'checked') {
+                $(selector).click();
+            }
             $(selector).attr("checked","checked");
         }
     }
 }
 function selectCmntCheckbox(ev) {
     // ev.preventDefault();
-    // $(ev.target.id).attr("checked","checked");
-    console.log(ev.target.nodeName);
+     $("#"+ev.target.id).attr("checked","checked");
+}
+
+// =================[ Select All Comments Buttons  ]=====================
+function selectAllCmnt() {
+    if($(".selectAllCheckboxes").attr( "checked" ) === 'checked'){
+        $(".selectAllCheckboxes").removeAttr("checked");
+        for (var i = 0; i < 8;i++){
+            var selectorCmnt = ".checkbox-"+i;
+            $(selectorCmnt).click();
+            $(selectorCmnt).removeAttr("checked");
+        }
+    }else{
+        $(".selectAllCheckboxes").attr( "checked","checked" )
+        for (var i = 0; i < 8;i++){
+            var selector = ".checkbox-"+i;
+            if($(selector).attr( "checked" ) !== 'checked') {
+                $(selector).click();
+            }
+            $(selector).attr("checked","checked");
+        }
+    }
+}
+function selectCmntCheckbox(ev) {
+    // ev.preventDefault();
+    $("#"+ev.target.id).attr("checked","checked");
 }
 
 
