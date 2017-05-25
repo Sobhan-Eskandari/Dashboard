@@ -5,6 +5,10 @@
 
     @endcomponent
 @endsection
+@section('css_resources')
+    <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>
+@endsection
+
 
 @section('content')
 
@@ -238,6 +242,8 @@
         </script>
 
     </section>
+@endsection
 
-
+@section('js_resources')
+    <script src="{{ asset('Hi_Framework/javascript/other/dropzone.js') }}"></script>
 @endsection

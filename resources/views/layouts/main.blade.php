@@ -24,9 +24,7 @@
     <!-- Hi_Frameworkwork Styles -->
     <link rel="stylesheet" href="{{ asset('Hi_Framework/dist/Hi_Framework.css') }}">
 
-    {{--<script src="{{asset('js/ckeditor.js')}}"></script>--}}
-    <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>
-
+    @yield('css_resources')
 
     {{--on pages we wanna user bootstrap-select the following should be included--}}
     {{--<link rel="stylesheet" href="{{ asset('Hi_Framework/components/Dropdown/Other Libraries/bootstrap-select/bootstrap.min.css') }}">--}}
@@ -60,7 +58,7 @@
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         حمید وتر
                                     </button>
-                                    <div data-dropdown-in="bounceIn" data-dropdown-out="bounceOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
+                                    <div data-dropdown-in="fadeIn" data-dropdown-out="fadeOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
                                         <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-user ml-2" aria-hidden="true"></i> پروفایل من</a>
                                         <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-file-text-o ml-2" aria-hidden="true"></i> مدیران</a>
                                         <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-download ml-2" aria-hidden="true"></i> نسخه پشتیبانی</a>
@@ -291,56 +289,21 @@
     </div>
 </div>
 
-<!-- Bootstrap core JavaScript
-================================================== -->
+
 
 {{--<script src="{{ asset('Resources/js/Jquery/jquery-3.2.0.min.js') }}"></script>--}}
 <script src="{{ asset('Resources/js/Jquery/jquery-2.2.4.min.js') }}"></script>
+<script src="{{ asset('js/layout/sidebar.js') }}"></script>
 <script src="{{ asset('Resources/js/Bootstrap/tether.min.js') }}"></script>
 <script src="{{ asset('Resources/js/Bootstrap/bootstrap.min.js') }}"></script>
-<script src="{{ asset('Hi_Framework/components/Dropdown/Other Libraries/bootstrap-select/bootstrap-select.js') }}"></script>
 <script src="{{ asset('Hi_Framework/css/Animation/Other Libraries/Waves/waves.min.js') }}"></script>
-<script src="{{ asset('Hi_Framework/css/Loader/Other Libraries/Progressbar/progressbar.js') }}"></script>
-<script src="{{ asset('Hi_Framework/css/Animation/Other Libraries/Animate/tutorial.js') }}"></script>
-<script src="{{ asset('Hi_Framework/javascript/Carousel/Other Libraries/Flicklity/flickity.pkgd.min.js') }}"></script>
-<script src="{{ asset('Hi_Framework/javascript/Drag/Other Libraries/Draggabilly/draggabilly.pkgd.min.js') }}"></script>
-<script src="{{ asset('Hi_Framework/javascript/Time And Date Picker/Other Libraries/PersianDatePicker/persian-date.js') }}"></script>
-<script src="{{ asset('Hi_Framework/javascript/Time And Date Picker/Other Libraries/PersianDatePicker/persian-datepicker-0.4.5.js') }}"></script>
-<script src="{{ asset('Hi_Framework/css/Grid/Other Libraries/Packery/packery.pkgd.min.js') }}"></script>
-<script src="{{ asset('js/jquery.simpleWeather.min.js') }}"></script>
-<script src="{{ asset('js/weather.js') }}"></script>
-<script src="{{ asset('Hi_Framework/javascript/Chart/Other Libraries/Chartjs/Chart.min.js') }}"></script>
-<script src="{{ asset('Hi_Framework/javascript/other/dropzone.js') }}"></script>
-<script src="{{ asset('js/chartjs.js') }}"></script>
-<script src="{{ asset('js/layout/sidebar.js') }}"></script>
+<script src="{{ asset('Hi_Framework/css/Animation/Other Libraries/Animate/dropdownAnim.js') }}"></script>
+@yield('js_resources')
+<script src="{{ asset('Hi_Framework/components/Dropdown/Other Libraries/bootstrap-select/bootstrap-select.js') }}"></script>
 <script src="{{ asset('js/application.js') }}"></script>
-<script src="{{ asset('js/moment.min.js') }}"></script>
-<script src="{{ asset('js/clock.js') }}"></script>
 <script src="{{ asset('js/jquery.easydropdown.js') }}"></script>
 <script src="{{ asset('js/public.js') }}"></script>
 
-
-<script>
-
-</script>
-
-<script type="text/javascript">
-    Waves.attach('#dropdownMenuButton',['waves-button', 'waves-float', 'waves-light']);
-    Waves.attach('.gallery_category_btn',['waves-block']);
-    Waves.attach('button',['waves-float', 'waves-light']);
-    Waves.attach('#home',['waves-float', 'waves-light','waves-button']);
-    Waves.attach('#posts',['waves-float', 'waves-light','waves-button']);
-    Waves.attach('#gallery',['waves-float', 'waves-light','waves-button']);
-    Waves.attach('#messages',['waves-float', 'waves-light','waves-button']);
-    Waves.attach('#users',['waves-float', 'waves-light','waves-button']);
-    Waves.attach('#admins',['waves-float', 'waves-light','waves-button']);
-    Waves.attach('#settings',['waves-float', 'waves-light','waves-button']);
-    Waves.attach('#comments',['waves-float', 'waves-light','waves-button']);
-    Waves.attach('#backup',['waves-float', 'waves-light','waves-button']);
-    Waves.attach('.dropdown-item');
-    Waves.attach('.gallery_category li',['waves-block']);
-    Waves.init();
-</script>
 
 {{--on pages we wanna user bootstrap-select the following should be included--}}
 {{--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>--}}

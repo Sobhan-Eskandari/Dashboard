@@ -29,7 +29,7 @@
                     نقش
                 </button>
 
-                <div data-dropdown-in="bounceIn" data-dropdown-out="bounceOut" class="dropdown-menu adminCard_dropdown hi-shadow-1" aria-labelledby="dropdownMenuLink">
+                <div data-dropdown-in="fadeIn" data-dropdown-out="fadeOut" class="dropdown-menu adminCard_dropdown hi-shadow-1" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="#"> مدیر کل <i class="fa fa-user-circle-o ml-1" aria-hidden="true"></i></a>
                     <a class="dropdown-item" href="#"> مدیر بخش <i class="fa fa-user-circle-o ml-1" aria-hidden="true"></i></a>
                     <a class="dropdown-item" href="#"> مدیر بخش تغییرات<i class="fa fa-user-circle-o ml-1" aria-hidden="true"></i></a>

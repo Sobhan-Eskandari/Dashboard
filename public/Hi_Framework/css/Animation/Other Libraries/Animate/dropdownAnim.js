@@ -40,6 +40,7 @@ function dropdownEffectStart(data, effectToStart) {
         data.dropdown.addClass('dropdown-animating');
         data.dropdownMenu.addClass('animated');
         data.dropdownMenu.addClass(effectToStart);
+        data.dropdownMenu.css('animation-duration','0.5s');
     }
 }
 

@@ -2,6 +2,26 @@
  * Created by sobhaneskandari on 5/4/17.
  */
 
+
+
+// ============[ Wavejs Configuration ]===========
+
+Waves.attach('#dropdownMenuButton',['waves-button', 'waves-float', 'waves-light']);
+Waves.attach('.gallery_category_btn',['waves-block']);
+Waves.attach('button',['waves-float', 'waves-light']);
+Waves.attach('#home',['waves-float', 'waves-light','waves-button']);
+Waves.attach('#posts',['waves-float', 'waves-light','waves-button']);
+Waves.attach('#gallery',['waves-float', 'waves-light','waves-button']);
+Waves.attach('#messages',['waves-float', 'waves-light','waves-button']);
+Waves.attach('#users',['waves-float', 'waves-light','waves-button']);
+Waves.attach('#admins',['waves-float', 'waves-light','waves-button']);
+Waves.attach('#settings',['waves-float', 'waves-light','waves-button']);
+Waves.attach('#comments',['waves-float', 'waves-light','waves-button']);
+Waves.attach('#backup',['waves-float', 'waves-light','waves-button']);
+Waves.attach('.dropdown-item');
+Waves.attach('.gallery_category li',['waves-block']);
+Waves.init();
+
 // ============[ Admin card dismissal button ]===========
 
 $(".dismissAdminCardBtn").click(function () {

@@ -137,19 +137,19 @@
                 <div class="homeCard">
                     <div class="carousel pt-2" data-flickity>
                         <div class="carousel-cell">
-                            <p class="text-right pr-1 pt-2 mb-0">آمار فروش ماهیانه</p>
+                            <p class="text-right px-5 pt-2 mb-0">آمار فروش ماهیانه</p>
                             <canvas id="doughnutChart"></canvas>
                         </div>
                         <div class="carousel-cell">
-                            <p class="text-right pr-1 pt-2 mb-0">آمار فروش هفلگی</p>
+                            <p class="text-right px-5 pt-2 mb-0">آمار فروش هفلگی</p>
                             <canvas id="polarChart"></canvas>
                         </div>
                         <div class="carousel-cell">
-                            <p class="text-right pr-1 pt-2 mb-02">آمار درخواست ها</p>
+                            <p class="text-right px-5 pt-2 mb-02">آمار درخواست ها</p>
                             <canvas id="pieChart"></canvas>
                         </div>
                         <div class="carousel-cell">
-                            <p class="text-right pr-1 pt-2 mb-0">آمار لغوها</p>
+                            <p class="text-right px-5 pt-2 mb-0">آمار لغوها</p>
                             <canvas id="radarChart"></canvas>
                         </div>
                     </div>
@@ -586,4 +586,19 @@
         </div>
     </section>
 
+@endsection
+
+@section('js_resources')
+    <script src="{{ asset('Hi_Framework/css/Loader/Other Libraries/Progressbar/progressbar.js') }}"></script>
+    <script src="{{ asset('Hi_Framework/javascript/Carousel/Other Libraries/Flicklity/flickity.pkgd.min.js') }}"></script>
+    <script src="{{ asset('Hi_Framework/javascript/Drag/Other Libraries/Draggabilly/draggabilly.pkgd.min.js') }}"></script>
+    <script src="{{ asset('Hi_Framework/javascript/Time And Date Picker/Other Libraries/PersianDatePicker/persian-date.js') }}"></script>
+    <script src="{{ asset('Hi_Framework/javascript/Time And Date Picker/Other Libraries/PersianDatePicker/persian-datepicker-0.4.5.js') }}"></script>
+    <script src="{{ asset('Hi_Framework/css/Grid/Other Libraries/Packery/packery.pkgd.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.simpleWeather.min.js') }}"></script>
+    <script src="{{ asset('js/weather.js') }}"></script>
+    <script src="{{ asset('Hi_Framework/javascript/Chart/Other Libraries/Chartjs/Chart.min.js') }}"></script>
+    <script src="{{ asset('js/chartjs.js') }}"></script>
+    <script src="{{ asset('js/moment.min.js') }}"></script>
+    <script src="{{ asset('js/clock.js') }}"></script>
 @endsection

@@ -3,11 +3,12 @@
  */
 $( document ).ready(function() {
 
-
     // The function to rotate the arrow in navigation menu
     $(".Sidebar_menu_link").parent().click(function () {
 
-        var parentId = $(this).parent().attr('id');
+
+        var parentId = $(this).attr('id');
+        console.log(parentId);
 
         $(".fa-chevron-left", this).animateRotate(-90,0, {
             duration:150,
@@ -19,12 +20,12 @@ $( document ).ready(function() {
         });
 
         // check if the arrow has turned or not
-        if ($(".Sidebar_menu_link").hasClass('turned')){
+        if ($("#"+parentId+" .Sidebar_menu_link").hasClass('turned')){
             $(".fa-chevron-left", this).animateRotate(0,-90, {
                 duration:150,
                 easing: 'linear',
                 complete: function () {
-                    $(".Sidebar_menu_link").removeClass('turned');
+                    $("#"+parentId+" .Sidebar_menu_link").removeClass('turned');
                 },
                 step: function () {}
             });

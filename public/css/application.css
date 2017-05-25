@@ -5790,6 +5790,8 @@ g, path, circle, rect {
   margin-top: 0;
   margin-bottom: 10px;
   position: sticky !important; }
+.homeCard .flickity-prev-next-button {
+  background-color: aliceblue; }
 
 /* ============[ create post]=========== */
 .createPostBox {
