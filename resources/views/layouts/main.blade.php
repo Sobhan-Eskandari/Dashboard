@@ -310,6 +310,7 @@
 <script src="{{ asset('js/jquery.simpleWeather.min.js') }}"></script>
 <script src="{{ asset('js/weather.js') }}"></script>
 <script src="{{ asset('Hi_Framework/javascript/Chart/Other Libraries/Chartjs/Chart.min.js') }}"></script>
+<script src="{{ asset('Hi_Framework/javascript/other/dropzone.js') }}"></script>
 <script src="{{ asset('js/chartjs.js') }}"></script>
 <script src="{{ asset('js/layout/sidebar.js') }}"></script>
 <script src="{{ asset('js/application.js') }}"></script>
@@ -325,8 +326,8 @@
 
 <script type="text/javascript">
     Waves.attach('#dropdownMenuButton',['waves-button', 'waves-float', 'waves-light']);
+    Waves.attach('.gallery_category_btn',['waves-block']);
     Waves.attach('button',['waves-float', 'waves-light']);
-
     Waves.attach('#home',['waves-float', 'waves-light','waves-button']);
     Waves.attach('#posts',['waves-float', 'waves-light','waves-button']);
     Waves.attach('#gallery',['waves-float', 'waves-light','waves-button']);
@@ -337,6 +338,7 @@
     Waves.attach('#comments',['waves-float', 'waves-light','waves-button']);
     Waves.attach('#backup',['waves-float', 'waves-light','waves-button']);
     Waves.attach('.dropdown-item');
+    Waves.attach('.gallery_category li',['waves-block']);
     Waves.init();
 </script>
 
