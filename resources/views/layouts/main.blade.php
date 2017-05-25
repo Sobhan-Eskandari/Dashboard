@@ -19,7 +19,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('Resources/css/Font/font-awesome.min.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('Resources/css/Font/fontiran.css') }}">
+    {{--<link rel="stylesheet" href="{{ asset('Resources/css/Font/fontiran.css') }}">--}}
 
     <!-- Hi_Frameworkwork Styles -->
     <link rel="stylesheet" href="{{ asset('Hi_Framework/dist/Hi_Framework.css') }}">

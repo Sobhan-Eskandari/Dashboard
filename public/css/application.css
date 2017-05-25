@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* ============[ Css Import ]=========== */
-@import url("../../Resources/css/Font/fontiran.css");
+@import url("../Resources/css/Font/fontiran.css");
 /* لینک فایلی که وظیفه بارگذاری فونت ها را برعهده دارد */
 body {
   font-family: IRANSans !important;
@@ -6511,7 +6511,7 @@ a:focus, a:hover, a {
     content: '';
     height: 16px;
     width: 16px;
-    background: url(../../images/cd-custom-separator.svg) no-repeat center center;
+    background: url(../images/cd-custom-separator.svg) no-repeat center center;
     vertical-align: middle;
     transform: rotate(180deg); }
   .cd-breadcrumb.custom-icons li > *::before, .cd-multi-steps.custom-icons li > *::before {
@@ -6522,7 +6522,7 @@ a:focus, a:hover, a {
     width: 20px;
     margin-right: 40px;
     margin-top: -2px;
-    background: url(../../images/cd-custom-icons-01.svg) no-repeat 0 0;
+    background: url(../images/cd-custom-icons-01.svg) no-repeat 0 0;
     vertical-align: middle; }
   .cd-breadcrumb.custom-icons li:not(.current):nth-of-type(2) > *::before, .cd-multi-steps.custom-icons li:not(.current):nth-of-type(2) > *::before {
     /* change custom icon using image sprites */
