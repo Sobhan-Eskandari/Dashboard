@@ -1,5 +1,11 @@
 @extends('layouts.main')
 
+@section('breadcrumb')
+    @component('components.Breadcrumb')
+
+    @endcomponent
+@endsection
+
 @section('content')
 
 

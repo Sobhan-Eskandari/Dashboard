@@ -9,11 +9,11 @@
     <img class="rounded-circle Topbar_avatar" src="{{ asset('images/avatar.png') }}">
     <p class="username">{{$msg_sender}}</p>
 </td>
-<td class="text-right py-1">{{$msg_text}}</td>
+<td class="text-right py-1 hi-fontSize-15">{{$msg_text}}</td>
 <td class="py-1">
-    <p class="my-0 text-left">{{$msg_time}}</p>
-    <p class="my-0 text-left">{{$msg_date}}</p>
-</td>
+    <p class="my-1 text-right hi-fontSize-14"><i class="fa fa-clock-o" aria-hidden="true"></i> {{$msg_time}}</p>
+    <p class="my-1 text-right hi-fontSize-14"><i class="fa fa-calendar" aria-hidden="true"></i> {{$msg_date}}</p>
+</td>@for ($i = 0; $i < 8; $i++)
 <td>{{$msg_receiver}}</td>
 
 {{--==========[ More Button Dropdown ]========= --}}

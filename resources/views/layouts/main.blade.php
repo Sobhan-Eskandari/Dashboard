@@ -102,6 +102,11 @@
             {{--============[ This is the main content ]===========--}}
             <main class="row" id="MainBody">
                 <div class="col-12">
+                    <div class="row mb-1">
+                        <div class="col-12 px-4">
+                            @yield('breadcrumb')
+                        </div>
+                    </div>
                     @yield('content')
                 </div>
             </main>

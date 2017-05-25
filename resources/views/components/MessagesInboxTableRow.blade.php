@@ -11,8 +11,8 @@
 </td>
 <td class="text-right">{{$sender_text}}</td>
 <td class="py-1">
-    <p class="my-0 text-left">{{$sender_time}}</p>
-    <p class="my-0 text-left">{{$sender_date}}</p>
+    <p class="my-1 text-right hi-fontSize-14"><i class="fa fa-clock-0" aria-hidden="true"></i> {{$sender_time}}</p>
+    <p class="my-1 text-right hi-fontSize-14"><i class="fa fa-calendar" aria-hidden="true"></i> {{$sender_date}}</p>
 </td>
 <td>
     <i class="fa fa-check fa-2x green-text" aria-hidden="true"></i>

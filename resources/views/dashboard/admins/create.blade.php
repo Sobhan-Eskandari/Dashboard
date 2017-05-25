@@ -1,5 +1,11 @@
 @extends('layouts.main')
 
+@section('breadcrumb')
+    @component('components.Breadcrumb')
+
+    @endcomponent
+@endsection
+
 @section('content')
     <div class="row">
         <div class="col hi-subjectDashboardAdminProfile text-right">
