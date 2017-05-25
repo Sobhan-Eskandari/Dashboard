@@ -114,7 +114,7 @@ function choose(clock, items) {
         var element = document.createElement('div')
         element.addEventListener('click', click, false)
         update()
-        chooser.appendChild(element)
+        // chooser.appendChild(element)
         function update() {
             element.innerHTML = name + '-style-<b>' + getValue() + '</b>'
         }
