@@ -7,6 +7,8 @@
 @endsection
 @section('css_resources')
     <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>
+    <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+    <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
 @endsection
 
 
@@ -212,9 +214,16 @@
                         </div>
 
                         {{--==========[ Dropzone to upload file ]========= --}}
-                        <div class="col-7 gallery_files">
-                            <form action="/" method="post" class="dropzone" id="my-awesome-dropzone"></form>
+                        <div id="dropzone" class="col-7 gallery_files">
+                            <form action="/file-upload"
+                                  class="dropzone"
+                                  id="my-awesome-dropzone">
+                                {{--<input type="file" name="file" />--}}
+                            </form>
                         </div>
+                        {{--<div class="col-7 gallery_files">--}}
+                            {{--<form action="/" method="post" class="dropzone" id="my-awesome-dropzone"></form>--}}
+                        {{--</div>--}}
 
                         {{--==========[ Category of Gallery Files ]========= --}}
                         <div class="col-2 pl-0">
