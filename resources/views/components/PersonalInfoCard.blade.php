@@ -1,5 +1,5 @@
 <div class="card hi-aboutMePanelCard">
-    <div class="card-header hi-aboutMePanelCard_card-header">
+    <div class="card-header hi-aboutMePanelCard_card-header {{$header_color}}">
         &nbsp;
     </div>
     <div class="card-block pl-4 text-right">

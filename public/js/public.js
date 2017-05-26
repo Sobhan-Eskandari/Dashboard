@@ -1,13 +1,15 @@
-$("#hi-infoPostListGroupPanel").show();
+$(".panel").show();
 $(document).ready(function () {
-    $('#hi-infoPostListGroupFlip').click(function () {
+    $('.flip').click(function () {
         var clicks = $(this).data('clicks');
+        var id = $(this).attr('id');
+        console.log('id:'+id);
         if (clicks) {
             // odd clicks
-            $("#hi-infoPostListGroupPanel").slideDown();
+            $("#"+id).next().slideDown();
         } else {
             // even clicks
-            $("#hi-infoPostListGroupPanel").slideUp();
+            $("#"+id).next().slideUp();
         }
         $(this).data("clicks", !clicks);
         return false;

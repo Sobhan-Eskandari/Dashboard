@@ -6,6 +6,10 @@
     @endcomponent
 @endsection
 
+@section('css_resources')
+    <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>
+@endsection
+
 @section('content')
 
     <div class="row hi-createPostBox">
@@ -35,7 +39,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <textarea class="form-control writeCreatePostBox" rows="10"></textarea>
+                        <textarea name="postText" class="form-control writeCreatePostBox" rows="10"></textarea>
                     </div>
                     <br>
                     <div class="row">
@@ -46,7 +50,7 @@
                 {{--============[ image box ]===========--}}
                 <div class="col-2 pr-0">
                     <br><br>
-                    <img src="images/nobody_m.original.jpg" alt="" class="createPostImage">
+                    <img src="{{asset('images/nobody_m.original.jpg')}}" alt="در حال بارگذاری عکس" class="createPostImage mr-2">
                 </div>
             </div>
         </div>
@@ -79,15 +83,33 @@
             <br>
             <div class="row">
                 @component('components.categoryListGroup')
+                    @slot('createCategoryTagsID')
+                        categoriesList
+                    @endslot
+
+                    @slot('categoryName')
+                        دسته بندی ها
+                    @endslot
                 @endcomponent
             </div>
             <br>
             <div class="row">
                 @component('components.categoryListGroup')
+                    @slot('createCategoryTagsID')
+                        tagsList
+                    @endslot
+
+                    @slot('categoryName')
+                        برچسب ها
+                    @endslot
                 @endcomponent
             </div>
 
         </div>
     </div>
+
+    <script>
+        CKEDITOR.replace('postText');
+    </script>
 
 @endsection

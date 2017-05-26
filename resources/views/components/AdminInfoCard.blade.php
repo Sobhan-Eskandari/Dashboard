@@ -1,5 +1,5 @@
 <div class="card hi-profileCard">
-    <div class="card-header hi-profileCard_cardHeader">
+    <div class="card-header hi-profileCard_cardHeader {{$header_color}}">
         &nbsp;
     </div>
     <div class="hi-profileCard_PictureSelectorBox">

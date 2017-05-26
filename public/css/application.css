@@ -5630,7 +5630,9 @@ body {
   font-family: IRANSans !important; }
 
 .hi-subjectDashboardAdminProfile_h5 {
-  color: #a7a7a7; }
+  color: #a7a7a7;
+  font-weight: 400;
+  font-size: 15px; }
 
 /* ============[ confirm button admin ]=========== */
 .hi-confirmButtonDashboard {
@@ -5670,17 +5672,23 @@ body {
 
 .hi-roundedDashboardTagsTable_thead_tr_td_r {
   border-top-right-radius: 10px;
+  border: 0;
   color: white; }
 
+.hi-roundedDashboardTagsTable_thead_tr_td_m {
+  border: 0 !important; }
+
 .hi-roundedDashboardTagsTable_thead_tr_td_l {
-  border-top-left-radius: 10px; }
+  border-top-left-radius: 10px;
+  border: 0; }
 
 .hi-roundedDashboardTagsTable tbody {
   padding: 0; }
 
 .hi-roundedDashboardTagsTable {
   border-radius: 10px;
-  box-shadow: 0 0 5px #a7a7a7; }
+  box-shadow: 0 0 5px #a7a7a7;
+  direction: rtl !important; }
 
 /* ============[ delete button ]=========== */
 .hi-roundedDashboardTagsTable_thead_tr_td_button {
@@ -6614,7 +6622,8 @@ body {
 .hi-roundedDashboardTagsTable td {
   border-left: 1px solid transparent;
   border-top: 1px solid black;
-  font-weight: 500; }
+  font-weight: 500;
+  vertical-align: middle; }
 
 .hi-roundedDashboardTagsTable tr {
   border-radius: 8px;

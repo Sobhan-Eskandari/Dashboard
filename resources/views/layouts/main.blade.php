@@ -294,6 +294,8 @@
 {{--<script src="{{ asset('Resources/js/Jquery/jquery-3.2.0.min.js') }}"></script>--}}
 <script src="{{ asset('Resources/js/Jquery/jquery-2.2.4.min.js') }}"></script>
 <script src="{{ asset('js/layout/sidebar.js') }}"></script>
+<script src="{{ asset('js/jquery.easydropdown.js') }}"></script>
+<script src="{{ asset('js/public.js') }}"></script>
 <script src="{{ asset('Resources/js/Bootstrap/tether.min.js') }}"></script>
 <script src="{{ asset('Resources/js/Bootstrap/bootstrap.min.js') }}"></script>
 <script src="{{ asset('Hi_Framework/css/Animation/Other Libraries/Waves/waves.min.js') }}"></script>
@@ -301,8 +303,6 @@
 @yield('js_resources')
 <script src="{{ asset('Hi_Framework/components/Dropdown/Other Libraries/bootstrap-select/bootstrap-select.js') }}"></script>
 <script src="{{ asset('js/application.js') }}"></script>
-<script src="{{ asset('js/jquery.easydropdown.js') }}"></script>
-<script src="{{ asset('js/public.js') }}"></script>
 
 
 {{--on pages we wanna user bootstrap-select the following should be included--}}

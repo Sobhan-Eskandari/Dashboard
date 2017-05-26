@@ -19,6 +19,10 @@
             <div class="col-8 mt-3">
 
                 @component('components.PersonalInfoCard')
+                    @slot('header_color')
+                        blue-grey darken-1
+                    @endslot
+
                     @slot('cardSubject')
                         :درباره ادمین
                     @endslot
@@ -29,6 +33,10 @@
             <div class="col-4 mt-3">
 
                 @component('components.AdminInfoCard')
+                    @slot('header_color')
+                        blue-grey darken-1
+                    @endslot
+
                     @slot('characterName')
                       سبحان اسکندری
                     @endslot
@@ -39,7 +47,7 @@
     </form>
     <div class="row pr-5 mt-5">
         <div class="col-3 push-11">
-            <button class="btn hi-confirmButtonDashboard " type="submit">تایید</button>
+            <button class="btn hi-confirmButtonDashboard light-blue darken-2" type="submit">تایید</button>
         </div>
     </div>
 @endsection

@@ -4,6 +4,8 @@ body {
 
 .hi-subjectDashboardAdminProfile_h5 {
   color: $light-text;
+  font-weight: $font-weight--medium;
+  font-size: 15px;
 }
 
 /* ============[ confirm button admin ]=========== */
@@ -51,11 +53,17 @@ body {
 
 .hi-roundedDashboardTagsTable_thead_tr_td_r {
   border-top-right-radius: 10px;
+  border: 0;
   color: white;
+}
+
+.hi-roundedDashboardTagsTable_thead_tr_td_m {
+  border: 0 !important;
 }
 
 .hi-roundedDashboardTagsTable_thead_tr_td_l {
   border-top-left-radius: 10px;
+  border: 0;
 }
 
 .hi-roundedDashboardTagsTable tbody {
@@ -65,6 +73,7 @@ body {
 .hi-roundedDashboardTagsTable {
   border-radius: 10px;
   box-shadow: 0 0 5px $darkGray;
+  direction: rtl !important;
 }
 
 /* ============[ delete button ]=========== */
