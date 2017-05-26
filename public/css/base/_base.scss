@@ -1,6 +1,11 @@
+body {
+  font-family: IRANSans !important;
+}
+
 .hi-subjectDashboardAdminProfile_h5 {
   color: $light-text;
 }
+
 /* ============[ confirm button admin ]=========== */
 .hi-confirmButtonDashboard {
   width: 100px;
@@ -30,7 +35,7 @@
 
 /* ============[ category ]=========== */
 
-.categoryRightDirection{
+.categoryRightDirection {
   direction: rtl;
 }
 
@@ -40,18 +45,18 @@
   box-shadow: 0 0 8px $darkGray;
 }
 
-.hi-roundedDashboardTagsTable_thead{
+.hi-roundedDashboardTagsTable_thead {
   background-color: $navyBlue;
 }
-.hi-roundedDashboardTagsTable_thead_tr_td_r{
+
+.hi-roundedDashboardTagsTable_thead_tr_td_r {
   border-top-right-radius: 10px;
   color: white;
 }
 
-.hi-roundedDashboardTagsTable_thead_tr_td_l{
+.hi-roundedDashboardTagsTable_thead_tr_td_l {
   border-top-left-radius: 10px;
 }
-
 
 .hi-roundedDashboardTagsTable tbody {
   padding: 0;
@@ -78,18 +83,19 @@
 
 /* ============[ input ]=========== */
 
-.hi-whiteCategoryDashboardBox_input{
+.hi-whiteCategoryDashboardBox_input {
   border-radius: 8px;
   border: 1px solid $light-text;
   height: 50px;
   width: 280px;
 }
-.hi-whiteCategoryDashboardBox_input:focus{
+
+.hi-whiteCategoryDashboardBox_input:focus {
   border: 1px solid $navyBlue;
 }
 
 /* ============[ confirm button ]=========== */
-.hi-whiteCategoryDashboardBox_button{
+.hi-whiteCategoryDashboardBox_button {
   width: 90px;
   font-weight: 400;
   box-shadow: 0 0 5px $darkGray;
@@ -100,6 +106,7 @@
   padding-top: 8px;
   padding-bottom: 8px;
 }
+
 .hi-whiteCategoryDashboardBox_button:active,
 .hi-whiteCategoryDashboardBox_button:focus,
 .hi-whiteCategoryDashboardBox_button.active {
@@ -110,90 +117,270 @@
 }
 
 /* ============[ pagination]=========== */
-.dashboardPaginatinBs{
+.dashboardPaginatinBs {
   direction: rtl;
   margin: 0 auto;
 }
-.dashboardPaginatinBs > ul.pagination > li:last-child > a{
+
+.dashboardPaginatinBs > ul.pagination > li:last-child > a {
   border-radius: 5px 0 0 5px;
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
   background-color: $lightGray2;
 }
 
-.dashboardPaginatinBs > ul.pagination > li:first-child > a{
-  border-radius:0 5px 5px 0;
+.dashboardPaginatinBs > ul.pagination > li:first-child > a {
+  border-radius: 0 5px 5px 0;
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
   background-color: $lightGray2;
 }
 
-.dashboardPaginatinBs > ul.pagination > li.active > a{
+.dashboardPaginatinBs > ul.pagination > li.active > a {
   border: 1px solid $navyBlue !important;
   border-right: 1px solid transparent !important;
   background-color: $navyBlue !important;
 
 }
 
-.dashboardPaginatinBs > ul.pagination > li > a{
+.dashboardPaginatinBs > ul.pagination > li > a {
   color: $navyBlue;
   font-weight: 500;
 }
 
-.dashboardPaginatinBs > ul.pagination > li > a , nav > ul.pagination > li > a:hover , nav > ul.pagination > li > a:focus{
+.dashboardPaginatinBs > ul.pagination > li > a, nav > ul.pagination > li > a:hover, nav > ul.pagination > li > a:focus {
   border: 1px solid $navyBlue;
   color: $navyBlue;
 }
 
 /* ============[ Settings Page]=========== */
 
-.contactUsInfo_line{
+.contactUsInfo_line {
   width: 104%;
   margin-left: -2%;
   border-top: 1px solid lightgray;
 }
 
-.contactUsInfo_textarea{
+.contactUsInfo_textarea {
   width: 100%;
   border-radius: 5px;
 }
-.rulesAndGuidesInfo_textarea{
+
+.rulesAndGuidesInfo_textarea {
   width: 70%;
   border-radius: 5px;
 }
-.rowOfInputs{
+
+.rowOfInputs {
   direction: rtl;
 }
 
 /* ============[ Home Page]=========== */
-.card_simple{
+.card_simple {
   border-radius: 10px;
 }
+
 /* ==========[ Background card stle in pages ]========= */
-.bgCard{
+.bgCard {
   border-radius: 10px;
   padding: 20px 50px;
 }
 
 /* ============[ Main pages Style ]=========== */
-#MainBody{
+#MainBody {
   padding: 20px 30px;
 }
+
 /* ============[ create post]=========== */
-.createPostBox{
+.hi-createPostBox {
   direction: rtl;
 }
-#panel, #flip {
+
+.hi-infoPostListGroup {
+  border-radius: 10px;
+  padding: 0;
+  width: 300px;
+  box-shadow: 0 0 5px $light-row-table;
+}
+
+.hi-infoPostListGroup li:last-child {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.hi-infoPostListGroup li {
+  border-color: transparent;
+}
+
+/* ============[ for slideUp and slideDown Of list group and styling it ]=========== */
+
+#hi-infoPostListGroupPanel, #hi-infoPostListGroupFlip {
   padding: 0px;
   text-align: center;
-  background-color: #e5eecc;
-  border: solid 1px #c3c3c3;
-  width: 260px;
 }
-#flip{
+
+#hi-infoPostListGroupFlip {
   padding: 5px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  color: $dark-text;
+  border: 1px solid $light-row-table;
 }
-#panel {
+
+#hi-infoPostListGroupPanel {
   padding: 0px;
+  border: 1px solid $light-row-table;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/* ============[ button in list group for information post ]=========== */
+
+.btn-secondary-postInfo {
+  border-radius: 10px;
+  background-color: $light-text;
+}
+
+.btn-secondary-postInfo.active {
+  border-color: $pre;
+  background-color: $pre;
+}
+
+/* ============[ create post image ]=========== */
+.createPostImage {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  border: 1px solid $light-text;
+}
+
+/* ============[ create post button ]=========== */
+.createPostAddFileButton, .createPostAddFileButton:focus, .createPostAddFileButton:hover {
+  background-color: white;
+  color: $confirm-button;
+  border: 1px solid $light-text;
+}
+
+.createPostAddFileButton:focus {
+  box-shadow: 0 0 0 2px rgba($light-text, .5);
+}
+
+.createPostPublicationButton, .createPostPublicationButton:focus, .createPostPublicationButton:hover {
+  background-color: $confirm-button;
+  border-radius: 8px;
+}
+
+.createPostPublicationButton:focus {
+  box-shadow: 0 0 0 2px rgba($confirm-button, .5);
+}
+
+/* ============[ create post form ]=========== */
+.makeCreatePostTitleBox {
+  width: 400px;
+}
+
+.makeCreatePostTitle {
+  border-radius: 0;
+}
+
+.makeCreatePostTitle:focus {
+  border: 1px solid $confirm-button;
+}
+
+/* ============[ create post textarea ]=========== */
+.writeCreatePostBox {
+  width: 573px;
+}
+
+/* ============[ create post label ]=========== */
+.createPostLabel {
+  font-weight: 600;
+}
+
+/* ============[ backup ]=========== */
+.backupBox_direction {
+  direction: rtl;
+}
+
+/* ============[ answer msg ]=========== */
+
+.answerPmBox {
+  direction: rtl;
+}
+
+.answerMsgFormCard {
+  width: 800px;
+  box-shadow: 0 0 3px $light-text;
+}
+
+.answerMsgFormCard_header {
+  font-size: 16px;
+  font-weight: 500;
+  background-color: $add-tag;
+  color: white;
+}
+
+.answerMsgFormCard_text {
+  font-weight: 400;
+}
+
+.answerMsgFormCard_form {
+  border-radius: 10px;
+}
+
+.answerMsgFormCard_form:focus {
+  border: 1px solid transparent;
+}
+
+.answerMsgFormCard_textarea {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  resize: none;
+}
+
+.answerMsgFormCard_textarea:focus {
+  border: 1px solid transparent;
+}
+
+/* ============[ FAQ ]=========== */
+.FAQBox_direction {
+  direction: rtl;
+}
+
+.FAQ_hr {
+  width: 82%;
+}
+
+/* ============[ check box ]=========== */
+
+.FAQ_card-block_tick_square-checkbox {
+  cursor: pointer;
+}
+
+.FAQ_card-block_tick_square-checkbox span {
+  line-height: 24px;
+}
+
+.FAQ_card-block_tick_square-checkbox span::before {
+  margin-right: 4px;
+  padding-left: 1px;
+  width: 21px;
+  height: 21px;
+  border: 1.5px solid white;
+  display: inline-block;
+  line-height: 14px;
+  content: '';
+  float: right;
+  border-radius: 5px;
+}
+
+.FAQ_card-block_tick_square-checkbox input[type="checkbox"] {
   display: none;
 }
+
+.FAQ_card-block_tick_square-checkbox input[type="checkbox"]:checked + span::before {
+  font-family: FontAwesome;
+  content: "\f00c";
+  color: white;
+}
+
