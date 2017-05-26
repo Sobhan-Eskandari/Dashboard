@@ -1,0 +1,57 @@
+.backupExportCard {
+  box-shadow: 0 0 3px $light-text;
+}
+
+.backupExportCard_title {
+  font-weight: 400;
+}
+
+.backupMainTitleCard {
+  color: white;
+  font-weight: 300;
+}
+
+.backupSelect {
+  border-radius: 5px;
+  font-family: IRANSans;
+  cursor: pointer;
+  width: 104px;
+  outline: none;
+  font-size: 14.5px;
+  font-weight: 500;
+  background-color: lightgray;
+  border: 1px solid lightgray;
+}
+
+.backupSelect option {
+  font-family: IRANSans;
+  font-weight: 400;
+  font-weight: 500;
+}
+
+.backupGroupButton {
+  margin-right: -10px;
+}
+
+.backupExportTypeButton, .backupExportTypeButton:hover, .backupExportTypeButton:focus {
+  width: 104px;
+  background-color: white;
+  color: #000;
+  border: 1px solid black;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.backupExportTypeButton:focus {
+  box-shadow: 0 0 0 2px transparent;
+}
+
+.backupExportButton {
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+.backupExportButton:focus, .backupExportButton:hover {
+  box-shadow: 0 0 0 2px transparent;
+  border-color: transparent;
+}

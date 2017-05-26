@@ -41,6 +41,18 @@ Route::get('/createPost', function () {
     return view('dashboard.posts.createPost');
 });
 
+Route::get('/backup', function () {
+    return view('dashboard.backup.backup');
+});
+
+Route::get('/answerMsg', function () {
+    return view('dashboard.answerMsg.index');
+});
+
+Route::get('/FAQ', function () {
+    return view('dashboard.FAQ.index');
+});
+
 /* mersede */
 
 Route::get('/layout', function () {

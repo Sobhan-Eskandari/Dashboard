@@ -5626,6 +5626,9 @@ g, path, circle, rect {
   width: 1px;
   visibility: hidden; }
 
+body {
+  font-family: IRANSans !important; }
+
 .hi-subjectDashboardAdminProfile_h5 {
   color: #a7a7a7; }
 
@@ -5794,21 +5797,152 @@ g, path, circle, rect {
   background-color: aliceblue; }
 
 /* ============[ create post]=========== */
-.createPostBox {
+.hi-createPostBox {
   direction: rtl; }
 
-#panel, #flip {
-  padding: 0px;
-  text-align: center;
-  background-color: #e5eecc;
-  border: solid 1px #c3c3c3;
-  width: 260px; }
+.hi-infoPostListGroup {
+  border-radius: 10px;
+  padding: 0;
+  width: 300px;
+  box-shadow: 0 0 5px #d9dfe9; }
 
-#flip {
-  padding: 5px; }
+.hi-infoPostListGroup li:last-child {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px; }
 
-#panel {
+.hi-infoPostListGroup li {
+  border-color: transparent; }
+
+/* ============[ for slideUp and slideDown Of list group and styling it ]=========== */
+#hi-infoPostListGroupPanel, #hi-infoPostListGroupFlip {
   padding: 0px;
+  text-align: center; }
+
+#hi-infoPostListGroupFlip {
+  padding: 5px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  color: #222222;
+  border: 1px solid #d9dfe9; }
+
+#hi-infoPostListGroupPanel {
+  padding: 0px;
+  border: 1px solid #d9dfe9;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px; }
+
+/* ============[ button in list group for information post ]=========== */
+.btn-secondary-postInfo {
+  border-radius: 10px;
+  background-color: #a7a7a7; }
+
+.btn-secondary-postInfo.active {
+  border-color: #ebebeb;
+  background-color: #ebebeb; }
+
+/* ============[ create post image ]=========== */
+.createPostImage {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  border: 1px solid #a7a7a7; }
+
+/* ============[ create post button ]=========== */
+.createPostAddFileButton, .createPostAddFileButton:focus, .createPostAddFileButton:hover {
+  background-color: white;
+  color: #027398;
+  border: 1px solid #a7a7a7; }
+
+.createPostAddFileButton:focus {
+  box-shadow: 0 0 0 2px rgba(167, 167, 167, 0.5); }
+
+.createPostPublicationButton, .createPostPublicationButton:focus, .createPostPublicationButton:hover {
+  background-color: #027398;
+  border-radius: 8px; }
+
+.createPostPublicationButton:focus {
+  box-shadow: 0 0 0 2px rgba(2, 115, 152, 0.5); }
+
+/* ============[ create post form ]=========== */
+.makeCreatePostTitleBox {
+  width: 400px; }
+
+.makeCreatePostTitle {
+  border-radius: 0; }
+
+.makeCreatePostTitle:focus {
+  border: 1px solid #027398; }
+
+/* ============[ create post textarea ]=========== */
+.writeCreatePostBox {
+  width: 573px; }
+
+/* ============[ create post label ]=========== */
+.createPostLabel {
+  font-weight: 600; }
+
+/* ============[ backup ]=========== */
+.backupBox_direction {
+  direction: rtl; }
+
+/* ============[ answer msg ]=========== */
+.answerPmBox {
+  direction: rtl; }
+
+.answerMsgFormCard {
+  width: 800px;
+  box-shadow: 0 0 3px #a7a7a7; }
+
+.answerMsgFormCard_header {
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #09686a;
+  color: white; }
+
+.answerMsgFormCard_text {
+  font-weight: 400; }
+
+.answerMsgFormCard_form {
+  border-radius: 10px; }
+
+.answerMsgFormCard_form:focus {
+  border: 1px solid transparent; }
+
+.answerMsgFormCard_textarea {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  resize: none; }
+
+.answerMsgFormCard_textarea:focus {
+  border: 1px solid transparent; }
+
+/* ============[ FAQ ]=========== */
+.FAQBox_direction {
+  direction: rtl; }
+
+.FAQ_hr {
+  width: 82%; }
+
+/* ============[ check box ]=========== */
+.FAQ_card-block_tick_square-checkbox {
+  cursor: pointer; }
+
+.FAQ_card-block_tick_square-checkbox span {
+  line-height: 24px; }
+
+.FAQ_card-block_tick_square-checkbox span::before {
+  margin-right: 4px;
+  padding-left: 1px;
+  width: 21px;
+  height: 21px;
+  border: 1.5px solid white;
+  display: inline-block;
+  line-height: 14px;
+  content: '';
+  float: right;
+  border-radius: 5px; }
+
+.FAQ_card-block_tick_square-checkbox input[type="checkbox"] {
   display: none; }
 
 /* ============[ Custom Check boxes ]=========== */
@@ -5859,6 +5993,11 @@ g, path, circle, rect {
     font-size: 14px;
     text-align: left;
     padding-left: 5px; }
+
+.FAQ_card-block_tick_square-checkbox input[type="checkbox"]:checked + span::before {
+  font-family: FontAwesome;
+  content: "\f00c";
+  color: white; }
 
 /* ============[ Components Css Import ]=========== */
 .hi-profileCard {
@@ -6103,6 +6242,110 @@ g, path, circle, rect {
 
 .hi-profileCard_formBox_input:focus {
   border: 1px solid #2b4748; }
+
+.backupExportCard {
+  box-shadow: 0 0 3px #a7a7a7; }
+
+.backupExportCard_title {
+  font-weight: 400; }
+
+.backupMainTitleCard {
+  color: white;
+  font-weight: 300; }
+
+.backupSelect {
+  border-radius: 5px;
+  font-family: IRANSans;
+  cursor: pointer;
+  width: 104px;
+  outline: none;
+  font-size: 14.5px;
+  font-weight: 500;
+  background-color: lightgray;
+  border: 1px solid lightgray; }
+
+.backupSelect option {
+  font-family: IRANSans;
+  font-weight: 400;
+  font-weight: 500; }
+
+.backupGroupButton {
+  margin-right: -10px; }
+
+.backupExportTypeButton, .backupExportTypeButton:hover, .backupExportTypeButton:focus {
+  width: 104px;
+  background-color: white;
+  color: #000;
+  border: 1px solid black;
+  font-weight: 500;
+  font-size: 15px; }
+
+.backupExportTypeButton:focus {
+  box-shadow: 0 0 0 2px transparent; }
+
+.backupExportButton {
+  margin: 0 auto;
+  font-size: 15px; }
+
+.backupExportButton:focus, .backupExportButton:hover {
+  box-shadow: 0 0 0 2px transparent;
+  border-color: transparent; }
+
+.FAQ_card-header {
+  background-color: #09686a;
+  color: white;
+  font-weight: 400;
+  padding-right: 9.5px; }
+
+.FAQ_card_card-block_redBorder {
+  border: 1px solid #b32e2e;
+  border-radius: 10px;
+  box-shadow: 0 0 3px #a7a7a7;
+  font-size: 14px;
+  font-weight: 400; }
+
+.FAQ_card_card-block_lightText {
+  color: #a7a7a7;
+  font-size: 14px; }
+
+.FAQ_card_card-block_blueBorder {
+  border: 1px solid #3baeda;
+  border-radius: 10px;
+  box-shadow: 0 0 3px #a7a7a7;
+  font-size: 14px;
+  font-weight: 400; }
+
+.FAQ_card-header_deleteButton {
+  background-color: #b32e2e;
+  border-radius: 6px;
+  border: 1px solid #b32e2e; }
+
+/* ============[ check box ]=========== */
+.FAQ_card-block_square-checkbox {
+  cursor: pointer; }
+
+.FAQ_card-block_square-checkbox span {
+  line-height: 24px; }
+
+.FAQ_card-block_square-checkbox span::before {
+  margin-right: 4px;
+  padding-left: 1px;
+  width: 21px;
+  height: 21px;
+  border: 2px solid grey;
+  display: inline-block;
+  line-height: 14px;
+  content: '';
+  float: right;
+  border-radius: 5px; }
+
+.FAQ_card-block_square-checkbox input[type="checkbox"] {
+  display: none; }
+
+.FAQ_card-block_square-checkbox input[type="checkbox"]:checked + span::before {
+  font-family: FontAwesome;
+  content: "\f00c";
+  color: gray; }
 
 .horizentalStat {
   height: 100%; }
@@ -6577,6 +6820,80 @@ a:focus, a:hover, a {
     background-position: -60px -20px; }
   .cd-breadcrumb .breadcrumb_currentPage, .cd-multi-steps .breadcrumb_currentPage {
     color: #12a3d9; }
+
+/* ============[ category box ]=========== */
+#hi-categoryListGroupFlip, #hi-CategoryListGroupPanel {
+  padding: 0px;
+  text-align: center; }
+
+#hi-categoryListGroupFlip {
+  padding: 5px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  color: #222222;
+  border: 1px solid #d9dfe9; }
+
+#hi-CategoryListGroupPanel {
+  padding: 0px;
+  border: 1px solid #d9dfe9;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px; }
+
+.hi-categoryListGroup {
+  border-radius: 10px;
+  padding: 0;
+  width: 300px;
+  box-shadow: 0 0 5px #d9dfe9; }
+
+.hi-categoryListGroup li:last-child {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px; }
+
+.hi-categoryListGroup li {
+  border-color: transparent;
+  color: gray; }
+
+.hi-categoryListGroup li.categoryListGroupButton {
+  height: 50px;
+  border-top: 1px solid #d9dfe9; }
+
+/* ============[ check box ]=========== */
+.hi-categoryListGroup_li_square-checkbox {
+  cursor: pointer; }
+
+.hi-categoryListGroup_li_square-checkbox span {
+  line-height: 24px;
+  color: gray;
+  font-weight: 400; }
+
+.hi-categoryListGroup_li_square-checkbox span::before {
+  padding-left: 1px;
+  width: 21px;
+  height: 21px;
+  border: 2px solid gray;
+  display: inline-block;
+  line-height: 14px;
+  content: '';
+  float: right;
+  border-radius: 5px; }
+
+.hi-categoryListGroup_li_square-checkbox input[type="checkbox"] {
+  display: none; }
+
+.hi-categoryListGroup_li_square-checkbox input[type="checkbox"]:checked + span::before {
+  font-family: FontAwesome;
+  content: "\f00c";
+  color: gray; }
+
+/* ============[ search form ]=========== */
+.searchFormListGroup, .searchFormListGroup:focus {
+  border-radius: 0;
+  border: 1px solid transparent;
+  border-bottom: 1px solid black;
+  background-color: transparent; }
+
+.iconClose-2 {
+  color: red; }
 
 /* ============[ Layouts Css Import ]=========== */
 /* ============[ Top Bar ]=========== */
