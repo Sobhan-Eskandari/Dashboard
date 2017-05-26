@@ -6,7 +6,8 @@
         <div class="col-4">
                 @component('components.ExportCard')
                     @slot('font_awesome')
-                        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        نسخه پشتیبانی پست ها
                     @endslot
                     @slot('style')
                         background-color:#2b4748;
@@ -16,7 +17,8 @@
         <div class="col-4">
             @component('components.ExportCard')
                 @slot('font_awesome')
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    نسخه پشتیبانی پیام ها
                 @endslot
                 @slot('style')
                     background-color:#3e4d9e;
@@ -27,6 +29,7 @@
             @component('components.ExportCard')
                 @slot('font_awesome')
                     <i class="fa fa-user-o" aria-hidden="true"></i>
+                    نسخه پشتیبانی کاربران
                 @endslot
                 @slot('style')
                     background-color:#3baeda;
@@ -39,7 +42,8 @@
         <div class="col-4">
             @component('components.ExportCard')
                 @slot('font_awesome')
-                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                    <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                   نسخه پشتیبانی نظرات
                 @endslot
                 @slot('style')
                     background-color:#b32e2e;
@@ -49,7 +53,8 @@
         <div class="col-4">
             @component('components.ExportCard')
                 @slot('font_awesome')
-                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    نسخه پشتیبانی ادمین ها
                 @endslot
                 @slot('style')
                     background-color:#4d5667;

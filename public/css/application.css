@@ -5876,7 +5876,7 @@ body {
   width: 400px; }
 
 .makeCreatePostTitle {
-  border-radius: 0; }
+  font-size: 14px; }
 
 .makeCreatePostTitle:focus {
   border: 1px solid #027398; }
@@ -5930,6 +5930,9 @@ body {
 
 .FAQ_hr {
   width: 82%; }
+
+.FAQInput:focus {
+  border: 1px solid #3B4452; }
 
 /* ============[ check box ]=========== */
 .FAQ_card-block_tick_square-checkbox {
@@ -6020,7 +6023,7 @@ body {
   height: auto;
   padding-top: 44.8px;
   padding-bottom: 44.8px;
-  background-color: #2b4748; }
+  background-color: #546e7a; }
 
 .hi-profileCard_PictureSelectorBox {
   margin-top: -72px; }
@@ -6204,7 +6207,7 @@ body {
     background: white;
     overflow: hidden;
     opacity: 0;
-    border: 1px solid #2b4748; }
+    border: 1px solid #3B4452; }
   .hi-profileCard_PictureSelectorBox_selector .metro:hover div {
     background: white; }
   .hi-profileCard_PictureSelectorBox_selector .metro.open div {
@@ -6237,22 +6240,23 @@ body {
     padding: 8px 12px;
     text-align: center; }
   .hi-profileCard_PictureSelectorBox_selector .metro li.focus {
-    background: #2b4748;
+    background: #3B4452;
     position: relative;
     z-index: 3;
     color: #fff; }
   .hi-profileCard_PictureSelectorBox_selector .metro li.active {
-    background: #2b4748;
+    background: #3B4452;
     color: #fff; }
 
 .hi-profileCard_formBox_input {
   border: 1px solid #a7a7a7; }
 
 .hi-profileCard_formBox_input:focus {
-  border: 1px solid #2b4748; }
+  border: 1px solid #3B4452; }
 
 .backupExportCard {
-  box-shadow: 0 0 3px #a7a7a7; }
+  box-shadow: 0 0 3px #a7a7a7;
+  border-radius: 9px; }
 
 .backupExportCard_title {
   font-weight: 400; }
@@ -6260,6 +6264,10 @@ body {
 .backupMainTitleCard {
   color: white;
   font-weight: 300; }
+
+h6.card-header.backupMainTitleCard {
+  border-top-right-radius: 9px;
+  border-top-left-radius: 9px; }
 
 .backupSelect {
   border-radius: 5px;
@@ -6269,8 +6277,8 @@ body {
   outline: none;
   font-size: 14.5px;
   font-weight: 500;
-  background-color: lightgray;
-  border: 1px solid lightgray; }
+  background-color: white;
+  border: 1px solid black; }
 
 .backupSelect option {
   font-family: IRANSans;
@@ -6300,7 +6308,7 @@ body {
   border-color: transparent; }
 
 .FAQ_card-header {
-  background-color: #09686a;
+  background-color: #3B4452;
   color: white;
   font-weight: 400;
   padding-right: 9.5px; }
@@ -6308,18 +6316,18 @@ body {
 .FAQ_card_card-block_redBorder {
   border: 1px solid #b32e2e;
   border-radius: 10px;
-  box-shadow: 0 0 3px #a7a7a7;
+  box-shadow: 0 0 4px #a7a7a7;
   font-size: 14px;
   font-weight: 400; }
 
 .FAQ_card_card-block_lightText {
   color: #a7a7a7;
-  font-size: 14px; }
+  font-size: 13px; }
 
 .FAQ_card_card-block_blueBorder {
   border: 1px solid #3baeda;
   border-radius: 10px;
-  box-shadow: 0 0 3px #a7a7a7;
+  box-shadow: 0 0 4px #a7a7a7;
   font-size: 14px;
   font-weight: 400; }
 
@@ -6354,6 +6362,18 @@ body {
   font-family: FontAwesome;
   content: "\f00c";
   color: gray; }
+
+.dropDownSettingFAQ, .dropDownSettingFAQ:hover, .dropDownSettingFAQ:focus, .dropDownSettingFAQ:active {
+  background-color: transparent;
+  color: black;
+  border: 1px solid transparent;
+  box-shadow: 0 0 2px #fff; }
+
+.dropSubDownSettingFAQ {
+  font-size: 12px;
+  width: 50px;
+  text-align: center;
+  margin-left: -75px; }
 
 .horizentalStat {
   height: 100%; }
@@ -6402,7 +6422,7 @@ body {
   border-top-left-radius: 8px; }
 
 .hi-aboutMePanelCard_textarea:focus, .hi-aboutMePanelCard_input:focus {
-  border: 1px solid #2b4748; }
+  border: 1px solid #3B4452; }
 
 .hi-aboutMePanelCard_textarea {
   height: 125.5px;
@@ -6641,6 +6661,26 @@ a:focus, a:hover, a {
 .hi-roundedDashboardTagsTable thead td {
   border-top: 1px solid transparent; }
 
+.hi-roundedDashboardTagsTable thead td {
+  border-top: 1px solid transparent; }
+
+.hi-roundedDashboardTagsTable tbody tr:last-child td:last-child {
+  border-bottom-left-radius: 8px;
+  border-left: 1px solid transparent; }
+
+.hi-roundedDashboardTagsTable tbody tr:last-child td:first-child {
+  border-bottom-right-radius: 8px;
+  border-right: 1px solid transparent;
+  border-bottom-width: thin; }
+
+.hi-roundedDashboardTagsTable tbody:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px; }
+
+.hi-roundedDashboardTagsTable tbody tr:last-child {
+  border-bottom: 1px solid transparent;
+  border-bottom-width: inherit; }
+
 /* ============[ edit & delete]=========== */
 .hi-roundedDashboardTagsTable_tbody_tr_td_edit a {
   color: #2e98b3; }
@@ -6835,7 +6875,7 @@ a:focus, a:hover, a {
   padding: 0px;
   text-align: center; }
 
-#hi-categoryListGroupFlip {
+#categoriesList, #tagsList {
   padding: 5px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;

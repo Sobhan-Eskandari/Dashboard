@@ -12,7 +12,7 @@
   height: auto;
   padding-top: 44.8px;
   padding-bottom: 44.8px;
-  background-color: $admin-green;
+  background-color: #546e7a;
 }
 
 .hi-profileCard_PictureSelectorBox {
@@ -244,7 +244,7 @@
     background: white;
     overflow: hidden;
     opacity: 0;
-    border: 1px solid $admin-green;
+    border: 1px solid #3B4452;
   }
 
   .metro:hover div {
@@ -305,14 +305,14 @@
   /* .focus class is also added on hover */
 
   .metro li.focus {
-    background: $admin-green;
+    background: #3B4452;;
     position: relative;
     z-index: 3;
     color: #fff;
   }
 
   .metro li.active {
-    background: $admin-green;
+    background: #3B4452;
     color: #fff;
   }
 }
@@ -322,5 +322,5 @@
 }
 
 .hi-profileCard_formBox_input:focus {
-  border: 1px solid $admin-green;
+  border: 1px solid #3B4452;
 }

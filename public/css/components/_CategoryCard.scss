@@ -25,6 +25,31 @@ a:focus, a:hover, a {
   border-top: 1px solid transparent;
 }
 
+.hi-roundedDashboardTagsTable thead td {
+  border-top: 1px solid transparent;
+}
+
+.hi-roundedDashboardTagsTable tbody tr:last-child td:last-child {
+  border-bottom-left-radius: 8px;
+  border-left: 1px solid transparent;
+}
+
+.hi-roundedDashboardTagsTable tbody tr:last-child td:first-child {
+  border-bottom-right-radius: 8px;
+  border-right: 1px solid transparent;
+  border-bottom-width: thin;
+}
+
+.hi-roundedDashboardTagsTable tbody:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.hi-roundedDashboardTagsTable tbody tr:last-child {
+  border-bottom: 1px solid transparent;
+  border-bottom-width: inherit;
+}
+
 /* ============[ edit & delete]=========== */
 
 .hi-roundedDashboardTagsTable_tbody_tr_td_edit a {

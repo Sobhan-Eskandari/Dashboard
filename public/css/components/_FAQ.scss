@@ -1,5 +1,5 @@
 .FAQ_card-header {
-  background-color: $add-tag;
+  background-color: #3B4452;
   color: white;
   font-weight: 400;
   padding-right: 9.5px;
@@ -8,20 +8,20 @@
 .FAQ_card_card-block_redBorder {
   border: 1px solid $delete;
   border-radius: 10px;
-  box-shadow: 0 0 3px $light-text;
+  box-shadow: 0 0 4px $light-text;
   font-size: 14px;
   font-weight: 400;
 }
 
 .FAQ_card_card-block_lightText {
   color: $light-text;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .FAQ_card_card-block_blueBorder {
   border: 1px solid $user;
   border-radius: 10px;
-  box-shadow: 0 0 3px $light-text;
+  box-shadow: 0 0 4px $light-text;
   font-size: 14px;
   font-weight: 400;
 }
@@ -63,4 +63,17 @@
   font-family: FontAwesome;
   content: "\f00c";
   color: gray;
+}
+
+.dropDownSettingFAQ,.dropDownSettingFAQ:hover,.dropDownSettingFAQ:focus,.dropDownSettingFAQ:active{
+  background-color: transparent;
+  color: black;
+  border: 1px solid transparent;
+  box-shadow: 0 0 2px #fff;
+}
+.dropSubDownSettingFAQ{
+  font-size: 12px;
+  width: 50px;
+  text-align: center;
+  margin-left: -75px;
 }

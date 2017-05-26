@@ -308,7 +308,7 @@ body {
 }
 
 .makeCreatePostTitle {
-  border-radius: 0;
+  font-size: 14px;
 }
 
 .makeCreatePostTitle:focus {
@@ -377,6 +377,9 @@ body {
 
 .FAQ_hr {
   width: 82%;
+}
+.FAQInput:focus{
+  border: 1px solid #3B4452;
 }
 
 /* ============[ check box ]=========== */

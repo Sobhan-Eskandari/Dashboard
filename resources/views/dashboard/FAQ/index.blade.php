@@ -1,17 +1,23 @@
 @extends('layouts.main')
 
+@section('css_resources')
+    <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>
+@endsection
+
 @section('content')
     <div class="row FAQBox_direction">
         <div class="col-6">
             <div class="row">
                 <label>متن سوال را وارد کنید:</label>
-                <textarea class="form-control" rows="6"></textarea>
+                <input type="text" class="form-control FAQInput">
             </div>
             <br>
             <div class="row">
                 <label>متن جواب را وراد کنید:</label>
-                <textarea class="form-control" rows="6"></textarea>
+                <textarea name="postText" class="form-control" rows="6"></textarea>
             </div>
+            <button class="btn hi-whiteCategoryDashboardBox_button light-blue darken-2 pull-right mt-4 py-2 px-1 hi-fontSize-16"
+                    type="submit">تایید</button>
         </div>
         <div class="col-6">
             <div class="card">
@@ -45,4 +51,8 @@
         </div>
     </div>
 
+
+    <script>
+        CKEDITOR.replace('postText');
+    </script>
 @endsection

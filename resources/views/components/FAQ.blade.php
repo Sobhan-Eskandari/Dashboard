@@ -10,7 +10,18 @@
             <p class="FAQ_card_card-block_redBorder px-3 py-2">
                 <span>چرا با وجود درخواست من برای تغییر رمز حساب کاربری،لینک آن برای من ایمیل نشده است؟ </span>
                 <span class="FAQ_card_card-block_lightText"> ۱۳۹۶/۰۳/۰۴&nbsp;|&nbsp;توسط : حمید وتر</span>
-                <i class="fa fa-cog" aria-hidden="true"></i>
+                <span>
+            <span class="btn-group">
+                <button type="button" class="btn btn-danger btn-sm p-0 dropDownSettingFAQ" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                </button>
+                <span class="dropdown-menu dropSubDownSettingFAQ p-0 mr-5">
+                    <a class="dropdown-item px-0" href="#">ویرایش</a>
+                    <a class="dropdown-item px-0" href="#">حذف</a>
+                </span>
+            </span>
+                    </span>
             </p>
         </div>
         <div class="row pl-4">

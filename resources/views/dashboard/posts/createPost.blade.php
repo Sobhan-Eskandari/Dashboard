@@ -30,7 +30,7 @@
                         <div class="col-6 pr-0 pt-3">
                             <label class="pull-right createPostLabel">متن پست را وارد کنید:</label>
                         </div>
-                        <div class="col-6 pr-0">
+                        <div class="col-6 pl-0">
                             <button class="btn btn-primary pull-left mb-2 createPostAddFileButton">
                                 <i class="fa fa-camera" aria-hidden="true"></i>
                                 افزودن فایل
@@ -43,7 +43,8 @@
                     </div>
                     <br>
                     <div class="row">
-                        <button class="btn btn-primary createPostPublicationButton px-4" type="submit">انتشار</button>
+                        <button class="btn btn-primary createPostPublicationButton px-4 light-blue darken-2"
+                                type="submit">انتشار</button>
                     </div>
                     </form>
                 </div>
@@ -59,7 +60,7 @@
             <br>
             <div class="row">
                 <ul class="list-group hi-infoPostListGroup">
-                    <li class="list-group-item justify-content-between pl-4 pr-3 flip" id="hi-infoPostListGroupFlip">
+                    <li class="list-group-item justify-content-between pl-4 pr-3 flip py-2" id="hi-infoPostListGroupFlip">
                         اطلاعات پست
                         <i class="fa fa-caret-down pull-left" aria-hidden="true"></i>
                     </li>
