@@ -6,7 +6,6 @@
     @endcomponent
 @endsection
 @section('css_resources')
-    <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>
     <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
     <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
 @endsection
