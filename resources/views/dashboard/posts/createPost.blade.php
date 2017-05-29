@@ -26,21 +26,11 @@
                 {{--============[ Right box without image ]===========--}}
                 <div class="col-10">
                     <form>
-                    <div class="row pr-0">
-                        <div class="col-6 pr-0 pt-3">
-                            <label class="pull-right createPostLabel">متن پست را وارد کنید:</label>
-                        </div>
-                        <div class="col-6 pl-0">
-                            <button class="btn btn-primary pull-left mb-2 createPostAddFileButton">
-                                <i class="fa fa-camera" aria-hidden="true"></i>
-                                افزودن فایل
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <textarea name="postText" class="form-control writeCreatePostBox" rows="10"></textarea>
-                    </div>
+                        @component('components.TextEditor')
+                            @slot('textEditorLabel')
+                                 متن پست را وارد کنید:
+                            @endslot
+                        @endcomponent
                     <br>
                     <div class="row">
                         <button class="btn btn-primary createPostPublicationButton px-4 light-blue darken-2"
@@ -109,8 +99,5 @@
         </div>
     </div>
 
-    <script>
-        CKEDITOR.replace('postText');
-    </script>
 
 @endsection

@@ -5855,22 +5855,6 @@ body {
   border-radius: 20px;
   border: 1px solid #a7a7a7; }
 
-/* ============[ create post button ]=========== */
-.createPostAddFileButton, .createPostAddFileButton:focus, .createPostAddFileButton:hover {
-  background-color: white;
-  color: #027398;
-  border: 1px solid #a7a7a7; }
-
-.createPostAddFileButton:focus {
-  box-shadow: 0 0 0 2px rgba(167, 167, 167, 0.5); }
-
-.createPostPublicationButton, .createPostPublicationButton:focus, .createPostPublicationButton:hover {
-  background-color: #027398;
-  border-radius: 8px; }
-
-.createPostPublicationButton:focus {
-  box-shadow: 0 0 0 2px rgba(2, 115, 152, 0.5); }
-
 /* ============[ create post form ]=========== */
 .makeCreatePostTitleBox {
   width: 400px; }
@@ -5880,10 +5864,6 @@ body {
 
 .makeCreatePostTitle:focus {
   border: 1px solid #027398; }
-
-/* ============[ create post textarea ]=========== */
-.writeCreatePostBox {
-  width: 573px; }
 
 /* ============[ create post label ]=========== */
 .createPostLabel {
@@ -6524,6 +6504,30 @@ h6.card-header.backupMainTitleCard {
 .userConfirmTick {
   width: 30px;
   height: 20px; }
+
+/* ============[ create post textarea ]=========== */
+.writeCreatePostBox {
+  width: 100%; }
+
+/* ============[ create post label ]=========== */
+.createPostLabel {
+  font-weight: 600; }
+
+/* ============[ create post button ]=========== */
+.createPostAddFileButton, .createPostAddFileButton:focus, .createPostAddFileButton:hover {
+  background-color: white;
+  color: #027398;
+  border: 1px solid #a7a7a7; }
+
+.createPostAddFileButton:focus {
+  box-shadow: 0 0 0 2px rgba(167, 167, 167, 0.5); }
+
+.createPostPublicationButton, .createPostPublicationButton:focus, .createPostPublicationButton:hover {
+  background-color: #027398;
+  border-radius: 8px; }
+
+.createPostPublicationButton:focus {
+  box-shadow: 0 0 0 2px rgba(2, 115, 152, 0.5); }
 
 /* ============[ Pagination ]=========== */
 .pagination {
