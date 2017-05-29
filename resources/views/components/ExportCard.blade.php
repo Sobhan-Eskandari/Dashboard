@@ -22,19 +22,10 @@
         <br>
         <div class="row pl-3 pr-3 btn-group-justified backupGroupButton">
             <h6 class="card-title pt-2 backupExportCard_title">از:&nbsp;</h6>
-            <select class="py-1 px-1 backupSelect pull-right">
-                <option value="volvo">۱۳۹۶/۰۳/۰۴&nbsp;</option>
-                <option value="saab">۱۳۹۶/۰۴/۰۴&nbsp;</option>
-                <option value="vw">۱۳۹۶/۰۳/۰۴&nbsp;</option>
-                <option value="audi" selected>۱۳۹۶/۰۴/۱۰&nbsp;</option>
-            </select>
+            <input type="text" class="backup_dateSelector backupSelect" />
             <h6 class="card-title pt-2 backupExportCard_title">&nbsp;&nbsp;تا:&nbsp;</h6>
-            <select class="py-1 px-1 backupSelect pull-left">
-                <option value="volvo">۱۳۹۶/۰۳/۰۴&nbsp;</option>
-                <option value="saab">۱۳۹۶/۰۴/۰۴&nbsp;</option>
-                <option value="vw">۱۳۹۶/۰۳/۰۴&nbsp;</option>
-                <option value="audi" selected>۱۳۹۶/۰۴/۱۰&nbsp;</option>
-            </select>
+            <input type="text" class="backup_dateSelector backupSelect" />
+
         </div>
         <br>
         <div class="row px-3">

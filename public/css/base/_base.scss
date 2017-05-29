@@ -482,3 +482,31 @@ body {
   color: white;
 }
 
+/* ============[ Tag ]=========== */
+.tag{
+  background-color: darkslateblue;
+  display: -webkit-inline-box;
+  height: 32px;
+  padding: 0 14px;
+  border-radius: 16px;
+  margin-bottom: 5px;
+  margin-right: 3px;
+}
+
+.tag__text{
+  margin-right: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 32px;
+}
+.tag__close{
+  vertical-align: bottom;
+  cursor: pointer;
+}
+
+.tag_lightMode{
+  color: #5C5C5C;
+}
+.tag_darkMode{
+  color: white;
+}
