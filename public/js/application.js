@@ -2,6 +2,47 @@
  * Created by sobhaneskandari on 5/4/17.
  */
 
+// Enter key detection
+$.fn.pressEnter = function(fn) {
+
+    return this.each(function() {
+        $(this).bind('enterPress', fn);
+        $(this).keyup(function(e){
+            if(e.keyCode == 13)
+            {
+                $(this).trigger("enterPress");
+            }
+        })
+    });
+};
+
+// this is the function ot add chips with the text form input
+$("#addChips").click(function () {
+    addChips();
+});
+$('#chipsText').pressEnter(function(){
+    addChips();
+});
+function addChips() {
+    var box = $("#boxOfTags");
+    var chipsText = $("#chipsText");
+    var chipsDynamicText = `<div class="tag tag_darkMode">
+                <p class="tag__text">`+chipsText.val()+`</p>
+                <i class="tag__close deleteTag fa fa-times" aria-hidden="true"></i>
+            </div>`;
+
+    // fade in animation for chips affter appending
+    $(box).append(chipsDynamicText).hide().fadeIn();
+
+    // resting the value of input
+    $("#chipsText").val('');
+}
+
+// this is the function to remove tag
+$( "body" ).delegate( ".deleteTag", "click", function() {
+    var parent = this.closest('div');
+    $(parent).fadeOut();
+});
 
 
 // ============[ Wavejs Configuration ]===========
@@ -37,6 +78,12 @@ $(".deleteRowBtn").click(function () {
 // ============[ Persian Date Picker ]===========
 $(document).ready(function() {
     $(".example1").pDatepicker();
+    $(".backup_dateSelector").pDatepicker({
+        altField: '#observerAlt',
+        altFormat: "YYYY MM DD HH:mm:ss",
+        observer: true,
+        format: 'YYYY/MM/DD'
+    });
 });
 
 // ============[ Translate English digits to farsi ]===========
@@ -317,19 +364,6 @@ $('body').on('keydown', 'input, select, textarea', function(e) {
     }
 });
 
-$.fn.pressEnter = function(fn) {
-
-    return this.each(function() {
-        $(this).bind('enterPress', fn);
-        $(this).keyup(function(e){
-            if(e.keyCode == 13)
-            {
-                $(this).trigger("enterPress");
-            }
-        })
-    });
-};
-
 
 var numberofTodos = 6;
 $("#addTodo_addBtn").click(function () {
@@ -440,3 +474,4 @@ window.pd = $("#inlineDatepicker").persianDatepicker({
 }).data('datepicker');
 
 // $("#inlineDatepicker").pDatepicker("setDate", [1391, 12, 1, 11, 14]);
+

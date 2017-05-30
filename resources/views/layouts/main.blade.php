@@ -8,7 +8,6 @@
     <title>Dashboard</title>
     {{--<link rel="icon" href="../../favicon.ico">--}}
 
-    <title>Cover Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{ asset('Resources/css/Bootstrap/bootstrap.min.css') }}">
@@ -279,8 +278,6 @@
                              پشتیبانی<i class="fa fa-download ml-4" aria-hidden="true"></i>
                         </a>
                     </h5>
-
-
                 </div>
 
             </div>

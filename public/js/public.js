@@ -43,5 +43,7 @@ $(document).ready(function () {
         $(".iconSearch-2").hide();
         $(".iconClose-2").hide();
     });
+
+
 });
 
