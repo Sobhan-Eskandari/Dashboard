@@ -5,7 +5,7 @@
         </label>
     </div>
     <div class="col-6 pl-0">
-        <button class="btn btn-primary pull-left mb-2 createPostAddFileButton">
+        <button type="button" data-toggle="modal" data-target="#galleryModal" class="btn btn-primary pull-left mb-2 createPostAddFileButton">
             <i class="fa fa-camera" aria-hidden="true"></i>
             افزودن فایل
             <i class="fa fa-plus" aria-hidden="true"></i>

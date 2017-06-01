@@ -20,11 +20,54 @@
                     {!! Form::open(['method'=>'POST', 'url' => 'tiny']) !!}
 
                     {{--==========[ Sample Gallery Modal Lunch ]========= --}}
-                    <div class="row">
-                        <div class="col-12 text-right mt-4">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                                Launch demo modal
-                            </button>
+
+
+                    <div class="row rowOfInputs">
+                        <div class="col-2">
+                            <p class="mt-4"> لوگو : <button data-toggle="modal" data-target="#galleryModal" class="hi-button-simple"> آپلود <i class="fa fa-plus"></i></button> </p>
+                        </div>
+
+                        {{--============[ image box ]===========--}}
+                        <div class="col-2 pr-0">
+                            <img src="{{asset('images/nobody_m.original.jpg')}}" alt="در حال بارگذاری عکس" class="createPostImage mr-2">
+                        </div>
+                    </div>
+
+                    <div class="row rowOfInputs">
+                        {{--============[ Right box without image ]===========--}}
+                        <div class="col-10">
+                            <form>
+                                @component('components.TextEditor')
+                                    @slot('textEditorLabel')
+                                        متن هدر را وارد کنید:
+                                    @endslot
+                                @endcomponent
+                                <br>
+                            </form>
+                        </div>
+                        {{--============[ image box ]===========--}}
+                        <div class="col-2 pr-0">
+                            <br><br>
+                            <img src="{{asset('images/nobody_m.original.jpg')}}" alt="در حال بارگذاری عکس" class="createPostImage mr-2">
+                        </div>
+                    </div>
+
+                    <div class="row rowOfInputs">
+                        {{--============[ Right box without image ]===========--}}
+                        <div class="col-10">
+                            <form>
+                                @component('components.TextEditor')
+                                    @slot('textEditorLabel')
+                                        درباره ما:
+                                    @endslot
+                                @endcomponent
+                                <br>
+                            </form>
+                        </div>
+                        {{--============[ image box ]===========--}}
+                        <div class="col-2 pr-0">
+                            <br><br>
+                            <img src="{{asset('images/nobody_m.original.jpg')}}" alt="در حال بارگذاری عکس" class="createPostImage mr-2">
                         </div>
                     </div>
 
@@ -167,83 +210,6 @@
             </div>
         </div>
 
-        {{--==========[ Gallery Modal ]========= --}}
-        <div class="modal fade galleryModal bd-example-modal-lg"
-             id="myModal" tabindex="-1" role="dialog"
-             aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="row" id="gallery_row">
-
-                        {{--==========[ Selected file Info ]========= --}}
-                        <div class="col-3 galleryFiles_info">
-                            <div class="row">
-                                <div class="col-12 text-right mt-5">
-                                    <p>: فایل انتخاب شده</p>
-
-                                    {{--==========[ File Image ]========= --}}
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <img class="img-fluid" src="{{asset('images/paris-sm.jpg')}}">
-                                        </div>
-                                        <div class="col-12 mt-2">
-                                            <button type="button" class="btn btn-outline-danger">حذف</button>
-                                        </div>
-                                    </div>
-                                    {{--==========[ File Info ]========= --}}
-                                    <div class="row mb-5">
-                                        <div class="col-12">
-                                            <ul class="file_info">
-                                                <li>bill-gates.jp</li>
-                                                <li>24 march 2017</li>
-                                                <li>45kb</li>
-                                                <li>564 x 343</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mt-5">
-                                        <div class="col-12 text-left mt-5 pt-5">
-                                            <button type="submit" class="hi-button-simple light-blue darken-2 mt-5">افزودن به پیوست</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {{--==========[ Dropzone to upload file ]========= --}}
-                        <div id="dropzone" class="col-7 gallery_files">
-                            <div class="row mt-2">
-                                <div class="col-12 text-right">
-                                    <button type="submit" class="hi-button-simple green darken-1 mb-2 mt-2"><i class="fa fa-plus"></i> افزودن فایل</button>
-                                </div>
-                            </div>
-
-                            <form action="/file-upload"
-                                  class="dropzone"
-                                  id="my-awesome-dropzone">
-                                {{--<input type="file" name="file" />--}}
-                            </form>
-                        </div>
-
-                        {{--==========[ Category of Gallery Files ]========= --}}
-                        <div class="col-2 pl-0">
-                            <ul class="gallery_category pl-0">
-                                <li><button type="button" class="btn gallery_category_btn">همه فایل ها</button></li>
-                                <li><button type="button" class="btn gallery_category_btn">عکس</button></li>
-                                <li><button type="button" class="btn gallery_category_btn">فیلم</button></li>
-                                <li><button type="button" class="btn gallery_category_btn">صدا</button></li>
-                                <li><button type="button" class="btn gallery_category_btn">متن</button></li>
-                                <li><button type="button" class="btn gallery_category_btn">بقیه فایل ها</button></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
         <script>
             CKEDITOR.replace( 'contactus' );
             CKEDITOR.replace( 'aboutSite' );
@@ -256,4 +222,5 @@
 
 @section('js_resources')
     <script src="{{ asset('Hi_Framework/javascript/other/dropzone.js') }}"></script>
+
 @endsection
