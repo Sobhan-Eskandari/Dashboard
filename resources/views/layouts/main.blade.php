@@ -372,6 +372,10 @@
 <script src="{{ asset('js/layout/sidebar.js') }}"></script>
 <script src="{{ asset('js/jquery.easydropdown.js') }}"></script>
 <script src="{{ asset('js/public.js') }}"></script>
+<script src="{{ asset('js/Alert/modernizr.custom.js') }}"></script>
+<script src="{{ asset('js/Alert/bounce.min.js') }}"></script>
+<script src="{{ asset('js/Alert/classie.js') }}"></script>
+<script src="{{ asset('js/Alert/notificationFx.js') }}"></script>
 <script src="{{ asset('Resources/js/Bootstrap/tether.min.js') }}"></script>
 <script src="{{ asset('Resources/js/Bootstrap/bootstrap.min.js') }}"></script>
 <script src="{{ asset('Hi_Framework/css/Animation/Other Libraries/Waves/waves.min.js') }}"></script>
