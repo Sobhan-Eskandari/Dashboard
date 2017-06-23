@@ -20,7 +20,7 @@
                 @include('Includes.AllCategories')
             </div>
 
-            <div class="col-4 offset-1 categoryRightDirection">
+            <div class="col-4 offset-1 categoryRightDirection" id="create-div">
                 {!! Form::open(['method'=>'POST', 'action'=>'CategoryController@store', 'id'=>'createForm']) !!}
                     <div class="row">
                         <div class="form-group">
@@ -33,6 +33,21 @@
                     </div>
                 {!! Form::close() !!}
             </div>
+
+            <div class="col-4 offset-1 categoryRightDirection" id="edit-div" style="display: none">
+                {!! Form::open(['method'=>'PUT', 'id'=>'editForm']) !!}
+                <div class="row">
+                    <div class="form-group">
+                        <label for="hi-whiteCategoryDashboardBox_input"><h5>دسته بندی:</h5></label>
+                        {!! Form::text('category', null, ['class' => 'form-control hi-whiteCategoryDashboardBox_input']) !!}
+                    </div>
+                </div>
+                <div class="row pr-1 pl-0">
+                    {!! Form::submit('ویرایش', ['class'=>'btn hi-whiteCategoryDashboardBox_button light-blue darken-2', 'id' => 'edit-submit']) !!}
+                </div>
+                {!! Form::close() !!}
+            </div>
+
         </div>
     </div>
 @endsection
@@ -62,6 +77,35 @@
 
         /***
          *      create category js end
+         */
+
+        /***
+         *      edit category js start
+         */
+
+        $('#edit-submit').click(function (event) {
+            event.preventDefault();
+            var dataArray = $(this).parents('#editForm').serializeArray();
+            var editUrl = $(this).parents('#editForm').attr('action');
+            $.ajax({
+                type: "PUT",
+                url: editUrl,
+                data: dataArray
+            }).success(function (data) {
+                $("#createForm").find("input[name=category]").val('');
+                $('#loadCategories').html(data);
+                $('#create-div').fadeIn();
+                $('#edit-div').fadeOut();
+                ShowNotification('دسته بندی ویرایش شد');
+            }).fail(function () {
+                ShowNotification('وارد کردن دسته بندی الزامی می باشد');
+            });
+
+            window.history.pushState("", "", "http://dashboard.dev/categories");
+        });
+
+        /***
+         *      edit category js end
          */
 
         /***

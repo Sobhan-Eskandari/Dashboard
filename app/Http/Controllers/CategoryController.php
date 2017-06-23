@@ -80,9 +80,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(Request $request, Category $category)
     {
-        //
+        if($request->ajax()){
+            return json_encode($category);
+        }
     }
 
     /**
@@ -92,9 +94,36 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Category $category)
+    public function update(CategoryRequest $request,Category $category)
     {
-        //
+        if($request->ajax()){
+
+            $input = $request->all();
+            $category->revisions++;
+            $category->updated_by = Auth::user()->id;
+            $category->update($input);
+
+            $allCategories = Category::orderByRaw('updated_at desc')->get();
+            $categoriesArray = [];
+            foreach ($allCategories as $category){
+                $categoriesArray[] = $category;
+            }
+
+            $page = Input::get('page', 1); // Get the current page or default to 1
+            $perPage = 8;
+            $offset = ($page * $perPage) - $perPage;
+            $path = "http://dashboard.dev/categories";
+
+            $categories = new LengthAwarePaginator(array_slice($categoriesArray, $offset, $perPage, true),
+                count($categoriesArray),
+                $perPage,
+                $page,
+                ['path' => $path]
+            );
+
+
+            return view('Includes.AllCategories', compact('categories'))->render();
+        }
     }
 
     /**
@@ -107,6 +136,8 @@ class CategoryController extends Controller
     {
         if($request->ajax()){
             try {
+                $category->updated_by = Auth::user()->id;
+                $category->save();
                 $category->delete();
             }catch (\Exception $exception){
                 dd($exception->getMessage());
@@ -140,7 +171,12 @@ class CategoryController extends Controller
             $input = $request->all();
             $ids = explode(',', $input['ids']);
             try {
-                Category::destroy($ids);
+                foreach ($ids as $id){
+                    $deleteCategory = Category::findOrFail($id);
+                    $deleteCategory->updated_by = Auth::user()->id;
+                    $deleteCategory->save();
+                    $deleteCategory->delete();
+                }
             }catch (\Exception $exception){
                 dd($exception->getMessage());
             }
