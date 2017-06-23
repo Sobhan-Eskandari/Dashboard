@@ -11,7 +11,7 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{ asset('Resources/css/Bootstrap/bootstrap.min.css') }}">
-
+    <script src="{{ asset('Resources/js/Jquery/jquery-2.2.4.min.js') }}"></script>
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="{{ asset('css/application.css') }}">
 
@@ -23,6 +23,10 @@
     <!-- Hi_Frameworkwork Styles -->
     <link rel="stylesheet" href="{{ asset('Hi_Framework/dist/Hi_Framework.css') }}">
 
+    {{--<script--}}
+            {{--src="https://code.jquery.com/jquery-2.2.4.min.js"--}}
+            {{--integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="--}}
+            {{--crossorigin="anonymous"></script>--}}
     @yield('css_resources')
 
     {{--on pages we wanna user bootstrap-select the following should be included--}}
@@ -384,7 +388,7 @@
 <script src="{{ asset('Hi_Framework/components/Dropdown/Other Libraries/bootstrap-select/bootstrap-select.js') }}"></script>
 <script src="{{ asset('js/application.js') }}"></script>
 
-
+@yield('javascript')
 {{--on pages we wanna user bootstrap-select the following should be included--}}
 {{--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>--}}
 {{--<script src="{{ asset('Hi_Framework/components/Dropdown/Other Libraries/bootstrap-select/bootstrap.min.js') }}"></script>--}}

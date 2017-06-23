@@ -33,9 +33,7 @@ Route::get('/create', function () {
     return view('dashboard.admins.create');
 });
 
-Route::get('/category', function () {
-    return view('dashboard.category.index');
-});
+
 Route::get('/tag', function () {
     return view('dashboard.tag.index');
 });
@@ -136,3 +134,10 @@ Route::post('/tiny', function (Request $request){
 });
 
 Route::resource('/textboxio', 'TextboxioController');
+
+/**
+ *  correct routes starts form here on
+ */
+
+Route::resource('/categories', 'CategoryController');
+Route::post('/categories-multiDestroy', 'CategoryController@multiDestroy')->name('categories.multiDestroy');

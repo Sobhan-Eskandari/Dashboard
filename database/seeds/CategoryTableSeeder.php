@@ -20,7 +20,7 @@ class CategoryTableSeeder extends Seeder
         $categories = [];
         $time = jDate::forge('now')->format('datetime', true);
 
-        foreach (range(1, 20) as $index){
+        foreach (range(1, 50) as $index){
             $categories[] = [
                 'category' => $faker->firstName,
                 'created_at' => $time,
