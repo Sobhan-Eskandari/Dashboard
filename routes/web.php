@@ -141,3 +141,4 @@ Route::resource('/textboxio', 'TextboxioController');
 
 Route::resource('/categories', 'CategoryController');
 Route::post('/categories-multiDestroy', 'CategoryController@multiDestroy')->name('categories.multiDestroy');
+Route::get('/categories-dashboardSearch', 'CategoryController@dashboardSearch')->name('categories.dashboardSearch');

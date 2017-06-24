@@ -1,5 +1,18 @@
 @extends('layouts.main')
 
+@section('search')
+    {{--<div class="hi-search-1">--}}
+        {{--<input placeholder="جست و جو کنید..." class="hi-search_field" type="text" id="search">--}}
+        {{--<button class="hi-button-btn1 pull-left"><i class="fa fa-search white-text hi-fontSize-19" aria-hidden="true"></i></button>--}}
+    {{--</div>--}}
+    <div class="hi-search-1">
+        {!! Form::open(['method'=>'GET', 'action'=>'CategoryController@index']) !!}
+            {!! Form::text('query', isset($_GET['query'])? $_GET['query'] : '', ['class' => 'hi-search_field', 'placeholder'=>'جست و جو کنید...', 'id'=>'search']) !!}
+            <button class="hi-button-btn1 pull-left" id="loading"><i class="fa fa-search white-text hi-fontSize-19" aria-hidden="true"></i></button>
+        {!! Form::close() !!}
+    </div>
+@endsection
+
 @section('breadcrumb')
     @component('components.Breadcrumb')
 
@@ -73,6 +86,8 @@
             }).fail(function () {
                 ShowNotification('وارد کردن دسته بندی الزامی است');
             });
+
+            window.history.pushState("", "", "http://dashboard.dev/categories");
         });
 
         /***
@@ -139,80 +154,6 @@
          *      ajax pagination end
          */
 
-        /***
-         *      multi-destroy category js start
-         */
-        {{--var token = $('#deleteForm').find('input[name=_token]').val();--}}
-        {{--var csrf = {--}}
-            {{--name: '_token',--}}
-            {{--value: token--}}
-        {{--};--}}
-
-        {{--var checkboxes = [];--}}
-        {{--var selectedCategories = {};--}}
-
-        {{--$('input[type=checkbox]').click(function () {--}}
-            {{--var checkedId = this.id;--}}
-            {{--if(this.checked){--}}
-                {{--checkboxes.push(checkedId);--}}
-            {{--}else{--}}
-                {{--$.each(checkboxes, function (index, value) {--}}
-                    {{--if(checkedId === value){--}}
-                        {{--checkboxes.splice(index, 1);--}}
-                    {{--}--}}
-                {{--});--}}
-            {{--}--}}
-            {{--selectedCategories = {--}}
-                {{--name: 'ids',--}}
-                {{--value: checkboxes--}}
-            {{--};--}}
-        {{--});--}}
-
-        {{--$('#multiDestroy').click(function (event) {--}}
-            {{--event.preventDefault();--}}
-            {{--$.ajax({--}}
-                {{--type: "POST",--}}
-                {{--url: "{{ route('categories.multiDestroy') }}",--}}
-                {{--data: [--}}
-                    {{--csrf, selectedCategories--}}
-                {{--]--}}
-            {{--}).success(function (data) {--}}
-                {{--$('#loadCategories').html(data);--}}
-                {{--ShowNotification('دسته بندی (ها) پاک شدند');--}}
-            {{--}).fail(function () {--}}
-                {{--ShowNotification('یک یا چند دسته بندی انتخاب کنید');--}}
-            {{--});--}}
-        {{--});--}}
-
-        /***
-         *      multi-destroy category js end
-         */
-
-        /***
-         *      single-destroy category js start
-         */
-
-//        $('.singleDestroy').click(function (event) {
-//            event.preventDefault();
-//            var url = this.action;
-//            var dataArray = $(this).serializeArray();
-//            $.ajax({
-//                type: "POST",
-//                url: url,
-//                data: dataArray
-//            }).success(function (data) {
-//                $('#loadCategories').html(data);
-//                ShowNotification('دسته بندی پاک شد');
-//            }).fail(function () {
-//                ShowNotification('ارور');
-//            });
-//        });
-
-        /***
-         *      single-destroy category js end
-         */
-
-
         function ShowNotification(notifText) {
             var notification = new NotificationFx({
                 wrapper : document.body,
@@ -226,6 +167,31 @@
             });
             notification.show();
         }
+
+        var SearchUrl = "{{ route('categories.index') }}";
+        var categorySearch = $("#search");
+        var collect = {};
+
+        categorySearch.keyup(function (event) {
+            if(categorySearch.val().length >=0  || event.keyCode === 8){
+
+                /**
+                 *      loading code goes here
+                 */
+
+                collect["query"] = categorySearch.val();
+                $.ajax({
+                    url : SearchUrl,
+                    data: collect
+                }).done(function (data) {
+                    $('#loadCategories').html(data);
+//                    ShowNotification('نتیجه های زیر یافت شدند');
+                }).fail(function () {
+//                    ShowNotification('نتیجه ای یافت نشد');
+                });
+                window.history.pushState("", "", SearchUrl + '?query=' + categorySearch.val());
+            }
+        });
 
     </script>
 @endsection

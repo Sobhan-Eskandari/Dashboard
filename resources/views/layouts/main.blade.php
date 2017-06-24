@@ -73,10 +73,11 @@
 
                             {{--============[ Search in topbar ]===========--}}
                             <div class="col-3 pull-4  pt-2">
-                                <div class="hi-search-1">
-                                    <input placeholder="جست و جو کنید..." class="hi-search_field" type="text">
-                                    <button class="hi-button-btn1 pull-left"><i class="fa fa-search white-text hi-fontSize-19" aria-hidden="true"></i></button>
-                                </div>
+                                @yield('search')
+                                {{--<div class="hi-search-1">--}}
+                                    {{--<input placeholder="جست و جو کنید..." class="hi-search_field" type="text">--}}
+                                    {{--<button class="hi-button-btn1 pull-left"><i class="fa fa-search white-text hi-fontSize-19" aria-hidden="true"></i></button>--}}
+                                {{--</div>--}}
                             </div>
 
                             {{--============[ Notifications with Badge in topbar ]===========--}}

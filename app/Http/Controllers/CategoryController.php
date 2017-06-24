@@ -23,6 +23,10 @@ class CategoryController extends Controller
     {
         $categories = Category::orderByRaw('updated_at desc')->paginate(8);
 
+        if($request->has('query')){
+            $categories = Category::search($request->input('query'))->orderBy('updated_at','desc')->paginate(8);
+        }
+
         if ($request->ajax()) {
             return view('Includes.AllCategories', compact('categories'))->render();
         }
@@ -201,5 +205,29 @@ class CategoryController extends Controller
 
             return view('Includes.AllCategories', compact('categories'))->render();
         }
+    }
+
+    public function dashboardSearch(Request $request)
+    {
+//        $categories = Category::orderByRaw('updated_at desc')->paginate(8);
+//
+//        if($request->has('query')){
+//            $categories = Category::search($request->input('query'))->orderByRaw('updated_at desc')->paginate(8);
+//        }
+//
+//        if ($request->ajax()) {
+////            dd($categories);
+//            return view('Includes.AllCategories', compact('categories'))->render();
+//        }
+//
+//        return view('dashboard.category.index', compact('categories'));
+//        $input = $request->all();
+////        dd($input['search']);
+//        $categories = Category::search($input['search'])->get();
+//        foreach ($categories as $category){
+////            $category->category;
+//            echo $category->category . "<br>";
+//        }
+////        dd($categories);
     }
 }

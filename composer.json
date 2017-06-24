@@ -17,6 +17,7 @@
         "maatwebsite/excel": "^2.1",
         "morilog/jalali": "^2.2",
         "predis/predis": "^1.1",
+        "teamtnt/laravel-scout-tntsearch-driver": "^3.0",
         "zarinpal/zarinpal": "^1.1"
     },
     "require-dev": {
