@@ -8,8 +8,8 @@
     <div class="col-11">
         <div class="row pl-4">
             <p class="FAQ_card_card-block_redBorder px-3 py-2">
-                <span>چرا با وجود درخواست من برای تغییر رمز حساب کاربری،لینک آن برای من ایمیل نشده است؟ </span>
-                <span class="FAQ_card_card-block_lightText"> ۱۳۹۶/۰۳/۰۴&nbsp;|&nbsp;توسط : حمید وتر</span>
+                <span>{{ $question }} </span>
+                <span class="FAQ_card_card-block_lightText"> {{ $created_at }}&nbsp;|&nbsp;توسط : {{ $created_by }}</span>
                 <span>
             <span class="btn-group">
                 <button type="button" class="btn btn-danger btn-sm p-0 dropDownSettingFAQ" data-toggle="dropdown"
@@ -17,19 +17,18 @@
                     <i class="fa fa-cog" aria-hidden="true"></i>
                 </button>
                 <span class="dropdown-menu dropSubDownSettingFAQ p-0 mr-5">
-                    <a class="dropdown-item px-0" href="#">ویرایش</a>
-                    <a class="dropdown-item px-0" href="#">حذف</a>
+                    <a class="dropdown-item px-0 edit" href="{{ route('faqs.edit', $id) }}">ویرایش</a>
+                    {!! Form::open(['method'=>'DELETE', 'action'=>['FaqController@destroy', $id], 'class'=>'singleDestroy']) !!}
+                        {!! Form::submit('حذف', ['id'=>'delete', 'style' => 'background: none; border: none;']) !!}
+                    {!! Form::close() !!}
+                    {{--<a class="dropdown-item px-0" href="#">حذف</a>--}}
                 </span>
             </span>
                     </span>
             </p>
         </div>
         <div class="row pl-4">
-            <p class="FAQ_card_card-block_blueBorder px-3 py-2">
-                لطفا ایمیل های اسپم(spam)خود را چک کنید.به ویژه ایمیل های ارسال
-                شده به حساب های کاربریgmail گاهی spam می شوند.توجه
-                داشته باشید که link تغییر رمز برای شما ارسال میشود نه خود رمز.
-            </p>
+            <p class="FAQ_card_card-block_blueBorder px-3 py-2">{{ $answer }}</p>
         </div>
     </div>
 </div>

@@ -50,10 +50,6 @@ Route::get('/answerMsg', function () {
     return view('dashboard.answerMsg.index');
 });
 
-Route::get('/FAQ', function () {
-    return view('dashboard.FAQ.index');
-});
-
 /* mersede */
 
 Route::get('/layout', function () {
@@ -128,16 +124,11 @@ Route::get('/email', function (){
     Mail::to('hamid.vetr@gmail.com')->send(new \App\Mail\TestMail());
 });
 
-Route::post('/tiny', function (Request $request){
-    $input = $request->all();
-    dd($input);
-});
-
-Route::resource('/textboxio', 'TextboxioController');
-
 /**
  *  correct routes starts form here on
  */
 
 Route::resource('/categories', 'CategoryController');
 Route::post('/categories-multiDestroy', 'CategoryController@multiDestroy')->name('categories.multiDestroy');
+
+Route::resource('/faqs', 'FaqController');

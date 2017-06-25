@@ -86,7 +86,9 @@ class CategoryController extends Controller
      */
     public function edit(Request $request, Category $category)
     {
-        //
+        if($request->ajax()){
+            return json_encode($category);
+        }
     }
 
     /**
