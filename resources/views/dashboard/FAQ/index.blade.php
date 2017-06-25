@@ -5,20 +5,51 @@
 @endsection
 
 @section('content')
+
+    <nav dir="rtl">
+        @component('components.errors') @endcomponent
+        @component('components.flash') @endcomponent
+    </nav>
+
     <div class="row FAQBox_direction">
-        <div class="col-6">
+        <div class="col-6" id="create-div">
+            {!! Form::open(['method'=>'POST', 'action'=>'FaqController@store', 'id'=>'createForm']) !!}
+                <div class="row">
+                    <label>متن سوال را وارد کنید:</label>
+                    {!! Form::text('question', null, ['class' => 'form-control FAQInput']) !!}
+                </div>
+                <br>
+                <div class="row">
+                    <label>متن جواب را وراد کنید:</label>
+                    {!! Form::textarea('answer', null, ['class'=>'form-control', 'rows'=>'6', 'id'=>'answer']) !!}
+                    <script>
+                        CKEDITOR.replace('answer');
+                    </script>
+                </div>
+                <button class="btn hi-whiteCategoryDashboardBox_button light-blue darken-2 pull-right mt-4 py-2 px-1 hi-fontSize-16" id="create-submit"
+                        type="submit">تایید</button>
+            {!! Form::close() !!}
+        </div>
+
+        <div class="col-6" id="edit-div" style="display: none">
+            {!! Form::open(['method'=>'PUT', 'id'=>'editForm']) !!}
             <div class="row">
                 <label>متن سوال را وارد کنید:</label>
-                <input type="text" class="form-control FAQInput">
+                {!! Form::text('question', null, ['class' => 'form-control FAQInput']) !!}
             </div>
             <br>
             <div class="row">
                 <label>متن جواب را وراد کنید:</label>
-                <textarea name="postText" class="form-control" rows="6"></textarea>
+                {!! Form::textarea('answer', null, ['class'=>'form-control', 'rows'=>'6', 'id'=>'answerEdit']) !!}
+                <script>
+                    CKEDITOR.replace('answerEdit');
+                </script>
             </div>
-            <button class="btn hi-whiteCategoryDashboardBox_button light-blue darken-2 pull-right mt-4 py-2 px-1 hi-fontSize-16"
-                    type="submit">تایید</button>
+            <button class="btn hi-whiteCategoryDashboardBox_button light-blue darken-2 pull-right mt-4 py-2 px-1 hi-fontSize-16" id="edit-submit"
+                    type="submit">ویرایش</button>
+            {!! Form::close() !!}
         </div>
+
         <div class="col-6">
             <div class="card">
                 <div class="card-header FAQ_card-header">
@@ -34,25 +65,15 @@
                     <button type="button" class="btn btn-danger FAQ_card-header_deleteButton py-1">حذف</button>
                 </span>
                 </div>
-                <div class="card-block">
-                    @component('components.FAQ')
-                    @endcomponent
-                    <hr  class="FAQ_hr">
-                        @component('components.FAQ')
-                        @endcomponent
-                        <hr  class="FAQ_hr">
-                        @component('components.FAQ')
-                        @endcomponent
-                        <hr  class="FAQ_hr">
-                        @component('components.FAQ')
-                        @endcomponent
+                <div class="card-block" id="loadFaqs">
+                    @include('includes.AllFaqs')
                 </div>
             </div>
         </div>
     </div>
 
+@section('javascript')
+    <script src="{{ asset('js/dashboard/faqIndex.js') }}"></script>
+@endsection
 
-    <script>
-        CKEDITOR.replace('postText');
-    </script>
 @endsection
