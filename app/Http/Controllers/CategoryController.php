@@ -86,9 +86,7 @@ class CategoryController extends Controller
      */
     public function edit(Request $request, Category $category)
     {
-        if($request->ajax()){
-            return json_encode($category);
-        }
+        //
     }
 
     /**
@@ -107,24 +105,7 @@ class CategoryController extends Controller
             $category->updated_by = Auth::user()->id;
             $category->update($input);
 
-            $allCategories = Category::orderByRaw('updated_at desc')->get();
-            $categoriesArray = [];
-            foreach ($allCategories as $category){
-                $categoriesArray[] = $category;
-            }
-
-            $page = Input::get('page', 1); // Get the current page or default to 1
-            $perPage = 8;
-            $offset = ($page * $perPage) - $perPage;
-            $path = "http://dashboard.dev/categories";
-
-            $categories = new LengthAwarePaginator(array_slice($categoriesArray, $offset, $perPage, true),
-                count($categoriesArray),
-                $perPage,
-                $page,
-                ['path' => $path]
-            );
-
+            $categories = Category::pagination();
 
             return view('Includes.AllCategories', compact('categories'))->render();
         }
@@ -147,23 +128,7 @@ class CategoryController extends Controller
                 dd($exception->getMessage());
             }
 
-            $allCategories = Category::orderByRaw('updated_at desc')->get();
-            $categoriesArray = [];
-            foreach ($allCategories as $category){
-                $categoriesArray[] = $category;
-            }
-
-            $page = Input::get('page', 1); // Get the current page or default to 1
-            $perPage = 8;
-            $offset = ($page * $perPage) - $perPage;
-            $path = "http://dashboard.dev/categories";
-
-            $categories = new LengthAwarePaginator(array_slice($categoriesArray, $offset, $perPage, true),
-                count($categoriesArray),
-                $perPage,
-                $page,
-                ['path' => $path]
-            );
+            $categories = Category::pagination();
 
             return view('Includes.AllCategories', compact('categories'))->render();
         }
@@ -185,49 +150,9 @@ class CategoryController extends Controller
                 dd($exception->getMessage());
             }
 
-            $allCategories = Category::orderByRaw('updated_at desc')->get();
-            $categoriesArray = [];
-            foreach ($allCategories as $category){
-                $categoriesArray[] = $category;
-            }
-
-            $page = Input::get('page', 1); // Get the current page or default to 1
-            $perPage = 8;
-            $offset = ($page * $perPage) - $perPage;
-            $path = "http://dashboard.dev/categories";
-
-            $categories = new LengthAwarePaginator(array_slice($categoriesArray, $offset, $perPage, true),
-                count($categoriesArray),
-                $perPage,
-                $page,
-                ['path' => $path]
-            );
+            $categories = Category::pagination();
 
             return view('Includes.AllCategories', compact('categories'))->render();
         }
-    }
-
-    public function dashboardSearch(Request $request)
-    {
-//        $categories = Category::orderByRaw('updated_at desc')->paginate(8);
-//
-//        if($request->has('query')){
-//            $categories = Category::search($request->input('query'))->orderByRaw('updated_at desc')->paginate(8);
-//        }
-//
-//        if ($request->ajax()) {
-////            dd($categories);
-//            return view('Includes.AllCategories', compact('categories'))->render();
-//        }
-//
-//        return view('dashboard.category.index', compact('categories'));
-//        $input = $request->all();
-////        dd($input['search']);
-//        $categories = Category::search($input['search'])->get();
-//        foreach ($categories as $category){
-////            $category->category;
-//            echo $category->category . "<br>";
-//        }
-////        dd($categories);
     }
 }

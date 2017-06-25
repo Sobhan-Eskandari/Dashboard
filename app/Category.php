@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Input;
 use Laravel\Scout\Searchable;
 
 class Category extends Model
@@ -19,5 +21,28 @@ class Category extends Model
         'updated_by',
         'revisions',
     ];
+
+    public static function pagination()
+    {
+        $allCategories = Category::orderByRaw('updated_at desc')->get();
+        $categoriesArray = [];
+        foreach ($allCategories as $category){
+            $categoriesArray[] = $category;
+        }
+
+        $page = Input::get('page', 1); // Get the current page or default to 1
+        $perPage = 8;
+        $offset = ($page * $perPage) - $perPage;
+        $path = "http://dashboard.dev/categories";
+
+        $categories = new LengthAwarePaginator(array_slice($categoriesArray, $offset, $perPage, true),
+            count($categoriesArray),
+            $perPage,
+            $page,
+            ['path' => $path]
+        );
+
+        return $categories;
+    }
 
 }
