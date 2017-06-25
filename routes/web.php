@@ -36,9 +36,10 @@ Route::get('/create', function () {
 Route::get('/category', function () {
     return view('dashboard.category.index');
 });
-Route::get('/tag', function () {
-    return view('dashboard.tag.index');
-});
+Route::resource('/tags','tagController');
+//Route::get('/tag', function () {
+//    return view('dashboard.tag.index');
+//});
 
 Route::get('/createPost', function () {
     return view('dashboard.posts.createPost');
