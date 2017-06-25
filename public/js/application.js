@@ -3,32 +3,69 @@
  */
 
 // Enter key detection
-$.fn.pressEnter = function(fn) {
+// $.fn.pressEnter = function(fn) {
+//
+//     return this.each(function() {
+//         $(this).bind('enterPress', fn);
+//         $(this).keyup(function(e){
+//             if(e.keyCode == 13)
+//             {
+//                 $(this).trigger("enterPress");
+//             }
+//         })
+//     });
+// };
+$("#addChips").click(function (e) {
+    e.preventDefault();
 
-    return this.each(function() {
-        $(this).bind('enterPress', fn);
-        $(this).keyup(function(e){
-            if(e.keyCode == 13)
-            {
-                $(this).trigger("enterPress");
-            }
-        })
-    });
-};
-
-// this is the function ot add chips with the text form input
-$("#addChips").click(function () {
-    addChips();
+    var chipsText = $("#chipsText").val();
+    var CSRF_TOKEN =$( "input[name*='_token']" ).val();
+    if(chipsText===""){
+        alert("is empty");
+    }else{
+        $.ajax({
+            type: 'POST',
+            url: '/tags',
+            data: {_token: CSRF_TOKEN,name:chipsText}
+        }).done(function (data) {
+            addChips(data['tag'],data['token']);
+            notify(data['message']);
+        }).fail(function () {
+            alert('Articles could not be loaded.');
+        });
+    }
+     // addChips();
 });
-$('#chipsText').pressEnter(function(){
-    addChips();
-});
-function addChips() {
+// $('#chipsText').pressEnter(function(e){
+//     e.preventDefault();
+//
+//     var chipsText = $("#chipsText").val();
+//     var CSRF_TOKEN =$( "input[name*='_token']" ).val();
+//     if(chipsText===""){
+//         alert("is empty");
+//     }else{
+//         $.ajax({
+//             type: 'POST',
+//             url: '/tags',
+//             data: {_token: CSRF_TOKEN,name:chipsText}
+//         }).done(function () {
+//             addChips();
+//         }).fail(function () {
+//             alert('Articles could not be loaded.');
+//         });
+//     }
+// });
+function addChips(tag,token) {
     var box = $("#boxOfTags");
     var chipsText = $("#chipsText");
     var chipsDynamicText = `<div class="tag tag_darkMode">
                 <p class="tag__text">`+chipsText.val()+`</p>
-                <i class="tag__close deleteTag fa fa-times" aria-hidden="true"></i>
+                   <form method="DELETE" action="/tag/`+tag.id+`">
+                   <input name="_token" type="hidden" value="`+token+`">
+                    <!--{!! Form::open(['method'=>'DELETE','action'=>['tagController@destroy',tag.id]]) !!}-->
+                      <button class="tag__close deleteTag fa fa-times" aria-hidden="true" id="deleteTag" data-id="`+tag.id+`"></button>
+                    <!--{!! Form::close() !!}-->
+                    </form>
             </div>`;
 
     // fade in animation for chips affter appending
@@ -39,9 +76,25 @@ function addChips() {
 }
 
 // this is the function to remove tag
-$( "body" ).delegate( ".deleteTag", "click", function() {
+$( "body" ).delegate( ".deleteTag", "click", function(e) {
+    e.preventDefault();
     var parent = this.closest('div');
-    $(parent).fadeOut();
+    var id = $(this).attr('data-id');
+    var CSRF_TOKEN =$(this).parent().children("input[name*='_token']").val();
+    if(chipsText===""){
+        alert("is empty");
+    }else{
+        $.ajax({
+            type: 'DELETE',
+            url: '/tags/'+id,
+            data: {_token: CSRF_TOKEN,id:id}
+        }).done(function (data) {
+            $(parent).fadeOut();
+            notify(data);
+        }).fail(function () {
+            alert('Articles could not be loaded.');
+        });
+    }
 });
 
 
@@ -474,40 +527,45 @@ window.pd = $("#inlineDatepicker").persianDatepicker({
 }).data('datepicker');
 
 // ================================[ Alert Notification  ]=================================
-
+function notify(message) {
 // create the notification
-var notification = new NotificationFx({
+    var notification = new NotificationFx({
 
-    // element to which the notification will be appended
-    // defaults to the document.body
-    wrapper : document.body,
+        // element to which the notification will be appended
+        // defaults to the document.body
+        wrapper: document.body,
 
-    // the message
-    message : '<p>این یک پیغام است</p>',
+        // the message
+        message: '<p>'+message+'</p>',
 
-    // layout type: growl|attached|bar|other
-    layout : 'growl',
+        // layout type: growl|attached|bar|other
+        layout: 'growl',
 
-    // effects for the specified layout:
-    // for growl layout: scale|slide|genie|jelly
-    // for attached layout: flip|bouncyflip
-    // for other layout: boxspinner|cornerexpand|loadingcircle|thumbslider
-    // ...
-    effect : 'jelly',
+        // effects for the specified layout:
+        // for growl layout: scale|slide|genie|jelly
+        // for attached layout: flip|bouncyflip
+        // for other layout: boxspinner|cornerexpand|loadingcircle|thumbslider
+        // ...
+        effect: 'jelly',
 
-    // notice, warning, error, success
-    // will add class ns-type-warning, ns-type-error or ns-type-success
-    type : 'error',
+        // notice, warning, error, success
+        // will add class ns-type-warning, ns-type-error or ns-type-success
+        type: 'success',
 
-    // if the user doesn´t close the notification then we remove it
-    // after the following time
-    ttl : 6000,
+        // if the user doesn´t close the notification then we remove it
+        // after the following time
+        ttl: 6000,
 
-    // callbacks
-    onClose : function() { return false; },
-    onOpen : function() { return false; }
+        // callbacks
+        onClose: function () {
+            return false;
+        },
+        onOpen: function () {
+            return false;
+        }
 
-});
+    });
 
 // show the notification
-notification.show();
+    notification.show();
+}
