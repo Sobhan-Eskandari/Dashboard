@@ -15,9 +15,15 @@ class tagController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $tags = Tag::all();
+        if($request->has('query')) {
+            $tags = Tag::search($request->input('query'))->get();
+        }
+        if ($request->ajax()){
+            return view('Includes.AllTags',compact('tags'));
+        }
         return view('dashboard.tag.index',compact('tags'));
     }
 

@@ -1,5 +1,13 @@
 @extends('layouts.main')
 
+@section('search')
+    <div class="hi-search-1">
+        {!! Form::open(['method'=>'GET', 'action'=>'tagController@index']) !!}
+        {!! Form::text('query', isset($_GET['query'])? $_GET['query'] : '', ['class' => 'hi-search_field', 'placeholder'=>'جست و جو کنید...', 'id'=>'searchTag']) !!}
+        <button class="hi-button-btn1 pull-left" id="loading"><i class="fa fa-search white-text hi-fontSize-19" aria-hidden="true"></i></button>
+        {!! Form::close() !!}
+    </div>
+    @endsection
 @section('breadcrumb')
     @component('components.Breadcrumb')
 
@@ -10,19 +18,7 @@
     <div class="hi-whiteCategoryDashboardBox">
         <div class="row p-5">
             <div class="col-5 offset-1" id="boxOfTags">
-                @if($tags)
-                    @foreach($tags as $tag)
-                        <div class="tag tag_darkMode">
-                            <p class="tag__text">
-                                {{$tag->name}}
-                            </p>
-                            {!! Form::open(['method'=>'DELETE','action'=>['tagController@destroy',$tag->id]]) !!}
-                            <button class="tag__close deleteTag fa fa-times" aria-hidden="true" id="deleteTag" data-id="{{$tag->id}}"></button>
-                            {!! Form::close() !!}
-                        </div>
-
-                    @endforeach
-                @endif
+                @include('Includes.AllTags')
             </div>
 
             <div class="col-4 offset-1 categoryRightDirection">
@@ -41,10 +37,25 @@
 
         </div>
     </div>
-    {{--<script src="{{ asset('js/Alert/modernizr.custom.js') }}"></script>--}}
-    {{--<script src="{{ asset('js/Alert/bounce.min.js') }}"></script>--}}
-    {{--<script src="{{ asset('js/Alert/classie.js') }}"></script>--}}
-    {{--<script src="{{ asset('js/Alert/notificationFx.js') }}"></script>--}}
+    <script>
+        var collect ={};
+        $('#searchTag').keyup(function(e){
+//            e.preventDefault();
+            collect['query'] = $('#searchTag').val();
+            if(collect['query'].length >=3 || e.keyCode===8){
+                console.log(collect['query']);
+                $.ajax({
+                    url: '/tags',
+                    data: collect
+                }).done(function (data) {
+                    $('#boxOfTags').html(data);
+                    window.history.pushState(data, "Title"," /tags?query="+collect['query']);
+                }).fail(function () {
+                    alert('Articles could not be loaded.');
+                });
+            }
+        });
+    </script>
 @endsection
 
 
