@@ -8,6 +8,11 @@
 
 @section('content')
 
+    <nav dir="rtl">
+        @component('components.errors') @endcomponent
+        @component('components.flash') @endcomponent
+    </nav>
+
     <section class="usersSection">
         <div class="row">
             <div class="col-12 bgCard hi-shadow-2">
@@ -59,43 +64,27 @@
                                     <th class="text-right">علامت زدن همه</th>
                                     <th width="50%">صندوق ورودی</th>
                                     <th>زمان</th>
-                                    <th>وضعیت</th>
+                                    <th>پاسخ داده شده</th>
                                     <th></th>
                                 </tr>
 
                                 </thead>
                                 <tbody>
-                                @for ($i = 0; $i < 8; $i++)
+                                @foreach($inboxes as $inbox)
                                     {{--==========[ Table Row ]========= --}}
-                                    <tr>
+                                    <tr class={{ $inbox->seen === 0 ? 'active_row' : '' }}>
                                         @component('components.MessagesInboxTableRow')
-
-                                            @slot('chk_name')
-                                                {{ $i }}
-                                            @endslot
-
-
-                                        @slot('sender_name')
-                                                حمید وتر
-                                            @endslot
-
-                                            @slot('sender_text')
-                                                    هواپیمای فضایی بدون سرنشین نیروی هوایی آمریکا به نام X-37B دیروز صبح در مرکز فضایی کِنِدی ناسا به زمین نشست،
-                                            @endslot
-
-                                            @slot('sender_time')
-    ۲۲:۳۰
-                                            @endslot
-
-                                            @slot('sender_date')
-    ۱۳۹۶/۵/۴
-                                            @endslot
-
-                                            @slot('trash')@endslot
-
+                                            @slot('id') {{ $inbox->id }} @endslot
+                                            @slot('full_name') {{ $inbox->full_name }} @endslot
+                                            @slot('message') {{ str_limit($inbox->message, 100) }} @endslot
+                                            @slot('time') {{ $inbox->created_at->format('H:i') }} @endslot
+                                            @slot('date') {{ $inbox->created_at->format('y/m/d') }} @endslot
+                                            @if(is_null($inbox->answered_by))
+                                                @slot('answered') @endslot
+                                            @endif
                                         @endcomponent
                                     </tr>
-                                @endfor
+                                @endforeach
 
                                 </tbody>
                             </table>
@@ -106,13 +95,7 @@
                     <div class="row mt-4">
                         <div class="col-auto">
                             <nav aria-label="Page navigation example">
-                                <ul class="pagination">
-                                    <li class="page-item"><a class="page-link nextBtn" href="#">بعدی</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">۱</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">۲</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">۳</a></li>
-                                    <li class="page-item"><a class="page-link prevBtn" href="#">قبلی</a></li>
-                                </ul>
+                                {{ $inboxes->links() }}
                             </nav>
                         </div>
                     </div>

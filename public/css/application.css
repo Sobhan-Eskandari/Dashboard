@@ -7864,11 +7864,6 @@ h6.card-header.backupMainTitleCard {
   .messages_inbox_trashTable tr, .messages_outbox_trashTable tr, .messages_outbox_table
   tr, .posts_table tr, .posts_trashTable tr, .sliders_table tr, .users_table tr, .users_trashTable tr {
     border: 1px solid #C6CBD0; }
-    .admins_trashTable tr:nth-child(2n), .comments_table tr:nth-child(2n), .comments_trashTable tr:nth-child(2n),
-    .media_table tr:nth-child(2n), .media_trashTable tr:nth-child(2n), .messages_inbox_table tr:nth-child(2n),
-    .messages_inbox_trashTable tr:nth-child(2n), .messages_outbox_trashTable tr:nth-child(2n), .messages_outbox_table
-    tr:nth-child(2n), .posts_table tr:nth-child(2n), .posts_trashTable tr:nth-child(2n), .sliders_table tr:nth-child(2n), .users_table tr:nth-child(2n), .users_trashTable tr:nth-child(2n) {
-      background-color: #D7DFE8; }
   .admins_trashTable .active_row, .comments_table .active_row, .comments_trashTable .active_row,
   .media_table .active_row, .media_trashTable .active_row, .messages_inbox_table .active_row,
   .messages_inbox_trashTable .active_row, .messages_outbox_trashTable .active_row, .messages_outbox_table

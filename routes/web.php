@@ -33,19 +33,7 @@ Route::get('/create', function () {
     return view('dashboard.admins.create');
 });
 
-
-
-Route::get('/tag', function () {
-    return view('dashboard.tag.index');
-});
-
-Route::get('/category', function () {
-    return view('dashboard.category.index');
-});
 Route::resource('/tags','tagController');
-//Route::get('/tag', function () {
-//    return view('dashboard.tag.index');
-//});
 
 Route::get('/createPost', function () {
     return view('dashboard.posts.createPost');
@@ -53,10 +41,6 @@ Route::get('/createPost', function () {
 
 Route::get('/backup', function () {
     return view('dashboard.backup.backup');
-});
-
-Route::get('/answerMsg', function () {
-    return view('dashboard.answerMsg.index');
 });
 
 /* mersede */
@@ -86,8 +70,6 @@ Route::get('/posts/trash', function () {
     return view('dashboard.posts.trash');
 });
 
-
-
 Route::get('/files', function () {
     return view('dashboard.media.index');
 });
@@ -102,24 +84,9 @@ Route::get('/comments/trash', function () {
     return view('dashboard.comments.trash');
 });
 
-Route::get('/messages/outbox', function () {
-    return view('dashboard.messages.outbox.index');
-});
-Route::get('/messages/outbox/trash', function () {
-    return view('dashboard.messages.outbox.trash');
-});
-
-Route::get('/messages/inbox', function () {
-    return view('dashboard.messages.inbox.index');
-});
-Route::get('/messages/inbox/trash', function () {
-    return view('dashboard.messages.inbox.trash');
-});
-
 Route::get('/sliders', function () {
     return view('dashboard.sliders.index');
 });
-
 
 Route::get('/settings', function () {
     return view('dashboard.settings.index');
@@ -142,3 +109,9 @@ Route::post('/categories-multiDestroy', 'CategoryController@multiDestroy')->name
 
 Route::resource('/faqs', 'FaqController');
 Route::post('/faqs-multiDestroy', 'FaqController@multiDestroy')->name('faqs.multiDestroy');
+
+Route::resource('/inbox', 'InboxController');
+Route::get('/inbox/trash', 'InboxController@trash')->name('inbox.trash');
+
+Route::resource('/outbox', 'OutboxController');
+Route::get('/outbox/trash', 'OutboxController@trash')->name('outbox.trash');

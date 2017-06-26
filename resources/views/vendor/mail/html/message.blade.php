@@ -10,18 +10,18 @@
     {{ $slot }}
 
     {{-- Subcopy --}}
-    @if (isset($subcopy))
+    @isset($subcopy)
         @slot('subcopy')
             @component('mail::subcopy')
                 {{ $subcopy }}
             @endcomponent
         @endslot
-    @endif
+    @endisset
 
     {{-- Footer --}}
     @slot('footer')
         @component('mail::footer')
-            &copy; {{ date('Y') }} {{ config('app.name') }}. All rights reserved.
+            تمام حقوق برای     {{ config('app.name') }}      محفوظ است   {{ jDate::forge('now')->format('Y') }}&copy;
         @endcomponent
     @endslot
 @endcomponent

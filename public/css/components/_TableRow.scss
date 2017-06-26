@@ -35,9 +35,6 @@
   /* ==========[ Each Table Row Style ]========= */
   tr{
     border: 1px solid #C6CBD0;
-    &:nth-child(2n){
-      background-color: #D7DFE8;
-    }
   }
   .active_row{
     background-color: #D7DFE8;
