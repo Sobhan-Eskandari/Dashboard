@@ -4,6 +4,16 @@
     <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>
 @endsection
 
+@section('search')
+    <div class="hi-search-1">
+        {!! Form::open(['method'=>'GET', 'action'=>'FaqController@index']) !!}
+            {!! Form::text('query', isset($_GET['query'])? $_GET['query'] : '', ['class' => 'hi-search_field', 'placeholder'=>'جست و جو کنید...', 'id'=>'search']) !!}
+            <button class="hi-button-btn1 pull-left" id="loading"><i class="fa fa-search white-text hi-fontSize-19" aria-hidden="true"></i></button>
+        {!! Form::close() !!}
+    </div>
+@endsection
+
+
 @section('content')
 
     <nav dir="rtl">
@@ -62,8 +72,11 @@
 
                    </span>
                     <span class="pull-left">
-                    <button type="button" class="btn btn-danger FAQ_card-header_deleteButton py-1">حذف</button>
-                </span>
+                        {!! Form::open(['method'=>'POST', 'action'=>'CategoryController@multiDestroy', 'id'=>'deleteForm']) !!}
+                            <button id="multiDestroy" type="button" class="btn btn-danger FAQ_card-header_deleteButton py-1">حذف</button>
+                        {!! Form::close() !!}
+                    {{--<button type="button" class="btn btn-danger FAQ_card-header_deleteButton py-1">حذف</button>--}}
+                    </span>
                 </div>
                 <div class="card-block" id="loadFaqs">
                     @include('includes.AllFaqs')
@@ -72,8 +85,8 @@
         </div>
     </div>
 
-@section('javascript')
-    <script src="{{ asset('js/dashboard/faqIndex.js') }}"></script>
 @endsection
 
+@section('javascript')
+    <script src="{{ asset('js/dashboard/faqIndex.js') }}"></script>
 @endsection

@@ -141,3 +141,4 @@ Route::resource('/categories', 'CategoryController');
 Route::post('/categories-multiDestroy', 'CategoryController@multiDestroy')->name('categories.multiDestroy');
 
 Route::resource('/faqs', 'FaqController');
+Route::post('/faqs-multiDestroy', 'FaqController@multiDestroy')->name('faqs.multiDestroy');

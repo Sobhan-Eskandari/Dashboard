@@ -15,9 +15,18 @@ class FaqController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $faqs = FAQ::orderBy('created_at', 'desc')->get();
+        $faqs = FAQ::orderBy('updated_at', 'desc')->get();
+
+        if($request->has('query')){
+            $faqs = FAQ::search($request->input('query'))->orderBy('updated_at','desc')->get();
+        }
+
+        if ($request->ajax()) {
+            return view('Includes.AllFaqs', compact('faqs'))->render();
+        }
+
         return view('dashboard.FAQ.index', compact('faqs'));
     }
 
@@ -49,7 +58,7 @@ class FaqController extends Controller
                 dd($exception);
             }
 
-            $faqs = FAQ::orderBy('created_at', 'desc')->get();
+            $faqs = FAQ::orderBy('updated_at', 'desc')->get();
             return view('Includes.AllFaqs', compact('faqs'))->render();
         }
     }
@@ -93,7 +102,7 @@ class FaqController extends Controller
             $faq->updated_by = Auth::user()->id;
             $faq->update($input);
 
-            $faqs = FAQ::orderBy('created_at', 'desc')->get();
+            $faqs = FAQ::orderBy('updated_at', 'desc')->get();
             return view('Includes.AllFaqs', compact('faqs'))->render();
         }
     }
@@ -115,7 +124,28 @@ class FaqController extends Controller
                 dd($exception->getMessage());
             }
 
-            $faqs = FAQ::orderBy('created_at', 'desc')->get();
+            $faqs = FAQ::orderBy('updated_at', 'desc')->get();
+            return view('Includes.AllFaqs', compact('faqs'))->render();
+        }
+    }
+
+    public function multiDestroy(Request $request)
+    {
+        if($request->ajax()){
+            $input = $request->all();
+            $ids = explode(',', $input['ids']);
+            try {
+                foreach ($ids as $id){
+                    $deleteFaq = FAQ::findOrFail($id);
+                    $deleteFaq->updated_by = Auth::user()->id;
+                    $deleteFaq->save();
+                    $deleteFaq->delete();
+                }
+            }catch (\Exception $exception){
+                dd($exception->getMessage());
+            }
+
+            $faqs = FAQ::orderBy('updated_at', 'desc')->get();
             return view('Includes.AllFaqs', compact('faqs'))->render();
         }
     }

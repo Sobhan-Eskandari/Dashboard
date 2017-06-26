@@ -22,7 +22,7 @@ class TagTableSeeder extends Seeder
 
         foreach (range(1, 20) as $index){
             $tags[] = [
-                'tag' => $faker->firstName,
+                'name' => $faker->firstName,
                 'created_at' => $time,
                 'updated_at' => $time,
                 'created_by' => '1',
