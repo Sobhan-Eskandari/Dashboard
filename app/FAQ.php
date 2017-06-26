@@ -5,11 +5,13 @@ namespace App;
 use Hamcrest\Thingy;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Laravel\Scout\Searchable;
 use Morilog\Jalali\jDate;
 
 class FAQ extends Model
 {
     use SoftDeletes;
+    use Searchable;
 
     protected $dates = ['deleted_at'];
 
