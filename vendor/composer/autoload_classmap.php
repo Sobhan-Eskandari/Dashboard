@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'CategoryTableSeeder' => $baseDir . '/database/seeds/CategoryTableSeeder.php',
+    'CreateAdminsTable' => $baseDir . '/database/migrations/2017_06_27_104503_create_admins_table.php',
     'CreateAudioTable' => $baseDir . '/database/migrations/2017_03_27_195240_create_audio_table.php',
     'CreateAudioablesTable' => $baseDir . '/database/migrations/2017_03_27_195254_create_audioables_table.php',
     'CreateCategorablesTable' => $baseDir . '/database/migrations/2017_03_27_195639_create_categorables_table.php',

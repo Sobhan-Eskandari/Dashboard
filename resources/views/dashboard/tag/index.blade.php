@@ -40,10 +40,8 @@
     <script>
         var collect ={};
         $('#searchTag').keyup(function(e){
-//            e.preventDefault();
             collect['query'] = $('#searchTag').val();
             if(collect['query'].length >=3 || e.keyCode===8){
-                console.log(collect['query']);
                 $.ajax({
                     url: '/tags',
                     data: collect
