@@ -25,6 +25,7 @@ class CreateInboxesTable extends Migration
             $table->dateTime('answered_at')->nullable(true);
             $table->unsignedBigInteger('answered_by')->nullable(true);
             $table->unsignedBigInteger('seen_by')->nullable(true);
+            $table->unsignedBigInteger('updated_by')->nullable(true);
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
             $table->dateTime('deleted_at')->nullable(true);

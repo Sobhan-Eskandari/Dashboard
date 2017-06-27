@@ -30,10 +30,13 @@
         </button>
         {{--==========[ Dropdown Menu ]========= --}}
         <div data-dropdown-in="fadeIn" data-dropdown-out="fadeOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item text-right py-0" href="{{ route('inbox.show', $id) }}"><i class="fa fa-reply ml-2" aria-hidden="true"></i>پاسخ</a>
+            {!! Form::open(['method'=>'POST', 'action'=>['InboxController@restore', $id], 'class'=>'restore']) !!}
+                {!! Form::submit('بازگردانی', ['id'=>'restore', 'style' => 'background: none; border: none;']) !!}
+            {!! Form::close() !!}
+            {{--<a class="dropdown-item text-right py-0" href="{{ route('inbox.restore', $id) }}"><i class="fa fa-undo ml-2" aria-hidden="true"></i>بازگردانی</a>--}}
             <div class="dropdown-divider my-1"></div>
-            {!! Form::open(['method'=>'DELETE', 'action'=>['InboxController@destroy', $id], 'class'=>'singleDestroy']) !!}
-                {!! Form::submit('حذف', ['id'=>'delete', 'style' => 'background: none; border: none;']) !!}
+            {!! Form::open(['method'=>'DELETE', 'action'=>['InboxController@forceDestroy', $id], 'class'=>'singleDestroy']) !!}
+                {!! Form::submit('حذف دائمی', ['id'=>'delete', 'style' => 'background: none; border: none;']) !!}
             {!! Form::close() !!}
         </div>
     </div>

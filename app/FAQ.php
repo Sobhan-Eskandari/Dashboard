@@ -11,7 +11,7 @@ use Morilog\Jalali\jDate;
 class FAQ extends Model
 {
     use SoftDeletes;
-    use Searchable;
+//    use Searchable;
 
     protected $dates = ['deleted_at'];
 

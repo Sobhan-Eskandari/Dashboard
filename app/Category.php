@@ -22,6 +22,11 @@ class Category extends Model
         'revisions',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'created_by');
+    }
+
     public static function pagination()
     {
         $allCategories = Category::orderByRaw('updated_at desc')->get();

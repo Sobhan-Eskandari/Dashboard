@@ -20,7 +20,7 @@ class InboxTableSeeder extends Seeder
         $inboxes = [];
         $time = jDate::forge('now')->format('datetime', true);
 
-        foreach (range(1, 20) as $index){
+        foreach (range(1, 100) as $index){
             $inboxes[] = [
                 'full_name' => $faker->name,
                 'email' => $faker->email,

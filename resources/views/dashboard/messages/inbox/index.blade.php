@@ -1,5 +1,14 @@
 @extends('layouts.main')
 
+@section('search')
+    <div class="hi-search-1">
+        {!! Form::open(['method'=>'GET', 'action'=>'InboxController@index']) !!}
+        {!! Form::text('query', isset($_GET['query'])? $_GET['query'] : '', ['class' => 'hi-search_field', 'placeholder'=>'جست و جو کنید...', 'id'=>'search']) !!}
+            <button class="hi-button-btn1 pull-left" id="loading"><i class="fa fa-search white-text hi-fontSize-19" aria-hidden="true"></i></button>
+        {!! Form::close() !!}
+    </div>
+@endsection
+
 @section('breadcrumb')
     @component('components.Breadcrumb')
 
@@ -21,9 +30,9 @@
                     {{--==========[ Row of buttons abpve table ]========= --}}
                     <div class="row">
                         <div class="col-1 pl-0">
-                            <button class="hi-button-btn1 orange darken-2 hi-shadow-1 hi-size-4">
+                            <a class="hi-button-btn1 orange darken-2 hi-shadow-1 hi-size-4" href="{{ route('inbox.trash') }}">
                                 <i class="fa fa-trash white-text hi-fontSize-20" aria-hidden="true"></i>
-                            </button>
+                            </a>
                         </div>
 
                         <div class="col-2">
@@ -42,62 +51,15 @@
                         </div>
 
                         <div class="col-auto offset-8 text-right mr-2">
-                            <button class="hi-button-simple hi-shadow-0 red darken-3 text-right">حذف</button>
+                            {!! Form::open(['method'=>'POST', 'action'=>'InboxController@multiDestroy', 'id'=>'deleteForm']) !!}
+                                <button id="multiDestroy" type="button" class="hi-button-simple hi-shadow-0 red darken-3 text-right">حذف</button>
+                            {!! Form::close() !!}
                         </div>
 
                     </div>
 
-                    {{--==========[ Table Of Users ]========= --}}
-                    <div class="row mt-3">
-                        <div class="col-12 px-0">
-                            <table class="messages_inbox_table">
-                                <thead class="table_tableHeader white-text">
-
-                                {{--==========[ Table Headers ]========= --}}
-                                <tr>
-                                    <th class="pl-0">
-                                        <div class="pure-checkbox mt-2">
-                                            <input id="selectAllMsgInbox" class="selectAllCheckboxes" name="checkbox" type="checkbox" onclick="selectAllCmnt()">
-                                            <label for="selectAllMsgInbox"></label>
-                                        </div>
-                                    </th>
-                                    <th class="text-right">علامت زدن همه</th>
-                                    <th width="50%">صندوق ورودی</th>
-                                    <th>زمان</th>
-                                    <th>پاسخ داده شده</th>
-                                    <th></th>
-                                </tr>
-
-                                </thead>
-                                <tbody>
-                                @foreach($inboxes as $inbox)
-                                    {{--==========[ Table Row ]========= --}}
-                                    <tr class={{ $inbox->seen === 0 ? 'active_row' : '' }}>
-                                        @component('components.MessagesInboxTableRow')
-                                            @slot('id') {{ $inbox->id }} @endslot
-                                            @slot('full_name') {{ $inbox->full_name }} @endslot
-                                            @slot('message') {{ str_limit($inbox->message, 100) }} @endslot
-                                            @slot('time') {{ $inbox->created_at->format('H:i') }} @endslot
-                                            @slot('date') {{ $inbox->created_at->format('y/m/d') }} @endslot
-                                            @if(is_null($inbox->answered_by))
-                                                @slot('answered') @endslot
-                                            @endif
-                                        @endcomponent
-                                    </tr>
-                                @endforeach
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    {{--============[ Pagination of Page ]===========--}}
-                    <div class="row mt-4">
-                        <div class="col-auto">
-                            <nav aria-label="Page navigation example">
-                                {{ $inboxes->links() }}
-                            </nav>
-                        </div>
+                    <div id="loadInboxes">
+                        @include('Includes.AllInboxes')
                     </div>
 
                 </div>
@@ -105,4 +67,8 @@
         </div>
     </section>
 
+@endsection
+
+@section('javascript')
+    <script src="{{ asset('js/dashboard/InboxIndex.js') }}"></script>
 @endsection

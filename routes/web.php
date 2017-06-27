@@ -111,7 +111,11 @@ Route::resource('/faqs', 'FaqController');
 Route::post('/faqs-multiDestroy', 'FaqController@multiDestroy')->name('faqs.multiDestroy');
 
 Route::resource('/inbox', 'InboxController');
-Route::get('/inbox/trash', 'InboxController@trash')->name('inbox.trash');
+Route::get('/inbox-trash', 'InboxController@trash')->name('inbox.trash');
+Route::delete('/inbox-trash/{inbox}', 'InboxController@forceDestroy')->name('inbox.forceDestroy');
+Route::post('/inbox-restore/{inbox}', 'InboxController@restore')->name('inbox.restore');
+Route::post('/inbox-multiDestroy', 'InboxController@multiDestroy')->name('inbox.multiDestroy');
+Route::post('/inbox-trash-forceMultiDestroy', 'InboxController@forceMultiDestroy')->name('inbox.forceMultiDestroy');
 
 Route::resource('/outbox', 'OutboxController');
 Route::get('/outbox/trash', 'OutboxController@trash')->name('outbox.trash');
