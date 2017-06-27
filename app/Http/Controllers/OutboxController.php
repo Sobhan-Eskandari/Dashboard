@@ -20,9 +20,19 @@ class OutboxController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('dashboard.messages.outbox.index');
+        $outboxes = Outbox::orderBy('created_at', 'desc')->paginate(8);
+
+        if($request->has('query')){
+            $outboxes = Outbox::search($request->input('query'))->orderBy('created_at', 'desc')->paginate(8);
+        }
+
+        if ($request->ajax()) {
+            return view('Includes.AllOutboxes', compact('outboxes'))->render();
+        }
+
+        return view('dashboard.messages.outbox.index', compact('outboxes'));
     }
 
     /**
@@ -64,7 +74,7 @@ class OutboxController extends Controller
      */
     public function show(Outbox $outbox)
     {
-        //
+        return view('dashboard.messages.outbox.show', compact('outbox'));
     }
 
     /**
@@ -96,13 +106,99 @@ class OutboxController extends Controller
      * @param  \App\Outbox  $outbox
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Outbox $outbox)
+    public function destroy(Request $request, Outbox $outbox)
     {
-        //
+        if($request->ajax()){
+            try {
+                $outbox->delete();
+            }catch (\Exception $exception){
+                dd($exception->getMessage());
+            }
+
+            $outboxes = Outbox::pagination();
+            return view('Includes.AllOutboxes', compact('outboxes'))->render();
+        }
     }
 
-    public function trash()
+    public function multiDestroy(Request $request)
     {
-        return view('dashboard.messages.outbox.trash');
+        if($request->ajax()){
+            $input = $request->all();
+            $ids = explode(',', $input['ids']);
+            try {
+                foreach ($ids as $id){
+                    Outbox::findOrFail($id)->delete();
+                }
+            }catch (\Exception $exception){
+                dd($exception->getMessage());
+            }
+
+            $outboxes = Outbox::pagination();
+            return view('Includes.AllOutboxes', compact('outboxes'))->render();
+        }
+    }
+
+    public function trash(Request $request)
+    {
+        $outboxes = Outbox::onlyTrashed()->orderBy('created_at', 'desc')->paginate(8);
+
+        if ($request->ajax()) {
+            return view('Includes.AllOutboxesTrash', compact('outboxes'))->render();
+        }
+
+        return view('dashboard.messages.outbox.trash', compact('outboxes'));
+    }
+
+    public function forceDestroy(Request $request, $id)
+    {
+        if($request->ajax()){
+            try {
+                Outbox::onlyTrashed()->findOrFail($id)->forceDelete();
+            }catch (\Exception $exception){
+                dd($exception->getMessage());
+            }
+
+            $outboxes = Outbox::pagination("http://dashboard.dev/outbox-trash");
+            return view('Includes.AllOutboxesTrash', compact('outboxes'))->render();
+        }
+    }
+
+    public function forceMultiDestroy(Request $request)
+    {
+        if($request->ajax()){
+            $input = $request->all();
+            $ids = explode(',', $input['ids']);
+            try {
+                foreach ($ids as $id){
+                    Outbox::onlyTrashed()->findOrFail($id)->forceDelete();
+                }
+            }catch (\Exception $exception){
+                dd($exception->getMessage());
+            }
+
+            $outboxes = Outbox::pagination("http://dashboard.dev/outbox-trash");
+            return view('Includes.AllOutboxesTrash', compact('outboxes'))->render();
+        }
+    }
+
+    public function restore(Request $request, $id)
+    {
+        $outbox = Outbox::onlyTrashed()->findOrFail($id);
+        if($request->ajax()){
+            try {
+                if(count($outbox->inbox) !== 0){
+                    $outbox->restore();
+                }else{
+                    /**
+                     *      couldn't restore because it has no inbox
+                     */
+                }
+            }catch (\Exception $exception){
+                dd($exception->getMessage());
+            }
+
+            $outboxes = Outbox::pagination("http://dashboard.dev/outbox-trash");
+            return view('Includes.AllOutboxesTrash', compact('outboxes'))->render();
+        }
     }
 }

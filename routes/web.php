@@ -118,4 +118,8 @@ Route::post('/inbox-multiDestroy', 'InboxController@multiDestroy')->name('inbox.
 Route::post('/inbox-trash-forceMultiDestroy', 'InboxController@forceMultiDestroy')->name('inbox.forceMultiDestroy');
 
 Route::resource('/outbox', 'OutboxController');
-Route::get('/outbox/trash', 'OutboxController@trash')->name('outbox.trash');
+Route::get('/outbox-trash', 'OutboxController@trash')->name('outbox.trash');
+Route::delete('/outbox-trash/{outbox}', 'OutboxController@forceDestroy')->name('outbox.forceDestroy');
+Route::post('/outbox-restore/{outbox}', 'OutboxController@restore')->name('outbox.restore');
+Route::post('/outbox-multiDestroy', 'OutboxController@multiDestroy')->name('outbox.multiDestroy');
+Route::post('/outbox-trash-forceMultiDestroy', 'OutboxController@forceMultiDestroy')->name('outbox.forceMultiDestroy');
