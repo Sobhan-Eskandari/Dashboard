@@ -141,10 +141,6 @@ class InboxController extends Controller
     {
         $inboxes = Inbox::onlyTrashed()->orderBy('created_at', 'desc')->paginate(8);
 
-        if($request->has('query')){
-            $inboxes = Inbox::onlyTrashed()->search($request->input('query'))->orderBy('created_at', 'desc')->paginate(8);
-        }
-
         if ($request->ajax()) {
             return view('Includes.AllInboxesTrash', compact('inboxes'))->render();
         }

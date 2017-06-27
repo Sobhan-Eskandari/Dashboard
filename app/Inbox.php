@@ -11,7 +11,7 @@ use Laravel\Scout\Searchable;
 class Inbox extends Model
 {
     use SoftDeletes;
-//    use Searchable;
+    use Searchable;
 
     protected $dates = ['deleted_at'];
 
@@ -63,5 +63,15 @@ class Inbox extends Model
         );
 
         return $inboxes;
+    }
+
+    public function toSearchableArray()
+    {
+        return [
+            'id' => $this->id,
+            'full_name' => $this->full_name,
+            'message' => $this->message,
+            'subject' => $this->subject,
+        ];
     }
 }

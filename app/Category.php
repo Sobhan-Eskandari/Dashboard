@@ -50,4 +50,12 @@ class Category extends Model
         return $categories;
     }
 
+    public function toSearchableArray()
+    {
+        return [
+            'id' => $this->id,
+            'category' => $this->category,
+        ];
+    }
+
 }

@@ -11,7 +11,7 @@ use Morilog\Jalali\jDate;
 class FAQ extends Model
 {
     use SoftDeletes;
-//    use Searchable;
+    use Searchable;
 
     protected $dates = ['deleted_at'];
 
@@ -30,5 +30,14 @@ class FAQ extends Model
     public function user()
     {
         return $this->belongsTo('App\User', 'created_by');
+    }
+
+    public function toSearchableArray()
+    {
+        return [
+            'id' => $this->id,
+            'question' => $this->question,
+            'answer' => $this->answer,
+        ];
     }
 }

@@ -61,26 +61,8 @@
         </div>
 
         <div class="col-6">
-            <div class="card">
-                <div class="card-header FAQ_card-header">
-                   <span class="pull-right pt-1">
-                       <label class='FAQ_card-block_tick_square-checkbox'>
-                                <input type='checkbox' class="pull-right">
-                           &nbsp;
-                                <span> علامت زدن همه</span>
-                            </label>
-
-                   </span>
-                    <span class="pull-left">
-                        {!! Form::open(['method'=>'POST', 'action'=>'CategoryController@multiDestroy', 'id'=>'deleteForm']) !!}
-                            <button id="multiDestroy" type="button" class="btn btn-danger FAQ_card-header_deleteButton py-1">حذف</button>
-                        {!! Form::close() !!}
-                    {{--<button type="button" class="btn btn-danger FAQ_card-header_deleteButton py-1">حذف</button>--}}
-                    </span>
-                </div>
-                <div class="card-block" id="loadFaqs">
-                    @include('includes.AllFaqs')
-                </div>
+            <div class="card" id="loadFaqs">
+                @include('includes.AllFaqs')
             </div>
         </div>
     </div>
