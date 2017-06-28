@@ -7007,6 +7007,16 @@ g, path, circle, rect {
 body {
   font-family: IRANSans !important; }
 
+.l-rtl {
+  direction: rtl; }
+
+.l-ltr {
+  direction: ltr; }
+
+.overflowBox {
+  height: 300px;
+  overflow: scroll; }
+
 .hi-subjectDashboardAdminProfile_h5 {
   color: #a7a7a7;
   font-weight: 400;
@@ -8275,13 +8285,12 @@ a:focus, a:hover, a {
 
 /* ============[ category box ]=========== */
 #hi-categoryListGroupFlip, #hi-CategoryListGroupPanel {
-  padding: 0px;
+  padding: 0;
   text-align: center; }
 
 #categoriesList, #tagsList {
   padding: 5px;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+  border-radius: 10px 10px 0 0;
   color: #222222;
   border: 1px solid #d9dfe9; }
 
