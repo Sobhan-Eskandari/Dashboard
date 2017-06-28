@@ -33,14 +33,8 @@ Route::get('/create', function () {
     return view('dashboard.admins.create');
 });
 
-Route::resource('/tags','tagController');
-
 Route::get('/createPost', function () {
     return view('dashboard.posts.createPost');
-});
-
-Route::get('/backup', function () {
-    return view('dashboard.backup.backup');
 });
 
 /* mersede */
@@ -123,3 +117,12 @@ Route::delete('/outbox-trash/{outbox}', 'OutboxController@forceDestroy')->name('
 Route::post('/outbox-restore/{outbox}', 'OutboxController@restore')->name('outbox.restore');
 Route::post('/outbox-multiDestroy', 'OutboxController@multiDestroy')->name('outbox.multiDestroy');
 Route::post('/outbox-trash-forceMultiDestroy', 'OutboxController@forceMultiDestroy')->name('outbox.forceMultiDestroy');
+
+Route::resource('/tags','tagController');
+
+Route::get('/backups', 'BackupController@index')->name('backups.index');
+Route::get('/backups-posts/{type}', 'BackupController@posts')->name('backups.posts');
+Route::get('/backups-inboxes/{type}', 'BackupController@inboxes')->name('backups.inboxes');
+Route::get('/backups-users/{type}', 'BackupController@users')->name('backups.users');
+Route::get('/backups-comments/{type}', 'BackupController@comments')->name('backups.comments');
+Route::get('/backups-admins/{type}', 'BackupController@admins')->name('backups.admins');
