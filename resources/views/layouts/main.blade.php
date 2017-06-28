@@ -130,7 +130,7 @@
 
                     {{--============[ Home Menu of dashboard ]===========--}}
                     <h5 role="tab" class="pt-2 mt-4" id="home">
-                        <a class="Sidebar_menu_link" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <a class="Sidebar_menu_link" href="{{url('/home')}}" >
                             صفحه اول<i class="fa fa-tachometer ml-4" aria-hidden="true"></i>
                         </a>
                     </h5>

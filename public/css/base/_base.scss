@@ -2,6 +2,19 @@ body {
   font-family: IRANSans !important;
 }
 
+.l-rtl{
+  direction: rtl;
+}
+
+.l-ltr{
+  direction: ltr;
+}
+
+.overflowBox{
+  height: 300px;
+  overflow: scroll;
+}
+
 .hi-subjectDashboardAdminProfile_h5 {
   color: $light-text;
   font-weight: $font-weight--medium;

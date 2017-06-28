@@ -1,18 +1,21 @@
 $(".panel").show();
 $(document).ready(function () {
+
     $('.flip').click(function () {
-        var clicks = $(this).data('clicks');
-        var id = $(this).attr('id');
-        console.log('id:'+id);
-        if (clicks) {
-            // odd clicks
-            $("#"+id).next().slideDown();
-        } else {
-            // even clicks
-            $("#"+id).next().slideUp();
+
+        //-----------[ Open and close the menu bu toggling between isopen and isclose class ] ------------
+        if ($(this).hasClass('is-open')){
+
+            $(this).toggleClass('is-open is-close');
+            $(this).closest('.menuDetector').next().find('.panel').slideUp();
+
+        }else if($(this).hasClass('is-close')){
+
+            $(this).toggleClass('is-close is-open');
+            $(this).closest('.menuDetector').next().find('.panel').slideDown();
+
         }
-        $(this).data("clicks", !clicks);
-        return false;
+
     });
 
 });

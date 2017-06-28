@@ -72,6 +72,7 @@
                 </ul>
             </div>
             <br>
+
             <div class="row">
                 @component('components.categoryListGroup')
                     @slot('createCategoryTagsID')
@@ -81,9 +82,15 @@
                     @slot('categoryName')
                         دسته بندی ها
                     @endslot
+
+                    @slot('category_btn')
+                        دسته بندی
+                    @endslot
                 @endcomponent
             </div>
+
             <br>
+
             <div class="row">
                 @component('components.categoryListGroup')
                     @slot('createCategoryTagsID')
@@ -92,6 +99,10 @@
 
                     @slot('categoryName')
                         برچسب ها
+                    @endslot
+
+                    @slot('category_btn')
+                        برچسب
                     @endslot
                 @endcomponent
             </div>

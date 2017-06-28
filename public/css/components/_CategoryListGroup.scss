@@ -1,12 +1,11 @@
 /* ============[ category box ]=========== */
 #hi-categoryListGroupFlip, #hi-CategoryListGroupPanel{
-  padding: 0px;
+  padding: 0;
   text-align: center;
 }
 #categoriesList,#tagsList{
   padding: 5px;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+  border-radius: 10px 10px 0 0;
   color: $dark-text;
   border: 1px solid $light-row-table;
 }
