@@ -2,29 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Tag;
+use App\Setting;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Session;
-use Zend\Diactoros\Response;
 
-class tagController extends Controller
+class settingsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $tags = Tag::all();
-        if($request->has('query')) {
-            $tags = Tag::search($request->input('query'))->get();
+        if($id = Setting::first()) {
+            $info = Setting::findOrFail($id->id);
+        }else{
+            $info = collect(new Setting);
         }
-        if ($request->ajax()){
-            return view('Includes.AllTags',compact('tags'));
-        }
-        return view('dashboard.tag.index',compact('tags'));
+        return view('dashboard.Settings.Index',compact('info'));
     }
 
     /**
@@ -45,14 +41,7 @@ class tagController extends Controller
      */
     public function store(Request $request)
     {
-
-        $input = $request->all();
-        $input['created_by']=1;
-        $tag = Tag::create($input);
-        $msg = "تگ ساخته شد.";
-        $token =csrf_token();
-        $data=['tag'=>$tag,'message'=>$msg,'token'=>$token];
-        return $data;
+        //
     }
 
     /**
@@ -63,6 +52,7 @@ class tagController extends Controller
      */
     public function show($id)
     {
+        //
     }
 
     /**
@@ -96,10 +86,6 @@ class tagController extends Controller
      */
     public function destroy($id)
     {
-        $tag=Tag::find($id);
-        $tag->forceDelete();
-        $msg="تگ پاک شد!";
-        return $msg;
-
+        //
     }
 }
