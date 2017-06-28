@@ -117,13 +117,13 @@ $this->fontdata = array(
 //		'useOTL' => 0xFF,
 //		'useKashida' => 75,
 //	),
-	"freesans" => array(
-		'R' => "FreeSans.ttf",
-		'B' => "FreeSansBold.ttf",
-		'I' => "FreeSansOblique.ttf",
-		'BI' => "FreeSansBoldOblique.ttf",
-		'useOTL' => 0xFF,
-	),
+//	"freesans" => array(
+//		'R' => "FreeSans.ttf",
+//		'B' => "FreeSansBold.ttf",
+//		'I' => "FreeSansOblique.ttf",
+//		'BI' => "FreeSansBoldOblique.ttf",
+//		'useOTL' => 0xFF,
+//	),
 	"freeserif" => array(
 		'R' => "FreeSerif.ttf",
 		'B' => "FreeSerifBold.ttf",
@@ -296,7 +296,7 @@ $this->BMPonly = array(
 // Always include "sans-serif", "serif" and "monospace" etc.
 $this->sans_fonts = array(
 //    'dejavusanscondensed', 'sans', 'sans-serif', 'cursive', 'fantasy', 'dejavusans',
- 'freesans',
+// 'freesans',
 // 'liberationsans',
 //	'arial', 'helvetica', 'verdana', 'geneva', 'lucida', 'arialnarrow', 'arialblack', 'arialunicodems',
 //	'franklin', 'franklingothicbook', 'tahoma', 'garuda', 'calibri', 'trebuchet', 'lucidagrande', 'microsoftsansserif',
