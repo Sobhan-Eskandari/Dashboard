@@ -299,7 +299,7 @@ return array(
             |--------------------------------------------------------------------------
             | Supported: DomPDF, tcPDF, mPDF
             */
-            'driver'  => 'DomPDF',
+            'driver'  => 'mPDF',
 
             /*
             |--------------------------------------------------------------------------
@@ -323,7 +323,7 @@ return array(
                 |--------------------------------------------------------------------------
                 */
                 'tcPDF'  => [
-                    'path' => base_path('vendor/tecnick.com/tcpdf/')
+                    'path' => base_path('vendor/tecnickcom/tcpdf/')
                 ],
 
                 /*

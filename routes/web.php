@@ -95,20 +95,9 @@ Route::get('/sliders', function () {
     return view('dashboard.sliders.index');
 });
 
-Route::get('/settings', function () {
-    return view('dashboard.settings.index');
-});
-
-Route::resource('/settings','settingsController');
-
 Route::get('/home', function (){
     return view('dashboard.home.index');
 });
-
-Route::get('/email', function (){
-    Mail::to('hamid.vetr@gmail.com')->send(new \App\Mail\TestMail());
-});
-
 /**
  *  correct routes starts form here on
  */
@@ -136,8 +125,10 @@ Route::post('/outbox-trash-forceMultiDestroy', 'OutboxController@forceMultiDestr
 Route::resource('/tags','tagController');
 
 Route::get('/backups', 'BackupController@index')->name('backups.index');
-Route::get('/backups-posts/{type}', 'BackupController@posts')->name('backups.posts');
-Route::get('/backups-inboxes/{type}', 'BackupController@inboxes')->name('backups.inboxes');
-Route::get('/backups-users/{type}', 'BackupController@users')->name('backups.users');
-Route::get('/backups-comments/{type}', 'BackupController@comments')->name('backups.comments');
-Route::get('/backups-admins/{type}', 'BackupController@admins')->name('backups.admins');
+Route::get('/backups-posts', 'BackupController@posts')->name('backups.posts');
+Route::get('/backups-inboxes', 'BackupController@inboxes')->name('backups.inboxes');
+Route::get('/backups-users', 'BackupController@users')->name('backups.users');
+Route::get('/backups-comments', 'BackupController@comments')->name('backups.comments');
+Route::get('/backups-admins', 'BackupController@admins')->name('backups.admins');
+
+Route::resource('/settings','settingsController');
