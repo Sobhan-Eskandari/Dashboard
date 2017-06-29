@@ -17,10 +17,10 @@ class InboxController extends Controller
      */
     public function index(Request $request)
     {
-        $inboxes = Inbox::orderBy('created_at', 'desc')->paginate(8);
-
         if($request->has('query')){
             $inboxes = Inbox::search($request->input('query'))->orderBy('created_at', 'desc')->paginate(8);
+        }else{
+            $inboxes = Inbox::orderBy('created_at', 'desc')->paginate(8);
         }
 
         if ($request->ajax()) {

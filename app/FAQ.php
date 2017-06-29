@@ -40,4 +40,9 @@ class FAQ extends Model
             'answer' => $this->answer,
         ];
     }
+
+    public static function pagination()
+    {
+        return FAQ::with('user')->orderBy('updated_at', 'desc')->get();
+    }
 }

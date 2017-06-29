@@ -52,12 +52,12 @@ class User extends Authenticatable
 
     public function faqs()
     {
-        return $this->hasMany('App\FAQ');
+        return $this->hasMany('App\FAQ', 'created_by');
     }
 
     public function categories()
     {
-        return $this->hasMany('App\Category');
+        return $this->hasMany('App\Category', 'created_by');
     }
 
     public function getFullNameAttribute()

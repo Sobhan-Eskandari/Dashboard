@@ -21,10 +21,10 @@ class CategoryController extends Controller
      */
     public function index(Request $request)
     {
-        $categories = Category::orderByRaw('updated_at desc')->paginate(8);
-
         if($request->has('query')){
             $categories = Category::search($request->input('query'))->orderBy('updated_at','desc')->paginate(8);
+        }else{
+            $categories = Category::orderByRaw('updated_at desc')->paginate(8);
         }
 
         if ($request->ajax()) {
@@ -98,7 +98,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CategoryRequest $request,Category $category)
+    public function update(CategoryRequest $request, Category $category)
     {
         if($request->ajax()){
 
@@ -123,8 +123,7 @@ class CategoryController extends Controller
     {
         if($request->ajax()){
             try {
-                $category->updated_by = Auth::user()->id;
-                $category->save();
+                $category->update(['updated_by' => Auth::user()->id]);
                 $category->delete();
             }catch (\Exception $exception){
                 dd($exception->getMessage());
@@ -144,8 +143,7 @@ class CategoryController extends Controller
             try {
                 foreach ($ids as $id){
                     $deleteCategory = Category::findOrFail($id);
-                    $deleteCategory->updated_by = Auth::user()->id;
-                    $deleteCategory->save();
+                    $deleteCategory->update(['updated_by' => Auth::user()->id]);
                     $deleteCategory->delete();
                 }
             }catch (\Exception $exception){

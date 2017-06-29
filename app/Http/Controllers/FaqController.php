@@ -17,10 +17,11 @@ class FaqController extends Controller
      */
     public function index(Request $request)
     {
-        $faqs = FAQ::orderBy('updated_at', 'desc')->get();
-
         if($request->has('query')){
             $faqs = FAQ::search($request->input('query'))->orderBy('updated_at','desc')->get();
+            $faqs->load('user');
+        }else{
+            $faqs = FAQ::pagination();
         }
 
         if ($request->ajax()) {
@@ -50,15 +51,16 @@ class FaqController extends Controller
     {
         if($request->ajax()){
             $input = $request->all();
-            $input['created_by'] = Auth::user()->id;
-            $input['updated_by'] = Auth::user()->id;
+            $user = Auth::user()->id;
+            $input['created_by'] = $user;
+            $input['updated_by'] = $user;
             try{
                 FAQ::create($input);
             }catch (\Exception $exception){
                 dd($exception);
             }
 
-            $faqs = FAQ::orderBy('updated_at', 'desc')->get();
+            $faqs = FAQ::pagination();
             return view('Includes.AllFaqs', compact('faqs'))->render();
         }
     }
@@ -102,7 +104,7 @@ class FaqController extends Controller
             $faq->updated_by = Auth::user()->id;
             $faq->update($input);
 
-            $faqs = FAQ::orderBy('updated_at', 'desc')->get();
+            $faqs = FAQ::pagination();
             return view('Includes.AllFaqs', compact('faqs'))->render();
         }
     }
@@ -117,14 +119,13 @@ class FaqController extends Controller
     {
         if($request->ajax()){
             try {
-                $faq->updated_by = Auth::user()->id;
-                $faq->save();
+                $faq->update(['updated_by' => Auth::user()->id]);
                 $faq->delete();
             }catch (\Exception $exception){
                 dd($exception->getMessage());
             }
 
-            $faqs = FAQ::orderBy('updated_at', 'desc')->get();
+            $faqs = FAQ::pagination();
             return view('Includes.AllFaqs', compact('faqs'))->render();
         }
     }
@@ -137,15 +138,14 @@ class FaqController extends Controller
             try {
                 foreach ($ids as $id){
                     $deleteFaq = FAQ::findOrFail($id);
-                    $deleteFaq->updated_by = Auth::user()->id;
-                    $deleteFaq->save();
+                    $deleteFaq->update(['updated_by' => Auth::user()->id]);
                     $deleteFaq->delete();
                 }
             }catch (\Exception $exception){
                 dd($exception->getMessage());
             }
 
-            $faqs = FAQ::orderBy('updated_at', 'desc')->get();
+            $faqs = FAQ::pagination();
             return view('Includes.AllFaqs', compact('faqs'))->render();
         }
     }

@@ -22,13 +22,15 @@ class OutboxController extends Controller
      */
     public function index(Request $request)
     {
-        $outboxes = Outbox::orderBy('created_at', 'desc')->paginate(8);
-
         if($request->has('query')){
             $outboxes = Outbox::search($request->input('query'))->orderBy('created_at', 'desc')->paginate(8);
+//            $outboxes->load(['inbox', 'user']);
+        }else{
+            $outboxes = Outbox::orderBy('created_at', 'desc')->paginate(8);
         }
 
         if ($request->ajax()) {
+            dd($outboxes);
             return view('Includes.AllOutboxes', compact('outboxes'))->render();
         }
 
