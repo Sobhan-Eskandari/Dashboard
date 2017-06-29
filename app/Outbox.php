@@ -29,7 +29,7 @@ class Outbox extends Model
 
     public function inbox()
     {
-        return $this->belongsTo('App\Inbox');
+        return $this->belongsTo('App\Inbox')->withTrashed();
     }
 
     public function toSearchableArray()
@@ -44,9 +44,9 @@ class Outbox extends Model
     public static function pagination($path = "http://dashboard.dev/outbox")
     {
         if ($path == "http://dashboard.dev/outbox"){
-            $allOutboxes = Outbox::orderBy('created_at', 'desc')->get();
+            $allOutboxes = Outbox::with(['inbox', 'user'])->orderBy('created_at', 'desc')->get();
         }else{
-            $allOutboxes = Outbox::onlyTrashed()->orderBy('created_at', 'desc')->get();
+            $allOutboxes = Outbox::with(['inbox', 'user'])->onlyTrashed()->orderBy('created_at', 'desc')->get();
         }
         $outboxesArray = [];
         foreach ($allOutboxes as $outbox){

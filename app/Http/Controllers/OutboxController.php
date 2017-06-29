@@ -24,13 +24,12 @@ class OutboxController extends Controller
     {
         if($request->has('query')){
             $outboxes = Outbox::search($request->input('query'))->orderBy('created_at', 'desc')->paginate(8);
-//            $outboxes->load(['inbox', 'user']);
+            $outboxes->load(['inbox', 'user']);
         }else{
-            $outboxes = Outbox::orderBy('created_at', 'desc')->paginate(8);
+            $outboxes = Outbox::with(['inbox', 'user'])->orderBy('created_at', 'desc')->paginate(8);
         }
 
         if ($request->ajax()) {
-            dd($outboxes);
             return view('Includes.AllOutboxes', compact('outboxes'))->render();
         }
 
@@ -142,7 +141,7 @@ class OutboxController extends Controller
 
     public function trash(Request $request)
     {
-        $outboxes = Outbox::onlyTrashed()->orderBy('created_at', 'desc')->paginate(8);
+        $outboxes = Outbox::with(['inbox', 'user'])->onlyTrashed()->orderBy('created_at', 'desc')->paginate(8);
 
         if ($request->ajax()) {
             return view('Includes.AllOutboxesTrash', compact('outboxes'))->render();
@@ -188,7 +187,7 @@ class OutboxController extends Controller
         $outbox = Outbox::onlyTrashed()->findOrFail($id);
         if($request->ajax()){
             try {
-                if(count($outbox->inbox) !== 0){
+                if(is_null($outbox->inbox->deleted_at)){
                     $outbox->restore();
                 }else{
                     /**

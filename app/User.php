@@ -60,6 +60,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Category', 'created_by');
     }
 
+    public function outboxes()
+    {
+        return $this->hasMany('App\Outbox', 'created_by');
+    }
+
     public function getFullNameAttribute()
     {
         return $this->first_name . ' ' . $this->last_name;

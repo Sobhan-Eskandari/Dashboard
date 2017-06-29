@@ -31,7 +31,7 @@ class Inbox extends Model
 
     public function outboxes()
     {
-        return $this->hasMany('App\Outbox')->withTrashed();
+        return $this->hasMany('App\Outbox');
     }
 
     public function user()
