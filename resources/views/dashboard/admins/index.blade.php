@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="col-1 push-9">
-                    <button class="hi-button-simple hi-shadow-0 ml-4 green darken-3">ایجاد</button>
+                    <a href="{{ route('admins.create') }}" class="hi-button-simple hi-shadow-0 ml-4 green darken-3">ایجاد</a>
                 </div>
             </div>
 

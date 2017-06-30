@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Admin;
+use App\Http\Requests\AdminStoreRequest;
 use App\Http\Requests\AdminUpdateRequest;
 use App\Role;
+use Faker\Provider\Uuid;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
@@ -35,7 +38,8 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('dashboard.admins.create');
+        $roles = Role::pluck('role', 'id')->all();
+        return view('dashboard.admins.create', compact('roles'));
     }
 
     /**
@@ -44,9 +48,18 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdminStoreRequest $request)
     {
-        //
+        $user = Auth::user()->id;
+        $input = $request->all();
+        $input['created_by'] = $user;
+        $input['updated_by'] = $user;
+        $input['email_token'] = str_random(30) . Uuid::uuid();
+        $input['password'] = bcrypt($request->password);
+
+        Admin::create($input);
+        Session::flash('success', 'ادمین با موفقیت ساخته شد');
+        return redirect(route('admins.index'));
     }
 
     /**
@@ -82,6 +95,8 @@ class AdminController extends Controller
     public function update(AdminUpdateRequest $request, $id)
     {
         $admin = Admin::findOrFail($id);
+        $admin->revisions++;
+        $admin->updated_by = Auth::user()->id;
         $input = $request->all();
         if(is_null($input['password'])){
             $input = $request->except('password');
@@ -91,7 +106,7 @@ class AdminController extends Controller
         }
 
         $admin->update($input);
-        Session::flash('success', 'ادمین با موفقیت ویرایش شد');
+        Session::flash('warning', 'ادمین با موفقیت ویرایش شد');
         return redirect(route('admins.index'));
     }
 
@@ -105,6 +120,7 @@ class AdminController extends Controller
     {
         $relations = ['faqs', 'categories', 'outboxes', 'tags'];
         $admin = Admin::with($relations)->findOrFail($id);
+        $admin->updated_by = Auth::user()->id;
         if($request->ajax()){
             try {
                 foreach ($relations as $relation) {

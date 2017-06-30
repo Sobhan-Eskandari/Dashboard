@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AdminUpdateRequest extends FormRequest
+class AdminStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,15 +24,15 @@ class AdminUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_name' => 'required|unique:admins,user_name,'.$this->admin,
+            'user_name' => 'required|unique:admins,user_name',
             'first_name' => 'required',
             'last_name' => 'required',
-            'email' => 'required|email|unique:admins,email,'.$this->admin,
+            'email' => 'required|email|unique:admins,email',
             'land_line' => 'required|digits:11',
-            'mobile' => 'required|digits:11|unique:admins,mobile,'.$this->admin,
+            'mobile' => 'required|digits:11|unique:admins,mobile',
             'address' => 'required',
             'zip' => 'required|digits:10',
-            'password' => 'confirmed|min:8',
+            'password' => 'required|min:8|confirmed',
         ];
     }
 
@@ -55,6 +55,7 @@ class AdminUpdateRequest extends FormRequest
             'zip.required' => 'وارد کردن کد پستی اجباری می باشد',
             'zip.digits' => 'کد پستی باید 10 رقم باشد',
             'password.confirmed' => 'تایید رمز عبور با رمز عبور وارده شده مطابقت ندارد',
+            'password.required' => 'وارد کردن رمز عبور اجباری است',
             'password.min' => 'رمز عبور باید حداقل 8 کاراکتر باشد',
         ];
     }

@@ -10,7 +10,6 @@
 
     <nav dir="rtl">
         @component('components.errors') @endcomponent
-        @component('components.flash') @endcomponent
     </nav>
 
     <div class="row">
@@ -43,7 +42,7 @@
                                 </div>
                             </div>
                             <div class="col-9">
-                                <h5>: درباره من</h5>
+                                <h5>: درباره</h5>
                                 <div class="form-group">
                                     {!! Form::textarea('about', null, ['class'=>'form-control hi-aboutMePanelCard_textarea', 'tabindex'=>'1', 'placeholder'=>'چیزی درباره خود بنویسید']) !!}
                                 </div>
