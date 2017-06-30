@@ -113,9 +113,7 @@ Route::prefix('admins')->group(function()
     Route::get('/{admin}/edit', 'AdminController@edit')->name('admins.edit');
     Route::put('/{admin}', 'AdminController@update')->name('admins.update');
     Route::delete('/{admin}', 'AdminController@destroy')->name('admins.destroy');
-    Route::get('/trash', 'AdminController@trash')->name('admins.trash');
 
-    Route::get('/trash', 'AdminController@trash')->name('admins.trash');
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::get('/logout','Auth\AdminLoginController@logout')->name('admin.logout');
@@ -126,3 +124,6 @@ Route::prefix('admins')->group(function()
     Route::get('/password/reset/{token}','Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
 });
 
+Route::get('/admins-trash', 'AdminController@trash')->name('admins.trash');
+Route::delete('/admins-trash/{admin}', 'AdminController@forceDestroy')->name('admins.forceDestroy');
+Route::post('/admins-restore/{admin}', 'AdminController@restore')->name('admins.restore');

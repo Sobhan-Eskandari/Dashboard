@@ -55,17 +55,17 @@ class Admin extends Authenticatable
 
     public function faqs()
     {
-        return $this->hasMany('App\FAQ', 'created_by');
+        return $this->hasMany('App\FAQ', 'created_by')->withTrashed();
     }
 
     public function tags()
     {
-        return $this->hasMany('App\Tag', 'created_by');
+        return $this->hasMany('App\Tag', 'created_by')->withTrashed();
     }
 
     public function categories()
     {
-        return $this->hasMany('App\Category', 'created_by');
+        return $this->hasMany('App\Category', 'created_by')->withTrashed();
     }
 
 //    public function children()
@@ -75,12 +75,12 @@ class Admin extends Authenticatable
 
     public function parent()
     {
-        return $this->belongsTo('App\Admin', 'created_by');
+        return $this->belongsTo('App\Admin', 'created_by')->withTrashed();
     }
 
     public function outboxes()
     {
-        return $this->hasMany('App\Outbox', 'created_by');
+        return $this->hasMany('App\Outbox', 'created_by')->withTrashed();
     }
 
     public function role()
