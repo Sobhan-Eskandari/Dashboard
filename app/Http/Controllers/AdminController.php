@@ -24,10 +24,20 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $admins = Admin::with(['parent', 'role'])->get();
         $roles = Role::all();
+        if($request->has('query')){
+            $admins = Admin::search($request->input('query'))->get();
+            $admins->load(['parent', 'role']);
+        }else{
+            $admins = Admin::with(['parent', 'role'])->get();
+        }
+
+        if ($request->ajax()) {
+            return view('Includes.AllAdmins', compact('admins', 'roles'))->render();
+        }
+
         return view('dashboard.admins.index', compact('admins', 'roles'));
     }
 
