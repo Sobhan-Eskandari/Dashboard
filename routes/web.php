@@ -11,40 +11,13 @@
 |
 */
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
-//use Illuminate\Support\Facades\Request;
+Route::get('/home', 'HomeController@index');
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-Route::get('user/logout','Auth\LoginController@userLogout')->name('user.logout');
-Route::prefix('admin')->group(function(){
-    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
-    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
-    Route::get('/', 'AdminController@index')->name('admin.dashboard');
-    Route::get('/logout','Auth\AdminLoginController@logout')->name('admin.logout');
-
-    Route::post('/password/email','Auth\AdminForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
-    Route::get('/password/reset','Auth\AdminForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
-    Route::post('/password/reset','Auth\AdminResetPasswordController@reset');
-    Route::get('/password/reset/{token}','Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
-
-});
-
 /* mersede */
-
-Route::get('/profile', function () {
-    return view('dashboard.admins.profile');
-});
-
-Route::get('/create', function () {
-    return view('dashboard.admins.create');
-});
 
 Route::get('/createPost', function () {
     return view('dashboard.posts.createPost');
@@ -59,15 +32,9 @@ Route::get('/layout', function () {
 Route::get('/users', function () {
     return view('dashboard.users.index');
 });
+
 Route::get('/users/trash', function () {
     return view('dashboard.users.trash');
-});
-
-Route::get('/admins', function () {
-    return view('dashboard.admins.index');
-});
-Route::get('/admins/trash', function () {
-    return view('dashboard.admins.trash');
 });
 
 Route::get('/posts', function () {
@@ -132,3 +99,30 @@ Route::get('/backups-comments', 'BackupController@comments')->name('backups.comm
 Route::get('/backups-admins', 'BackupController@admins')->name('backups.admins');
 
 Route::resource('/settings','settingsController');
+
+Auth::routes();
+
+Route::get('user/logout','Auth\LoginController@userLogout')->name('user.logout');
+
+Route::prefix('admins')->group(function()
+{
+    Route::get('/', 'AdminController@index')->name('admins.index');
+    Route::get('/create', 'AdminController@create')->name('admins.create');
+    Route::post('/', 'AdminController@store')->name('admins.store');
+    Route::get('/{admin}', 'AdminController@show')->name('admins.show');
+    Route::get('/{admin}/edit', 'AdminController@edit')->name('admins.edit');
+    Route::put('/{admin}', 'AdminController@update')->name('admins.update');
+    Route::delete('/{admin}', 'AdminController@destroy')->name('admins.destroy');
+    Route::get('/trash', 'AdminController@trash')->name('admins.trash');
+
+    Route::get('/trash', 'AdminController@trash')->name('admins.trash');
+    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+    Route::get('/logout','Auth\AdminLoginController@logout')->name('admin.logout');
+
+    Route::post('/password/email','Auth\AdminForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
+    Route::get('/password/reset','Auth\AdminForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
+    Route::post('/password/reset','Auth\AdminResetPasswordController@reset');
+    Route::get('/password/reset/{token}','Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
+});
+

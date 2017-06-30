@@ -23,57 +23,14 @@
                 </div>
             </div>
 
-            {{--==========[ Row of Admin Cards ]========= --}}
-            <div class="row mt-4">
-                <div class="col-3">
-                    {{--==========[ Admin Card ]========= --}}
-                    @component('components.AdminCard')
-                        @slot('admin_name')سبحان اسکندری@endslot
-                        @slot('admin_mail')
-                                serprofessional@gmail.com
-                        @endslot
-                        @slot('admin_desc')توسط حمید وتر در ۹۲/۲/۲@endslot
-                        @slot('trash')@endslot
-                    @endcomponent
-                </div>
-
-                <div class="col-3">
-                    {{--==========[ Admin Card ]========= --}}
-                    @component('components.AdminCard')
-                        @slot('admin_name')سبحان اسکندری@endslot
-                        @slot('admin_mail')
-                            serprofessional@gmail.com
-                        @endslot
-                        @slot('admin_desc')توسط حمید وتر در ۹۲/۲/۲@endslot
-                        @slot('trash')@endslot
-                    @endcomponent
-                </div>
-
-                <div class="col-3">
-                    {{--==========[ Admin Card ]========= --}}
-                    @component('components.AdminCard')
-                        @slot('admin_name')سبحان اسکندری@endslot
-                        @slot('admin_mail')
-                            serprofessional@gmail.com
-                        @endslot
-                        @slot('admin_desc')توسط حمید وتر در ۹۲/۲/۲@endslot
-                        @slot('trash')@endslot
-                    @endcomponent
-                </div>
-
-                <div class="col-3">
-                    {{--==========[ Admin Card ]========= --}}
-                    @component('components.AdminCard')
-                        @slot('admin_name')سبحان اسکندری@endslot
-                        @slot('admin_mail')
-                            serprofessional@gmail.com
-                        @endslot
-                        @slot('admin_desc')توسط حمید وتر در ۹۲/۲/۲@endslot
-                        @slot('trash')@endslot
-                    @endcomponent
-                </div>
+            <div id="loadAdmins">
+                @include('Includes.AllAdmins')
             </div>
         </div>
 
     </section>
+@endsection
+
+@section('javascript')
+    <script src="{{ asset('js/dashboard/adminIndex.js') }}"></script>
 @endsection

@@ -118,9 +118,9 @@ Waves.init();
 
 // ============[ Admin card dismissal button ]===========
 
-$(".dismissAdminCardBtn").click(function () {
-    $(this).parent().parent().parent().fadeOut();
-});
+// $(".dismissAdminCardBtn").click(function () {
+//     $(this).parent().parent().parent().fadeOut();
+// });
 
 // ============[ Table Row Delete ]===========
 

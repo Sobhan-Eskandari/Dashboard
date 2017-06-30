@@ -44,36 +44,7 @@
                                 <tr>
                                     @component('components.AdminTrashTableRow')
 
-                                        @slot('admin_username')
-                                            Serpro
-                                        @endslot
-
-                                        @slot('admin_fullname')
-                                            سبحان اسکندری
-                                        @endslot
-
-                                        @slot('admin_email')
-                                            serprofessional@gmail.com
-                                        @endslot
-
-                                        @slot('admin_number')
-                                            ۰۹۱۱۲۳۴۴۴۴۴
-                                        @endslot
-
-                                        @slot('admin_role')
-                                            مدیر کل
-                                        @endslot
-
-                                        @slot('trash')
-                                            yes
-                                        @endslot
-
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.AdminTrashTableRow')
+                                        @slot('chk_name') 1 @endslot
 
                                         @slot('admin_username')
                                             Serpro
@@ -101,101 +72,6 @@
 
                                     @endcomponent
                                 </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.AdminTrashTableRow')
-
-                                        @slot('admin_username')
-                                            Serpro
-                                        @endslot
-
-                                        @slot('admin_fullname')
-                                            سبحان اسکندری
-                                        @endslot
-
-                                        @slot('admin_email')
-                                            serprofessional@gmail.com
-                                        @endslot
-
-                                        @slot('admin_number')
-                                            ۰۹۱۱۲۳۴۴۴۴۴
-                                        @endslot
-
-                                        @slot('admin_role')
-                                            مدیر کل
-                                        @endslot
-
-                                        @slot('trash')
-                                            yes
-                                        @endslot
-
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.AdminTrashTableRow')
-
-                                        @slot('admin_username')
-                                            Serpro
-                                        @endslot
-
-                                        @slot('admin_fullname')
-                                            سبحان اسکندری
-                                        @endslot
-
-                                        @slot('admin_email')
-                                            serprofessional@gmail.com
-                                        @endslot
-
-                                        @slot('admin_number')
-                                            ۰۹۱۱۲۳۴۴۴۴۴
-                                        @endslot
-
-                                        @slot('admin_role')
-                                            مدیر کل
-                                        @endslot
-
-                                        @slot('trash')
-                                            yes
-                                        @endslot
-
-                                    @endcomponent
-                                </tr>
-
-                                {{--==========[ Table Row ]========= --}}
-                                <tr>
-                                    @component('components.AdminTrashTableRow')
-
-                                        @slot('admin_username')
-                                            Serpro
-                                        @endslot
-
-                                        @slot('admin_fullname')
-                                            سبحان اسکندری
-                                        @endslot
-
-                                        @slot('admin_email')
-                                            serprofessional@gmail.com
-                                        @endslot
-
-                                        @slot('admin_number')
-                                            ۰۹۱۱۲۳۴۴۴۴۴
-                                        @endslot
-
-                                        @slot('admin_role')
-                                            مدیر کل
-                                        @endslot
-
-                                        @slot('trash')
-                                            yes
-                                        @endslot
-
-                                    @endcomponent
-                                </tr>
-
-
                                 </tbody>
                             </table>
                         </div>

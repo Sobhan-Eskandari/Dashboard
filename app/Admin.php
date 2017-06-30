@@ -54,13 +54,44 @@ class Admin extends Authenticatable
 
     public function faqs()
     {
-        return $this->hasMany('App\FAQ');
+        return $this->hasMany('App\FAQ', 'created_by');
+    }
+
+    public function tags()
+    {
+        return $this->hasMany('App\Tag', 'created_by');
+    }
+
+    public function categories()
+    {
+        return $this->hasMany('App\Category', 'created_by');
+    }
+
+//    public function children()
+//    {
+//        return $this->hasMany('App\Admin', 'created_by');
+//    }
+
+    public function parent()
+    {
+        return $this->belongsTo('App\Admin', 'created_by');
+    }
+
+    public function outboxes()
+    {
+        return $this->hasMany('App\Outbox', 'created_by');
+    }
+
+    public function role()
+    {
+        return $this->belongsTo('App\Role');
     }
 
     public function getFullNameAttribute()
     {
         return $this->first_name . ' ' . $this->last_name;
     }
+
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new AdminResetPasswordNotification($token));
