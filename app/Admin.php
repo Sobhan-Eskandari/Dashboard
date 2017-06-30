@@ -41,6 +41,7 @@ class Admin extends Authenticatable
         'email_token',
         'revisions',
         'last_seen',
+        'about',
     ];
 
     /**

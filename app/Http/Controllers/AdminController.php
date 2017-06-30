@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Admin;
+use App\Http\Requests\AdminUpdateRequest;
 use App\Role;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
@@ -55,7 +57,7 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        return view('dashboard.admins.profile');
+        //
     }
 
     /**
@@ -64,9 +66,10 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Admin $admin)
     {
-        //
+        $roles = Role::pluck('role', 'id')->all();
+        return view('dashboard.admins.edit', compact('admin', 'roles'));
     }
 
     /**
@@ -76,9 +79,20 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AdminUpdateRequest $request, $id)
     {
-        //
+        $admin = Admin::findOrFail($id);
+        $input = $request->all();
+        if(is_null($input['password'])){
+            $input = $request->except('password');
+        }else{
+            $input = $request->all();
+            $input['password'] = bcrypt($request->password);
+        }
+
+        $admin->update($input);
+        Session::flash('success', 'ادمین با موفقیت ویرایش شد');
+        return redirect(route('admins.index'));
     }
 
     /**

@@ -25,6 +25,7 @@ class CreateAdminsTable extends Migration
             $table->char('land_line',11)->nullable(true);
             $table->char('mobile',11)->nullable(true)->unique();
             $table->text('address')->nullable(true);
+            $table->text('about')->nullable(true);
             $table->char('zip',10)->nullable(true);
             $table->tinyInteger('gender')->nullable(true);
             $table->string('occupation')->nullable(true);

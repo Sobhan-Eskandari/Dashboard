@@ -7,6 +7,11 @@
 @endsection
 
 @section('content')
+
+    <nav dir="rtl">
+        @component('components.flash') @endcomponent
+    </nav>
+
     <section class="adminsSection">
 
         {{--==========[ Row of buttons abpve table ]=========--}}

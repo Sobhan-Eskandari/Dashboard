@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->char('zip',10)->nullable(true);
             $table->tinyInteger('gender')->nullable(true);
             $table->string('occupation')->nullable(true);
+            $table->text('about')->nullable(true);
             $table->tinyInteger('verified')->default(0);
             $table->unsignedBigInteger('created_by')->nullable(false);
             $table->unsignedBigInteger('updated_by')->nullable(true);

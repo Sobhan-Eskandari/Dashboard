@@ -6,7 +6,6 @@
                 <button class="hi-button-btn1 pull-right">
                     <i class="fa fa-times hi-fontSize-21" aria-hidden="true"></i>
                 </button>
-                {{--{!! Form::submit('حذف', ['id'=>'delete', 'style' => 'background: none; border: none; margin-left:25px;']) !!}--}}
             {!! Form::close() !!}
         </div>
     </div>
@@ -23,25 +22,23 @@
     {{--============[ Row of Edit and dropdwon of roles ]===========--}}
     <div class="row">
         <div class="col-6 text-center">
-            <button class="btn btn-secondary adminCard_btn hvr-sweep-to-top">ویرایش</button>
+            <a class="btn btn-secondary adminCard_btn hvr-sweep-to-top" href="{{ route('admins.edit', $id) }}">ویرایش</a>
         </div>
         <div class="col-6 text-center">
             {{--============[ Admin Roles Dropdown ]===========--}}
             <div class="dropdown">
-                <select name="role" id="">
+                {{--<select name="role" id="">--}}
                     {{--@foreach($roles as $role)--}}
                         {{--<option value="{{ $role->id }}">{{ $role->role }}</option>--}}
                     {{--@endforeach--}}
 
-                    <option value="1" {{ $role_id == '1' ? 'selected' : ''}}>مدیر کل سایت</option>
-                    <option value="2" {{ $role_id == '2' ? 'selected' : ''}}>مدیر تغییرات</option>
-                    <option value="3" {{ $role_id == '3' ? 'selected' : ''}}>مدیر ساخت</option>
-                    <option value="4" {{ $role_id == '4' ? 'selected' : ''}}>مدیر گزارش گیری</option>
-                    <option value="5" {{ $role_id == '5' ? 'selected' : ''}}>مدیر پاک سازی</option>
-                </select>
-                {{--<button class="btn btn-secondary dropdown-toggle adminCard_btn hvr-sweep-to-top" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-                    {{--نقش--}}
-                {{--</button>--}}
+                    {{--<option value="1" {{ $role_id == '1' ? 'selected' : ''}}>مدیر کل سایت</option>--}}
+                    {{--<option value="2" {{ $role_id == '2' ? 'selected' : ''}}>مدیر تغییرات</option>--}}
+                    {{--<option value="3" {{ $role_id == '3' ? 'selected' : ''}}>مدیر ساخت</option>--}}
+                    {{--<option value="4" {{ $role_id == '4' ? 'selected' : ''}}>مدیر گزارش گیری</option>--}}
+                    {{--<option value="5" {{ $role_id == '5' ? 'selected' : ''}}>مدیر پاک سازی</option>--}}
+                {{--</select>--}}
+                <button class="btn btn-secondary adminCard_btn hvr-sweep-to-top" aria-haspopup="true" aria-expanded="false"> {{ $role }} </button>
 
                 {{--<div data-dropdown-in="fadeIn" data-dropdown-out="fadeOut" class="dropdown-menu adminCard_dropdown hi-shadow-1" aria-labelledby="dropdownMenuLink">--}}
                     {{--<a class="dropdown-item" href="#"> مدیر کل <i class="fa fa-user-circle-o ml-1" aria-hidden="true"></i></a>--}}
