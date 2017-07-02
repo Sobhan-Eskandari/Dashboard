@@ -8,12 +8,12 @@
 
 @section('content')
 
-    {!! Form::open(['method'=>'POST', 'action'=>'AdminController@profile_pic', 'files' => true, 'id'=>'uploadForm']) !!}
-    {!! Form::file('avatar') !!}
-    {!! Form::submit('آپلود', ['class'=>'btnSubmit', 'id'=>'uploadSubmit']) !!}
+    {!! Form::open(['method'=>'POST', 'action'=>['AdminController@profile_pic', $admin->id], 'files' => true, 'id'=>'uploadForm']) !!}
+        {!! Form::file('avatar') !!}
+        {!! Form::submit('آپلود', ['class'=>'btnSubmit', 'id'=>'uploadSubmit']) !!}
     {!! Form::close() !!}
 
-    <div id="targetLayer"></div>
+    <div id="target"></div>
 
     <nav dir="rtl">
         @component('components.errors') @endcomponent
@@ -125,11 +125,19 @@
                                 {{--<div id="targetLayer"></div>--}}
                                 <div class="hi-profileCard_PictureSelectorBox_pictureBox_hover">
                                     <figure>
-                                        <img src="{{ asset('images/nobody_m.original.jpg') }}"
-                                             class="hi-profileCard_PictureSelectorBox_picture img-fluid"
-                                             alt="Responsive image"
-                                             id="picture"
-                                        >
+                                        @if(isset($admin->photos[0]->address))
+                                            <img src="{{ asset('profile_pics/' . '/' . $admin->photos[0]->address) }}"
+                                                 class="hi-profileCard_PictureSelectorBox_picture img-fluid"
+                                                 alt="Responsive image"
+                                                 id="picture"
+                                            >
+                                        @else
+                                            <img src="{{ asset('images/nobody_m.original.jpg') }}"
+                                                 class="hi-profileCard_PictureSelectorBox_picture img-fluid"
+                                                 alt="Responsive image"
+                                                 id="picture"
+                                            >
+                                        @endif
                                     </figure>
                                 </div>
                             </div>
@@ -170,59 +178,5 @@
 @endsection
 
 @section('javascript')
-    {{--<script type="text/javascript">--}}
-        {{--$("#uploadForm").on('submit',(function(e){--}}
-            {{--e.preventDefault();--}}
-            {{--var uploadUrl = this.action;--}}
-            {{--$.ajax({--}}
-                {{--url: uploadUrl,--}}
-                {{--type: "POST",--}}
-                {{--data:  new FormData(this),--}}
-                {{--contentType: false,--}}
-                {{--cache: false,--}}
-                {{--processData:false,--}}
-                {{--success: function(data){--}}
-                    {{--$('#picture').attr('src', 'http://dashboard.dev/profile_pics/' + JSON.parse(data));--}}
-{{--//                        $("figure").html(data);--}}
-                {{--},--}}
-                {{--error: function(){}--}}
-            {{--});--}}
-        {{--}));--}}
-    {{--</script>--}}
-    <script type="text/javascript">
-
-        function ShowNotification(notifText) {
-            var notification = new NotificationFx({
-                wrapper : document.body,
-                message : notifText,
-                layout : 'growl',
-                effect : 'jelly',
-                type : 'error',
-                ttl : 6000,
-                onClose : function() { return false; },
-                onOpen : function() { return false; }
-            });
-            notification.show();
-        }
-
-        $("#uploadForm").submit(function(event){
-            event.preventDefault();
-            var uploadUrl = this.action;
-            console.log(uploadUrl);
-            $.ajax({
-                type: "POST",
-                url: uploadUrl,
-                data: new FormData(this),
-                contentType: false,
-                cache: false,
-                processData:false
-            }).success(function(data){
-                $('#picture').attr('src', 'http://dashboard.dev/profile_pics/' + JSON.parse(data));
-//                $("#targetLayer").html(data);
-                ShowNotification('تصویر پروفایل با موفقیت آپلود شد');
-            }).fail(function (){
-                ShowNotification('مشکلی در آپلود تصویر به وجود آمد');
-            });
-        });
-    </script>
+    <script src="{{ asset('js/dashboard/UploadProfilePic.js') }}"></script>
 @endsection

@@ -109,5 +109,9 @@ class Admin extends Authenticatable
             'email' => $this->email,
         ];
     }
+
+    public function photos(){
+        return $this->morphToMany('App\Photo', 'photoable');
+    }
 }
 

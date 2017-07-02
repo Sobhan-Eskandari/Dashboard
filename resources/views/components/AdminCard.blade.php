@@ -12,7 +12,11 @@
     {{--============[ Row of Admin info ]===========--}}
     <div class="row">
         <div class="col-12 text-center">
-            <img class="rounded-circle hi-size-9 mb-3" src="{{ asset('images/avatar.png') }}">
+            @if(isset($profile_pic))
+                <img class="rounded-circle hi-size-9 mb-3" src="{{ asset('profile_pics/' . '/' . $profile_pic) }}">
+            @else
+                <img class="rounded-circle hi-size-9 mb-3" src="{{ asset('images/nobody_m.original.jpg') }}">
+            @endif
             <h3 class="hi-fontSize-16"><b>{{ $full_name }}</b></h3>
             <p  class="hi-fontSize-12 grey-text mb-2">{{ $email }}</p>
             <p class="hi-fontSize-10 grey-text">{{ $description }}</p>
