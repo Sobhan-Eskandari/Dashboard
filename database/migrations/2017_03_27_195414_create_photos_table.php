@@ -21,6 +21,7 @@ class CreatePhotosTable extends Migration
             $table->dateTime('created_at');
             $table->unsignedBigInteger('created_by')->nullable(false);
             $table->dateTime('deleted_at')->nullable(true);
+            $table->dateTime('updated_at')->nullable(true);
         });
     }
 

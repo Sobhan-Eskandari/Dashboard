@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Admin;
 use App\Http\Requests\AdminStoreRequest;
 use App\Http\Requests\AdminUpdateRequest;
+use App\Photo;
 use App\Role;
 use Faker\Provider\Uuid;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Morilog\Jalali\jDate;
 
 class AdminController extends Controller
 {
@@ -203,5 +205,20 @@ class AdminController extends Controller
             $roles = Role::all();
             return view('Includes.AllAdminsTrash', compact('admins', 'roles'))->render();
         }
+    }
+
+    public function profile_pic(Request $request)
+    {
+        $input = $request->all();
+        if($file = $request->file('avatar')){
+            $name = time() . $file->getClientOriginalName();
+            $file->move('profile_pics', $name);
+            $input['address'] = $name;
+        }
+
+        $input['created_by'] = Auth::user()->id;
+        $photo = Photo::create($input);
+
+        return json_encode($photo->address);
     }
 }
