@@ -8,6 +8,13 @@
 
 @section('content')
 
+    {!! Form::open(['method'=>'POST', 'action'=>['AdminController@edit_profile_pic', $admin->id], 'files' => true, 'id'=>'uploadForm']) !!}
+        {!! Form::file('avatar') !!}
+        {!! Form::submit('آپلود', ['class'=>'btnSubmit', 'id'=>'uploadSubmit']) !!}
+    {!! Form::close() !!}
+
+    <div id="target"></div>
+
     <nav dir="rtl">
         @component('components.errors') @endcomponent
     </nav>
@@ -18,7 +25,7 @@
                 اطلاعات : {{ $admin->updated_at->format('y/m/d') }}</h5>
         </div>
     </div>
-    {!! Form::model($admin , ['method'=>'PUT', 'action'=>['AdminController@update', $admin->id], 'files' => true]) !!}
+    {!! Form::model($admin , ['method'=>'PUT', 'action'=>['AdminController@update', $admin->id], 'files' => true, 'id'=>'form']) !!}
         <div class="row">
             <div class="col-8 mt-3">
                 <div class="card hi-aboutMePanelCard">
@@ -100,6 +107,7 @@
                     <div class="card-header hi-profileCard_cardHeader cyan darken-4">
                         &nbsp;
                     </div>
+
                     <div class="hi-profileCard_PictureSelectorBox">
                         <div class="row">
                             <div class="col-4 pr-0 pt-5">
@@ -107,14 +115,34 @@
                                     {!! Form::select('gender',['1' => 'مرد', '0' => 'زن'], null, ['class'=>'dropdown', 'data-settings'=>'{"wrapperClass":"metro"}']) !!}
                                 </div>
                             </div>
+                            {{-- profile pic upload - start --}}
+
                             <div class="col-4 px-2 hi-profileCard_PictureSelectorBox_pictureBox">
+                                {{--{!! Form::open(['method'=>'POST', 'action'=>'AdminController@profile_pic', 'files' => true, 'id'=>'uploadForm']) !!}--}}
+                                    {{--{!! Form::file('avatar') !!}--}}
+                                    {{--{!! Form::submit('آپلود', ['class'=>'btnSubmit', 'id'=>'uploadSubmit']) !!}--}}
+                                {{--{!! Form::close() !!}--}}
+                                {{--<div id="targetLayer"></div>--}}
                                 <div class="hi-profileCard_PictureSelectorBox_pictureBox_hover">
                                     <figure>
-                                        <img src="{{ asset('images/nobody_m.original.jpg') }}"
-                                             class="hi-profileCard_PictureSelectorBox_picture img-fluid"
-                                             alt="Responsive image"></figure>
+                                        @if(isset($admin->photos[0]->address))
+                                            <img src="{{ asset('profile_pics/' . '/' . $admin->photos[0]->address) }}"
+                                                 class="hi-profileCard_PictureSelectorBox_picture img-fluid"
+                                                 alt="Responsive image"
+                                                 id="picture"
+                                            >
+                                        @else
+                                            <img src="{{ asset('images/nobody_m.original.jpg') }}"
+                                                 class="hi-profileCard_PictureSelectorBox_picture img-fluid"
+                                                 alt="Responsive image"
+                                                 id="picture"
+                                            >
+                                        @endif
+                                    </figure>
                                 </div>
                             </div>
+
+                            {{-- profile pic upload - end --}}
                             <div class="col-4 pt-5">
                                 <div class="hi-profileCard_PictureSelectorBox_selector hi-profileCard_PictureSelectorBox_selector_first mt-4">
                                     {!! Form::select('role_id',$roles, null, ['class'=>'dropdown', 'data-settings'=>'{"wrapperClass":"metro"}']) !!}
@@ -122,6 +150,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="card-block pt-0 hi-profileCard_formBox pb-4">
                         <h4 class="card-title text-center">{{ $admin->full_name }}</h4>
                         <fieldset class="form-group px-3 pt-3">
@@ -145,4 +174,9 @@
             </div>
         </div>
     {!! Form::close() !!}
+
+@endsection
+
+@section('javascript')
+    <script src="{{ asset('js/dashboard/EditAdminUploadProfilePic.js') }}"></script>
 @endsection

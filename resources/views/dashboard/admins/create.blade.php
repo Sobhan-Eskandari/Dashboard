@@ -8,6 +8,13 @@
 
 @section('content')
 
+    {!! Form::open(['method'=>'POST', 'action'=>'AdminController@create_profile_pic', 'files' => true, 'id'=>'uploadForm']) !!}
+        {!! Form::file('avatar') !!}
+        {!! Form::submit('آپلود', ['class'=>'btnSubmit', 'id'=>'uploadSubmit']) !!}
+    {!! Form::close() !!}
+
+    <div id="target"></div>
+
     <nav dir="rtl">
         @component('components.errors') @endcomponent
     </nav>
@@ -109,10 +116,13 @@
                         </div>
                         <div class="col-4 px-2 hi-profileCard_PictureSelectorBox_pictureBox">
                             <div class="hi-profileCard_PictureSelectorBox_pictureBox_hover">
+                                {!! Form::text('photo_id', null, ['style' => 'display: none;']) !!}
                                 <figure>
                                     <img src="{{ asset('images/nobody_m.original.jpg') }}"
                                          class="hi-profileCard_PictureSelectorBox_picture img-fluid"
-                                         alt="Responsive image"></figure>
+                                         alt="Responsive image"
+                                         id="picture">
+                                </figure>
                             </div>
                         </div>
                         <div class="col-4 pt-5">
@@ -145,4 +155,8 @@
         </div>
     </div>
     {!! Form::close() !!}
+@endsection
+
+@section('javascript')
+    <script src="{{ asset('js/dashboard/CreateAdminUploadProfilePic.js') }}"></script>
 @endsection

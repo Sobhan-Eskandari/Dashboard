@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use App\Admin;
 use App\Http\Requests\AdminStoreRequest;
 use App\Http\Requests\AdminUpdateRequest;
+use App\Photo;
 use App\Role;
 use Faker\Provider\Uuid;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
+use Morilog\Jalali\jDate;
 
 class AdminController extends Controller
 {
@@ -28,10 +31,10 @@ class AdminController extends Controller
     {
         $roles = Role::all();
         if($request->has('query')){
-            $admins = Admin::search($request->input('query'))->get();
-            $admins->load(['parent', 'role']);
+            $admins = Admin::search($request->input('query'))->orderBy('updated_at', 'desc')->get();
+            $admins->load(['parent', 'role', 'photos']);
         }else{
-            $admins = Admin::with(['parent', 'role'])->get();
+            $admins = Admin::with(['parent', 'role', 'photos'])->orderBy('updated_at', 'desc')->get();
         }
 
         if ($request->ajax()) {
@@ -67,7 +70,11 @@ class AdminController extends Controller
         $input['email_token'] = str_random(30) . Uuid::uuid();
         $input['password'] = bcrypt($request->password);
 
-        Admin::create($input);
+        $admin = Admin::create($input);
+
+        $photo = Photo::findOrFail($input['photo_id']);
+        $admin->photos()->save($photo);
+
         Session::flash('success', 'ادمین با موفقیت ساخته شد');
         return redirect(route('admins.index'));
     }
@@ -89,8 +96,9 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Admin $admin)
+    public function edit($id)
     {
+        $admin = Admin::with('photos')->findOrFail($id);
         $roles = Role::pluck('role', 'id')->all();
         return view('dashboard.admins.edit', compact('admin', 'roles'));
     }
@@ -105,8 +113,10 @@ class AdminController extends Controller
     public function update(AdminUpdateRequest $request, $id)
     {
         $admin = Admin::findOrFail($id);
+        $user = Auth::user()->id;
+
         $admin->revisions++;
-        $admin->updated_by = Auth::user()->id;
+        $admin->updated_by = $user;
         $input = $request->all();
         if(is_null($input['password'])){
             $input = $request->except('password');
@@ -143,16 +153,21 @@ class AdminController extends Controller
                 dd($exception->getMessage());
             }
 
-            $admins = Admin::with(['parent', 'role'])->get();
+            $admins = Admin::with(['parent', 'role'])->orderBy('updated_at', 'desc')->get();
             $roles = Role::all();
             return view('Includes.AllAdmins', compact('admins', 'roles'))->render();
         }
     }
 
-    public function trash()
+    public function trash(Request $request)
     {
-        $admins = Admin::with(['parent', 'role'])->onlyTrashed()->get();
+        $admins = Admin::with(['parent', 'role', 'photos'])->onlyTrashed()->orderBy('updated_at', 'desc')->paginate(8);
         $roles = Role::all();
+
+        if ($request->ajax()) {
+            return view('Includes.AllAdminsTrash', compact('admins', 'roles'))->render();
+        }
+
         return view('dashboard.admins.trash', compact('admins', 'roles'));
     }
 
@@ -172,7 +187,33 @@ class AdminController extends Controller
                 dd($exception->getMessage());
             }
 
-            $admins = Admin::with(['parent', 'role'])->onlyTrashed()->get();
+            $admins = Admin::pagination();
+            $roles = Role::all();
+            return view('Includes.AllAdminsTrash', compact('admins', 'roles'))->render();
+        }
+    }
+
+    public function forceMultiDestroy(Request $request)
+    {
+        $relations = ['faqs', 'categories', 'outboxes', 'tags'];
+        if($request->ajax()){
+            $input = $request->all();
+            $ids = explode(',', $input['ids']);
+            try {
+                foreach ($ids as $id){
+                    $admin = Admin::with($relations)->onlyTrashed()->findOrFail($id);
+                    foreach ($relations as $relation) {
+                        foreach ($admin->{$relation} as $item){
+                            $item->forceDelete();
+                        }
+                    }
+                    $admin->forceDelete();
+                }
+            }catch (\Exception $exception){
+                dd($exception->getMessage());
+            }
+
+            $admins = Admin::pagination();
             $roles = Role::all();
             return view('Includes.AllAdminsTrash', compact('admins', 'roles'))->render();
         }
@@ -199,9 +240,49 @@ class AdminController extends Controller
                 dd($exception->getMessage());
             }
 
-            $admins = Admin::with(['parent', 'role'])->onlyTrashed()->get();
+            $admins = Admin::pagination();
             $roles = Role::all();
             return view('Includes.AllAdminsTrash', compact('admins', 'roles'))->render();
         }
+    }
+
+    public function edit_profile_pic(Request $request, $id)
+    {
+        $admin = Admin::findOrFail($id);
+        $input = $request->all();
+        if($file = $request->file('avatar')){
+            if(isset($admin->photos[0])){
+                $admin->photos()->delete();
+                $admin->photos()->detach();
+                // Below line of code, Remain if the photo is deleted permanently else it should be commented out
+                File::delete('profile_pics/' . $admin->photos[0]->address);
+            }
+            $name = time() . $file->getClientOriginalName();
+            $file->move('profile_pics', $name);
+            $input['address'] = $name;
+        }
+
+        $input['created_by'] = Auth::user()->id;
+
+        $photo = Photo::create($input);
+        $admin->photos()->save($photo);
+
+        return json_encode($photo->address);
+    }
+
+    public function create_profile_pic(Request $request)
+    {
+        $input = $request->all();
+        if($file = $request->file('avatar')){
+            $name = time() . $file->getClientOriginalName();
+            $file->move('profile_pics', $name);
+            $input['address'] = $name;
+        }
+
+        $input['created_by'] = Auth::user()->id;
+
+        $photo = Photo::create($input);
+
+        return json_encode($photo);
     }
 }

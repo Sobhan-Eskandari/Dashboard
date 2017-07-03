@@ -109,6 +109,8 @@ Route::prefix('admins')->group(function()
     Route::get('/', 'AdminController@index')->name('admins.index');
     Route::get('/create', 'AdminController@create')->name('admins.create');
     Route::post('/', 'AdminController@store')->name('admins.store');
+    Route::post('/edit_profile_pic/{admin}', 'AdminController@edit_profile_pic')->name('admins.edit_profile_pic');
+    Route::post('/create_profile_pic', 'AdminController@create_profile_pic')->name('admins.create_profile_pic');
     Route::get('/{admin}', 'AdminController@show')->name('admins.show');
     Route::get('/{admin}/edit', 'AdminController@edit')->name('admins.edit');
     Route::put('/{admin}', 'AdminController@update')->name('admins.update');
@@ -126,4 +128,5 @@ Route::prefix('admins')->group(function()
 
 Route::get('/admins-trash', 'AdminController@trash')->name('admins.trash');
 Route::delete('/admins-trash/{admin}', 'AdminController@forceDestroy')->name('admins.forceDestroy');
+Route::post('/admins-trash-forceMultiDestroy', 'AdminController@forceMultiDestroy')->name('admins.forceMultiDestroy');
 Route::post('/admins-restore/{admin}', 'AdminController@restore')->name('admins.restore');
