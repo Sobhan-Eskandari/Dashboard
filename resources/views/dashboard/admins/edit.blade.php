@@ -8,7 +8,7 @@
 
 @section('content')
 
-    {!! Form::open(['method'=>'POST', 'action'=>['AdminController@profile_pic', $admin->id], 'files' => true, 'id'=>'uploadForm']) !!}
+    {!! Form::open(['method'=>'POST', 'action'=>['AdminController@edit_profile_pic', $admin->id], 'files' => true, 'id'=>'uploadForm']) !!}
         {!! Form::file('avatar') !!}
         {!! Form::submit('آپلود', ['class'=>'btnSubmit', 'id'=>'uploadSubmit']) !!}
     {!! Form::close() !!}
@@ -178,5 +178,5 @@
 @endsection
 
 @section('javascript')
-    <script src="{{ asset('js/dashboard/UploadProfilePic.js') }}"></script>
+    <script src="{{ asset('js/dashboard/EditAdminUploadProfilePic.js') }}"></script>
 @endsection

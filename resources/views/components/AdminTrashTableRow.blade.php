@@ -6,7 +6,11 @@
     </div>
 </td>
 <td class="py-1 text-right userInfoPlace">
-    <img class="rounded-circle Topbar_avatar" src="{{ asset('images/avatar.png') }}">
+    @if(isset($photo))
+        <img class="rounded-circle Topbar_avatar" src="{{ asset('profile_pics/' . '/' . $photo) }}">
+    @else
+        <img class="rounded-circle Topbar_avatar" src="{{ asset('images/nobody_m.original.jpg') }}">
+    @endif
     <p class="username">{{ $user_name }}</p>
 </td>
 <td>{{ $full_name }}</td>

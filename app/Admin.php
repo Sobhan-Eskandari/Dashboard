@@ -118,7 +118,7 @@ class Admin extends Authenticatable
 
     public static function pagination()
     {
-        $allAdmins = Admin::with(['parent', 'role'])->onlyTrashed()->orderBy('updated_at', 'desc')->get();
+        $allAdmins = Admin::with(['parent', 'role', 'photos'])->onlyTrashed()->orderBy('updated_at', 'desc')->get();
         $adminsArray = [];
         foreach ($allAdmins as $admin){
             $adminsArray[] = $admin;

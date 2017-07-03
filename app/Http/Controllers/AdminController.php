@@ -31,10 +31,10 @@ class AdminController extends Controller
     {
         $roles = Role::all();
         if($request->has('query')){
-            $admins = Admin::search($request->input('query'))->get();
+            $admins = Admin::search($request->input('query'))->orderBy('updated_at', 'desc')->get();
             $admins->load(['parent', 'role', 'photos']);
         }else{
-            $admins = Admin::with(['parent', 'role', 'photos'])->get();
+            $admins = Admin::with(['parent', 'role', 'photos'])->orderBy('updated_at', 'desc')->get();
         }
 
         if ($request->ajax()) {
@@ -70,7 +70,11 @@ class AdminController extends Controller
         $input['email_token'] = str_random(30) . Uuid::uuid();
         $input['password'] = bcrypt($request->password);
 
-        Admin::create($input);
+        $admin = Admin::create($input);
+
+        $photo = Photo::findOrFail($input['photo_id']);
+        $admin->photos()->save($photo);
+
         Session::flash('success', 'ادمین با موفقیت ساخته شد');
         return redirect(route('admins.index'));
     }
@@ -149,7 +153,7 @@ class AdminController extends Controller
                 dd($exception->getMessage());
             }
 
-            $admins = Admin::with(['parent', 'role'])->get();
+            $admins = Admin::with(['parent', 'role'])->orderBy('updated_at', 'desc')->get();
             $roles = Role::all();
             return view('Includes.AllAdmins', compact('admins', 'roles'))->render();
         }
@@ -157,7 +161,7 @@ class AdminController extends Controller
 
     public function trash(Request $request)
     {
-        $admins = Admin::with(['parent', 'role'])->onlyTrashed()->paginate(8);
+        $admins = Admin::with(['parent', 'role', 'photos'])->onlyTrashed()->orderBy('updated_at', 'desc')->paginate(8);
         $roles = Role::all();
 
         if ($request->ajax()) {
@@ -242,11 +246,10 @@ class AdminController extends Controller
         }
     }
 
-    public function profile_pic(Request $request, $id)
+    public function edit_profile_pic(Request $request, $id)
     {
         $admin = Admin::findOrFail($id);
         $input = $request->all();
-//        dd(isset($admin->photos[0]));
         if($file = $request->file('avatar')){
             if(isset($admin->photos[0])){
                 $admin->photos()->delete();
@@ -265,5 +268,21 @@ class AdminController extends Controller
         $admin->photos()->save($photo);
 
         return json_encode($photo->address);
+    }
+
+    public function create_profile_pic(Request $request)
+    {
+        $input = $request->all();
+        if($file = $request->file('avatar')){
+            $name = time() . $file->getClientOriginalName();
+            $file->move('profile_pics', $name);
+            $input['address'] = $name;
+        }
+
+        $input['created_by'] = Auth::user()->id;
+
+        $photo = Photo::create($input);
+
+        return json_encode($photo);
     }
 }
