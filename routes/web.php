@@ -127,4 +127,5 @@ Route::prefix('admins')->group(function()
 
 Route::get('/admins-trash', 'AdminController@trash')->name('admins.trash');
 Route::delete('/admins-trash/{admin}', 'AdminController@forceDestroy')->name('admins.forceDestroy');
+Route::post('/admins-trash-forceMultiDestroy', 'AdminController@forceMultiDestroy')->name('admins.forceMultiDestroy');
 Route::post('/admins-restore/{admin}', 'AdminController@restore')->name('admins.restore');

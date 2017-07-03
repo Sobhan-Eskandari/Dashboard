@@ -155,10 +155,15 @@ class AdminController extends Controller
         }
     }
 
-    public function trash()
+    public function trash(Request $request)
     {
-        $admins = Admin::with(['parent', 'role'])->onlyTrashed()->get();
+        $admins = Admin::with(['parent', 'role'])->onlyTrashed()->paginate(8);
         $roles = Role::all();
+
+        if ($request->ajax()) {
+            return view('Includes.AllAdminsTrash', compact('admins', 'roles'))->render();
+        }
+
         return view('dashboard.admins.trash', compact('admins', 'roles'));
     }
 
@@ -178,7 +183,33 @@ class AdminController extends Controller
                 dd($exception->getMessage());
             }
 
-            $admins = Admin::with(['parent', 'role'])->onlyTrashed()->get();
+            $admins = Admin::pagination();
+            $roles = Role::all();
+            return view('Includes.AllAdminsTrash', compact('admins', 'roles'))->render();
+        }
+    }
+
+    public function forceMultiDestroy(Request $request)
+    {
+        $relations = ['faqs', 'categories', 'outboxes', 'tags'];
+        if($request->ajax()){
+            $input = $request->all();
+            $ids = explode(',', $input['ids']);
+            try {
+                foreach ($ids as $id){
+                    $admin = Admin::with($relations)->onlyTrashed()->findOrFail($id);
+                    foreach ($relations as $relation) {
+                        foreach ($admin->{$relation} as $item){
+                            $item->forceDelete();
+                        }
+                    }
+                    $admin->forceDelete();
+                }
+            }catch (\Exception $exception){
+                dd($exception->getMessage());
+            }
+
+            $admins = Admin::pagination();
             $roles = Role::all();
             return view('Includes.AllAdminsTrash', compact('admins', 'roles'))->render();
         }
@@ -205,7 +236,7 @@ class AdminController extends Controller
                 dd($exception->getMessage());
             }
 
-            $admins = Admin::with(['parent', 'role'])->onlyTrashed()->get();
+            $admins = Admin::pagination();
             $roles = Role::all();
             return view('Includes.AllAdminsTrash', compact('admins', 'roles'))->render();
         }
