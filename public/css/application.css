@@ -7404,6 +7404,9 @@ body {
 .tag_darkMode {
   color: white; }
 
+.direction_create_slider {
+  direction: rtl; }
+
 /* ============[ Components Css Import ]=========== */
 .hi-profileCard {
   border-radius: 8px;

@@ -65,6 +65,9 @@ Route::get('/sliders', function () {
 Route::get('/home', function (){
     return view('dashboard.home.index');
 });
+Route::get('/create_slider', function (){
+    return view('dashboard.sliders.create');
+});
 /**
  *  correct routes starts form here on
  */
