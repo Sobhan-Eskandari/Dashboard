@@ -127,8 +127,60 @@ class PostController extends Controller
         }
     }
 
-    public function trash()
+    public function trash(Request $request)
     {
-        return view('dashboard.posts.trash');
+        $posts = Post::with(['updater', 'creator', 'categories', 'tags'])->onlyTrashed()->orderBy('updated_at', 'desc')->paginate(8);
+
+        if ($request->ajax()) {
+            return view('Includes.AllPostsTrash', compact('posts'))->render();
+        }
+
+        return view('dashboard.posts.trash', compact('posts'));
+    }
+
+    public function forceDestroy(Request $request, $id)
+    {
+        if($request->ajax()){
+            try {
+                Post::onlyTrashed()->findOrFail($id)->forceDelete();
+            }catch (\Exception $exception){
+                dd($exception->getMessage());
+            }
+
+            $posts = Post::pagination("http://dashboard.dev/posts-trash");
+            return view('Includes.AllPostsTrash', compact('posts'))->render();
+        }
+    }
+
+    public function forceMultiDestroy(Request $request)
+    {
+        if($request->ajax()){
+            $input = $request->all();
+            $ids = explode(',', $input['ids']);
+            try {
+                foreach ($ids as $id){
+                    Post::onlyTrashed()->findOrFail($id)->forceDelete();
+                }
+            }catch (\Exception $exception){
+                dd($exception->getMessage());
+            }
+
+            $posts = Post::pagination("http://dashboard.dev/posts-trash");
+            return view('Includes.AllPostsTrash', compact('posts'))->render();
+        }
+    }
+
+    public function restore(Request $request, $id)
+    {
+        if($request->ajax()){
+            try {
+                Post::onlyTrashed()->findOrFail($id)->restore();
+            }catch (\Exception $exception){
+                dd($exception->getMessage());
+            }
+
+            $posts = Post::pagination("http://dashboard.dev/posts-trash");
+            return view('Includes.AllPostsTrash', compact('posts'))->render();
+        }
     }
 }
