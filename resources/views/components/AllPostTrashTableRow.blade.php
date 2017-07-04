@@ -27,14 +27,17 @@
         </button>
         {{--==========[ Dropdown Menu ]========= --}}
         <div data-dropdown-in="fadeIn" data-dropdown-out="fadeOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-eye ml-2" aria-hidden="true"></i>مشاهده</a>
-            <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-pencil ml-2" aria-hidden="true"></i> ویرایش</a>
-            {!! Form::open(['method'=>'DELETE', 'action'=>['PostController@destroy', $id], 'class'=>'singleDestroy']) !!}
-                <button type="submit" class="dropdown-item text-right py-0 mt-1" href="#"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</button>
-                {{--{!! Form::submit('حذف', ['id'=>'single-' . $id ,'style' => 'background: none; border: none; color: #b32e2e; font-weight: bold;']) !!}--}}
+            {!! Form::open(['method'=>'POST', 'action'=>['PostController@restore', $id], 'class'=>'restore']) !!}
+            <button class="dropdown-item text-right py-0">
+                <i class="fa fa-undo ml-2" aria-hidden="true"></i>بازگردانی
+            </button>
             {!! Form::close() !!}
-
-            <a class="dropdown-item text-right py-0 mt-1" href="#"><i class="fa fa-lock ml-2" aria-hidden="true"></i>قفل پست</a>
+            <div class="dropdown-divider my-1"></div>
+            {!! Form::open(['method'=>'DELETE', 'action'=>['PostController@forceDestroy', $id], 'class'=>'singleDestroy']) !!}
+            <button class="dropdown-item text-right py-0 mt-1">
+                <i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف
+            </button>
+            {!! Form::close() !!}
         </div>
     </div>
 </td>
