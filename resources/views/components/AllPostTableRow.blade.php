@@ -1,22 +1,22 @@
 {{--==========[ Table Row items ]========= --}}
 <td>
     <div class="pure-checkbox mt-2 mr-2">
-        <input id="posts_checkbox-{{$chk_name}}" class="checkbox-{{$chk_name}}" onclick="selectCmntCheckbox(event)" name="posts_checkbox-{{$chk_name}}" type="checkbox" >
-        <label for="posts_checkbox-{{$chk_name}}"></label>
+        <input id="{{ $id }}" class="checkbox-{{ $id }}" onclick="selectCmntCheckbox(event)" name="{{ $id }}" type="checkbox" >
+        <label for="{{ $id }}"></label>
     </div>
 </td>
 <td class="text-right py-1">
-    <p class="my-1">{{$post_name}}</p>
-    <p class="grey-text my-1 hi-fontSize-12">{{$post_editedBy}}</p>
+    <p class="my-1">{{ $title }}</p>
+    <p class="grey-text my-1 hi-fontSize-12">{{ $last_update }}</p>
 </td>
-<td>{{$post_author}}</td>
-<td>{{$post_category}}</td>
-<td>{{$post_tag}}</td>
+<td>{{ $creator }}</td>
+<td>{{ $categories }}</td>
+<td>{{ $tags }}</td>
 {{--==========[ Post Info ]========= --}}
 <td class="py-1">
-    <p class="my-1 text-right hi-fontSize-12"><i class="fa fa-calendar" aria-hidden="true"></i> {{$post_date}}</p>
-    <p class="my-1 text-right hi-fontSize-12"><i class="fa fa-comments" aria-hidden="true"></i> {{$post_commentsCount}}</p>
-    <p class="my-1 text-right hi-fontSize-12"><i class="fa fa-eye" aria-hidden="true"></i> {{$post_views}}</p>
+    <p class="my-1 text-right hi-fontSize-12"><i class="fa fa-calendar" aria-hidden="true"></i> {{ $created_at }}</p>
+    <p class="my-1 text-right hi-fontSize-12"><i class="fa fa-comments" aria-hidden="true"></i> {{ $comments }}</p>
+    <p class="my-1 text-right hi-fontSize-12"><i class="fa fa-eye" aria-hidden="true"></i> {{ $views }}</p>
 </td>
 
 {{--==========[ More Button Dropdown ]========= --}}

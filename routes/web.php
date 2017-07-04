@@ -17,14 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/* mersede */
-
-Route::get('/createPost', function () {
-    return view('dashboard.posts.createPost');
-});
-
-/* mersede */
-
 Route::get('/layout', function () {
     return view('layouts.main');
 });
@@ -35,13 +27,6 @@ Route::get('/users', function () {
 
 Route::get('/users/trash', function () {
     return view('dashboard.users.trash');
-});
-
-Route::get('/posts', function () {
-    return view('dashboard.posts.index');
-});
-Route::get('/posts/trash', function () {
-    return view('dashboard.posts.trash');
 });
 
 Route::get('/files', function () {
@@ -130,3 +115,10 @@ Route::get('/admins-trash', 'AdminController@trash')->name('admins.trash');
 Route::delete('/admins-trash/{admin}', 'AdminController@forceDestroy')->name('admins.forceDestroy');
 Route::post('/admins-trash-forceMultiDestroy', 'AdminController@forceMultiDestroy')->name('admins.forceMultiDestroy');
 Route::post('/admins-restore/{admin}', 'AdminController@restore')->name('admins.restore');
+
+Route::resource('/posts', 'PostController');
+Route::get('/posts-trash', 'PostController@trash')->name('posts.trash');
+//Route::delete('/posts-trash/{post}', 'PostController@forceDestroy')->name('posts.forceDestroy');
+//Route::post('/posts-restore/{post}', 'PostController@restore')->name('posts.restore');
+//Route::post('/posts-multiDestroy', 'PostController@multiDestroy')->name('posts.multiDestroy');
+//Route::post('/posts-trash-forceMultiDestroy', 'PostController@forceMultiDestroy')->name('posts.forceMultiDestroy');

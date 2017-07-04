@@ -20,13 +20,14 @@ class PostTableSeeder extends Seeder
         $posts = [];
         $time = jDate::forge('now')->format('datetime', true);
 
-        foreach (range(1, 20) as $index){
+        foreach (range(1, 50) as $index){
             $posts[] = [
                 'title' => $faker->firstName,
                 'body' => $faker->realText(500),
                 'created_at' => $time,
                 'updated_at' => $time,
                 'created_by' => '1',
+                'updated_by' => '2',
             ];
         }
 

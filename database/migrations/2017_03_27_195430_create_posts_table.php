@@ -21,7 +21,7 @@ class CreatePostsTable extends Migration
             $table->boolean('lock')->default(false);
             $table->boolean('draft')->default(false);
             $table->unsignedBigInteger('created_by');
-            $table->unsignedBigInteger('updated_by')->nullable(true);
+            $table->unsignedBigInteger('updated_by');
             $table->unsignedBigInteger('locked_by')->nullable(true);
             $table->integer('revisions')->default(0);
             $table->dateTime('created_at');
