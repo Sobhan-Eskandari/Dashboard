@@ -42,4 +42,13 @@ class Post extends Model
     {
         return $this->morphToMany('App\Tag', 'taggable');
     }
+
+    public function toSearchableArray()
+    {
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+            'body' => $this->body,
+        ];
+    }
 }
