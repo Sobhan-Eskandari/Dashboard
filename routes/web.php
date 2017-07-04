@@ -50,6 +50,9 @@ Route::get('/sliders', function () {
 Route::get('/home', function (){
     return view('dashboard.home.index');
 });
+Route::get('/create_slider', function (){
+    return view('dashboard.sliders.create');
+});
 /**
  *  correct routes starts form here on
  */
@@ -122,3 +125,4 @@ Route::delete('/posts-trash/{post}', 'PostController@forceDestroy')->name('posts
 Route::post('/posts-restore/{post}', 'PostController@restore')->name('posts.restore');
 Route::post('/posts-multiDestroy', 'PostController@multiDestroy')->name('posts.multiDestroy');
 Route::post('/posts-trash-forceMultiDestroy', 'PostController@forceMultiDestroy')->name('posts.forceMultiDestroy');
+Route::post('/admins-restore/{admin}', 'AdminController@restore')->name('admins.restore');
