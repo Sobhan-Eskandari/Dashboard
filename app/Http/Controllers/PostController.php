@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -90,9 +91,20 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, Post $post)
     {
-        //
+        if($request->ajax()){
+            try {
+                $post->update(['updated_by' => Auth::user()->id]);
+                $post->delete();
+            }catch (\Exception $exception){
+                dd($exception->getMessage());
+            }
+
+            $posts = Post::pagination();
+
+            return view('Includes.AllPosts', compact('posts'))->render();
+        }
     }
 
     public function trash()

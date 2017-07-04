@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Input;
 use Laravel\Scout\Searchable;
 
 class Post extends Model
@@ -22,6 +24,32 @@ class Post extends Model
         'locked_by',
         'revisions',
     ];
+
+    public static function pagination($path = "http://dashboard.dev/posts")
+    {
+        if ($path == "http://dashboard.dev/posts"){
+            $allPosts = Post::with(['updater', 'creator', 'categories', 'tags'])->orderBy('updated_at', 'desc')->get();
+        }else{
+            $allPosts = Post::with(['updater', 'creator', 'categories', 'tags'])->onlyTrashed()->orderBy('updated_at', 'desc')->get();
+        }
+        $postArray = [];
+        foreach ($allPosts as $post){
+            $postArray[] = $post;
+        }
+
+        $page = Input::get('page', 1); // Get the current page or default to 1
+        $perPage = 8;
+        $offset = ($page * $perPage) - $perPage;
+
+        $posts = new LengthAwarePaginator(array_slice($postArray, $offset, $perPage, true),
+            count($postArray),
+            $perPage,
+            $page,
+            ['path' => $path]
+        );
+
+        return $posts;
+    }
 
     public function updater()
     {
