@@ -120,5 +120,5 @@ Route::resource('/posts', 'PostController');
 Route::get('/posts-trash', 'PostController@trash')->name('posts.trash');
 //Route::delete('/posts-trash/{post}', 'PostController@forceDestroy')->name('posts.forceDestroy');
 //Route::post('/posts-restore/{post}', 'PostController@restore')->name('posts.restore');
-//Route::post('/posts-multiDestroy', 'PostController@multiDestroy')->name('posts.multiDestroy');
+Route::post('/posts-multiDestroy', 'PostController@multiDestroy')->name('posts.multiDestroy');
 //Route::post('/posts-trash-forceMultiDestroy', 'PostController@forceMultiDestroy')->name('posts.forceMultiDestroy');

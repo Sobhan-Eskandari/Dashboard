@@ -107,6 +107,26 @@ class PostController extends Controller
         }
     }
 
+    public function multiDestroy(Request $request)
+    {
+        if($request->ajax()){
+            $input = $request->all();
+            $ids = explode(',', $input['ids']);
+            try {
+                foreach ($ids as $id){
+                    $post = Post::findOrFail($id);
+                    $post->update(['updated_by' => Auth::user()->id]);
+                    $post->delete();
+                }
+            }catch (\Exception $exception){
+                dd($exception->getMessage());
+            }
+
+            $posts = Post::pagination();
+            return view('Includes.AllPosts', compact('posts'))->render();
+        }
+    }
+
     public function trash()
     {
         return view('dashboard.posts.trash');
