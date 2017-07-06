@@ -7,6 +7,7 @@ use App\Http\Requests\AdminStoreRequest;
 use App\Http\Requests\AdminUpdateRequest;
 use App\Photo;
 use App\Role;
+use App\Todo;
 use Faker\Provider\Uuid;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -29,6 +30,7 @@ class AdminController extends Controller
      */
     public function index(Request $request)
     {
+        $todos = Todo::all();
         $roles = Role::all();
         if($request->has('query')){
             $admins = Admin::search($request->input('query'))->orderBy('updated_at', 'desc')->get();
@@ -41,7 +43,7 @@ class AdminController extends Controller
             return view('Includes.AllAdmins', compact('admins', 'roles'))->render();
         }
 
-        return view('dashboard.admins.index', compact('admins', 'roles'));
+        return view('dashboard.admins.index', compact('admins', 'roles', 'todos'));
     }
 
     /**

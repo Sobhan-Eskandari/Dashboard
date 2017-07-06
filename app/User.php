@@ -67,7 +67,7 @@ class User extends Authenticatable
     }
 
     public function todos() {
-        return $this->hasMany(Todo::class, 'done_at');
+        return $this->hasMany(Todo::class);
     }
 
     public function getFullNameAttribute()

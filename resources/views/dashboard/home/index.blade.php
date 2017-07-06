@@ -295,60 +295,29 @@
                             <div class="row" id="listOfTodos">
                                 <div class="col-md-12">
                                     <ul class="list">
-                                        <li class="list-item">
-                                            <input type="checkbox" class="hidden-box" id="todo[0]"/>
-                                            <label for="todo[0]" class="check--label">
-                                                <span class="check--label-box"></span>
-                                                <span class="check--label-text">چک کردن متن</span>
-                                                <button type="submit" class="hi-button-btn1 todo_deleteBtn"><i class="fa fa-times grey-text"></i> </button>
-                                            </label>
-                                        </li>
-                                        <li class="list-item">
-                                            <input type="checkbox" class="hidden-box" id="todo[1]"/>
-                                            <label for="todo[1]" class="check--label">
-                                                <span class="check--label-box"></span>
-                                                <span class="check--label-text">چک کردن متن</span>
-                                                <button type="submit" class="hi-button-btn1 todo_deleteBtn"><i class="fa fa-times grey-text"></i> </button>
-                                            </label>
-                                        </li>
-                                        <li class="list-item">
-                                            <input type="checkbox" class="hidden-box" id="todo[2]"/>
-                                            <label for="todo[2]" class="check--label">
-                                                <span class="check--label-box"></span>
-                                                <span class="check--label-text">چک کردن متن</span>
-                                                <button type="submit" class="hi-button-btn1 todo_deleteBtn"><i class="fa fa-times grey-text"></i> </button>
-                                            </label>
-                                        </li>
-                                        <li class="list-item">
-                                            <input type="checkbox" class="hidden-box" id="todo[3]"/>
-                                            <label for="todo[3]" class="check--label">
-                                                <span class="check--label-box"></span>
-                                                <span class="check--label-text">چک کردن متن</span>
-                                                <button type="submit" class="hi-button-btn1 todo_deleteBtn"><i class="fa fa-times grey-text"></i> </button>
-                                            </label>
-                                        </li>
-                                        <li class="list-item">
-                                            <input type="checkbox" class="hidden-box" id="todo[4]"/>
-                                            <label for="todo[4]" class="check--label">
-                                                <span class="check--label-box"></span>
-                                                <span class="check--label-text">چک کردن متن</span>
-                                                <button type="submit" class="hi-button-btn1 todo_deleteBtn"><i class="fa fa-times grey-text"></i> </button>
-                                            </label>
-                                        </li>
-                                        <li class="list-item">
-                                            <input type="checkbox" class="hidden-box" id="todo[5]"/>
-                                            <label for="todo[5]" class="check--label">
-                                                <span class="check--label-box"></span>
-                                                <span class="check--label-text">چک کردن متن</span>
-                                                <button type="submit" class="hi-button-btn1 todo_deleteBtn"><i class="fa fa-times grey-text"></i> </button>
-                                            </label>
-                                        </li>
+                                        @if(isset($todos))
+                                            @foreach($todos as $key=>$todo)
+                                                <li class="list-item">
+                                                    <input name="done" type="checkbox" class="hidden-box" id="todo[{{$key}}]"/>
+                                                    <label for="todo[{{$key}}]" class="check--label">
+                                                        <span class="check--label-box"></span>
+                                                        <span class="check--label-text">{{$todo->task}}</span>
+                                                        <form method="post" action="/todos">
+                                                            {{ method_field('DELETE') }}
+                                                            {{ csrf_field() }}
+                                                            <button type="submit" class="hi-button-btn1 todo_deleteBtn"><i class="fa fa-times grey-text"></i> </button>
+                                                        </form>
+                                                    </label>
+                                                </li>
+                                            @endforeach
+                                        @endif
                                     </ul>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">
                                     <form action="/todos" method="post" class="form-inline">
+                                        {{csrf_field()}}
                                         <label class="sr-only" for="inlineFormInputGroup">Username</label>
                                         <div class="input-group" id="addTodo">
                                             <button type="submit" id="addTodo_addBtn"><img class="img-fluid" src="{{asset('images/Add-icone.png')}}"></button>
