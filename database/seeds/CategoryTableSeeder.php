@@ -1,0 +1,41 @@
+<?php
+
+use Illuminate\Database\Seeder;
+<<<<<<< HEAD
+=======
+use Illuminate\Support\Facades\DB;
+use Faker\Factory as Faker;
+use Morilog\Jalali\Facades\jDate;
+>>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
+
+class CategoryTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+<<<<<<< HEAD
+        factory(App\Category::class, 50)->create();
+=======
+        DB::table('categories')->truncate();
+
+        $faker = Faker::create("fa_IR");
+        $categories = [];
+        $time = jDate::forge('now')->format('datetime', true);
+
+        foreach (range(1, 50) as $index){
+            $categories[] = [
+                'category' => $faker->firstName,
+                'created_at' => $time,
+                'updated_at' => $time,
+                'created_by' => '1',
+            ];
+        }
+
+        DB::table('categories')->insert($categories);
+>>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
+    }
+}
