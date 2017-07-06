@@ -2020,20 +2020,12 @@
         "version_normalized": "0.9.9.0",
         "source": {
             "type": "git",
-<<<<<<< HEAD
-            "url": "https://github.com/padraic/mockery.git",
-=======
             "url": "https://github.com/mockery/mockery.git",
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
             "reference": "6fdb61243844dc924071d3404bb23994ea0b6856"
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-            "url": "https://api.github.com/repos/padraic/mockery/zipball/6fdb61243844dc924071d3404bb23994ea0b6856",
-=======
             "url": "https://api.github.com/repos/mockery/mockery/zipball/6fdb61243844dc924071d3404bb23994ea0b6856",
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
             "reference": "6fdb61243844dc924071d3404bb23994ea0b6856",
             "shasum": ""
         },
@@ -4223,8 +4215,6 @@
             "import",
             "laravel"
         ]
-<<<<<<< HEAD
-=======
     },
     {
         "name": "filp/whoops",
@@ -5087,6 +5077,5 @@
             "php",
             "utf-8"
         ]
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
     }
 ]

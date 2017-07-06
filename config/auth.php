@@ -42,11 +42,6 @@ return [
         ],
 
         'api' => [
-<<<<<<< HEAD
-            'driver' => 'token',
-            'provider' => 'users',
-        ],
-=======
             'driver' => 'passport',
             'provider' => 'users',
         ],
@@ -54,7 +49,6 @@ return [
             'driver' => 'session',
             'provider' => 'admins',
         ],
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
     ],
 
     /*
@@ -79,13 +73,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-<<<<<<< HEAD
-=======
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Admin::class,
         ],
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
 
         // 'users' => [
         //     'driver' => 'database',
@@ -114,14 +105,11 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
-<<<<<<< HEAD
-=======
         'admins' => [
             'provider' => 'admins',
             'table' => 'password_resets',
             'expire' => 60,
         ],
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
     ],
 
 ];

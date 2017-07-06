@@ -1,12 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-<<<<<<< HEAD
-=======
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
 use Morilog\Jalali\Facades\jDate;
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
 
 class PostTableSeeder extends Seeder
 {
@@ -17,9 +14,6 @@ class PostTableSeeder extends Seeder
      */
     public function run()
     {
-<<<<<<< HEAD
-        factory(App\Post::class, 50)->create();
-=======
         DB::table('posts')->truncate();
 
         $faker = Faker::create("fa_IR");
@@ -38,6 +32,5 @@ class PostTableSeeder extends Seeder
         }
 
         DB::table('posts')->insert($posts);
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
     }
 }

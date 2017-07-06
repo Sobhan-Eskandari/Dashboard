@@ -2,26 +2,6 @@
 
 namespace App;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-=======
-
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Database\Eloquent\SoftDeletes;
->>>>>>> 6cbc4625ebac1ef4ce2a0596954b89c7fff516b3
-
-class User extends Authenticatable
-{
-    use Notifiable;
-<<<<<<< HEAD
-
-=======
-    use SoftDeletes;
->>>>>>> 6cbc4625ebac1ef4ce2a0596954b89c7fff516b3
-=======
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -32,19 +12,11 @@ class User extends Authenticatable
     use HasApiTokens;
     use Notifiable;
     use SoftDeletes;
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
-    protected $fillable = [
-        'name', 'email', 'password',
-=======
-=======
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
@@ -56,11 +28,7 @@ class User extends Authenticatable
         'role_id',
         'password',
         'land_line',
-<<<<<<< HEAD
-        'mobil',
-=======
         'mobile',
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
         'address',
         'zip',
         'gender',
@@ -71,12 +39,7 @@ class User extends Authenticatable
         'email_token',
         'revisions',
         'last_seen',
-<<<<<<< HEAD
-
->>>>>>> 6cbc4625ebac1ef4ce2a0596954b89c7fff516b3
-=======
         'about',
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
     ];
 
     /**
@@ -87,8 +50,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-<<<<<<< HEAD
-=======
 
     public function faqs()
     {
@@ -109,5 +70,4 @@ class User extends Authenticatable
     {
         return $this->first_name . ' ' . $this->last_name;
     }
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
 }

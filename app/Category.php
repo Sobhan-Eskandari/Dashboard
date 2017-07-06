@@ -3,14 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD
-
-class Category extends Model
-{
-    protected $fillable = [
-        'category',
-    ];
-=======
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Input;
@@ -66,5 +58,4 @@ class Category extends Model
         ];
     }
 
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
 }

@@ -6,29 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-<<<<<<< HEAD
-    'CreateAudioablesTable' => $baseDir . '/database/migrations/2017_03_23_154454_create_audioables_table.php',
-    'CreateAudiosTable' => $baseDir . '/database/migrations/2017_03_23_154434_create_audios_table.php',
-    'CreateFriendsTable' => $baseDir . '/database/migrations/2017_03_23_123916_create_friends_table.php',
-    'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
-    'CreateSettingsTable' => $baseDir . '/database/migrations/2017_03_23_155901_create_settings_table.php',
-    'CreateTaggablesTable' => $baseDir . '/database/migrations/2017_03_23_140211_create_taggables_table.php',
-    'CreateTagsTable' => $baseDir . '/database/migrations/2017_03_23_134802_create_tags_table.php',
-    'CreateTodosTable' => $baseDir . '/database/migrations/2017_03_23_131218_create_todos_table.php',
-    'CreateFAQsTable' => $baseDir . '/database/migrations/2017_03_24_125313_create_f_a_q_s_table.php',
-    'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
-    'CreatePhotoablesTable' => $baseDir . '/database/migrations/2017_03_24_135830_create_photoables_table.php',
-    'CreatePhotosTable' => $baseDir . '/database/migrations/2017_03_24_133945_create_photos_table.php',
-
-    'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
-    'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
-    'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
-    'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
-    'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/src/Factory.php',
-
-    'FriendsSeeder' => $baseDir . '/database/seeds/FriendsSeeder.php',
-
-=======
     'AdminTableSeeder' => $baseDir . '/database/seeds/AdminTableSeeder.php',
     'CGIF' => $vendorDir . '/mpdf/mpdf/classes/gif.php',
     'CGIFCOLORTABLE' => $vendorDir . '/mpdf/mpdf/classes/gif.php',
@@ -72,7 +49,6 @@ return array(
     'FilterASCIIHexDecode' => $vendorDir . '/setasign/fpdi/filters/FilterASCIIHexDecode.php',
     'FilterLZW' => $vendorDir . '/setasign/fpdi/filters/FilterLZW.php',
     'FriendTableSeeder' => $baseDir . '/database/seeds/FriendTableSeeder.php',
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
     'Hamcrest\\Arrays\\IsArray' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
     'Hamcrest\\Arrays\\IsArrayContaining' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
     'Hamcrest\\Arrays\\IsArrayContainingInAnyOrder' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingInAnyOrder.php',
@@ -141,12 +117,9 @@ return array(
     'Hamcrest\\Type\\IsString' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
     'Hamcrest\\Util' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
     'Hamcrest\\Xml\\HasXPath' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
-<<<<<<< HEAD
-=======
     'INDIC' => $vendorDir . '/mpdf/mpdf/classes/indic.php',
     'InboxTableSeeder' => $baseDir . '/database/seeds/InboxTableSeeder.php',
     'MYANMAR' => $vendorDir . '/mpdf/mpdf/classes/myanmar.php',
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
     'Maatwebsite\\Excel\\Classes\\Cache' => $vendorDir . '/maatwebsite/excel/src/Maatwebsite/Excel/Classes/Cache.php',
     'Maatwebsite\\Excel\\Classes\\FormatIdentifier' => $vendorDir . '/maatwebsite/excel/src/Maatwebsite/Excel/Classes/FormatIdentifier.php',
     'Maatwebsite\\Excel\\Classes\\LaravelExcelWorksheet' => $vendorDir . '/maatwebsite/excel/src/Maatwebsite/Excel/Classes/LaravelExcelWorksheet.php',
@@ -175,11 +148,8 @@ return array(
     'Maatwebsite\\Excel\\Readers\\LaravelExcelReader' => $vendorDir . '/maatwebsite/excel/src/Maatwebsite/Excel/Readers/LaravelExcelReader.php',
     'Maatwebsite\\Excel\\Writers\\CellWriter' => $vendorDir . '/maatwebsite/excel/src/Maatwebsite/Excel/Writers/CellWriter.php',
     'Maatwebsite\\Excel\\Writers\\LaravelExcelWriter' => $vendorDir . '/maatwebsite/excel/src/Maatwebsite/Excel/Writers/LaravelExcelWriter.php',
-<<<<<<< HEAD
-=======
     'OTLdump' => $vendorDir . '/mpdf/mpdf/classes/otl_dump.php',
     'PDFBarcode' => $vendorDir . '/mpdf/mpdf/classes/barcode.php',
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
     'PHPUnit\\Framework\\Assert' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
     'PHPUnit\\Framework\\BaseTestListener' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
     'PHPUnit\\Framework\\TestCase' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
@@ -559,13 +529,10 @@ return array(
     'PHP_Token_XOR_EQUAL' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD_FROM' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
-<<<<<<< HEAD
-=======
     'PostTableSeeder' => $baseDir . '/database/seeds/PostTableSeeder.php',
     'RoleTableSeeder' => $baseDir . '/database/seeds/RoleTableSeeder.php',
     'SEA' => $vendorDir . '/mpdf/mpdf/classes/sea.php',
     'SVG' => $vendorDir . '/mpdf/mpdf/classes/svg.php',
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
     'SebastianBergmann\\CodeCoverage\\CodeCoverage' => $vendorDir . '/phpunit/php-code-coverage/src/CodeCoverage.php',
     'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
     'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => $vendorDir . '/phpunit/php-code-coverage/src/Driver/Driver.php',
@@ -645,20 +612,6 @@ return array(
     'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => $vendorDir . '/sebastian/recursion-context/src/InvalidArgumentException.php',
     'SebastianBergmann\\ResourceOperations\\ResourceOperations' => $vendorDir . '/sebastian/resource-operations/src/ResourceOperations.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
-<<<<<<< HEAD
-
-    'TagSeeder' => $baseDir . '/database/seeds/TagSeeder.php',
-    'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
-    'TodoSeeder' => $baseDir . '/database/seeds/TodoSeeder.php',
-
-    'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
-    'UserTableSeeder' => $baseDir . '/database/seeds/UserTableSeeder.php',
-    'faqTableSeeder' => $baseDir . '/database/seeds/faqTableSeeder.php',
-
-    'nusoap_base' => $vendorDir . '/zarinpal/zarinpal/src/Drivers/lib/nusoap.php',
-    'nusoap_client' => $vendorDir . '/zarinpal/zarinpal/src/Drivers/lib/nusoap.php',
-    'soapclient' => $vendorDir . '/zarinpal/zarinpal/src/Drivers/lib/nusoap.php',
-=======
     'TTFontFile' => $vendorDir . '/mpdf/mpdf/classes/ttfontsuni.php',
     'TTFontFile_Analysis' => $vendorDir . '/mpdf/mpdf/classes/ttfontsuni_analysis.php',
     'TagTableSeeder' => $baseDir . '/database/seeds/TagTableSeeder.php',
@@ -681,5 +634,4 @@ return array(
     'soapclient' => $vendorDir . '/zarinpal/zarinpal/src/Drivers/lib/nusoap.php',
     'tocontents' => $vendorDir . '/mpdf/mpdf/classes/tocontents.php',
     'wmf' => $vendorDir . '/mpdf/mpdf/classes/wmf.php',
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
 );

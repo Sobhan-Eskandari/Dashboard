@@ -76,20 +76,6 @@
                     @endif
                 </div>
             @endif
-<<<<<<< HEAD
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-=======
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
@@ -110,7 +96,6 @@
                     <a href="/adminProfile">Admin Profile</a>
                     <a href="/createAdmin">CreateAdmin</a>
                     <a href="/layout">Layout</a>
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
                 </div>
             </div>
         </div>

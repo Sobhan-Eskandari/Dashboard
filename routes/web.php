@@ -11,20 +11,12 @@
 |
 */
 
-<<<<<<< HEAD
-=======
 Route::get('/home', 'HomeController@index');
 
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
 Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-=======
 Route::get('/layout', function () {
     return view('layouts.main');
 });
@@ -134,4 +126,3 @@ Route::post('/posts-restore/{post}', 'PostController@restore')->name('posts.rest
 Route::post('/posts-multiDestroy', 'PostController@multiDestroy')->name('posts.multiDestroy');
 Route::post('/posts-trash-forceMultiDestroy', 'PostController@forceMultiDestroy')->name('posts.forceMultiDestroy');
 Route::post('/admins-restore/{admin}', 'AdminController@restore')->name('admins.restore');
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023

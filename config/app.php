@@ -172,12 +172,9 @@ return [
         Morilog\Jalali\JalaliServiceProvider::class,
         Zarinpal\Laravel\ZarinpalServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-<<<<<<< HEAD
-=======
         Laravel\Passport\PassportServiceProvider::class,
         TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
         Laravel\Scout\ScoutServiceProvider::class,
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
 
         /*
          * Application Service Providers...

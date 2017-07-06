@@ -4,13 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "hash": "ba6386c8a1958d2d4b9dd6ec29e05d6f",
-    "content-hash": "f792f7b2f5b89966d88697710fc69c10",
-=======
     "hash": "cfea836a00891ab3ef88c5ec778a757b",
     "content-hash": "994d79ef0290ecb16800c6da78cc0044",
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -209,8 +204,6 @@
             "time": "2016-11-02 15:56:58"
         },
         {
-<<<<<<< HEAD
-=======
             "name": "filp/whoops",
             "version": "2.1.8",
             "source": {
@@ -315,7 +308,6 @@
             "time": "2016-07-18 04:51:16"
         },
         {
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
             "name": "guzzlehttp/guzzle",
             "version": "6.2.3",
             "source": {
@@ -787,8 +779,6 @@
             "time": "2017-03-21 19:34:41"
         },
         {
-<<<<<<< HEAD
-=======
             "name": "laravel/passport",
             "version": "v2.0.6",
             "source": {
@@ -913,7 +903,6 @@
             "time": "2017-06-01 13:21:09"
         },
         {
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
             "name": "laravel/tinker",
             "version": "v1.0.0",
             "source": {
@@ -1026,8 +1015,6 @@
             "time": "2017-01-26 19:27:05"
         },
         {
-<<<<<<< HEAD
-=======
             "name": "lcobucci/jwt",
             "version": "3.2.1",
             "source": {
@@ -1136,7 +1123,6 @@
             "time": "2015-05-21 12:24:47"
         },
         {
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
             "name": "league/flysystem",
             "version": "1.0.36",
             "source": {
@@ -1220,8 +1206,6 @@
             "time": "2017-03-18 16:02:30"
         },
         {
-<<<<<<< HEAD
-=======
             "name": "league/oauth2-server",
             "version": "5.1.3",
             "source": {
@@ -1298,7 +1282,6 @@
             "time": "2016-10-12 14:08:15"
         },
         {
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
             "name": "maatwebsite/excel",
             "version": "2.1.10",
             "source": {
@@ -1560,8 +1543,6 @@
             "time": "2016-06-24 14:01:34"
         },
         {
-<<<<<<< HEAD
-=======
             "name": "mpdf/mpdf",
             "version": "v6.1.3",
             "source": {
@@ -1613,7 +1594,6 @@
             "time": "2016-12-12 10:42:18"
         },
         {
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
             "name": "mtdowling/cron-expression",
             "version": "v1.2.0",
             "source": {
@@ -1867,8 +1847,6 @@
             "time": "2015-05-01 07:00:55"
         },
         {
-<<<<<<< HEAD
-=======
             "name": "phpseclib/phpseclib",
             "version": "2.0.5",
             "source": {
@@ -1961,7 +1939,6 @@
             "time": "2017-05-08 05:58:35"
         },
         {
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
             "name": "predis/predis",
             "version": "v1.1.1",
             "source": {
@@ -2264,8 +2241,6 @@
             "time": "2017-03-18 15:38:09"
         },
         {
-<<<<<<< HEAD
-=======
             "name": "setasign/fpdi",
             "version": "1.6.2",
             "source": {
@@ -2315,7 +2290,6 @@
             "time": "2017-05-11 14:25:49"
         },
         {
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
             "name": "swiftmailer/swiftmailer",
             "version": "v5.4.6",
             "source": {
@@ -2895,8 +2869,6 @@
             "time": "2017-03-04 12:23:14"
         },
         {
-<<<<<<< HEAD
-=======
             "name": "symfony/psr-http-message-bridge",
             "version": "v1.0.0",
             "source": {
@@ -2957,7 +2929,6 @@
             "time": "2016-09-14 18:37:20"
         },
         {
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
             "name": "symfony/routing",
             "version": "v3.2.6",
             "source": {
@@ -3163,8 +3134,6 @@
             "time": "2017-02-20 13:45:48"
         },
         {
-<<<<<<< HEAD
-=======
             "name": "teamtnt/laravel-scout-tntsearch-driver",
             "version": "v3.0.0",
             "source": {
@@ -3283,7 +3252,6 @@
             "time": "2017-06-11 22:54:11"
         },
         {
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
             "name": "tijsverkoyen/css-to-inline-styles",
             "version": "2.2.0",
             "source": {
@@ -3422,8 +3390,6 @@
             ],
             "description": "transaction request system for zarinpal",
             "time": "2016-06-26 07:18:27"
-<<<<<<< HEAD
-=======
         },
         {
             "name": "zendframework/zend-diactoros",
@@ -3476,7 +3442,6 @@
                 "psr-7"
             ],
             "time": "2017-04-06 16:18:34"
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
         }
     ],
     "packages-dev": [
@@ -3632,20 +3597,12 @@
             "version": "0.9.9",
             "source": {
                 "type": "git",
-<<<<<<< HEAD
-                "url": "https://github.com/padraic/mockery.git",
-=======
                 "url": "https://github.com/mockery/mockery.git",
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
                 "reference": "6fdb61243844dc924071d3404bb23994ea0b6856"
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/6fdb61243844dc924071d3404bb23994ea0b6856",
-=======
                 "url": "https://api.github.com/repos/mockery/mockery/zipball/6fdb61243844dc924071d3404bb23994ea0b6856",
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
                 "reference": "6fdb61243844dc924071d3404bb23994ea0b6856",
                 "shasum": ""
             },

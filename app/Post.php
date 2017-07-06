@@ -3,15 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD
-
-class Post extends Model
-{
-    protected $fillable = [
-        'title',
-        'body',
-    ];
-=======
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Input;
@@ -88,5 +79,4 @@ class Post extends Model
             'body' => $this->body,
         ];
     }
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
 }

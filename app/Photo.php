@@ -12,18 +12,9 @@ class Photo extends Model
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
-<<<<<<< HEAD
-        'path',
-        'positions',
-        'order',
-        'created_by'
-    ];
-
-=======
         'address',
         'position',
         'order',
         'created_by'
     ];
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
 }

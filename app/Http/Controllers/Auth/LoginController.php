@@ -4,10 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-<<<<<<< HEAD
-=======
 use Illuminate\Support\Facades\Auth;
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
 
 class LoginController extends Controller
 {
@@ -38,9 +35,6 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-<<<<<<< HEAD
-        $this->middleware('guest', ['except' => 'logout']);
-=======
         $this->middleware('guest', ['except' => ['userLogout','logout']]);
     }
 
@@ -48,6 +42,5 @@ class LoginController extends Controller
     {
         Auth::guard('web')->logout();
         return redirect('/');
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
     }
 }

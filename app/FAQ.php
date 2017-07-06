@@ -2,24 +2,16 @@
 
 namespace App;
 
-<<<<<<< HEAD
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-=======
 use Hamcrest\Thingy;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Scout\Searchable;
 use Morilog\Jalali\jDate;
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
 
 class FAQ extends Model
 {
     use SoftDeletes;
-<<<<<<< HEAD
-=======
     use Searchable;
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
 
     protected $dates = ['deleted_at'];
 
@@ -30,8 +22,6 @@ class FAQ extends Model
         'created_by',
         'updated_by',
     ];
-<<<<<<< HEAD
-=======
 
     public function getCreateDateAttribute(){
         return $this->created_at->format('y/m/d');
@@ -55,5 +45,4 @@ class FAQ extends Model
     {
         return FAQ::with('user')->orderBy('updated_at', 'desc')->get();
     }
->>>>>>> bcad798afbaa27c79c73a0ad0f50e4bcf00a2023
 }
