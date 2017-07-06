@@ -300,6 +300,7 @@
                                             <label for="todo[0]" class="check--label">
                                                 <span class="check--label-box"></span>
                                                 <span class="check--label-text">چک کردن متن</span>
+                                                <button type="submit" class="hi-button-btn1 todo_deleteBtn"><i class="fa fa-times grey-text"></i> </button>
                                             </label>
                                         </li>
                                         <li class="list-item">
@@ -307,6 +308,7 @@
                                             <label for="todo[1]" class="check--label">
                                                 <span class="check--label-box"></span>
                                                 <span class="check--label-text">چک کردن متن</span>
+                                                <button type="submit" class="hi-button-btn1 todo_deleteBtn"><i class="fa fa-times grey-text"></i> </button>
                                             </label>
                                         </li>
                                         <li class="list-item">
@@ -314,6 +316,7 @@
                                             <label for="todo[2]" class="check--label">
                                                 <span class="check--label-box"></span>
                                                 <span class="check--label-text">چک کردن متن</span>
+                                                <button type="submit" class="hi-button-btn1 todo_deleteBtn"><i class="fa fa-times grey-text"></i> </button>
                                             </label>
                                         </li>
                                         <li class="list-item">
@@ -321,6 +324,7 @@
                                             <label for="todo[3]" class="check--label">
                                                 <span class="check--label-box"></span>
                                                 <span class="check--label-text">چک کردن متن</span>
+                                                <button type="submit" class="hi-button-btn1 todo_deleteBtn"><i class="fa fa-times grey-text"></i> </button>
                                             </label>
                                         </li>
                                         <li class="list-item">
@@ -328,6 +332,7 @@
                                             <label for="todo[4]" class="check--label">
                                                 <span class="check--label-box"></span>
                                                 <span class="check--label-text">چک کردن متن</span>
+                                                <button type="submit" class="hi-button-btn1 todo_deleteBtn"><i class="fa fa-times grey-text"></i> </button>
                                             </label>
                                         </li>
                                         <li class="list-item">
@@ -335,6 +340,7 @@
                                             <label for="todo[5]" class="check--label">
                                                 <span class="check--label-box"></span>
                                                 <span class="check--label-text">چک کردن متن</span>
+                                                <button type="submit" class="hi-button-btn1 todo_deleteBtn"><i class="fa fa-times grey-text"></i> </button>
                                             </label>
                                         </li>
                                     </ul>
