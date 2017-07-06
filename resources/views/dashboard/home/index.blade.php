@@ -351,7 +351,7 @@
                                     <form class="form-inline">
                                         <label class="sr-only" for="inlineFormInputGroup">Username</label>
                                         <div class="input-group" id="addTodo">
-                                            <button type="button" id="addTodo_addBtn"><img class="img-fluid" src="{{asset('images/Add-icone.png')}}"></button>
+                                            <button type="submit" id="addTodo_addBtn"><img class="img-fluid" src="{{asset('images/Add-icone.png')}}"></button>
                                             <input type="text" class="form-control" id="todoText" placeholder="یادداشت جدید">
                                         </div>
                                         <button type="submit" id="hiddenSubmitBtn">Sign in</button>
