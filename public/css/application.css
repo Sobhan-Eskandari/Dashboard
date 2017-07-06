@@ -5972,6 +5972,9 @@ g, path, circle, rect {
     position: relative; }
     .TodoWidget .list .list-item:last-child {
       border: 0; }
+.TodoWidget .todo_deleteBtn {
+  position: absolute;
+  left: 20px; }
 .TodoWidget .hidden-box {
   position: absolute;
   top: -9999px;
