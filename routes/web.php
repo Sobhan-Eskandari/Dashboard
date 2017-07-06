@@ -126,3 +126,6 @@ Route::post('/posts-restore/{post}', 'PostController@restore')->name('posts.rest
 Route::post('/posts-multiDestroy', 'PostController@multiDestroy')->name('posts.multiDestroy');
 Route::post('/posts-trash-forceMultiDestroy', 'PostController@forceMultiDestroy')->name('posts.forceMultiDestroy');
 Route::post('/admins-restore/{admin}', 'AdminController@restore')->name('admins.restore');
+
+// Todo Routes
+Route::resource('/todos','TodoController');

@@ -348,11 +348,11 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <form class="form-inline">
+                                    <form action="/todos" method="post" class="form-inline">
                                         <label class="sr-only" for="inlineFormInputGroup">Username</label>
                                         <div class="input-group" id="addTodo">
                                             <button type="button" id="addTodo_addBtn"><img class="img-fluid" src="{{asset('images/Add-icone.png')}}"></button>
-                                            <input type="text" class="form-control" id="todoText" placeholder="یادداشت جدید">
+                                            <input name="task" type="text" class="form-control" id="todoText" placeholder="یادداشت جدید">
                                         </div>
                                         <button type="submit" id="hiddenSubmitBtn">Sign in</button>
                                     </form>

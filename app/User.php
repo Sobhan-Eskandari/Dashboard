@@ -66,8 +66,16 @@ class User extends Authenticatable
         return $this->hasMany('App\Outbox', 'created_by');
     }
 
+    public function todos() {
+        return $this->hasMany(Todo::class, 'done_at');
+    }
+
     public function getFullNameAttribute()
     {
         return $this->first_name . ' ' . $this->last_name;
+    }
+
+    public function addTodo(Todo $todo) {
+        $this->todos()->save($todo);
     }
 }
