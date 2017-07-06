@@ -420,10 +420,10 @@ $('body').on('keydown', 'input, select, textarea', function(e) {
 
 var numberofTodos = 6;
 $("#addTodo_addBtn").click(function () {
-    addTodo();
+    //addTodo();
 });
 $('#todoText').pressEnter(function(){
-   addTodo();
+   //addTodo();
 });
 function addTodo() {
     var textOfTodo = $("#todoText").val();
