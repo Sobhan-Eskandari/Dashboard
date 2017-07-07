@@ -6,6 +6,7 @@ use App\Inbox;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class InboxController extends Controller
@@ -17,17 +18,74 @@ class InboxController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->has('query')){
-            $inboxes = Inbox::search($request->input('query'))->orderBy('created_at', 'desc')->paginate(8);
-        }else{
-            $inboxes = Inbox::orderBy('created_at', 'desc')->paginate(8);
+//        $month = '';
+//        $inboxes = Inbox::get(['created_at']);
+//        foreach ($inboxes as $inbox){
+//            switch ($inbox->created_at->format('m')){
+//                case '01':
+//                    $month = 'فروردین';
+//                    break;
+//                case '02':
+//                    $month = 'اردیبهشت';
+//                    break;
+//                case '03':
+//                    $month = 'خرداد';
+//                    break;
+//                case '04':
+//                    $month = 'تیر';
+//                    break;
+//                case '05':
+//                    $month = 'مرداد';
+//                    break;
+//                case '06':
+//                    $month = 'شهریور';
+//                    break;
+//                case '07':
+//                    $month = 'مهر';
+//                    break;
+//                case '08':
+//                    $month = 'آبان';
+//                    break;
+//                case '09':
+//                    $month = 'آذر';
+//                    break;
+//                case '10':
+//                    $month = 'دی';
+//                    break;
+//                case '11':
+//                    $month = 'بهمن';
+//                    break;
+//                case '12':
+//                    $month = 'اسفند';
+//                    break;
+//            }
+//            echo $inbox->created_at->format('y') . $month . '<br>';
+//        }
+//        $archives = Inbox::selectRaw('year(created_at) year, month(created_at) month, count(*) published')
+//            ->groupBy('year', 'month')
+//            ->orderByRaw('min(created_at) desc')
+//            ->get();
+//        foreach ($archives as $archive){
+//            $month = Inbox::getMonthName($archive->month);
+//            echo $archive->year . ' ' . $month . '<br>';
+//        }
+//
+        $archives = DB::table('inboxes')->select('year(created_at) year', 'month(created_at) month', 'count(*) published')->get();
+        $inboxes = Inbox::get(['created_at']);
+        foreach ($inboxes as $inbox) {
+            dd($inbox);
         }
-
-        if ($request->ajax()) {
-            return view('Includes.AllInboxes', compact('inboxes'))->render();
-        }
-
-        return view('dashboard.messages.inbox.index', compact('inboxes'));
+//        if($request->has('query')){
+//            $inboxes = Inbox::search($request->input('query'))->orderBy('created_at', 'desc')->paginate(8);
+//        }else{
+//            $inboxes = Inbox::orderBy('created_at', 'desc')->paginate(8);
+//        }
+//
+//        if ($request->ajax()) {
+//            return view('Includes.AllInboxes', compact('inboxes'))->render();
+//        }
+//
+//        return view('dashboard.messages.inbox.index', compact('inboxes'));
     }
 
     /**
