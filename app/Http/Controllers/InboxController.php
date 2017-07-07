@@ -70,17 +70,22 @@ class InboxController extends Controller
 //            echo $archive->year . ' ' . $month . '<br>';
 //        }
 //
-        if($request->has('query')){
-            $inboxes = Inbox::search($request->input('query'))->orderBy('created_at', 'desc')->paginate(8);
-        }else{
-            $inboxes = Inbox::orderBy('created_at', 'desc')->paginate(8);
+        $archives = DB::table('inboxes')->select('year(created_at) year', 'month(created_at) month', 'count(*) published')->get();
+        $inboxes = Inbox::get(['created_at']);
+        foreach ($inboxes as $inbox) {
+            dd($inbox);
         }
-
-        if ($request->ajax()) {
-            return view('Includes.AllInboxes', compact('inboxes'))->render();
-        }
-
-        return view('dashboard.messages.inbox.index', compact('inboxes'));
+//        if($request->has('query')){
+//            $inboxes = Inbox::search($request->input('query'))->orderBy('created_at', 'desc')->paginate(8);
+//        }else{
+//            $inboxes = Inbox::orderBy('created_at', 'desc')->paginate(8);
+//        }
+//
+//        if ($request->ajax()) {
+//            return view('Includes.AllInboxes', compact('inboxes'))->render();
+//        }
+//
+//        return view('dashboard.messages.inbox.index', compact('inboxes'));
     }
 
     /**
