@@ -84,12 +84,17 @@ Route::get('/files/trash', function () {
     return view('dashboard.media.trash');
 });
 
-Route::get('/comments', function () {
-    return view('dashboard.comments.index');
-});
-Route::get('/comments/trash', function () {
-    return view('dashboard.comments.trash');
-});
+Route::resource('comments','CommentController');
+Route::post('comments-approve','CommentController@approve')->name('approveComment');
+Route::post('comments/multiDestroy','CommentController@multiDestroy')->name('multiCommentsDelete');
+route::post('comments-answer','CommentController@answer')->name('answerComment');
+Route::get('comments-trash','CommentController@trash')->name('comments.trash');
+Route::post('comments-restore/{id}','CommentController@restore')->name('comments.restore');
+Route::Delete('comments-forceDelete/{id}','CommentController@forceDelete')->name('comments.forceDelete');
+Route::post('comments-multiForceDelete','CommentController@multiForceDelete')->name('comments.multiForceDelete');
+//Route::get('/comments/trash', function () {
+//    return view('dashboard.comments.trash');
+//});
 
 Route::get('/sliders', function () {
     return view('dashboard.sliders.index');
