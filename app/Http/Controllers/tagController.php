@@ -19,10 +19,18 @@ class tagController extends Controller
     {
         $tags = Tag::all();
         if($request->has('query')) {
-            $tags = Tag::search($request->input('query'))->get();
+            if($request->header('referer') === 'http://dashboard.dev/posts/create'){
+                $tags = Tag::search($request->input('query'))->orderBy('created_at', 'desc')->get();
+            }else {
+                $tags = Tag::search($request->input('query'))->get();
+            }
         }
         if ($request->ajax()){
-            return view('Includes.AllTags',compact('tags'));
+            if($request->header('referer') === 'http://dashboard.dev/posts/create'){
+                return view('Includes.PostTags', compact('tags'))->render();
+            }else {
+                return view('Includes.AllTags', compact('tags'));
+            }
         }
         return view('dashboard.tag.index',compact('tags'));
     }
@@ -41,7 +49,7 @@ class tagController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return array|\Illuminate\Http\Response
      */
     public function store(Request $request)
     {
@@ -51,6 +59,10 @@ class tagController extends Controller
         $tag = Tag::create($input);
         $msg = "تگ ساخته شد.";
         $token =csrf_token();
+        if($request->header('referer') === 'http://dashboard.dev/posts/create') {
+            $tags = Tag::orderBy('created_at', 'desc')->get();
+            return view('Includes.PostTags', compact('tags'))->render();
+        }
         $data=['tag'=>$tag,'message'=>$msg,'token'=>$token];
         return $data;
     }
@@ -92,12 +104,16 @@ class tagController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response|string
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $tag=Tag::find($id);
         $tag->forceDelete();
+        if($request->header('referer') === 'http://dashboard.dev/posts/create') {
+            $tags = Tag::orderBy('created_at', 'desc')->get();
+            return view('Includes.PostTags', compact('tags'))->render();
+        }
         $msg="تگ پاک شد!";
         return $msg;
 

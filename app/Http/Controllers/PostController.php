@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Post;
+use App\Tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -37,7 +39,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('dashboard.posts.createPost');
+        $categories = Category::orderBy('created_at', 'desc')->get();
+        $tags = Tag::orderBy('created_at', 'desc')->get();
+        return view('dashboard.posts.createPost', compact('categories', 'tags'));
     }
 
     /**
@@ -48,7 +52,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**
