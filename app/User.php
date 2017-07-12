@@ -66,6 +66,10 @@ class User extends Authenticatable
         return $this->hasMany('App\Outbox', 'created_by');
     }
 
+    public function setting() {
+        return $this->hasOne(Setting::class, 'created_by');
+    }
+
     public function todos() {
         return $this->hasMany(Todo::class);
     }
@@ -77,5 +81,9 @@ class User extends Authenticatable
 
     public function addTodo(Todo $todo) {
         $this->todos()->save($todo);
+    }
+
+    public function saveSetting(Setting $setting) {
+        $this->setting()->save($setting);
     }
 }

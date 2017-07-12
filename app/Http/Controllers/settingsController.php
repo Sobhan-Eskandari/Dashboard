@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Setting;
+use App\Http\Requests\storeSetting;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class settingsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -20,7 +26,7 @@ class settingsController extends Controller
         }else{
             $info = collect(new Setting);
         }
-        return view('dashboard.Settings.Index',compact('info'));
+        return view('dashboard.settings.index',compact('info'));
     }
 
     /**
@@ -36,23 +42,13 @@ class settingsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param storeSetting|\App\Http\Requests\storeSetting $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(storeSetting $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        auth()->user()->saveSetting(new Setting($request->all()));
+        return 'ok';
     }
 
     /**
@@ -74,17 +70,6 @@ class settingsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
     {
         //
     }

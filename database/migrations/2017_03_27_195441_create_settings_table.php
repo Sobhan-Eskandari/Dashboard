@@ -15,11 +15,15 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->tinyIncrements('id');
+            $table->string('first_name')->nullable(false);
+            $table->string('last_name')->nullable(false);
             $table->string('site_title')->nullable(false);
             $table->text('meta_description')->nullable(true);
             $table->string('email')->nullable(false);
             $table->char('land_line', 11)->nullable(false);
-            $table->char('mobile', 11)->nullable(false);
+            $table->char('land_line2', 11)->nullable(false);
+            $table->char('mobile_number', 11)->nullable(false);
+            $table->char('mobile_number2', 11)->nullable(false);
             $table->char('zip', 10)->nullable(false);
             $table->text('address')->nullable(false);
             $table->string('instagram')->nullable(true)->default('https://www.instagram.com/');
@@ -29,7 +33,8 @@ class CreateSettingsTable extends Migration
             $table->string('twitter')->nullable(true)->default('https://twitter.com/');
             $table->string('aparat')->nullable(true)->default('http://www.aparat.com/');
             $table->mediumText('terms')->nullable(true);
-            $table->mediumText('about')->nullable(true);
+            $table->mediumText('about_us')->nullable(true);
+            $table->mediumText('about_site')->nullable(true);
             $table->mediumText('guide')->nullable(true);
             $table->text('header')->nullable(true);
             $table->text('slider')->nullable(true);

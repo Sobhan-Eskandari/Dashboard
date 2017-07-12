@@ -13,7 +13,11 @@
     </div>
 </div>
 <div class="row">
-    <textarea name="postText" class="form-control writeCreatePostBox" rows="10"></textarea>
+    @if(isset($name))
+        <textarea name="{{$name}}" class="form-control writeCreatePostBox" rows="10"></textarea>
+    @else
+        <textarea name="postText" class="form-control writeCreatePostBox" rows="10"></textarea>
+    @endif
 </div>
 <script>
     CKEDITOR.replace('postText');

@@ -38,7 +38,7 @@ return [
     'digits_between'       => 'The :attribute must be between :min and :max digits.',
     'dimensions'           => 'The :attribute has invalid image dimensions.',
     'distinct'             => 'The :attribute field has a duplicate value.',
-    'email'                => 'The :attribute must be a valid email address.',
+    'email'                => 'آدرس ایمیل معتبر نیست.',
     'exists'               => 'The selected :attribute is invalid.',
     'file'                 => 'The :attribute must be a file.',
     'filled'               => 'The :attribute field must have a value.',
@@ -66,7 +66,7 @@ return [
     'numeric'              => 'The :attribute must be a number.',
     'present'              => 'The :attribute field must be present.',
     'regex'                => 'The :attribute format is invalid.',
-    'required'             => 'الزامی است. :attribute افزودن',
+    'required'             => 'وارد کردن :attribute الزامی است.',
     'required_if'          => 'The :attribute field is required when :other is :value.',
     'required_unless'      => 'The :attribute field is required unless :other is in :values.',
     'required_with'        => 'The :attribute field is required when :values is present.',
@@ -115,7 +115,16 @@ return [
     */
 
     'attributes' => [
-        'task' => 'یادداشت'
+        'task' => 'یادداشت',
+        'site_title' => 'عنوان سایت',
+        'email' => 'پست الکترونیک',
+        'land_line' => 'شماره تلفن ثابت',
+        'land_line2' => 'شماره تلفن ثابت دوم',
+        'zip' => 'کدپستی',
+        'first_name' => 'نام',
+        'last_name' => 'نام خانوادگی',
+        'mobile_number' => 'شماره تلفن همراه',
+        'mobile_number2' => ' شماره تلفن همراه دوم',
     ],
 
 ];
