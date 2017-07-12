@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Setting;
 use App\Http\Requests\storeSetting;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -21,12 +22,12 @@ class settingsController extends Controller
      */
     public function index()
     {
-        if($id = Setting::first()) {
-            $info = Setting::findOrFail($id->id);
+        if(($setting = Setting::first()) !== null) {
+            return $this->edit($setting);
         }else{
-            $info = collect(new Setting);
+            return $this->create();
         }
-        return view('dashboard.settings.index',compact('info'));
+
     }
 
     /**
@@ -36,7 +37,7 @@ class settingsController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.settings.create');
     }
 
     /**
@@ -47,30 +48,38 @@ class settingsController extends Controller
      */
     public function store(storeSetting $request)
     {
-        auth()->user()->saveSetting(new Setting($request->all()));
-        return 'ok';
+        $request['created_by'] = auth()->user()->getAuthIdentifier();
+        $setting = Setting::create($request->all());
+        auth()->user()->saveSetting($setting);
+        Session::flash('success', 'تنظیمات با موفقیت ثبت شد.');
+        return back();
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param Setting $setting
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Setting $setting)
     {
-        //
+        return view('dashboard.settings.edit', compact('setting'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param Setting $setting
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Setting $setting)
     {
-        //
+        $request['updated_by'] = auth()->user()->getAuthIdentifier();
+        $request['updated_at'] = jdate(Carbon::now());
+        $request['revisions'] = $setting->revisions + 1;
+        auth()->user()->updateSetting($setting->fill($request->all()));
+        Session::flash('success', 'تنظیمات با موفقیت ذخیره شد.');
+        return back();
     }
 }

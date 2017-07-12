@@ -15,6 +15,9 @@
     @component('components.errors')
     @endcomponent
 
+    @component('components.flash')
+    @endcomponent
+
     <section class="usersSection">
         <div class="row mb-5">
             <div class="col-12">

@@ -83,7 +83,13 @@ class User extends Authenticatable
         $this->todos()->save($todo);
     }
 
+//    Setting Methods Begin
     public function saveSetting(Setting $setting) {
         $this->setting()->save($setting);
     }
+
+    public function updateSetting(Setting $setting) {
+        $this->setting()->update($setting);
+    }
+//    Setting Methods End
 }

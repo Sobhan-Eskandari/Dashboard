@@ -7,11 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Setting extends Model
 {
     protected $fillable = [
+        'first_name',
+        'last_name',
         'site_title',
         'meta_description',
         'email',
         'land_line',
-        'mobile',
+        'land_line2',
+        'mobile_number',
+        'mobile_number2',
         'address',
         'zip',
         'instagram',
