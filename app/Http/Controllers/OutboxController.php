@@ -54,15 +54,20 @@ class OutboxController extends Controller
      */
     public function store(OutboxStoreRequest $request)
     {
-        $input = $request->all();
-        $inbox = Inbox::findOrFail($input['inbox_id']);
-        $inbox->status = 2;
-        $inbox->answered_by = Auth::user()->id;;
-        $inbox->answered_at = jDate::forge('now')->format('datetime', true);
-        $inbox->save();
-        $input['created_by'] = Auth::user()->id;
-        Outbox::create($input);
-        Mail::to($input['email'])->send(new AnswerMessage($input));
+        try{
+            $input = $request->all();
+            $inbox = Inbox::findOrFail($input['inbox_id']);
+            $inbox->status = 2;
+            $inbox->answered_by = Auth::user()->id;;
+            $inbox->answered_at = jDate::forge('now')->format('datetime', true);
+            $inbox->save();
+            $input['created_by'] = Auth::user()->id;
+            Outbox::create($input);
+            Mail::to($input['email'])->send(new AnswerMessage($input));
+        }catch (\Exception $exception){
+            dd($exception->getMessage());
+        }
+
         Session::flash('success', 'ایمیل با موفقیت ارسال شد');
         return redirect(route('inbox.index'));
     }
