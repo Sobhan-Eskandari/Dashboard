@@ -12,11 +12,13 @@
 
 @section('content')
 
-    @component('components.errors') @endcomponent
+    <nav dir="rtl">
+        @component('components.errors') @endcomponent
+    </nav>
 
     <div class="row hi-createPostBox">
         <div class="col-8">
-            {!! Form::open(['method'=>'POST', 'action'=>'PostController@store', 'files' => true]) !!}
+            {!! Form::open(['method'=>'POST', 'action'=>'PostController@store', 'id'=>'createPostForm', 'files' => true]) !!}
                 <div class="row">
                     <div class="form-group makeCreatePostTitleBox">
                         {!! Form::label('title', 'ایجاد پست جدید', ['class' => 'createPostLabel']) !!}
@@ -46,6 +48,10 @@
                             CKEDITOR.replace('body');
                         </script>
                         <br>
+
+                        {!! Form::text('selectedCategories', null, ['style' => 'display: none;']) !!}
+                        {!! Form::text('selectedTags', null, ['style' => 'display: none;']) !!}
+
                         <div class="row">
                             {!! Form::submit('انتشار', ['class'=>'btn btn-primary createPostPublicationButton px-4 light-blue darken-2']) !!}
                         </div>

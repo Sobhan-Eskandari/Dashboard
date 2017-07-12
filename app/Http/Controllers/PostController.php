@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Requests\PostCreateRequest;
 use App\Post;
 use App\Tag;
 use Illuminate\Http\Request;
@@ -50,9 +51,21 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostCreateRequest $request)
     {
-        dd($request->all());
+        $input = $request->all();
+        $user = Auth::user()->id;
+        $input['created_by'] = $user;
+        $input['updated_by'] = $user;
+        $post = Post::create($input);
+
+        $tags = explode(',', $input['selectedTags']);
+        $post->tags()->attach($tags);
+
+        $categories = explode(',', $input['selectedCategories']);
+        $post->categories()->attach($categories);
+
+        return redirect(route('posts.index'));
     }
 
     /**

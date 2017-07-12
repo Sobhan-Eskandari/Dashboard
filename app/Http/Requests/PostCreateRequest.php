@@ -13,7 +13,7 @@ class PostCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,20 @@ class PostCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required',
+            'body' => 'required',
+            'selectedCategories' => 'required',
+            'selectedTags' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'وارد کردن عنوان اجباری است',
+            'body.required' => 'وارد کردن متن اجباری است',
+            'selectedCategories.required' => 'انتخاب حداقل یک دسته بندی اجباری است',
+            'selectedTags.required' => 'انتخاب حداقل یک برچسب اجباری است',
         ];
     }
 }
