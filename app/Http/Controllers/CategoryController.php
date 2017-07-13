@@ -22,13 +22,21 @@ class CategoryController extends Controller
     public function index(Request $request)
     {
         if($request->has('query')){
-            $categories = Category::search($request->input('query'))->orderBy('updated_at','desc')->paginate(8);
+            if($request->header('referer') === 'http://dashboard.dev/posts/create'){
+                $categories = Category::search($request->input('query'))->orderBy('created_at','desc')->get();
+            }else{
+                $categories = Category::search($request->input('query'))->orderBy('updated_at','desc')->paginate(8);
+            }
         }else{
             $categories = Category::orderByRaw('updated_at desc')->paginate(8);
         }
 
         if ($request->ajax()) {
-            return view('Includes.AllCategories', compact('categories'))->render();
+            if($request->header('referer') === 'http://dashboard.dev/posts/create'){
+                return view('Includes.PostCategories', compact('categories'))->render();
+            }else{
+                return view('Includes.AllCategories', compact('categories'))->render();
+            }
         }
 
         return view('dashboard.category.index', compact('categories'));
@@ -62,8 +70,14 @@ class CategoryController extends Controller
             }catch (\Exception $exception){
                 dd($exception->getMessage());
             }
-            $categories = Category::orderByRaw('updated_at desc')->paginate(8);
-            return view('Includes.AllCategories', compact('categories'))->render();
+
+            if($request->header('referer') === 'http://dashboard.dev/posts/create'){
+                $categories = Category::orderBy('created_at', 'desc')->get();
+                return view('Includes.PostCategories', compact('categories'))->render();
+            }else{
+                $categories = Category::orderByRaw('updated_at desc')->paginate(8);
+                return view('Includes.AllCategories', compact('categories'))->render();
+            }
         }
     }
 
@@ -129,9 +143,13 @@ class CategoryController extends Controller
                 dd($exception->getMessage());
             }
 
-            $categories = Category::pagination();
-
-            return view('Includes.AllCategories', compact('categories'))->render();
+            if($request->header('referer') === 'http://dashboard.dev/posts/create'){
+                $categories = Category::orderBy('created_at', 'desc')->get();
+                return view('Includes.PostCategories', compact('categories'))->render();
+            }else {
+                $categories = Category::pagination();
+                return view('Includes.AllCategories', compact('categories'))->render();
+            }
         }
     }
 
@@ -152,6 +170,23 @@ class CategoryController extends Controller
 
             $categories = Category::pagination();
 
+            return view('Includes.AllCategories', compact('categories'))->render();
+        }
+    }
+
+    public function postCategoryStore(CategoryRequest $request)
+    {
+        if($request->ajax()){
+            $input = $request->all();
+            $user = Auth::user()->id;
+            $input['created_by'] = $user;
+            $input['updated_by'] = $user;
+            try {
+                Category::create($input);
+            }catch (\Exception $exception){
+                dd($exception->getMessage());
+            }
+            $categories = Category::orderByRaw('updated_at desc')->paginate(8);
             return view('Includes.AllCategories', compact('categories'))->render();
         }
     }

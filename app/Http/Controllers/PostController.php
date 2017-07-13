@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Http\Requests\PostCreateRequest;
 use App\Post;
+use App\Tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
 {
@@ -37,7 +41,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('dashboard.posts.createPost');
+        $categories = Category::orderBy('created_at', 'desc')->get();
+        $tags = Tag::orderBy('created_at', 'desc')->get();
+        return view('dashboard.posts.create', compact('categories', 'tags'));
     }
 
     /**
@@ -46,9 +52,22 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostCreateRequest $request)
     {
-        //
+        $input = $request->all();
+        $user = Auth::user()->id;
+        $input['created_by'] = $user;
+        $input['updated_by'] = $user;
+        $post = Post::create($input);
+
+        $tags = explode(',', $input['selectedTags']);
+        $post->tags()->attach($tags);
+
+        $categories = explode(',', $input['selectedCategories']);
+        $post->categories()->attach($categories);
+
+        Session::flash('success', 'پست جدید با موفقیت ساخته شد');
+        return redirect(route('posts.index'));
     }
 
     /**
@@ -70,7 +89,26 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $selectedTags = [];
+        $selectedCategories = [];
+
+        $categories = Category::orderBy('created_at', 'desc')->get();
+        $tags = Tag::orderBy('created_at', 'desc')->get();
+        $post = Post::with(['tags', 'categories', 'creator', 'updater'])->findOrFail($id);
+
+        foreach ($post->tags as $tag){
+            $selectedTags[] = $tag->id;
+        }
+
+        $selectedTags = implode($selectedTags, ',');
+
+        foreach ($post->categories as $category){
+            $selectedCategories[] = $category->id;
+        }
+
+        $selectedCategories = implode($selectedCategories, ',');
+
+        return view('dashboard.posts.edit', compact('post', 'categories', 'tags', 'selectedCategories', 'selectedTags'));
     }
 
     /**
@@ -80,9 +118,25 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PostCreateRequest $request, $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->revisions++;
+
+        $input = $request->all();
+        $user = Auth::user()->id;
+
+        $input['updated_by'] = $user;
+        $post->update($input);
+
+        $tags = explode(',', $input['selectedTags']);
+        $post->tags()->sync($tags);
+
+        $categories = explode(',', $input['selectedCategories']);
+        $post->categories()->sync($categories);
+
+        Session::flash('warning', 'پست با موفقیت ویرایش شد');
+        return redirect(route('posts.index'));
     }
 
     /**
