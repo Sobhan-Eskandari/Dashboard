@@ -123,4 +123,5 @@
 
 @section('javascript')
     <script src="{{ asset('js/dashboard/CreatePostIndex.js') }}"></script>
+    <script src="{{ asset('Hi_Framework/javascript/other/dropzone.js') }}"></script>
 @endsection
