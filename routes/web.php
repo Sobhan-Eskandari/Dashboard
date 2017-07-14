@@ -56,12 +56,20 @@ Route::get('/layout', function () {
     return view('layouts.main');
 });
 
-Route::get('/users', function () {
-    return view('dashboard.users.index');
-});
-Route::get('/users/trash', function () {
-    return view('dashboard.users.trash');
-});
+//Route::get('/users', function () {
+//    return view('dashboard.users.index');
+//});
+Route::get('users','API\UserController@index')->name('all.users');
+Route::Delete('users/delete/{user}','API\UserController@destroy')->name('users.destroy');
+Route::post('users/MultiDelete','API\UserController@multiDestroy')->name('user.multi.destroy');
+Route::get('users/trash','API\UserController@trash')->name('user.trash');
+Route::get('users/create','API\UserController@create')->name('user.create');
+Route::post('users','API\UserController@store')->name('user.store');
+Route::post('photo','API\UserController@photo')->name('user.photo');
+ROute::get('users/show/{user}','API\UserController@show')->name('user.show');
+//Route::get('/users/trash', function () {
+//    return view('dashboard.users.trash');
+//});
 
 Route::get('/admins', function () {
     return view('dashboard.admins.index');

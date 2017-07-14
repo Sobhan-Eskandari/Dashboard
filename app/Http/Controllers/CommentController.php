@@ -155,14 +155,14 @@ class CommentController extends Controller
         $comments = Comment::onlyTrashed()->paginate(8);
 //        dd($comments);
 //        if($request->has('query')) {
-//            $comment= Comment::search($request->input('query'));
-//            $comments = $comment->where('deleted_at','!=',NULL)->get();
-////            dd($comments);
-//            $comments = Comment::search($request->input('query'))->paginate(8);
+//            $comment= Comment::onlyTrashed()->search($request->input('query'));
+////            $comments = $comment->where('deleted_at','==',NULL)->get();
+//            dd($comment);
+////            $comments = Comment::search($request->input('query'))->paginate(8);
 //        }
-//        if ($request->ajax()){
-//            return view('Includes.AllTrashedComments',compact('comments'));
-//        }
+        if ($request->ajax()){
+            return view('Includes.AllTrashedComments',compact('comments'));
+        }
 //        dd($comments);
         return view('dashboard.comments.trash', compact('comments'));
     }
