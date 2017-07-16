@@ -80,7 +80,7 @@
                         @slot('trash')@endslot
                         @slot('settings')
                                 <a class="dropdown-item text-right py-0" href="{{route('user.show',$user->id)}}"><i class="fa fa-eye ml-2" aria-hidden="true"></i>مشاهده</a>
-                                <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-pencil ml-2" aria-hidden="true"></i> ویرایش</a>
+                                <a class="dropdown-item text-right py-0" href="{{route('user.edit',$user->id)}}"><i class="fa fa-pencil ml-2" aria-hidden="true"></i> ویرایش</a>
                                 <div class="dropdown-divider my-1"></div>
                             {!! Form::open(['method'=>'DELETE','action'=>['API\UserController@destroy',$user->id]]) !!}
                                 <button class="dropdown-item text-right py-0 mt-1" id="destroyUser" data-id="{{$user->id}}"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</button>

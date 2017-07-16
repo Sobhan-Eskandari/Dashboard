@@ -66,7 +66,12 @@ Route::get('users/trash','API\UserController@trash')->name('user.trash');
 Route::get('users/create','API\UserController@create')->name('user.create');
 Route::post('users','API\UserController@store')->name('user.store');
 Route::post('photo','API\UserController@photo')->name('user.photo');
-ROute::get('users/show/{user}','API\UserController@show')->name('user.show');
+Route::get('users/show/{user}','API\UserController@show')->name('user.show');
+Route::get('users/edit/{user}','API\UserController@edit')->name('user.edit');
+Route::post('users/update/{user}','API\UserController@update')->name('user.update');
+Route::delete('users/forceDelete/{user}','API\UserController@forceDelete')->name('user.force.delete');
+Route::post('users/forceMultiDelete','API\UserController@forceMultiDelete')->name('user.force.multiDelete');
+Route::post('users/restore/{user}','API\UserController@restore')->name('user.restore');
 //Route::get('/users/trash', function () {
 //    return view('dashboard.users.trash');
 //});

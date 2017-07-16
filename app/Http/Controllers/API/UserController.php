@@ -143,6 +143,20 @@ class UserController extends Controller
 
         return view('dashboard.users.show', compact('user'));
     }
+    public function edit(User $user){
+        $photo = $user->photo;
+        return view('dashboard.users.edit', compact('user','photo'));
+    }
+    public function update(Request $request,User $user){
+        $input = $request->all();
+        if($request->has('password')){
+            $input['password'] = bcrypt($request->password);
+        }else{
+            $input['password'] = $user->password;
+        }
+            $user->update($input);
+            return redirect()->route('all.users');
+    }
     public function trash(Request $request){
         $users = User::onlyTrashed()->paginate(8);
 //        dd($comments);
@@ -156,5 +170,29 @@ class UserController extends Controller
             return view('Includes.AllTrashedUsers',compact('users'));
         }
         return view('dashboard.users.trash', compact('users'));
+    }
+    public function forceDelete($user){
+        $users = User::onlyTrashed()->find($user);
+        $users->forceDelete();
+        $users = User::onlyTrashed()->paginate();
+        return view('Includes.AllTrashedUsers',compact('users'))->render();
+    }
+
+    public function forceMultiDelete(Request $request){
+        foreach ($request->input('checkboxes') as $checkbox) {
+            if ($checkbox === "on") {
+                continue;
+            }
+            User::onlyTrashed()->find($checkbox)->forceDelete();;
+        }
+            $users = User::onlyTrashed()->paginate();
+        return view('Includes.AllTrashedUsers',compact('users'))->render();
+    }
+
+    public function restore($user){
+            $users = User::onlyTrashed()->find($user);
+            $users->restore();
+            $users = User::onlyTrashed()->paginate();
+            return view('Includes.AllTrashedUsers',compact('users'))->render();
     }
 }
