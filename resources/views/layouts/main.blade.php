@@ -367,6 +367,7 @@
 
                 <div class="container">
 
+                    {{--==========[ Delete Part ]=========--}}
                     <div class="row mt-4 px-4">
                         <div class="col-6 text-left">
                             <button class="hi-button-simple red darken-4">حذف</button>
@@ -376,10 +377,11 @@
                         </div>
                     </div>
 
+                    {{--==========[ Dropzone to upload file ]=========--}}
                     <div class="row mt-4 px-4" id="gallery_row">
-                        <div class="col-12 p-0">
+                        <div class="col-12">
                             {{--==========[ Dropzone to upload file ]=========--}}
-                            <div class="col-12 gallery_files p-0">
+                            <div class="gallery_files p-0">
                                 <form action="/file-upload"
                                       class="dropzone"
                                       id="my-awesome-dropzone">
@@ -388,6 +390,43 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row px-4">
+                        <div class="col-12">
+                            <div class="container-fluid">
+                                <div class="row gallery_files l-rtl gallery_uploadedImage">
+                                    <div class="col-3 text-center">
+                                        <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
+                                    </div>
+                                    <div class="col-3 text-center">
+                                        <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
+                                    </div>
+                                    <div class="col-3 text-center">
+                                        <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
+                                    </div>
+                                    <div class="col-3 text-center">
+                                        <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
+                                    </div>
+                                    <div class="col-3 text-center">
+                                        <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
+                                    </div>
+                                    <div class="col-3 text-center">
+                                        <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
+                                    </div>
+                                    <div class="col-3 text-center">
+                                        <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
+                                    </div>
+                                    <div class="col-3 text-center">
+                                        <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
+                                    </div>
+                                    <div class="col-3 text-center">
+                                        <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <hr>
                     <div class="row">
                         <div class="col-12">
