@@ -396,31 +396,31 @@
                             <div class="container-fluid">
                                 <div class="row gallery_files l-rtl gallery_uploadedImage">
                                     <div class="col-3 text-center">
-                                        <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-1" onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-1" class="img-radioBtn">
+                                                <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+
                                     </div>
                                     <div class="col-3 text-center">
-                                        <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-2" onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-2" class="img-radioBtn">
+                                                <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+
+                                        </div>
+
                                     </div>
                                     <div class="col-3 text-center">
-                                        <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
-                                    </div>
-                                    <div class="col-3 text-center">
-                                        <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
-                                    </div>
-                                    <div class="col-3 text-center">
-                                        <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
-                                    </div>
-                                    <div class="col-3 text-center">
-                                        <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
-                                    </div>
-                                    <div class="col-3 text-center">
-                                        <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
-                                    </div>
-                                    <div class="col-3 text-center">
-                                        <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
-                                    </div>
-                                    <div class="col-3 text-center">
-                                        <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-3"  onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-3" class="img-radioBtn">
+                                                <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

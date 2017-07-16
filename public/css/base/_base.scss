@@ -470,6 +470,18 @@ body {
       padding-left: 5px;
     }
   }
+
+  .img-radioBtn{
+    padding-left: 0 !important;
+    &:after{
+      top: 21.0% !important;
+      left: 13.0% !important;
+    }
+    &:before{
+      top: 20.5% !important;
+      left: 10% !important;
+    }
+  }
 }
 .FAQ_card-block_tick_square-checkbox input[type="checkbox"]:checked + span::before {
   font-family: FontAwesome;
