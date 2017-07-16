@@ -1,7 +1,7 @@
 /node_modules
 /public/storage
 /public/hot
-/storage/*.key
+/storage/*.index
 /.idea
 Homestead.json
 Homestead.yaml
