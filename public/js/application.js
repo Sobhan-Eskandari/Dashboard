@@ -441,54 +441,75 @@ $('#todoText').pressEnter(function(){
 // }
 
 // =================[ Select All Comments Buttons  ]=====================
-function selectAllCmnt() {
-    if($("#selectAllComments").attr( "checked" ) === 'checked'){
-        $("#selectAllComments").removeAttr("checked");
-        for (var i = 0; i < 8;i++){
-            var selectorCmnt = "#cmnt_checkbox-"+i+"-";
-            $(selectorCmnt).click();
-            $(selectorCmnt).removeAttr("checked");
-        }
-    }else{
-        $("#selectAllComments").attr( "checked","checked" )
-        for (var i = 0; i < 8;i++){
-            var selector = "#cmnt_checkbox-"+i+"-";
-            if($(selector).attr( "checked" ) !== 'checked') {
-                $(selector).click();
-            }
-            $(selector).attr("checked","checked");
-        }
-    }
-}
-function selectCmntCheckbox(ev) {
-    // ev.preventDefault();
-     $("#"+ev.target.id).attr("checked","checked");
-}
+// function selectAllCmnt() {
+//     if($("#selectAllComments").attr( "checked" ) === 'checked'){
+//         for (var i = 0; i < 8;i++){
+//             var selectorCmnt = "#cmnt_checkbox-"+i+"-";
+//             $(selectorCmnt).click();
+//             $(selectorCmnt).removeAttr("checked");
+//         }
+//     }else{
+//         $("#selectAllComments").attr( "checked","checked" )
+//         for (var i = 0; i < 8;i++){
+//             var selector = "#cmnt_checkbox-"+i+"-";
+//             if($(selector).attr( "checked" ) !== 'checked') {
+//                 $(selector).click();
+//             }
+//             $(selector).attr("checked","checked");
+//         }
+//     }
+// }
+// function selectCmntCheckbox(ev) {
+//     // ev.preventDefault();
+//      $("#"+ev.target.id).attr("checked","checked");
+// }
 
 // =================[ Select All Comments Buttons  ]=====================
 function selectAllCmnt() {
-    if($(".selectAllCheckboxes").attr( "checked" ) === 'checked'){
-        $(".selectAllCheckboxes").removeAttr("checked");
-        for (var i = 0; i < 8;i++){
-            var selectorCmnt = ".checkbox-"+i;
-            $(selectorCmnt).click();
-            $(selectorCmnt).removeAttr("checked");
+    $('input[type=checkbox]').each(function(){
+        if($(this).attr("checked")!=="checked") {
+            $(this).click();
+            $(this).attr("checked", "checked");
         }
-    }else{
-        $(".selectAllCheckboxes").attr( "checked","checked" )
-        for (var i = 0; i < 8;i++){
-            var selector = ".checkbox-"+i;
-            if($(selector).attr( "checked" ) !== 'checked') {
-                $(selector).click();
-            }
-            $(selector).attr("checked","checked");
-        }
-    }
+    });
+    $(".selectAllCheckboxes").attr('onclick','removeAllCmnt()');
 }
+function removeAllCmnt(){
+    $('input[type=checkbox]').each(function(){
+        if($(this).attr("checked")==="checked") {
+            $(this).click();
+            $(this).removeAttr("checked");
+        }
+    });
+    $(".selectAllCheckboxes").attr('onclick','selectAllCmnt()');
+}
+// function selectAllCmnt() {
+//     if($(".selectAllCheckboxes").attr( "checked" ) === 'checked'){
+//         var page = $(".page-item.active > a").attr('id');
+//         $(".selectAllCheckboxes").removeAttr("checked");
+//         for (var i = page-1; i <= page+7;i++){
+//             var selectorCmnt = ".checkbox-"+i;
+//             $(selectorCmnt).click();
+//             $(selectorCmnt).removeAttr("checked");
+//         }
+//     }else{
+//         var page = $(".page-item.active > a").attr('id');
+//         $(".selectAllCheckboxes").attr( "checked","checked" )
+//         for (var i = page-1; i <= page+7;i++){
+//             var selector = ".checkbox-"+i;
+//             if($(selector).attr( "checked" ) !== 'checked') {
+//                 $(selector).click();
+//             }
+//             $(selector).attr("checked","checked");
+//         }
+//     }
+// }
 function selectCmntCheckbox(ev) {
     // ev.preventDefault();
     $("#"+ev.target.id).attr("checked","checked");
 }
+
+
 
 
 // =================[ Calender  ]=====================
