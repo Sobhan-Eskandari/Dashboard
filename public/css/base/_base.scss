@@ -423,11 +423,17 @@ body {
   }
 
   #gallery_row{
-    height: 400px;
+    height: 160px;
   }
   .modal-content{
-    height: 600px;
+    height: 720px;
   }
+
+  .gallery_uploadedImage{
+    height:380px !important;
+    overflow-y: scroll;
+  }
+
   .gallery_category{
     list-style: none;
 
@@ -449,6 +455,7 @@ body {
 
   .gallery_files{
     height: 100%;
+    border: 1px solid #3AAEDD;
   }
 
   .galleryFiles_info{
