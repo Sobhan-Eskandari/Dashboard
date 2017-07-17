@@ -7,7 +7,7 @@
 @endsection
 
 @section('css_resources')
-    <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>
+    <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
 @endsection
 
 @section('content')
@@ -45,7 +45,10 @@
                             {!! Form::textarea('body', null, ['class'=>'form-control writeCreatePostBox', 'rows'=>'10']) !!}
                         </div>
                         <script>
-                            CKEDITOR.replace('body');
+                            CKEDITOR.replace('body', {
+                                filebrowserUploadUrl : '{{ route('posts.imageUpload') }}',
+                                filebrowserImageUploadUrl : '{{ route('posts.imageUpload') }}'
+                            });
                         </script>
                         <br>
 

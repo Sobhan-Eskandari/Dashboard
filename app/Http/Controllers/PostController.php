@@ -237,4 +237,22 @@ class PostController extends Controller
             return view('Includes.AllPostsTrash', compact('posts'))->render();
         }
     }
+
+    public function imageUpload(Request $request)
+    {
+        $this->validate($request, [
+            'upload' => 'required|mimes:jpeg,png,bmp,jpg'
+        ]);
+
+        $name = '';
+
+        if($file = $request->file('upload')){
+            $name = time() . $file->getClientOriginalName();
+            $file->move('PostsPhotos', $name);
+        }
+
+        $url = '/PostsPhotos/' . $name;
+
+        return "<script>window.parent.CKEDITOR.tools.callFunction(1, '{$url}', '')</script>";
+    }
 }

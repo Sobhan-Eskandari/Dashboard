@@ -66,9 +66,6 @@ Route::get('comments-trash','CommentController@trash')->name('comments.trash');
 Route::post('comments-restore/{id}','CommentController@restore')->name('comments.restore');
 Route::Delete('comments-forceDelete/{id}','CommentController@forceDelete')->name('comments.forceDelete');
 Route::post('comments-multiForceDelete','CommentController@multiForceDelete')->name('comments.multiForceDelete');
-//Route::get('/comments/trash', function () {
-//    return view('dashboard.comments.trash');
-//});
 
 Route::get('/sliders', function () {
     return view('dashboard.sliders.index');
@@ -152,6 +149,7 @@ Route::delete('/posts-trash/{post}', 'PostController@forceDestroy')->name('posts
 Route::post('/posts-restore/{post}', 'PostController@restore')->name('posts.restore');
 Route::post('/posts-multiDestroy', 'PostController@multiDestroy')->name('posts.multiDestroy');
 Route::post('/posts-trash-forceMultiDestroy', 'PostController@forceMultiDestroy')->name('posts.forceMultiDestroy');
+Route::post('/posts-image-upload', 'PostController@imageUpload')->name('posts.imageUpload');
 
 // Todo Routes
 Route::resource('/todos','TodoController');
