@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Morilog\Jalali\Facades\jDate;
 
 class PostController extends Controller
 {
@@ -67,8 +68,13 @@ class PostController extends Controller
         $categories = explode(',', $input['selectedCategories']);
         $post->categories()->attach($categories);
 
-        Session::flash('success', 'پست جدید با موفقیت ساخته شد');
-        return redirect(route('posts.index'));
+        if($input['draft'] === '1'){
+            Session::flash('success', 'پست با موفقیت ساخته و پیش نویس شد');
+            return redirect(route('posts.draft'));
+        }else {
+            Session::flash('success', 'پست جدید با موفقیت ساخته شد');
+            return redirect(route('posts.index'));
+        }
     }
 
     /**
@@ -161,7 +167,7 @@ class PostController extends Controller
                 dd($exception->getMessage());
             }
 
-            if($request->header('referer') === 'http://dashboard.dev/posts-drafts') {
+            if(strpos($request->header('referer'), 'posts-drafts')) {
                 $posts = Post::pagination('http://dashboard.dev/posts-drafts', '1');
                 return view('Includes.AllPostsDraft', compact('posts'))->render();
             }else{
@@ -186,7 +192,7 @@ class PostController extends Controller
                 dd($exception->getMessage());
             }
 
-            if($request->header('referer') === 'http://dashboard.dev/posts-drafts') {
+            if(strpos($request->header('referer'), 'posts-drafts')) {
                 $posts = Post::pagination('http://dashboard.dev/posts-drafts', '1');
                 return view('Includes.AllPostsDraft', compact('posts'))->render();
             }else{

@@ -21,16 +21,17 @@ class Post extends Model
         'draft',
         'created_by',
         'updated_by',
+        'updated_at',
         'locked_by',
         'revisions',
     ];
 
     public static function pagination($path = "http://dashboard.dev/posts", $draft = 0)
     {
-        if ($path == "http://dashboard.dev/posts"){
-            $allPosts = Post::with(['updater', 'creator', 'categories', 'tags'])->where('draft', $draft)->orderBy('updated_at', 'desc')->get();
+        if ($path == "http://dashboard.dev/posts-trash"){
+            $allPosts = Post::with(['updater', 'creator', 'categories', 'tags'])->onlyTrashed()->orderBy('updated_at', 'desc')->get();
         }else{
-            $allPosts = Post::with(['updater', 'creator', 'categories', 'tags'])->where('draft', $draft)->onlyTrashed()->orderBy('updated_at', 'desc')->get();
+            $allPosts = Post::with(['updater', 'creator', 'categories', 'tags'])->where('draft', $draft)->orderBy('updated_at', 'desc')->get();
         }
         $postArray = [];
         foreach ($allPosts as $post){
