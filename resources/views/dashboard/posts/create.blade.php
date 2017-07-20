@@ -54,9 +54,12 @@
 
                         {!! Form::text('selectedCategories', null, ['style' => 'display: none;']) !!}
                         {!! Form::text('selectedTags', null, ['style' => 'display: none;']) !!}
+                        {!! Form::text('draft', null, ['style' => 'display: none;']) !!}
 
                         <div class="row">
-                            {!! Form::submit('انتشار', ['class'=>'btn btn-primary createPostPublicationButton px-4 light-blue darken-2']) !!}
+                            {!! Form::submit('انتشار', ['class'=>'btn btn-primary createPostPublicationButton px-4 light-blue darken-2', 'id'=>'releaseButton']) !!}
+                            &nbsp;
+                            {!! Form::submit('پیش نویس کن', ['class'=>'btn btn-primary createPostPublicationButton px-4 light-blue darken-2', 'id'=>'draftButton']) !!}
                         </div>
                     </div>
                     {{--============[ image box ]===========--}}

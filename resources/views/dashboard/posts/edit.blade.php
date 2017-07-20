@@ -7,7 +7,7 @@
 @endsection
 
 @section('css_resources')
-    <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>
+    <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
 @endsection
 
 @section('content')
@@ -45,15 +45,21 @@
                             {!! Form::textarea('body', null, ['class'=>'form-control writeCreatePostBox', 'rows'=>'10']) !!}
                         </div>
                         <script>
-                            CKEDITOR.replace('body');
+                            CKEDITOR.replace('body', {
+                                filebrowserUploadUrl : '{{ route('posts.imageUpload') }}',
+                                filebrowserImageUploadUrl : '{{ route('posts.imageUpload') }}'
+                            });
                         </script>
                         <br>
 
                         {!! Form::text('selectedCategories', $selectedCategories, ['style' => 'display: none;']) !!}
                         {!! Form::text('selectedTags', $selectedTags, ['style' => 'display: none;']) !!}
+                        {!! Form::text('draft', null, ['style' => 'display: none;']) !!}
 
                         <div class="row">
-                            {!! Form::submit('انتشار', ['class'=>'btn btn-primary createPostPublicationButton px-4 light-blue darken-2']) !!}
+                            {!! Form::submit('ویرایش و انتشار', ['class'=>'btn btn-primary createPostPublicationButton px-4 light-blue darken-2', 'id'=>'releaseButton']) !!}
+                            &nbsp;
+                            {!! Form::submit('ویرایش و پیش نویس کن', ['class'=>'btn btn-primary createPostPublicationButton px-4 light-blue darken-2', 'id'=>'draftButton']) !!}
                         </div>
                     </div>
                     {{--============[ image box ]===========--}}

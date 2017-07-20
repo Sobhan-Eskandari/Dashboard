@@ -22,9 +22,10 @@ class PostController extends Controller
     {
         if($request->has('query')){
             $posts = Post::search($request->input('query'))->orderBy('updated_at', 'desc')->paginate(8);
+            $posts = $posts->where('draft', 0);
             $posts->load(['updater', 'creator', 'categories', 'tags']);
         }else{
-            $posts = Post::with(['updater', 'creator', 'categories', 'tags'])->orderBy('updated_at', 'desc')->paginate(8);
+            $posts = Post::with(['updater', 'creator', 'categories', 'tags'])->where('draft', 0)->orderBy('updated_at', 'desc')->paginate(8);
         }
 
         if($request->ajax()){
@@ -135,8 +136,13 @@ class PostController extends Controller
         $categories = explode(',', $input['selectedCategories']);
         $post->categories()->sync($categories);
 
-        Session::flash('warning', 'پست با موفقیت ویرایش شد');
-        return redirect(route('posts.index'));
+        if($input['draft'] === '0'){
+            Session::flash('warning', 'پست با موفقیت ویرایش و منتشر شد');
+            return redirect(route('posts.index'));
+        }else{
+            Session::flash('warning', 'پست با موفقیت ویرایش و پیش نویس شد');
+            return redirect(route('posts.draft'));
+        }
     }
 
     /**
@@ -155,9 +161,13 @@ class PostController extends Controller
                 dd($exception->getMessage());
             }
 
-            $posts = Post::pagination();
-
-            return view('Includes.AllPosts', compact('posts'))->render();
+            if($request->header('referer') === 'http://dashboard.dev/posts-drafts') {
+                $posts = Post::pagination('http://dashboard.dev/posts-drafts', '1');
+                return view('Includes.AllPostsDraft', compact('posts'))->render();
+            }else{
+                $posts = Post::pagination();
+                return view('Includes.AllPosts', compact('posts'))->render();
+            }
         }
     }
 
@@ -176,8 +186,13 @@ class PostController extends Controller
                 dd($exception->getMessage());
             }
 
-            $posts = Post::pagination();
-            return view('Includes.AllPosts', compact('posts'))->render();
+            if($request->header('referer') === 'http://dashboard.dev/posts-drafts') {
+                $posts = Post::pagination('http://dashboard.dev/posts-drafts', '1');
+                return view('Includes.AllPostsDraft', compact('posts'))->render();
+            }else{
+                $posts = Post::pagination();
+                return view('Includes.AllPosts', compact('posts'))->render();
+            }
         }
     }
 
@@ -254,5 +269,22 @@ class PostController extends Controller
         $url = '/PostsPhotos/' . $name;
 
         return "<script>window.parent.CKEDITOR.tools.callFunction(1, '{$url}', '')</script>";
+    }
+
+    public function draft(Request $request)
+    {
+        if($request->has('query')){
+            $posts = Post::search($request->input('query'))->orderBy('updated_at', 'desc')->paginate(8);
+            $posts = $posts->where('draft', 1);
+            $posts->load(['updater', 'creator', 'categories', 'tags']);
+        }else{
+            $posts = Post::with(['updater', 'creator', 'categories', 'tags'])->where('draft', 1)->orderBy('updated_at', 'desc')->paginate(8);
+        }
+
+        if($request->ajax()){
+            return view('Includes.AllPostsDraft', compact('posts'))->render();
+        }
+
+        return view('dashboard.posts.draft', compact('posts'));
     }
 }

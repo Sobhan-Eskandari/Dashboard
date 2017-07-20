@@ -145,6 +145,7 @@ Route::post('/admins-restore/{admin}', 'AdminController@restore')->name('admins.
 
 Route::resource('/posts', 'PostController');
 Route::get('/posts-trash', 'PostController@trash')->name('posts.trash');
+Route::get('/posts-drafts', 'PostController@draft')->name('posts.draft');
 Route::delete('/posts-trash/{post}', 'PostController@forceDestroy')->name('posts.forceDestroy');
 Route::post('/posts-restore/{post}', 'PostController@restore')->name('posts.restore');
 Route::post('/posts-multiDestroy', 'PostController@multiDestroy')->name('posts.multiDestroy');
