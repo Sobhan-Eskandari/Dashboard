@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Setting;
-use App\Http\Requests\storeSetting;
+use App\Http\Requests\SettingStoreRequest;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -43,10 +43,11 @@ class settingsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param storeSetting|\App\Http\Requests\storeSetting $request
+     * @param SettingStoreRequest $request
      * @return \Illuminate\Http\Response
+     * @internal param $
      */
-    public function store(storeSetting $request)
+    public function store(SettingStoreRequest $request)
     {
         $request['created_by'] = auth()->user()->getAuthIdentifier();
         $setting = Setting::create($request->all());
@@ -69,11 +70,11 @@ class settingsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param SettingStoreRequest|Request $request
      * @param Setting $setting
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Setting $setting)
+    public function update(SettingStoreRequest $request, Setting $setting)
     {
         $request['updated_by'] = auth()->user()->getAuthIdentifier();
         $request['updated_at'] = jdate(Carbon::now());

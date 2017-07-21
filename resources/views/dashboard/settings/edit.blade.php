@@ -51,7 +51,7 @@
                                 @endslot
 
                                 @slot('value')
-                                    {{$setting->header}}
+                                    {!! $setting->header !!}
                                 @endslot
 
 
@@ -78,7 +78,7 @@
                                 @endslot
 
                                 @slot('value')
-                                    {{$setting->about_us}}
+                                    {!! $setting->about_us !!}
                                 @endslot
                             @endcomponent
                             <br>
