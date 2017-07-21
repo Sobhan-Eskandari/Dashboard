@@ -17,6 +17,10 @@
 
 @section('content')
 
+    <nav dir="rtl">
+        @component('components.flash') @endcomponent
+    </nav>
+
     <section class="usersSection">
         <div class="row">
             <div class="col-12 bgCard hi-shadow-2">

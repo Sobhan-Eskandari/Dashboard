@@ -5699,10 +5699,10 @@ g, path, circle, rect {
   box-sizing: border-box; }
 
 .dropzone {
-  height: 500px;
-  overflow: scroll;
-  background: transparent;
-  padding: 20px 20px; }
+  min-height: 150px;
+  height: 100%;
+  background: white;
+  overflow-y: scroll; }
 
 .dropzone.dz-clickable {
   cursor: pointer; }
@@ -5731,6 +5731,7 @@ g, path, circle, rect {
   display: inline-block;
   vertical-align: top;
   margin: 16px;
+  float: right;
   min-height: 100px; }
 
 .dropzone .dz-preview:hover {
@@ -6033,7 +6034,7 @@ g, path, circle, rect {
   width: 85%; }
 .TodoWidget #addTodo {
   margin: 10px auto; }
-.TodoWidget #addTodo_addBtn {
+.TodoWidget #categorySubmit, .TodoWidget #tagSubmit {
   border: none;
   background-color: #7E53C5;
   width: 40px;
@@ -6041,7 +6042,7 @@ g, path, circle, rect {
   padding: 10px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px; }
-  .TodoWidget #addTodo_addBtn img {
+  .TodoWidget #categorySubmit img, .TodoWidget #tagSubmit img {
     width: 100%;
     height: 100%; }
 .TodoWidget #todoText {
@@ -7348,9 +7349,12 @@ body {
   .galleryModal .modal-lg {
     max-width: 1000px; } }
 .galleryModal #gallery_row {
-  height: 100%; }
+  height: 160px; }
 .galleryModal .modal-content {
-  height: 600px; }
+  height: 720px; }
+.galleryModal .gallery_uploadedImage {
+  height: 380px !important;
+  overflow-y: scroll; }
 .galleryModal .gallery_category {
   list-style: none; }
   .galleryModal .gallery_category li {
@@ -7365,6 +7369,7 @@ body {
     text-align: right;
     padding: 15px; }
 .galleryModal .gallery_files {
+  height: 100%;
   border: 1px solid #3AAEDD; }
 .galleryModal .galleryFiles_info {
   background-color: #F3F4F5; }
@@ -7375,6 +7380,14 @@ body {
     font-size: 14px;
     text-align: left;
     padding-left: 5px; }
+.galleryModal .img-radioBtn {
+  padding-left: 0 !important; }
+  .galleryModal .img-radioBtn:after {
+    top: 21.0% !important;
+    left: 13.0% !important; }
+  .galleryModal .img-radioBtn:before {
+    top: 20.5% !important;
+    left: 10% !important; }
 
 .FAQ_card-block_tick_square-checkbox input[type="checkbox"]:checked + span::before {
   font-family: FontAwesome;
