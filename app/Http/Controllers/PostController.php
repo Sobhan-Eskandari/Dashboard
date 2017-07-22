@@ -22,8 +22,7 @@ class PostController extends Controller
     public function index(Request $request)
     {
         if($request->has('query')){
-            $posts = Post::search($request->input('query'))->orderBy('updated_at', 'desc')->paginate(8);
-            $posts = $posts->where('draft', 0);
+            $posts = Post::search($request->input('query'))->where('draft', 0)->orderBy('updated_at', 'desc')->paginate(8);
             $posts->load(['updater', 'creator', 'categories', 'tags']);
         }else{
             $posts = Post::with(['updater', 'creator', 'categories', 'tags'])->where('draft', 0)->orderBy('updated_at', 'desc')->paginate(8);
@@ -33,6 +32,7 @@ class PostController extends Controller
             return view('Includes.AllPosts', compact('posts'))->render();
         }
 
+//        dd($posts);
         return view('dashboard.posts.index', compact('posts'));
     }
 
@@ -280,8 +280,7 @@ class PostController extends Controller
     public function draft(Request $request)
     {
         if($request->has('query')){
-            $posts = Post::search($request->input('query'))->orderBy('updated_at', 'desc')->paginate(8);
-            $posts = $posts->where('draft', 1);
+            $posts = Post::search($request->input('query'))->where('draft', 1)->orderBy('updated_at', 'desc')->paginate(8);
             $posts->load(['updater', 'creator', 'categories', 'tags']);
         }else{
             $posts = Post::with(['updater', 'creator', 'categories', 'tags'])->where('draft', 1)->orderBy('updated_at', 'desc')->paginate(8);
