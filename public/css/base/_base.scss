@@ -440,7 +440,6 @@ body {
     li{
       padding: 0;
       text-align: right;
-      border-bottom: 1px solid #3AAEDD;
     }
 
     .gallery_category_btn{
@@ -455,7 +454,6 @@ body {
 
   .gallery_files{
     height: 100%;
-    border: 1px solid #3AAEDD;
   }
 
   .galleryFiles_info{
@@ -483,6 +481,26 @@ body {
     }
   }
 }
+
+#my-awesome-dropzone{
+  background-color: #EAEBEC;
+  border: 1px dashed;
+  border-radius: 5px;
+
+  &:before{
+    font-family: FontAwesome !important;
+    content: '\f093';
+    position: absolute;
+    left: 51%;
+    color: grey;
+    top: 40px;
+    margin-top: 8px;
+  }
+  .dz-message{
+    margin-top: 75px !important;
+  }
+}
+
 .FAQ_card-block_tick_square-checkbox input[type="checkbox"]:checked + span::before {
   font-family: FontAwesome;
   content: "\f00c";

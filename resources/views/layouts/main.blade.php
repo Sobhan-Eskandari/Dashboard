@@ -368,9 +368,10 @@
                 <div class="container">
 
                     {{--==========[ Delete Part ]=========--}}
-                    <div class="row mt-4 px-4">
-                        <div class="col-6 text-left">
-                            <button class="hi-button-simple red darken-4">حذف</button>
+                    <div class="row mt-2 px-4">
+                        <div class="col-12">
+                            {{--<button class="hi-button-simple red darken-4">حذف</button>--}}
+                            <button class="hi-button-btn1 pull-right"><i class="fa grey-text text-darken-2 fa-2x fa-close"></i> </button>
                         </div>
                         <div class="col-6">
 
@@ -378,7 +379,7 @@
                     </div>
 
                     {{--==========[ Dropzone to upload file ]=========--}}
-                    <div class="row mt-4 px-4" id="gallery_row">
+                    <div class="row mt-2 px-4" id="gallery_row">
                         <div class="col-12">
                             {{--==========[ Dropzone to upload file ]=========--}}
                             <div class="gallery_files p-0">
@@ -391,34 +392,209 @@
                         </div>
                     </div>
 
-                    <div class="row px-4">
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="btn-group pull-left ml-4" role="group" aria-label="Basic example">
+                                <button type="submit" class="hi-button-simple light-blue darken-2 ml-3">افزودن فایل</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row px-4 mt-3">
                         <div class="col-12">
                             <div class="container-fluid">
                                 <div class="row gallery_files l-rtl gallery_uploadedImage">
-                                    <div class="col-3 text-center">
+                                    <div class="col-2 text-center">
                                         <div class="pure-radiobutton mt-2 mr-2">
                                             <input id="img-id-1" onclick="" name="img-radio" type="radio" >
                                             <label for="img-id-1" class="img-radioBtn">
-                                                <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
                                             </label>
                                         </div>
-
                                     </div>
-                                    <div class="col-3 text-center">
+                                    <div class="col-2 text-center">
                                         <div class="pure-radiobutton mt-2 mr-2">
                                             <input id="img-id-2" onclick="" name="img-radio" type="radio" >
                                             <label for="img-id-2" class="img-radioBtn">
-                                                <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
                                             </label>
-
                                         </div>
-
                                     </div>
-                                    <div class="col-3 text-center">
+                                    <div class="col-2 text-center">
                                         <div class="pure-radiobutton mt-2 mr-2">
                                             <input id="img-id-3"  onclick="" name="img-radio" type="radio" >
                                             <label for="img-id-3" class="img-radioBtn">
-                                                <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-1" onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-1" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-2" onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-2" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-3"  onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-3" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-1" onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-1" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-2" onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-2" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-3"  onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-3" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-1" onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-1" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-2" onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-2" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-3"  onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-3" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-1" onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-1" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-2" onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-2" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-3"  onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-3" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-1" onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-1" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-2" onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-2" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-3"  onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-3" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-1" onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-1" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-2" onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-2" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-3"  onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-3" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-1" onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-1" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-2" onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-2" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <div class="pure-radiobutton mt-2 mr-2">
+                                            <input id="img-id-3"  onclick="" name="img-radio" type="radio" >
+                                            <label for="img-id-3" class="img-radioBtn">
+                                                <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
                                             </label>
                                         </div>
                                     </div>
@@ -427,22 +603,10 @@
                         </div>
                     </div>
 
-                    <hr>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="btn-group pull-right" role="group" aria-label="Basic example">
-                                <button type="submit" class="hi-button-simple light-blue darken-2 mr-4">افزودن به پیوست</button>
-                                <button type="submit" class="hi-button-simple grey lighten-3 black-text mr-4">انصراف</button>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
     </div>
-
-
 </div>
 
 

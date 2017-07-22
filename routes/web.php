@@ -30,6 +30,10 @@ Route::get('/users/trash', function () {
     return view('dashboard.users.trash');
 });
 
+Route::get('/gallery', function () {
+    return view('dashboard.gallery.index');
+});
+
 //Route::get('/users', function () {
 //    return view('dashboard.users.index');
 //});

@@ -5711,6 +5711,7 @@ g, path, circle, rect {
   cursor: default; }
 
 .dropzone.dz-clickable .dz-message, .dropzone.dz-clickable .dz-message * {
+  color: gray;
   cursor: pointer; }
 
 .dropzone.dz-started .dz-message {
@@ -5725,6 +5726,8 @@ g, path, circle, rect {
 .dropzone .dz-message {
   text-align: center;
   margin: 2em 0; }
+  .dropzone .dz-message:after {
+    content: '!'; }
 
 .dropzone .dz-preview {
   position: relative;
@@ -7359,8 +7362,7 @@ body {
   list-style: none; }
   .galleryModal .gallery_category li {
     padding: 0;
-    text-align: right;
-    border-bottom: 1px solid #3AAEDD; }
+    text-align: right; }
   .galleryModal .gallery_category .gallery_category_btn {
     background-color: transparent;
     border: none;
@@ -7369,8 +7371,7 @@ body {
     text-align: right;
     padding: 15px; }
 .galleryModal .gallery_files {
-  height: 100%;
-  border: 1px solid #3AAEDD; }
+  height: 100%; }
 .galleryModal .galleryFiles_info {
   background-color: #F3F4F5; }
   .galleryModal .galleryFiles_info .file_info {
@@ -7388,6 +7389,21 @@ body {
   .galleryModal .img-radioBtn:before {
     top: 20.5% !important;
     left: 10% !important; }
+
+#my-awesome-dropzone {
+  background-color: #EAEBEC;
+  border: 1px dashed;
+  border-radius: 5px; }
+  #my-awesome-dropzone:before {
+    font-family: FontAwesome !important;
+    content: '\f093';
+    position: absolute;
+    left: 51%;
+    color: grey;
+    top: 40px;
+    margin-top: 8px; }
+  #my-awesome-dropzone .dz-message {
+    margin-top: 75px !important; }
 
 .FAQ_card-block_tick_square-checkbox input[type="checkbox"]:checked + span::before {
   font-family: FontAwesome;
