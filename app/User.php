@@ -82,10 +82,11 @@ class User extends Authenticatable
     {
         return $this->first_name . ' ' . $this->last_name;
     }
-
+//    Todo Methods Begin
     public function addTodo(Todo $todo) {
         $this->todos()->save($todo);
     }
+//    Todo Methods End
 
 //    Setting Methods Begin
     public function saveSetting(Setting $setting) {
@@ -93,7 +94,7 @@ class User extends Authenticatable
     }
 
     public function updateSetting(Setting $setting) {
-        $this->setting()->update($setting);
+        $this->setting()->update($setting->toArray());
     }
 //    Setting Methods End
     public function toSearchableArray()
