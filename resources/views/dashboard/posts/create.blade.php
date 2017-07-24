@@ -10,6 +10,12 @@
     <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
 @endsection
 
+@section('gallery')
+    @component('components.galleryModal')
+
+    @endcomponent
+@endsection
+
 @section('content')
 
     <nav dir="rtl">
