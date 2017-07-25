@@ -160,3 +160,12 @@ Route::get('/gallery', function () {
 });
 
 Route::post('/gallery', 'PhotoController@store')->name('gallery.store');
+
+Route::get('/test', function (\Illuminate\Http\Request $request){
+    $photos = \App\Photo::orderBy('created_at', 'desc')->get();
+    if($request->ajax()){
+        return view('Includes.AllPhotos', compact('photos'));
+    }
+    return view('test', compact('photos'));
+});
+Route::post('/test', 'PhotoController@store');

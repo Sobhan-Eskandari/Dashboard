@@ -72,6 +72,11 @@ class Post extends Model
         return $this->morphToMany('App\Tag', 'taggable');
     }
 
+    public function photos()
+    {
+        return $this->morphToMany('App\Photo', 'photoable');
+    }
+
     public function toSearchableArray()
     {
         return [

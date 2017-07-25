@@ -2,16 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PhotoController extends Controller
 {
     public function store(Request $request)
     {
-        if($file = $request->file('file')){
-            $name = time() . $file->getClientOriginalName();
-            $file->move('gallery', $name);
-            $input['file'] = $name;
-        }
+        $file = $request->file('file');
+
+        $name = time() . $file->getClientOriginalName();
+
+        $file->move('gallery', $name);
+
+        Photo::create([
+            'address' => $name,
+            'created_by' => Auth::user()->id
+        ]);
     }
 }
