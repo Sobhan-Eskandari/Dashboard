@@ -16,7 +16,7 @@ class FaqTableSeeder extends Seeder
     {
         DB::table('f_a_q_s')->truncate();
         $faker = Faker::create('fa_IR');
-        foreach (range(1,20) as $index){
+        foreach (range(1,10) as $index){
             FAQ::create([
                 'question'=>$faker->realText(150),
                 'answer'=>$faker->realText(500),

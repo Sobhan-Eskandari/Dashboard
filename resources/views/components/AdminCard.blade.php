@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-12 text-center">
             @if(isset($profile_pic))
-                <img class="rounded-circle hi-size-9 mb-3" src="{{ asset('profile_pics/' . '/' . $profile_pic) }}">
+                <img class="rounded-circle hi-size-9 mb-3" src="{{ asset('gallery/' . '/' . $profile_pic) }}">
             @else
                 <img class="rounded-circle hi-size-9 mb-3" src="{{ asset('images/nobody_m.original.jpg') }}">
             @endif

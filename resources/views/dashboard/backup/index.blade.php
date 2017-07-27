@@ -1,5 +1,13 @@
 @extends('layouts.main')
 
+
+@section('breadcrumb')
+    @component('components.Breadcrumb')
+        <li><a href="{{ route('home') }}">داشبورد</a></li>
+        <li><a class="breadcrumb_currentPage" href="{{ route('backups.index') }}">پشتیبانی</a></li>
+    @endcomponent
+@endsection
+
 @section('content')
 
     <div class="row backupBox_direction">

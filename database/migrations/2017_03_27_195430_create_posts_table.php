@@ -16,6 +16,7 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title')->nullable(false);
+            $table->string('slug')->nullable(true);
             $table->text('body')->nullable(false);
             $table->integer('views')->default(0);
             $table->boolean('lock')->default(false);
@@ -24,8 +25,8 @@ class CreatePostsTable extends Migration
             $table->unsignedBigInteger('updated_by');
             $table->unsignedBigInteger('locked_by')->nullable(true);
             $table->integer('revisions')->default(0);
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
+            $table->dateTime('created_at')->nullable(true);
+            $table->dateTime('updated_at')->nullable(true);
             $table->dateTime('deleted_at')->nullable(true);
         });
     }

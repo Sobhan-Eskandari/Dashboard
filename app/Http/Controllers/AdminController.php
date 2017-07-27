@@ -18,11 +18,6 @@ use Morilog\Jalali\jDate;
 
 class AdminController extends Controller
 {
-//    public function __construct()
-//    {
-//        $this->middleware('auth:admin');
-//    }
-
     /**
      * Display a listing of the resource.
      *
@@ -30,7 +25,6 @@ class AdminController extends Controller
      */
     public function index(Request $request)
     {
-        $todos = Todo::all();
         $roles = Role::all();
         if($request->has('query')){
             $admins = Admin::search($request->input('query'))->orderBy('updated_at', 'desc')->get();
@@ -53,8 +47,9 @@ class AdminController extends Controller
      */
     public function create()
     {
+        $photos = Photo::orderBy('created_at', 'desc')->get();
         $roles = Role::pluck('role', 'id')->all();
-        return view('dashboard.admins.create', compact('roles'));
+        return view('dashboard.admins.create', compact('roles', 'photos'));
     }
 
     /**
@@ -74,8 +69,7 @@ class AdminController extends Controller
 
         $admin = Admin::create($input);
 
-        $photo = Photo::findOrFail($input['photo_id']);
-        $admin->photos()->save($photo);
+        $admin->photos()->attach($input['indexPhoto']);
 
         Session::flash('success', 'ادمین با موفقیت ساخته شد');
         return redirect(route('admins.index'));
@@ -101,8 +95,9 @@ class AdminController extends Controller
     public function edit($id)
     {
         $admin = Admin::with('photos')->findOrFail($id);
+        $photos = Photo::orderBy('created_at', 'desc')->get();
         $roles = Role::pluck('role', 'id')->all();
-        return view('dashboard.admins.edit', compact('admin', 'roles'));
+        return view('dashboard.admins.edit', compact('admin', 'roles', 'photos'));
     }
 
     /**
@@ -126,6 +121,9 @@ class AdminController extends Controller
             $input = $request->all();
             $input['password'] = bcrypt($request->password);
         }
+
+        $admin->photos()->detach();
+        $admin->photos()->attach($input['indexPhoto']);
 
         $admin->update($input);
         Session::flash('warning', 'ادمین با موفقیت ویرایش شد');
@@ -155,7 +153,7 @@ class AdminController extends Controller
                 dd($exception->getMessage());
             }
 
-            $admins = Admin::with(['parent', 'role'])->orderBy('updated_at', 'desc')->get();
+            $admins = Admin::with(['parent', 'role', 'photos'])->orderBy('updated_at', 'desc')->get();
             $roles = Role::all();
             return view('Includes.AllAdmins', compact('admins', 'roles'))->render();
         }
@@ -184,6 +182,7 @@ class AdminController extends Controller
                         $item->forceDelete();
                     }
                 }
+                $admin->photos()->detach();
                 $admin->forceDelete();
             }catch (\Exception $exception){
                 dd($exception->getMessage());
@@ -209,6 +208,7 @@ class AdminController extends Controller
                             $item->forceDelete();
                         }
                     }
+                    $admin->photos()->detach();
                     $admin->forceDelete();
                 }
             }catch (\Exception $exception){
@@ -248,43 +248,43 @@ class AdminController extends Controller
         }
     }
 
-    public function edit_profile_pic(Request $request, $id)
-    {
-        $admin = Admin::findOrFail($id);
-        $input = $request->all();
-        if($file = $request->file('avatar')){
-            if(isset($admin->photos[0])){
-                $admin->photos()->delete();
-                $admin->photos()->detach();
-                // Below line of code, Remain if the photo is deleted permanently else it should be commented out
-                File::delete('profile_pics/' . $admin->photos[0]->address);
-            }
-            $name = time() . $file->getClientOriginalName();
-            $file->move('profile_pics', $name);
-            $input['address'] = $name;
-        }
-
-        $input['created_by'] = Auth::user()->id;
-
-        $photo = Photo::create($input);
-        $admin->photos()->save($photo);
-
-        return json_encode($photo->address);
-    }
-
-    public function create_profile_pic(Request $request)
-    {
-        $input = $request->all();
-        if($file = $request->file('avatar')){
-            $name = time() . $file->getClientOriginalName();
-            $file->move('profile_pics', $name);
-            $input['address'] = $name;
-        }
-
-        $input['created_by'] = Auth::user()->id;
-
-        $photo = Photo::create($input);
-
-        return json_encode($photo);
-    }
+//    public function edit_profile_pic(Request $request, $id)
+//    {
+//        $admin = Admin::findOrFail($id);
+//        $input = $request->all();
+//        if($file = $request->file('avatar')){
+//            if(isset($admin->photos[0])){
+//                $admin->photos()->delete();
+//                $admin->photos()->detach();
+//                // Below line of code, Remain if the photo is deleted permanently else it should be commented out
+//                File::delete('profile_pics/' . $admin->photos[0]->address);
+//            }
+//            $name = time() . $file->getClientOriginalName();
+//            $file->move('profile_pics', $name);
+//            $input['address'] = $name;
+//        }
+//
+//        $input['created_by'] = Auth::user()->id;
+//
+//        $photo = Photo::create($input);
+//        $admin->photos()->save($photo);
+//
+//        return json_encode($photo->address);
+//    }
+//
+//    public function create_profile_pic(Request $request)
+//    {
+//        $input = $request->all();
+//        if($file = $request->file('avatar')){
+//            $name = time() . $file->getClientOriginalName();
+//            $file->move('profile_pics', $name);
+//            $input['address'] = $name;
+//        }
+//
+//        $input['created_by'] = Auth::user()->id;
+//
+//        $photo = Photo::create($input);
+//
+//        return json_encode($photo);
+//    }
 }

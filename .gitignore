@@ -2,6 +2,8 @@
 /public/storage
 /public/hot
 /storage/*.index
+/public/gallery
+/public/UserImage
 /.idea
 Homestead.json
 Homestead.yaml

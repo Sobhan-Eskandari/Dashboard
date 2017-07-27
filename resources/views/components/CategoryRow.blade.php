@@ -4,7 +4,7 @@
         <li class="hi-roundedDashboardTagsTable_tbody_tr_td_li text-right">
             <div class="pure-checkbox mt-2 mr-2">
                 <input id="{{ $id }}" class="checkbox-{{ $id }}" onclick="selectCmntCheckbox(event)" name="{{ $id }}" type="checkbox">
-                <label for="{{ $id }}">{{ $category }}</label>
+                <label for="{{ $id }}">{{ $name }}</label>
             </div>
         </li>
 

@@ -7,13 +7,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Audio extends Model
 {
-    use SoftDeletes;
-
-    protected $dates = ['deleted_at'];
-
     protected $fillable = [
-        'address',
-        'position',
+        'name',
         'created_by',
     ];
 }

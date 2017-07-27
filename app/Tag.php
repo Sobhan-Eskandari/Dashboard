@@ -8,9 +8,7 @@ use Laravel\Scout\Searchable;
 
 class Tag extends Model
 {
-    use SoftDeletes;
     use Searchable;
-    protected $dates = ['deleted_at'];
 
     protected $fillable = [
         'name',

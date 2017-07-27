@@ -24,14 +24,14 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'category' => 'required',
+            'name' => 'required',
         ];
     }
 
     public function messages()
     {
         return [
-            'category.required' => 'وارد کردن دسته بندی الزامی است',
+            'name.required' => 'وارد کردن دسته بندی الزامی است',
         ];
     }
 }
