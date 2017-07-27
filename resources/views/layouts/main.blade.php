@@ -408,24 +408,24 @@
                                 <div class="row gallery_files l-rtl gallery_uploadedImage">
                                     <div class="col-2 text-center">
                                         <div class="pure-radiobutton mt-2 mr-2">
-                                            <input id="img-id-1" onclick="" name="img-radio" type="radio" >
-                                            <label for="img-id-1" class="img-radioBtn">
+                                            <input id="i1" onclick="" name="img-radio" type="radio" >
+                                            <label for="i1" class="img-radioBtn">
                                                 <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
                                             </label>
                                         </div>
                                     </div>
                                     <div class="col-2 text-center">
                                         <div class="pure-radiobutton mt-2 mr-2">
-                                            <input id="img-id-2" onclick="" name="img-radio" type="radio" >
-                                            <label for="img-id-2" class="img-radioBtn">
+                                            <input id="i2" onclick="" name="img-radio" type="radio" >
+                                            <label for="i2" class="img-radioBtn">
                                                 <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
                                             </label>
                                         </div>
                                     </div>
                                     <div class="col-2 text-center">
                                         <div class="pure-radiobutton mt-2 mr-2">
-                                            <input id="img-id-3"  onclick="" name="img-radio" type="radio" >
-                                            <label for="img-id-3" class="img-radioBtn">
+                                            <input id="i3"  onclick="" name="img-radio" type="radio" >
+                                            <label for="i3" class="img-radioBtn">
                                                 <img class="rounded img-fluid my-3" src="{{asset('images/avatar.png')}}">
                                             </label>
                                         </div>
