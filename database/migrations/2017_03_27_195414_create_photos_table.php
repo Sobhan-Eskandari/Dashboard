@@ -15,12 +15,9 @@ class CreatePhotosTable extends Migration
     {
         Schema::create('photos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('address')->nullable(false);
-            $table->string('position')->nullable();
-            $table->tinyInteger('order')->nullable();
-            $table->dateTime('created_at');
+            $table->string('name')->nullable(false);
             $table->unsignedBigInteger('created_by')->nullable(false);
-            $table->dateTime('deleted_at')->nullable(true);
+            $table->dateTime('created_at')->nullable(true);
             $table->dateTime('updated_at')->nullable(true);
         });
     }

@@ -11,7 +11,8 @@
 
 @section('breadcrumb')
     @component('components.Breadcrumb')
-
+        <li><a href="{{ route('posts.index') }}">پست ها</a></li>
+        <li><a class="breadcrumb_currentPage" href="{{ route('categories.index') }}">دسته بندی ها</a></li>
     @endcomponent
 @endsection
 
@@ -29,7 +30,7 @@
                     <div class="row">
                         <div class="form-group">
                             <label for="hi-whiteCategoryDashboardBox_input"><h5>دسته بندی:</h5></label>
-                            {!! Form::text('category', null, ['class' => 'form-control hi-whiteCategoryDashboardBox_input']) !!}
+                            {!! Form::text('name', null, ['class' => 'form-control hi-whiteCategoryDashboardBox_input']) !!}
                         </div>
                     </div>
                     <div class="row pr-1 pl-0">
@@ -43,7 +44,7 @@
                 <div class="row">
                     <div class="form-group">
                         <label for="hi-whiteCategoryDashboardBox_input"><h5>دسته بندی:</h5></label>
-                        {!! Form::text('category', null, ['class' => 'form-control hi-whiteCategoryDashboardBox_input']) !!}
+                        {!! Form::text('name', null, ['class' => 'form-control hi-whiteCategoryDashboardBox_input']) !!}
                     </div>
                 </div>
                 <div class="row pr-1 pl-0">

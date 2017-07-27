@@ -15,13 +15,12 @@ class CreateTagsTable extends Migration
     {
         Schema::create('tags', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
+            $table->string('name')->unique();
             $table->unsignedBigInteger('created_by')->nullable(false);
             $table->unsignedBigInteger('updated_by')->nullable(true);
             $table->integer('revisions')->default(0);
-            $table->dateTime('deleted_at')->nullable(true);
+            $table->dateTime('created_at')->nullable(true);
+            $table->dateTime('updated_at')->nullable(true);
         });
     }
 

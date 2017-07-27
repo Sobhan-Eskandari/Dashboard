@@ -19,8 +19,8 @@ class CreateOutboxesTable extends Migration
             $table->string('subject');
             $table->text('message');
             $table->unsignedBigInteger('created_by')->nullable(true);
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
+            $table->dateTime('created_at')->nullable(true);
+            $table->dateTime('updated_at')->nullable(true);
             $table->dateTime('deleted_at')->nullable(true);
         });
     }

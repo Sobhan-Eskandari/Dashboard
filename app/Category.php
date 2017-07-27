@@ -10,13 +10,10 @@ use Laravel\Scout\Searchable;
 
 class Category extends Model
 {
-    use SoftDeletes;
     use Searchable;
 
-    protected $dates = ['deleted_at'];
-
     protected $fillable = [
-        'category',
+        'name',
         'created_by',
         'updated_by',
         'revisions',
@@ -54,7 +51,7 @@ class Category extends Model
     {
         return [
             'id' => $this->id,
-            'category' => $this->category,
+            'name' => $this->name,
         ];
     }
 

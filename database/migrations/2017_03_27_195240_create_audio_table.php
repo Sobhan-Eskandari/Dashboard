@@ -15,11 +15,10 @@ class CreateAudioTable extends Migration
     {
         Schema::create('audio', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('address')->nullable(false);
-            $table->string('position');
-            $table->dateTime('created_at');
+            $table->string('name')->nullable(false);
             $table->unsignedBigInteger('created_by')->nullable(false);
-            $table->dateTime('deleted_at')->nullable(true);
+            $table->dateTime('created_at')->nullable(true);
+            $table->dateTime('updated_at')->nullable(true);
         });
     }
 
