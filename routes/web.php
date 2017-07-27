@@ -71,9 +71,11 @@ Route::get('/sliders', function () {
     return view('dashboard.sliders.index');
 });
 
-//Route::get('/home', function (){
-//    return view('dashboard.home.index');
-//});
+
+Route::get('/home', function (){
+    return view('dashboard.home.index');
+})->name('home');
+
 Route::get('/create_slider', function (){
     return view('dashboard.sliders.create');
 });
@@ -121,8 +123,8 @@ Route::prefix('admins')->group(function()
     Route::get('/', 'AdminController@index')->name('admins.index');
     Route::get('/create', 'AdminController@create')->name('admins.create');
     Route::post('/', 'AdminController@store')->name('admins.store');
-    Route::post('/edit_profile_pic/{admin}', 'AdminController@edit_profile_pic')->name('admins.edit_profile_pic');
-    Route::post('/create_profile_pic', 'AdminController@create_profile_pic')->name('admins.create_profile_pic');
+//    Route::post('/edit_profile_pic/{admin}', 'AdminController@edit_profile_pic')->name('admins.edit_profile_pic');
+//    Route::post('/create_profile_pic', 'AdminController@create_profile_pic')->name('admins.create_profile_pic');
     Route::get('/{admin}', 'AdminController@show')->name('admins.show');
     Route::get('/{admin}/edit', 'AdminController@edit')->name('admins.edit');
     Route::put('/{admin}', 'AdminController@update')->name('admins.update');

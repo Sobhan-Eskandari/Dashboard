@@ -154,7 +154,8 @@ class PostController extends Controller
         $categories = explode(',', $input['selectedCategories']);
         $post->categories()->sync($categories);
 
-        $post->photos()->sync([$input['indexPhoto']]);
+        $post->photos()->detach();
+        $post->photos()->attach($input['indexPhoto']);
 
         if($input['draft'] === '0'){
             Session::flash('warning', 'پست با موفقیت ویرایش و منتشر شد');

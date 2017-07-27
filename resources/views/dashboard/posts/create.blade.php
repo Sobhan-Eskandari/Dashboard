@@ -157,8 +157,6 @@
                             alert('مشکلی در آپلود تصویر مورد نظر ایجاد شد');
                         }
                     });
-
-//                    window.history.pushState("", "", "http://dashboard.dev/test");
                 });
             }
         };

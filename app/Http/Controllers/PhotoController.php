@@ -17,7 +17,7 @@ class PhotoController extends Controller
         $file->move('gallery', $name);
 
         Photo::create([
-            'address' => $name,
+            'name' => $name,
             'created_by' => Auth::user()->id
         ]);
     }
