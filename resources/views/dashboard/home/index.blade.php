@@ -302,7 +302,7 @@
                                                     <label for="todo[{{$key}}]" class="check--label">
                                                         <span class="check--label-box"></span>
                                                         <span class="check--label-text">{{$todo->task}}</span>
-                                                        <form method="post" action="/todos">
+                                                        <form method="post" action="/todos/{{$todo->id}}">
                                                             {{ method_field('DELETE') }}
                                                             {{ csrf_field() }}
                                                             <button type="submit" class="hi-button-btn1 todo_deleteBtn"><i class="fa fa-times grey-text"></i> </button>
