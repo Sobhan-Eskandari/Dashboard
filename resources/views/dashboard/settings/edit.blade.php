@@ -22,7 +22,7 @@
         <div class="row mb-5">
             <div class="col-12">
                 <div class="container-fluid">
-                    {!! Form::open(['method'=>'PATCH', 'url' => '/settings/1']) !!}
+                    {!! Form::open(['method'=>'PATCH', 'url' => '/settings/'. $setting->id]) !!}
 
                     {{--==========[ Sample Gallery Modal Lunch ]========= --}}
 

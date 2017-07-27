@@ -73,8 +73,9 @@ class settingsController extends Controller
      * @param SettingStoreRequest|Request $request
      * @param Setting $setting
      * @return \Illuminate\Http\Response
+     * @internal param Setting $setting
      */
-    public function update(SettingStoreRequest $request, Setting $setting)
+    public function update(SettingStoreRequest $request,Setting $setting)
     {
         $request['updated_by'] = auth()->user()->getAuthIdentifier();
         $request['updated_at'] = jdate(Carbon::now());

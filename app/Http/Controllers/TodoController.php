@@ -38,15 +38,18 @@ class TodoController extends Controller
      */
     public function update(Request $request, Todo $todo)
     {
-        if ($request->done) {
-            $todo->done = true;
-            $todo->update();
-        } else {
-            $todo->done = false;
-            $todo->update();
+        if ($request->ajax()) {
+            if ($todo->done) {
+                $todo->done = false;
+                $todo->update();
+                return response()->json(['response' => 'success']);
+            } else {
+                $todo->done = true;
+                $todo->update();
+                return response()->json(['response' => 'success']);
+            }
         }
-
-        return back();
+        return response()->json(['response' => 'failure']);
     }
 
     /**

@@ -96,7 +96,7 @@ class User extends Authenticatable
     }
 
     public function updateSetting(Setting $setting) {
-        $this->setting()->update($setting->toArray());
+        $setting->update();
     }
 //    Setting Methods End
     public function toSearchableArray()

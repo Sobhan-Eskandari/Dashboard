@@ -71,6 +71,7 @@ Route::get('/sliders', function () {
     return view('dashboard.sliders.index');
 });
 
+
 Route::get('/home', function (){
     return view('dashboard.home.index');
 })->name('home');
