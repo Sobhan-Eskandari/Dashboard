@@ -283,6 +283,11 @@
                              پشتیبانی<i class="fa fa-download ml-4" aria-hidden="true"></i>
                         </a>
                     </h5>
+                    <h5 role="tab" class="pt-3" id="backup">
+                        <a class="Sidebar_menu_link" data-parent="#accordion" href="#backup">
+                            پیوند ها<i class="fa fa-link ml-4" aria-hidden="true"></i>
+                        </a>
+                    </h5>
                 </div>
 
             </div>
@@ -292,156 +297,7 @@
 
 
     {{--==========[ Gallery Modal ]========= --}}
-    <div class="modal fade galleryModal bd-example-modal-lg"
-         id="galleryModal" tabindex="-1" role="dialog"
-         aria-labelledby="myLargeModalLabel" aria-hidden="true">
-
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                {{--<div class="row" id="gallery_row">--}}
-
-                    {{--==========[ Selected file Info ]========= --}}
-                    {{--<div class="col-3 galleryFiles_info">--}}
-                        {{--<div class="row">--}}
-                            {{--<div class="col-12 text-right mt-5">--}}
-                                {{--<p>: فایل انتخاب شده</p>--}}
-
-                                {{--==========[ File Image ]========= --}}
-                                {{--<div class="row">--}}
-                                    {{--<div class="col-12">--}}
-                                        {{--<img class="img-fluid" src="{{asset('images/paris-sm.jpg')}}">--}}
-                                    {{--</div>--}}
-                                    {{--<div class="col-12 mt-2">--}}
-                                        {{--<button type="button" class="btn btn-outline-danger">حذف</button>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                                {{--==========[ File Info ]========= --}}
-                                {{--<div class="row mb-5">--}}
-                                    {{--<div class="col-12">--}}
-                                        {{--<ul class="file_info">--}}
-                                            {{--<li>bill-gates.jp</li>--}}
-                                            {{--<li>24 march 2017</li>--}}
-                                            {{--<li>45kb</li>--}}
-                                            {{--<li>564 x 343</li>--}}
-                                        {{--</ul>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-
-                                {{--<div class="row mt-5">--}}
-                                    {{--<div class="col-12 text-left mt-5 pt-5">--}}
-                                        {{--<button type="submit" class="hi-button-simple light-blue darken-2 mt-5">افزودن به پیوست</button>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-
-                    {{--==========[ Dropzone to upload file ]========= --}}
-                    {{--<div id="dropzone" class="col-7 gallery_files">--}}
-                        {{--<div class="row mt-2">--}}
-                            {{--<div class="col-12 text-right">--}}
-                                {{--<button type="submit" class="hi-button-simple green darken-1 mb-2 mt-2"><i class="fa fa-plus"></i> افزودن فایل</button>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-
-                        {{--<form action="/file-upload"--}}
-                              {{--class="dropzone"--}}
-                              {{--id="my-awesome-dropzone">--}}
-                            {{--<input type="file" name="file" />--}}
-                        {{--</form>--}}
-                    {{--</div>--}}
-
-                    {{--==========[ Category of Gallery Files ]========= --}}
-                    {{--<div class="col-2 pl-0">--}}
-                        {{--<ul class="gallery_category pl-0">--}}
-                            {{--<li><button type="button" class="btn gallery_category_btn">همه فایل ها</button></li>--}}
-                            {{--<li><button type="button" class="btn gallery_category_btn">عکس</button></li>--}}
-                            {{--<li><button type="button" class="btn gallery_category_btn">فیلم</button></li>--}}
-                            {{--<li><button type="button" class="btn gallery_category_btn">صدا</button></li>--}}
-                            {{--<li><button type="button" class="btn gallery_category_btn">متن</button></li>--}}
-                            {{--<li><button type="button" class="btn gallery_category_btn">بقیه فایل ها</button></li>--}}
-                        {{--</ul>--}}
-                    {{--</div>--}}
-
-                {{--</div>--}}
-
-                <div class="container">
-
-                    {{--==========[ Delete Part ]=========--}}
-                    <div class="row mt-4 px-4">
-                        <div class="col-6 text-left">
-                            <button class="hi-button-simple red darken-4">حذف</button>
-                        </div>
-                        <div class="col-6">
-
-                        </div>
-                    </div>
-
-                    {{--==========[ Dropzone to upload file ]=========--}}
-                    <div class="row mt-4 px-4" id="gallery_row">
-                        <div class="col-12">
-                            {{--==========[ Dropzone to upload file ]=========--}}
-                            <div class="gallery_files p-0">
-                                <form action="/file-upload"
-                                      class="dropzone"
-                                      id="my-awesome-dropzone">
-                                      <input type="file" multiple="multiple" class="dz-hidden-input" style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row px-4">
-                        <div class="col-12">
-                            <div class="container-fluid">
-                                <div class="row gallery_files l-rtl gallery_uploadedImage">
-                                    <div class="col-3 text-center">
-                                        <div class="pure-radiobutton mt-2 mr-2">
-                                            <input id="img-id-1" onclick="" name="img-radio" type="radio" >
-                                            <label for="img-id-1" class="img-radioBtn">
-                                                <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
-                                            </label>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-3 text-center">
-                                        <div class="pure-radiobutton mt-2 mr-2">
-                                            <input id="img-id-2" onclick="" name="img-radio" type="radio" >
-                                            <label for="img-id-2" class="img-radioBtn">
-                                                <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
-                                            </label>
-
-                                        </div>
-
-                                    </div>
-                                    <div class="col-3 text-center">
-                                        <div class="pure-radiobutton mt-2 mr-2">
-                                            <input id="img-id-3"  onclick="" name="img-radio" type="radio" >
-                                            <label for="img-id-3" class="img-radioBtn">
-                                                <img class="rounded hi-size-16 my-3" src="{{asset('images/avatar.png')}}">
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="btn-group pull-right" role="group" aria-label="Basic example">
-                                <button type="submit" class="hi-button-simple light-blue darken-2 mr-4">افزودن به پیوست</button>
-                                <button type="submit" class="hi-button-simple grey lighten-3 black-text mr-4">انصراف</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
+    @yield('gallery')
 
 </div>
 

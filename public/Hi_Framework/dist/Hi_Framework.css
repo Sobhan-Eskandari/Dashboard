@@ -392,8 +392,9 @@ select.selectpicker {
   background-color: #4f8196;
   position: absolute;
   top: 50.5%;
-  left: 5px;
+  left: 17px !important;
   width: 10px;
+  border: 1p;
   height: 10px;
   margin-top: -5px;
   transform: scale(0);

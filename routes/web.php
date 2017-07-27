@@ -150,7 +150,25 @@ Route::delete('/posts-trash/{post}', 'PostController@forceDestroy')->name('posts
 Route::post('/posts-restore/{post}', 'PostController@restore')->name('posts.restore');
 Route::post('/posts-multiDestroy', 'PostController@multiDestroy')->name('posts.multiDestroy');
 Route::post('/posts-trash-forceMultiDestroy', 'PostController@forceMultiDestroy')->name('posts.forceMultiDestroy');
+
 Route::post('/posts-image-upload', 'PostController@imageUpload')->name('posts.imageUpload');
 
 // Todo Routes
 Route::resource('/todos','TodoController');
+
+Route::get('/gallery', function () {
+    return view('dashboard.gallery.index');
+});
+
+Route::post('/gallery', 'PhotoController@store')->name('gallery.store');
+
+Route::get('/test', function (\Illuminate\Http\Request $request){
+    $photos = \App\Photo::orderBy('created_at', 'desc')->get();
+    if($request->ajax()){
+        return view('Includes.AllPhotos', compact('photos'));
+    }
+    return view('test', compact('photos'));
+});
+Route::post('/test', 'PhotoController@store');
+
+Route::post('/admins-restore/{admin}', 'AdminController@restore')->name('admins.restore');

@@ -15,6 +15,7 @@ class Post extends Model
 
     protected $fillable = [
         'title',
+        'slug',
         'body',
         'views',
         'lock',
@@ -70,6 +71,11 @@ class Post extends Model
     public function tags()
     {
         return $this->morphToMany('App\Tag', 'taggable');
+    }
+
+    public function photos()
+    {
+        return $this->morphToMany('App\Photo', 'photoable');
     }
 
     public function toSearchableArray()

@@ -22,7 +22,7 @@ class FriendTableSeeder extends Seeder
 
         foreach (range(1, 20) as $index){
             $friends[] = [
-                'name' => $faker->domainName,
+                'site_name' => $faker->domainName,
                 'address' => $faker->url,
                 'created_at' => $time,
                 'updated_at' => $time,

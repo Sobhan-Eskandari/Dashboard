@@ -184,7 +184,9 @@
 .dropzone.dz-clickable * {
   cursor: default; }
 .dropzone.dz-clickable .dz-message, .dropzone.dz-clickable .dz-message * {
-  cursor: pointer; }
+  color: gray;
+  cursor: pointer;
+}
 .dropzone.dz-started .dz-message {
   display: none; }
 .dropzone.dz-drag-hover {
@@ -193,7 +195,12 @@
   opacity: 0.5; }
 .dropzone .dz-message {
   text-align: center;
-  margin: 2em 0; }
+  margin: 2em 0;
+
+  &:after{
+    content: '!';
+  }
+}
 .dropzone .dz-preview {
   position: relative;
   display: inline-block;

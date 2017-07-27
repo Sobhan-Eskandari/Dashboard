@@ -32,7 +32,6 @@
                 <input name="from" type="text" class="backup_dateSelector backupSelect" />
                 <h6 class="card-title pt-2 backupExportCard_title">&nbsp;&nbsp;تا:&nbsp;</h6>
                 <input name="till" type="text" class="backup_dateSelector backupSelect" />
-
             </div>
             <br>
             <div class="row px-3">

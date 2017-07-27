@@ -7,12 +7,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Friend extends Model
 {
-    use SoftDeletes;
-
-    protected $dates = ['deleted_at'];
-
     protected $fillable = [
-        'name',
+        'site_name',
         'address',
         'created_by',
         'updated_by',

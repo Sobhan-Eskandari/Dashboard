@@ -15,14 +15,13 @@ class CreateFriendsTable extends Migration
     {
         Schema::create('friends', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->nullable(false);
+            $table->string('site_name')->nullable(false);
             $table->string('address')->nullable(false);
             $table->unsignedBigInteger('created_by')->nullable(false);
             $table->unsignedBigInteger('updated_by')->nullable(true);
             $table->integer('revisions')->default(0);
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
-            $table->dateTime('deleted_at')->nullable(true);
+            $table->dateTime('created_at')->nullable(true);
+            $table->dateTime('updated_at')->nullable(true);
         });
     }
 

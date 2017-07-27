@@ -7,7 +7,18 @@
 @endsection
 
 @section('css_resources')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.css">
     <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
+@endsection
+
+@section('gallery')
+    @component('components.galleryModal')
+        @slot('gallery')
+            <div class="row gallery_files l-rtl gallery_uploadedImage" id="loadPhotos">
+                @include('Includes.AllPhotos')
+            </div>
+        @endslot
+    @endcomponent
 @endsection
 
 @section('content')
@@ -55,6 +66,11 @@
                         {!! Form::text('selectedCategories', $selectedCategories, ['style' => 'display: none;']) !!}
                         {!! Form::text('selectedTags', $selectedTags, ['style' => 'display: none;']) !!}
                         {!! Form::text('draft', null, ['style' => 'display: none;']) !!}
+                        @if(is_null($indexPhoto))
+                            {!! Form::text('indexPhoto', null, ['style' => 'display: none;']) !!}
+                        @else
+                            {!! Form::text('indexPhoto', $indexPhoto[0]->id, ['style' => 'display: none;']) !!}
+                        @endif
 
                         <div class="row">
                             {!! Form::submit('ویرایش و انتشار', ['class'=>'btn btn-primary createPostPublicationButton px-4 light-blue darken-2', 'id'=>'releaseButton']) !!}
@@ -65,7 +81,11 @@
                     {{--============[ image box ]===========--}}
                     <div class="col-2 pr-0">
                         <br><br>
-                        <img src="{{asset('images/nobody_m.original.jpg')}}" alt="در حال بارگذاری عکس" class="createPostImage mr-2">
+                        @if(is_null($indexPhoto))
+                            <img src="{{asset('images/nobody_m.original.jpg')}}" alt="در حال بارگذاری عکس" class="createPostImage mr-2" id="indexPhoto">
+                        @else
+                            <img src="{{asset('gallery' . '/' . $indexPhoto[0]->address)}}" alt="در حال بارگذاری عکس" class="createPostImage mr-2" id="indexPhoto">
+                        @endif
                     </div>
                 </div>
             {!! Form::close() !!}
@@ -154,4 +174,26 @@
 
 @section('javascript')
     <script src="{{ asset('js/dashboard/EditPostIndex.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.js"></script>
+    <script>
+        Dropzone.options.myAwesomeDropzone = {
+            init: function() {
+                this.on("success", function() {
+                    $.ajax({
+                        type: "GET",
+                        url: "/test",
+                        data: [],
+                        success: function (data) {
+                            $('#loadPhotos').html(data);
+                        },
+                        fail: function () {
+                            alert('مشکلی در آپلود تصویر مورد نظر ایجاد شد');
+                        }
+                    });
+
+//                    window.history.pushState("", "", "http://dashboard.dev/test");
+                });
+            }
+        };
+    </script>
 @endsection

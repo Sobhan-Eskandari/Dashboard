@@ -15,7 +15,6 @@ class CreateAdminsTable extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->increments('id');
-//            $table->string('photo_id')->nullable(true);
             $table->string('user_name')->unique()->nullable(true);
             $table->string('first_name')->nullable(true);
             $table->string('last_name')->nullable(true);
@@ -34,10 +33,10 @@ class CreateAdminsTable extends Migration
             $table->unsignedBigInteger('updated_by')->nullable(true);
             $table->string('email_token')->nullable(true);
             $table->rememberToken();
-            $table->bigInteger('revisions')->default(0);
+            $table->integer('revisions')->default(0);
             $table->dateTime('last_seen')->nullable(true);
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
+            $table->dateTime('created_at')->nullable(true);
+            $table->dateTime('updated_at')->nullable(true);
             $table->dateTime('deleted_at')->nullable(true);
         });
     }

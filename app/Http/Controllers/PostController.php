@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Http\Requests\PostCreateRequest;
+use App\Photo;
 use App\Post;
 use App\Tag;
 use Illuminate\Http\Request;
@@ -22,8 +23,7 @@ class PostController extends Controller
     public function index(Request $request)
     {
         if($request->has('query')){
-            $posts = Post::search($request->input('query'))->orderBy('updated_at', 'desc')->paginate(8);
-            $posts = $posts->where('draft', 0);
+            $posts = Post::search($request->input('query'))->where('draft', 0)->orderBy('updated_at', 'desc')->paginate(8);
             $posts->load(['updater', 'creator', 'categories', 'tags']);
         }else{
             $posts = Post::with(['updater', 'creator', 'categories', 'tags'])->where('draft', 0)->orderBy('updated_at', 'desc')->paginate(8);
@@ -33,6 +33,7 @@ class PostController extends Controller
             return view('Includes.AllPosts', compact('posts'))->render();
         }
 
+//        dd($posts);
         return view('dashboard.posts.index', compact('posts'));
     }
 
@@ -45,7 +46,8 @@ class PostController extends Controller
     {
         $categories = Category::orderBy('created_at', 'desc')->get();
         $tags = Tag::orderBy('created_at', 'desc')->get();
-        return view('dashboard.posts.create', compact('categories', 'tags'));
+        $photos = Photo::orderBy('created_at', 'desc')->get();
+        return view('dashboard.posts.create', compact('categories', 'tags', 'photos'));
     }
 
     /**
@@ -67,6 +69,8 @@ class PostController extends Controller
 
         $categories = explode(',', $input['selectedCategories']);
         $post->categories()->attach($categories);
+
+        $post->photos()->attach($input['indexPhoto']);
 
         if($input['draft'] === '1'){
             Session::flash('success', 'پست با موفقیت ساخته و پیش نویس شد');
@@ -98,6 +102,9 @@ class PostController extends Controller
     {
         $selectedTags = [];
         $selectedCategories = [];
+        $indexPhoto = null;
+
+        $photos = Photo::orderBy('created_at', 'desc')->get();
 
         $categories = Category::orderBy('created_at', 'desc')->get();
         $tags = Tag::orderBy('created_at', 'desc')->get();
@@ -113,9 +120,13 @@ class PostController extends Controller
             $selectedCategories[] = $category->id;
         }
 
+        if(count($post->photos) != 0){
+            $indexPhoto = $post->photos;
+        }
+
         $selectedCategories = implode($selectedCategories, ',');
 
-        return view('dashboard.posts.edit', compact('post', 'categories', 'tags', 'selectedCategories', 'selectedTags'));
+        return view('dashboard.posts.edit', compact('post', 'photos', 'categories', 'tags', 'selectedCategories', 'selectedTags', 'indexPhoto'));
     }
 
     /**
@@ -127,6 +138,7 @@ class PostController extends Controller
      */
     public function update(PostCreateRequest $request, $id)
     {
+//        dd($request->all());
         $post = Post::findOrFail($id);
         $post->revisions++;
 
@@ -141,6 +153,8 @@ class PostController extends Controller
 
         $categories = explode(',', $input['selectedCategories']);
         $post->categories()->sync($categories);
+
+        $post->photos()->sync([$input['indexPhoto']]);
 
         if($input['draft'] === '0'){
             Session::flash('warning', 'پست با موفقیت ویرایش و منتشر شد');
@@ -280,8 +294,7 @@ class PostController extends Controller
     public function draft(Request $request)
     {
         if($request->has('query')){
-            $posts = Post::search($request->input('query'))->orderBy('updated_at', 'desc')->paginate(8);
-            $posts = $posts->where('draft', 1);
+            $posts = Post::search($request->input('query'))->where('draft', 1)->orderBy('updated_at', 'desc')->paginate(8);
             $posts->load(['updater', 'creator', 'categories', 'tags']);
         }else{
             $posts = Post::with(['updater', 'creator', 'categories', 'tags'])->where('draft', 1)->orderBy('updated_at', 'desc')->paginate(8);
