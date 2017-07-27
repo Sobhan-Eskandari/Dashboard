@@ -297,18 +297,33 @@
                                     <ul class="list">
                                         @if(isset($todos))
                                             @foreach($todos as $key=>$todo)
-                                                <li class="list-item">
-                                                    <input name="done" type="checkbox" class="hidden-box" id="todo[{{$key}}]"/>
-                                                    <label for="todo[{{$key}}]" class="check--label">
-                                                        <span class="check--label-box"></span>
-                                                        <span class="check--label-text">{{$todo->task}}</span>
-                                                        <form method="post" action="/todos/{{$todo->id}}">
-                                                            {{ method_field('DELETE') }}
-                                                            {{ csrf_field() }}
-                                                            <button type="submit" class="hi-button-btn1 todo_deleteBtn"><i class="fa fa-times grey-text"></i> </button>
-                                                        </form>
-                                                    </label>
-                                                </li>
+                                                @if($todo->done)
+                                                    <li class="list-item">
+                                                        <input name="done" type="checkbox" onclick="task_done('{{$todo->id}}')" class="hidden-box active" id="todo[{{$key}}]"/>
+                                                        <label for="todo[{{$key}}]" class="check--label">
+                                                            <span class="check--label-box"></span>
+                                                            <span class="check--label-text">{{$todo->task}}</span>
+                                                            <form method="post" action="/todos/{{$todo->id}}">
+                                                                {{ method_field('DELETE') }}
+                                                                {{ csrf_field() }}
+                                                                <button type="submit" class="hi-button-btn1 todo_deleteBtn"><i class="fa fa-times grey-text"></i> </button>
+                                                            </form>
+                                                        </label>
+                                                    </li>
+                                                @else
+                                                    <li class="list-item">
+                                                        <input name="done" type="checkbox" onclick="task_done('{{$todo->id}}')" class="hidden-box" id="todo[{{$key}}]"/>
+                                                        <label for="todo[{{$key}}]" class="check--label">
+                                                            <span class="check--label-box"></span>
+                                                            <span class="check--label-text">{{$todo->task}}</span>
+                                                            <form method="post" action="/todos/{{$todo->id}}">
+                                                                {{ method_field('DELETE') }}
+                                                                {{ csrf_field() }}
+                                                                <button type="submit" class="hi-button-btn1 todo_deleteBtn"><i class="fa fa-times grey-text"></i> </button>
+                                                            </form>
+                                                        </label>
+                                                    </li>
+                                                @endif
                                             @endforeach
                                         @endif
                                     </ul>
@@ -576,4 +591,5 @@
     <script src="{{ asset('js/chartjs.js') }}"></script>
     <script src="{{ asset('js/moment.min.js') }}"></script>
     <script src="{{ asset('js/clock.js') }}"></script>
+    <script src="{{ asset('js/dashboard/todo.js') }}"></script>
 @endsection
