@@ -84,7 +84,7 @@
                         @if(is_null($indexPhoto))
                             <img src="{{asset('images/nobody_m.original.jpg')}}" alt="در حال بارگذاری عکس" class="createPostImage mr-2" id="indexPhoto">
                         @else
-                            <img src="{{asset('gallery' . '/' . $indexPhoto[0]->address)}}" alt="در حال بارگذاری عکس" class="createPostImage mr-2" id="indexPhoto">
+                            <img src="{{asset('gallery' . '/' . $indexPhoto[0]->name)}}" alt="در حال بارگذاری عکس" class="createPostImage mr-2" id="indexPhoto">
                         @endif
                     </div>
                 </div>

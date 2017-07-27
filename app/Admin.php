@@ -59,17 +59,17 @@ class Admin extends Authenticatable
 
     public function faqs()
     {
-        return $this->hasMany('App\FAQ', 'created_by')->withTrashed();
+        return $this->hasMany('App\FAQ', 'created_by');
     }
 
     public function tags()
     {
-        return $this->hasMany('App\Tag', 'created_by')->withTrashed();
+        return $this->hasMany('App\Tag', 'created_by');
     }
 
     public function categories()
     {
-        return $this->hasMany('App\Category', 'created_by')->withTrashed();
+        return $this->hasMany('App\Category', 'created_by');
     }
 
 //    public function children()
@@ -84,7 +84,7 @@ class Admin extends Authenticatable
 
     public function outboxes()
     {
-        return $this->hasMany('App\Outbox', 'created_by')->withTrashed();
+        return $this->hasMany('App\Outbox', 'created_by');
     }
 
     public function role()
@@ -112,7 +112,8 @@ class Admin extends Authenticatable
         ];
     }
 
-    public function photos(){
+    public function photos()
+    {
         return $this->morphToMany('App\Photo', 'photoable');
     }
 

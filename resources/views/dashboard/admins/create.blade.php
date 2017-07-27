@@ -2,18 +2,35 @@
 
 @section('breadcrumb')
     @component('components.Breadcrumb')
+        <li><a href="{{ route('home') }}">داشبورد</a></li>
+        <li><a href="#">مدیران</a></li>
+        <li><a href="{{ route('admins.index') }}">همه مدیران</a></li>
+        <li><a class="breadcrumb_currentPage" href="{{ route('admins.create') }}">ساخت مدیر جدید</a></li>
+    @endcomponent
+@endsection
 
+@section('css_resources')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.css">
+@endsection
+
+@section('gallery')
+    @component('components.galleryModal')
+        @slot('gallery')
+            <div class="row gallery_files l-rtl gallery_uploadedImage" id="loadPhotos">
+                @include('Includes.AllPhotos')
+            </div>
+        @endslot
     @endcomponent
 @endsection
 
 @section('content')
 
-    {!! Form::open(['method'=>'POST', 'action'=>'AdminController@create_profile_pic', 'files' => true, 'id'=>'uploadForm']) !!}
-        {!! Form::file('avatar') !!}
-        {!! Form::submit('آپلود', ['class'=>'btnSubmit', 'id'=>'uploadSubmit']) !!}
-    {!! Form::close() !!}
+    {{--{!! Form::open(['method'=>'POST', 'action'=>'AdminController@create_profile_pic', 'files' => true, 'id'=>'uploadForm']) !!}--}}
+        {{--{!! Form::file('avatar') !!}--}}
+        {{--{!! Form::submit('آپلود', ['class'=>'btnSubmit', 'id'=>'uploadSubmit']) !!}--}}
+    {{--{!! Form::close() !!}--}}
 
-    <div id="target"></div>
+    {{--<div id="target"></div>--}}
 
     <nav dir="rtl">
         @component('components.errors') @endcomponent
@@ -116,12 +133,12 @@
                         </div>
                         <div class="col-4 px-2 hi-profileCard_PictureSelectorBox_pictureBox">
                             <div class="hi-profileCard_PictureSelectorBox_pictureBox_hover">
-                                {!! Form::text('photo_id', null, ['style' => 'display: none;']) !!}
-                                <figure>
+                                {!! Form::text('indexPhoto', null, ['style' => 'display: none;']) !!}
+                                <figure data-toggle="modal" data-target="#galleryModal">
                                     <img src="{{ asset('images/nobody_m.original.jpg') }}"
                                          class="hi-profileCard_PictureSelectorBox_picture img-fluid"
                                          alt="Responsive image"
-                                         id="picture">
+                                         id="indexPhoto">
                                 </figure>
                             </div>
                         </div>
@@ -159,4 +176,24 @@
 
 @section('javascript')
     <script src="{{ asset('js/dashboard/CreateAdminUploadProfilePic.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.js"></script>
+    <script>
+        Dropzone.options.myAwesomeDropzone = {
+            init: function() {
+                this.on("success", function() {
+                    $.ajax({
+                        type: "GET",
+                        url: "/test",
+                        data: [],
+                        success: function (data) {
+                            $('#loadPhotos').html(data);
+                        },
+                        fail: function () {
+                            alert('مشکلی در آپلود تصویر مورد نظر ایجاد شد');
+                        }
+                    });
+                });
+            }
+        };
+    </script>
 @endsection

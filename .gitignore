@@ -2,7 +2,7 @@
 /public/storage
 /public/hot
 /storage/*.index
-/public/gallety
+/public/gallery
 /public/UserImage
 /.idea
 Homestead.json

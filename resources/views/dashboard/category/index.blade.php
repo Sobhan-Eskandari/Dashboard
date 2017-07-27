@@ -11,6 +11,7 @@
 
 @section('breadcrumb')
     @component('components.Breadcrumb')
+        <li><a href="{{ route('home') }}">داشبورد</a></li>
         <li><a href="{{ route('posts.index') }}">پست ها</a></li>
         <li><a class="breadcrumb_currentPage" href="{{ route('categories.index') }}">دسته بندی ها</a></li>
     @endcomponent
