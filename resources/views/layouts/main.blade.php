@@ -162,9 +162,6 @@
                             <li class="subMenu">
                                 <a>نسخه پشتیبانی</a>
                             </li>
-                            <li class="subMenu">
-                                <a>پیوندها</a>
-                            </li>
                         </ul>
 
                     </div>
@@ -284,6 +281,11 @@
                     <h5 role="tab" class="pt-3" id="backup">
                         <a class="Sidebar_menu_link" data-parent="#accordion" href="#backup">
                              پشتیبانی<i class="fa fa-download ml-4" aria-hidden="true"></i>
+                        </a>
+                    </h5>
+                    <h5 role="tab" class="pt-3" id="backup">
+                        <a class="Sidebar_menu_link" data-parent="#accordion" href="#backup">
+                            پیوند ها<i class="fa fa-link ml-4" aria-hidden="true"></i>
                         </a>
                     </h5>
                 </div>
