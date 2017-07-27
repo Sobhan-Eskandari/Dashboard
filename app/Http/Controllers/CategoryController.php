@@ -58,7 +58,7 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response|string
      */
-    public function store(CategoryRequest $request)
+    public function store(Request $request)
     {
         if($request->ajax()){
             $input = $request->all();

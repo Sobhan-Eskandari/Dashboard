@@ -20,9 +20,8 @@ class CreateFAQsTable extends Migration
             $table->integer('revisions')->default(0);
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable(true);
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
-            $table->dateTime('deleted_at')->nullable(true);
+            $table->dateTime('created_at')->nullable(true);
+            $table->dateTime('updated_at')->nullable(true);
         });
     }
 

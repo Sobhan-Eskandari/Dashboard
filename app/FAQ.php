@@ -10,10 +10,7 @@ use Morilog\Jalali\jDate;
 
 class FAQ extends Model
 {
-    use SoftDeletes;
     use Searchable;
-
-    protected $dates = ['deleted_at'];
 
     protected $fillable = [
         'question',

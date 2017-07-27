@@ -18,10 +18,9 @@ class CreateTodosTable extends Migration
             $table->text('task')->nullable(false);
             $table->boolean('done')->default(false);
             $table->unsignedBigInteger('user_id')->nullable(false);
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
+            $table->dateTime('created_at')->nullable(true);
+            $table->dateTime('updated_at')->nullable(true);
             $table->dateTime('done_at')->nullable(true);
-            $table->dateTime('deleted_at')->nullable(true);
         });
     }
 
