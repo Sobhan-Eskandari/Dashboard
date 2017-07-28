@@ -15,9 +15,11 @@
     <p class="my-1 text-right hi-fontSize-14"><i class="fa fa-calendar" aria-hidden="true"></i> {{ $date }}</p>
 </td>
 <td>
-    @if(isset($answered))
-        <i class="fa fa-2x fa-times red-text" aria-hidden="true"></i>
-    @else
+    @if($status == 'not-checked')
+        <i class="fa fa-times fa-2x red-text" aria-hidden="true"></i>
+    @elseif($status == 'checking')
+        <i class="fa fa-hourglass-start fa-2x" aria-hidden="true"></i>
+    @elseif($status == 'checked')
         <i class="fa fa-check fa-2x green-text" aria-hidden="true"></i>
     @endif
 </td>
