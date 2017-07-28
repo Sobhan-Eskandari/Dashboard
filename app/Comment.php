@@ -52,13 +52,21 @@ class Comment extends Model
 
         return $comments;
     }
+
     public function children()
     {
         return $this->hasMany('App\Comment','parent_id');
     }
+
     public function parent(){
         return $this->belongsTo('App\Comment');
     }
+
+    public function post()
+    {
+        return $this->belongsTo('App\Post');
+    }
+
     public function toSearchableArray()
     {
         return [
@@ -67,5 +75,4 @@ class Comment extends Model
             'message'=>$this->message,
         ];
     }
-
 }

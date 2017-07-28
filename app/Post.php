@@ -78,6 +78,11 @@ class Post extends Model
         return $this->morphToMany('App\Photo', 'photoable');
     }
 
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
+
     public function toSearchableArray()
     {
         return [

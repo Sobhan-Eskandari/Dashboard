@@ -24,16 +24,15 @@ class PostController extends Controller
     {
         if($request->has('query')){
             $posts = Post::search($request->input('query'))->where('draft', 0)->orderBy('updated_at', 'desc')->paginate(8);
-            $posts->load(['updater', 'creator', 'categories', 'tags']);
+            $posts->load(['updater', 'creator', 'categories', 'tags', 'comments']);
         }else{
-            $posts = Post::with(['updater', 'creator', 'categories', 'tags'])->where('draft', 0)->orderBy('updated_at', 'desc')->paginate(8);
+            $posts = Post::with(['updater', 'creator', 'categories', 'tags', 'comments'])->where('draft', 0)->orderBy('updated_at', 'desc')->paginate(8);
         }
 
         if($request->ajax()){
             return view('Includes.AllPosts', compact('posts'))->render();
         }
 
-//        dd($posts);
         return view('dashboard.posts.index', compact('posts'));
     }
 
@@ -138,7 +137,6 @@ class PostController extends Controller
      */
     public function update(PostCreateRequest $request, $id)
     {
-//        dd($request->all());
         $post = Post::findOrFail($id);
         $post->revisions++;
 

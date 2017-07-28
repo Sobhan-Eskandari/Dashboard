@@ -2,7 +2,10 @@
 
 @section('breadcrumb')
     @component('components.Breadcrumb')
-
+        <li><a href="{{ route('home') }}">داشبورد</a></li>
+        <li><a href="#">پست ها</a></li>
+        <li><a href="{{ route('posts.index') }}">همه پست ها</a></li>
+        <li><a class="breadcrumb_currentPage" href="{{ route('posts.edit', $post->id) }}">ویرایش پست ({{ $post->title }})</a></li>
     @endcomponent
 @endsection
 
@@ -105,7 +108,7 @@
                             <button class="btn btn-secondary btn-secondary-postInfo btn-sm active p-2">پیش نمایش</button>
                         </li>
                         <li class="list-group-item"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp; {{ $post->views }} بازدید</li>
-                        <li class="list-group-item"><i class="fa fa-comments" aria-hidden="true"></i>&nbsp;10 نظر</li>
+                        <li class="list-group-item"><i class="fa fa-comments" aria-hidden="true"></i>&nbsp;{{ count($post->comments) }} نظر</li>
                         <li class="list-group-item"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;{{ $post->created_at->format('y/m/d') }}</li>
                         <li class="list-group-item">ایجاد شده توسط : {{ $post->creator->full_name }}</li>
                         <li class="list-group-item">تعداد ویرایش&nbsp;<span class="badge badge-pill badge-default">{{ $post->revisions }}</span></li>
@@ -158,7 +161,7 @@
                         {!! Form::open(['method'=>'POST', 'action'=>'tagController@store', 'class'=>'form-inline TodoWidget l-ltr', 'id'=>'createTagForm']) !!}
                             <div class="input-group" id="addTodo">
                                 <button type="submit" id="tagSubmit"><img class="img-fluid" src="{{asset('images/Add-icone.png')}}"></button>
-                                {!! Form::text('name', null, ['class' => 'form-control', 'id'=>'todoText', 'placeholder'=>'دسته بندی جدید']) !!}
+                                {!! Form::text('name', null, ['class' => 'form-control', 'id'=>'todoText', 'placeholder'=>'برچسب جدید']) !!}
                             </div>
                         {!! Form::close() !!}
                     @endslot
