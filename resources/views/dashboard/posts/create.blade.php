@@ -2,7 +2,10 @@
 
 @section('breadcrumb')
     @component('components.Breadcrumb')
-
+        <li><a href="{{ route('home') }}">داشبورد</a></li>
+        <li><a href="#">پست ها</a></li>
+        <li><a href="{{ route('posts.index') }}">همه پست ها</a></li>
+        <li><a class="breadcrumb_currentPage" href="{{ route('posts.create') }}">ساخت پست</a></li>
     @endcomponent
 @endsection
 
@@ -127,7 +130,7 @@
                         {!! Form::open(['method'=>'POST', 'action'=>'tagController@store', 'class'=>'form-inline TodoWidget l-ltr', 'id'=>'createTagForm']) !!}
                             <div class="input-group" id="addTodo">
                                 <button type="submit" id="tagSubmit"><img class="img-fluid" src="{{asset('images/Add-icone.png')}}"></button>
-                                {!! Form::text('name', null, ['class' => 'form-control', 'id'=>'todoText', 'placeholder'=>'دسته بندی جدید']) !!}
+                                {!! Form::text('name', null, ['class' => 'form-control', 'id'=>'todoText', 'placeholder'=>'برچسب جدید']) !!}
                             </div>
                         {!! Form::close() !!}
                     @endslot

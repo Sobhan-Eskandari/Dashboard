@@ -29,55 +29,9 @@ class Inbox extends Model
         'updated_by',
     ];
 
-//    public static function getMonthName($month)
-//    {
-//        $monthName = '';
-//
-//        switch ($month){
-//            case '01':
-//                $monthName = 'فروردین';
-//                break;
-//            case '02':
-//                $monthName = 'اردیبهشت';
-//                break;
-//            case '03':
-//                $monthName = 'خرداد';
-//                break;
-//            case '04':
-//                $monthName = 'تیر';
-//                break;
-//            case '05':
-//                $monthName = 'مرداد';
-//                break;
-//            case '06':
-//                $monthName = 'شهریور';
-//                break;
-//            case '07':
-//                $monthName = 'مهر';
-//                break;
-//            case '08':
-//                $monthName = 'آبان';
-//                break;
-//            case '09':
-//                $monthName = 'آذر';
-//                break;
-//            case '10':
-//                $monthName = 'دی';
-//                break;
-//            case '11':
-//                $monthName = 'بهمن';
-//                break;
-//            case '12':
-//                $monthName = 'اسفند';
-//                break;
-//        }
-//
-//        return $monthName;
-//    }
-
     public function outboxes()
     {
-        return $this->hasMany('App\Outbox');
+        return $this->hasMany('App\Outbox')->withTrashed();
     }
 
     public function user()

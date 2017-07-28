@@ -164,13 +164,22 @@ Route::get('/gallery', function () {
 
 Route::post('/gallery', 'PhotoController@store')->name('gallery.store');
 
+Route::post('/admins-restore/{admin}', 'AdminController@restore')->name('admins.restore');
+
 Route::get('/test', function (\Illuminate\Http\Request $request){
     $photos = \App\Photo::orderBy('created_at', 'desc')->get();
     if($request->ajax()){
         return view('Includes.AllPhotos', compact('photos'));
     }
     return view('test', compact('photos'));
-});
+})->name('test');
+
 Route::post('/test', 'PhotoController@store');
 
-Route::post('/admins-restore/{admin}', 'AdminController@restore')->name('admins.restore');
+//Route::get('ckeditor/plugins/imageuploader/imgbrowser.php', function (\Illuminate\Http\Request $request){
+//    $photos = \App\Photo::orderBy('created_at', 'desc')->get();
+//    if($request->ajax()){
+//        return view('Includes.AllPhotos', compact('photos'));
+//    }
+//    return view('test', compact('photos'));
+//});

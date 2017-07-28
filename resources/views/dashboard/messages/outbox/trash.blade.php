@@ -2,7 +2,10 @@
 
 @section('breadcrumb')
     @component('components.Breadcrumb')
-
+        <li><a href="{{ route('home') }}">داشبورد</a></li>
+        <li><a href="#">پیام ها</a></li>
+        <li><a href="{{ route('outbox.index') }}">صندوق خروجی</a></li>
+        <li><a class="breadcrumb_currentPage" href="{{ route('outbox.trash') }}">زباله دان</a></li>
     @endcomponent
 @endsection
 

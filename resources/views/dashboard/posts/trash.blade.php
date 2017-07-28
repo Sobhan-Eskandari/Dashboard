@@ -1,8 +1,9 @@
 @extends('layouts.main')
-
 @section('breadcrumb')
     @component('components.Breadcrumb')
-
+        <li><a href="{{ route('home') }}">داشبورد</a></li>
+        <li><a href="{{ route('posts.index') }}">پست ها</a></li>
+        <li><a class="breadcrumb_currentPage" href="{{ route('posts.trash') }}">زباله دان</a></li>
     @endcomponent
 @endsection
 

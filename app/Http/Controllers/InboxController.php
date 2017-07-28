@@ -61,6 +61,7 @@ class InboxController extends Controller
     public function show(Inbox $inbox)
     {
         $inbox->seen = 1;
+        $inbox->status = 2;
         $inbox->seen_by = Auth::user()->id;
         $inbox->save();
         return view('dashboard.messages.inbox.show', compact('inbox'));

@@ -57,7 +57,7 @@ class OutboxController extends Controller
         try{
             $input = $request->all();
             $inbox = Inbox::findOrFail($input['inbox_id']);
-            $inbox->status = 2;
+            $inbox->status = 3;
             $inbox->answered_by = Auth::user()->id;;
             $inbox->answered_at = jDate::forge('now')->format('datetime', true);
             $inbox->save();

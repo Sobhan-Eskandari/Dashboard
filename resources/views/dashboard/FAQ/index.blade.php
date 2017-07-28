@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('css_resources')
-    <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>
+    <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
 @endsection
 
 @section('search')
@@ -13,6 +13,13 @@
     </div>
 @endsection
 
+@section('breadcrumb')
+    @component('components.Breadcrumb')
+        <li><a href="{{ route('home') }}">داشبورد</a></li>
+        <li><a href="{{ route('settings.index') }}">تنظیمات</a></li>
+        <li><a class="breadcrumb_currentPage" href="{{ route('faqs.index') }}">سوالات متداول</a></li>
+    @endcomponent
+@endsection
 
 @section('content')
 
@@ -33,7 +40,10 @@
                     <label>متن جواب را وراد کنید:</label>
                     {!! Form::textarea('answer', null, ['class'=>'form-control', 'rows'=>'6', 'id'=>'answer']) !!}
                     <script>
-                        CKEDITOR.replace('answer');
+                        CKEDITOR.replace('answer', {
+                            filebrowserUploadUrl : '{{ route('posts.imageUpload') }}',
+                            filebrowserImageUploadUrl : '{{ route('posts.imageUpload') }}'
+                        });
                     </script>
                 </div>
                 <button class="btn hi-whiteCategoryDashboardBox_button light-blue darken-2 pull-right mt-4 py-2 px-1 hi-fontSize-16" id="create-submit"
@@ -52,7 +62,10 @@
                 <label>متن جواب را وراد کنید:</label>
                 {!! Form::textarea('answer', null, ['class'=>'form-control', 'rows'=>'6', 'id'=>'answerEdit']) !!}
                 <script>
-                    CKEDITOR.replace('answerEdit');
+                    CKEDITOR.replace('answerEdit', {
+                        filebrowserUploadUrl : '{{ route('posts.imageUpload') }}',
+                        filebrowserImageUploadUrl : '{{ route('posts.imageUpload') }}'
+                    });
                 </script>
             </div>
             <button class="btn hi-whiteCategoryDashboardBox_button light-blue darken-2 pull-right mt-4 py-2 px-1 hi-fontSize-16" id="edit-submit"

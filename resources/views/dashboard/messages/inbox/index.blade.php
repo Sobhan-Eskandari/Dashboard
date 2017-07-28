@@ -11,7 +11,9 @@
 
 @section('breadcrumb')
     @component('components.Breadcrumb')
-
+        <li><a href="{{ route('home') }}">داشبورد</a></li>
+        <li><a href="#">پیام ها</a></li>
+        <li><a class="breadcrumb_currentPage" href="{{ route('inbox.index') }}">صندوق ورودی</a></li>
     @endcomponent
 @endsection
 

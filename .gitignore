@@ -3,6 +3,7 @@
 /public/hot
 /storage/*.index
 /public/gallery
+/public/PostsPhotos
 /public/UserImage
 /.idea
 Homestead.json

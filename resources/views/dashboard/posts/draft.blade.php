@@ -2,7 +2,9 @@
 
 @section('breadcrumb')
     @component('components.Breadcrumb')
-
+        <li><a href="{{ route('home') }}">داشبورد</a></li>
+        <li><a href="#">پست ها</a></li>
+        <li><a class="breadcrumb_currentPage" href="{{ route('posts.draft') }}">پیش نویس ها</a></li>
     @endcomponent
 @endsection
 
