@@ -1,5 +1,14 @@
 @extends('layouts.main')
 
+@section('breadcrumb')
+    @component('components.Breadcrumb')
+        <li><a href="{{ route('home') }}">داشبورد</a></li>
+        <li><a href="#">پیام ها</a></li>
+        <li><a href="{{ route('outbox.index') }}">صندوق خروجی</a></li>
+        <li><a class="breadcrumb_currentPage" href="{{ route('outbox.show', $outbox->id) }}">مکالمه بین مدیر ({{ $outbox->user->full_name }}) و فرستنده ({{ $outbox->inbox->full_name }})</a></li>
+    @endcomponent
+@endsection
+
 @section('content')
 
     <div class="row answerPmBox">
