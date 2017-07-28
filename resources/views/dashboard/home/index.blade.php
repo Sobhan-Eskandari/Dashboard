@@ -281,11 +281,11 @@
         </div>
 
         <div class="gridOfNotif mt-4">
-            {{--==========[ To-Do Widget ]=========--}}
+            ==========[ To-Do Widget ]=========
             <div class="col-12 col-md-4 grid-notif TodoWidget" id="gridWith">
                 <div class="homeCard">
                     <div class="Card-Box Card-Box_dayMode hi-shadow-1">
-                        {{--==========[ Header Of Card ]=========--}}
+                        ==========[ Header Of Card ]=========
                         <div class="container-fluid">
                             <div class="row deep-purple lighten-1 Card_Header">
                                 <div class="col-md-12">
@@ -346,6 +346,7 @@
                     </div>
                 </div>
             </div>
+
 
             {{--==========[ Akharin Paiam ha Widget ]=========--}}
             <div class="col-12 col-md-4 grid-notif">

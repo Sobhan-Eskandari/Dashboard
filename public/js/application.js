@@ -420,25 +420,25 @@ $('body').on('keydown', 'input, select, textarea', function(e) {
 
 var numberofTodos = 6;
 $("#addTodo_addBtn").click(function () {
-    //addTodo();
+    addTodo();
 });
 $('#todoText').pressEnter(function(){
    //addTodo();
 });
-// function addTodo() {
-//     var textOfTodo = $("#todoText").val();
-//     $("#listOfTodos ul").prepend(`
-//         <li class="list-item">
-//             <input type="checkbox" class="hidden-box" id="todo[`+(numberofTodos)+`]"/>
-//            <label for="todo[`+(numberofTodos)+`]" class="check--label">
-//               <span class="check--label-box"></span>
-//               <span class="check--label-text">`+textOfTodo+`</span>
-//            </label>
-//         </li>
-//     `);
-//     $(".list-item").animateCss('slideInDown');
-//     $("#todoText").val('');
-// }
+function addTodo() {
+    var textOfTodo = $("#todoText").val();
+    $("#listOfTodos ul").prepend(`
+        <li class="list-item">
+            <input type="checkbox" class="hidden-box" id="todo[`+(numberofTodos)+`]"/>
+           <label for="todo[`+(numberofTodos)+`]" class="check--label">
+              <span class="check--label-box"></span>
+              <span class="check--label-text">`+textOfTodo+`</span>
+           </label>
+        </li>
+    `);
+    $(".list-item").animateCss('slideInDown');
+    $("#todoText").val('');
+}
 
 // =================[ Select All Comments Buttons  ]=====================
 // function selectAllCmnt() {

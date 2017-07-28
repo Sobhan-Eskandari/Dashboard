@@ -6035,6 +6035,8 @@ g, path, circle, rect {
     transform: rotate(45deg); }
 .TodoWidget .hidden-box:checked + .check--label .check--label-text:after {
   width: 85%; }
+.TodoWidget .check--label-text.checkDone:after {
+  width: 85%; }
 .TodoWidget #addTodo {
   margin: 10px auto; }
 .TodoWidget #categorySubmit, .TodoWidget #tagSubmit {

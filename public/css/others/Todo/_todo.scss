@@ -104,6 +104,11 @@
       }
     }
   }
+
+  .check--label-text.checkDone:after {
+    width: 85%;
+  }
+
   #addTodo{
     margin: 10px auto;
   }
