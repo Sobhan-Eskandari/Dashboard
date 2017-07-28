@@ -89,6 +89,9 @@ Route::post('/categories-multiDestroy', 'CategoryController@multiDestroy')->name
 Route::resource('/faqs', 'FaqController');
 Route::post('/faqs-multiDestroy', 'FaqController@multiDestroy')->name('faqs.multiDestroy');
 
+Route::resource('/friends', 'FriendController');
+Route::post('/friends-multiDestroy', 'FriendController@multiDestroy')->name('friends.multiDestroy');
+
 Route::resource('/inbox', 'InboxController');
 Route::get('/inbox-trash', 'InboxController@trash')->name('inbox.trash');
 Route::delete('/inbox-trash/{inbox}', 'InboxController@forceDestroy')->name('inbox.forceDestroy');
