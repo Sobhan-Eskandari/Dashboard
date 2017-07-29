@@ -115,7 +115,7 @@ Route::get('/backups-users', 'BackupController@users')->name('backups.users');
 Route::get('/backups-comments', 'BackupController@comments')->name('backups.comments');
 Route::get('/backups-admins', 'BackupController@admins')->name('backups.admins');
 
-Route::resource('/settings','settingsController');
+Route::resource('/settings','settingController');
 
 Auth::routes();
 

@@ -8,7 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-class settingsController extends Controller
+class settingController extends Controller
 {
     public function __construct()
     {
@@ -71,12 +71,12 @@ class settingsController extends Controller
      * Update the specified resource in storage.
      *
      * @param SettingStoreRequest|Request $request
-     * @param Setting $setting
      * @return \Illuminate\Http\Response
      * @internal param Setting $setting
      */
-    public function update(SettingStoreRequest $request,Setting $setting)
+    public function update(SettingStoreRequest $request)
     {
+        $setting = Setting::first();
         $request['updated_by'] = auth()->user()->getAuthIdentifier();
         $request['updated_at'] = jdate(Carbon::now());
         $request['revisions'] = $setting->revisions + 1;
