@@ -9,7 +9,13 @@ function task_done(id){
         type : 'PATCH',
         data : { 'id': id},
         success : function(response, textStatus, jqXhr) {
-            console.log("Todo Item has been PUTed!");
+            if(response["response"] === 'done') {
+                console.log("done");
+                $(".check--label-text").addClass("checkDone");
+            } else {
+                console.log("undone");
+                $(".check--label-text").removeClass("checkDone");
+            }
         },
         error : function(jqXHR, textStatus, errorThrown) {
             // log the error to the console

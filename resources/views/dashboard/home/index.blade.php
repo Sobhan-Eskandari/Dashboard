@@ -302,7 +302,7 @@
                                                         <input name="done" type="checkbox" onclick="task_done('{{$todo->id}}')" class="hidden-box active" id="todo[{{$key}}]"/>
                                                         <label for="todo[{{$key}}]" class="check--label">
                                                             <span class="check--label-box"></span>
-                                                            <span class="check--label-text">{{$todo->task}}</span>
+                                                            <span class="check--label-text checkDone">{{$todo->task}}</span>
                                                             <form method="post" action="/todos/{{$todo->id}}">
                                                                 {{ method_field('DELETE') }}
                                                                 {{ csrf_field() }}

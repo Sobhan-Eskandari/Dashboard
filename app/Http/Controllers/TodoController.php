@@ -42,11 +42,11 @@ class TodoController extends Controller
             if ($todo->done) {
                 $todo->done = false;
                 $todo->update();
-                return response()->json(['response' => 'success']);
+                return response()->json(['response' => 'undone']);
             } else {
                 $todo->done = true;
                 $todo->update();
-                return response()->json(['response' => 'success']);
+                return response()->json(['response' => 'done']);
             }
         }
         return response()->json(['response' => 'failure']);

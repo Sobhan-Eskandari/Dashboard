@@ -26,6 +26,7 @@ class AdminController extends Controller
     public function index(Request $request)
     {
         $roles = Role::all();
+        $todos = Todo::all();
         if($request->has('query')){
             $admins = Admin::search($request->input('query'))->orderBy('updated_at', 'desc')->get();
             $admins->load(['parent', 'role', 'photos']);
