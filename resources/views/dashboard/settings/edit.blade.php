@@ -34,7 +34,7 @@
 
                         {{--============[ image box ]===========--}}
                         <div class="col-2 pr-0">
-                            <img src="{{asset('images/nobody_m.original.jpg')}}" alt="در حال بارگذاری عکس" class="createPostImage mr-2">
+                            <img src="{{asset('images/' . $setting->logo)}}" alt="در حال بارگذاری عکس" class="createPostImage mr-2">
                         </div>
                     </div>
 
