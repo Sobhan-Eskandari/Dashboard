@@ -11,10 +11,10 @@ function task_done(id){
         success : function(response, textStatus, jqXhr) {
             if(response["response"] === 'done') {
                 console.log("done");
-                $(".check--label-text").addClass("checkDone");
+                $("#todo_checkbox_" . id).addClass("checkDone");
             } else {
                 console.log("undone");
-                $(".check--label-text").removeClass("checkDone");
+                $("#todo_checkbox_" . id).removeClass("checkDone");
             }
         },
         error : function(jqXHR, textStatus, errorThrown) {
