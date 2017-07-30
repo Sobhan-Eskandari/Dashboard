@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@index')->name('home');;
 
 Route::get('/', function () {
     return view('welcome');
@@ -46,10 +46,6 @@ Route::post('users/update/{user}','API\UserController@update')->name('user.updat
 Route::delete('users/forceDelete/{user}','API\UserController@forceDelete')->name('user.force.delete');
 Route::post('users/forceMultiDelete','API\UserController@forceMultiDelete')->name('user.force.multiDelete');
 Route::post('users/restore/{user}','API\UserController@restore')->name('user.restore');
-//Route::get('/users/trash', function () {
-//    return view('dashboard.users.trash');
-//});
-
 
 Route::get('/files', function () {
     return view('dashboard.media.index');
@@ -70,11 +66,6 @@ Route::post('comments-multiForceDelete','CommentController@multiForceDelete')->n
 Route::get('/sliders', function () {
     return view('dashboard.sliders.index');
 });
-
-
-//Route::get('/home', function (){
-//    return view('dashboard.home.index');
-//})->name('home');
 
 Route::get('/create_slider', function (){
     return view('dashboard.sliders.create');
