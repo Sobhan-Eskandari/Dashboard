@@ -63,6 +63,13 @@
             @slot('comment_date')
                 {{ $comment->created_at->format('y/m/d') }}
             @endslot
+                @slot('status')
+                    @if($comment->status==='not-checked')
+                        <i class="fa fa-times fa-2x red-text" aria-hidden="true"></i>
+                    @elseif($comment->status==='checked')
+                        <i class="fa fa-check fa-2x green-text" aria-hidden="true"></i>
+                    @endif
+                @endslot
 @slot('trash')
 yes
 @endslot

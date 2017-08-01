@@ -28,7 +28,6 @@
             {{--integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="--}}
             {{--crossorigin="anonymous"></script>--}}
     @yield('css_resources')
-
     {{--on pages we wanna user bootstrap-select the following should be included--}}
     {{--<link rel="stylesheet" href="{{ asset('Hi_Framework/components/Dropdown/Other Libraries/bootstrap-select/bootstrap.min.css') }}">--}}
 
@@ -226,7 +225,7 @@
                     {{--============[ Comments page of dashboard ]===========--}}
                     <h5 role="tab" class="pt-2" id="comments">
                         <a class="Sidebar_menu_link" data-parent="#accordion" href="#comments">
-                            <span class="badge badge-pill badge-default mr-2 countBadge">۷۳</span>نظرات<i class="fa fa-commenting-o ml-4" aria-hidden="true"></i>
+                            <span class="badge badge-pill badge-default mr-2 countBadge">{{ \App\Comment::whereStatus('not-checked')->count() }}</span>نظرات<i class="fa fa-commenting-o ml-4" aria-hidden="true"></i>
                         </a>
                     </h5>
                     {{--============[ Admin Menu of dashboard ]===========--}}

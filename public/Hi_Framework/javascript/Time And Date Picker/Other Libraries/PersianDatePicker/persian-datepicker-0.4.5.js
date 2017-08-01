@@ -197,6 +197,7 @@ var ClassConfig = {
      * @param self
      */
     onShow: function (self) {
+
     },
 
 
@@ -217,6 +218,21 @@ var ClassConfig = {
      * @param unixDate
      */
     onSelect: function (unixDate) {
+        this.hide();
+        var start = $("#start").val();
+        var end = $("#end").val();
+        var path = window.location.pathname;
+        console.log(path);
+            var query = $('#searchCmt').val();
+            var CSRF_TOKEN =$("input[name*='_token']").val();
+            $.ajax({
+                type: 'GET',
+                url: path,
+                data: {query:query,start:start,end:end}
+            }).done(function (data) {
+                $("#categories").html(data);
+            }).fail(function () {
+            });
         return this;
     },
 

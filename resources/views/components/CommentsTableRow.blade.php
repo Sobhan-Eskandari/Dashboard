@@ -12,8 +12,9 @@
     <p class="my-1">{{$comment_time}}</p>
     <p class="my-1">{{$comment_date}}</p>
 </td>
-<td><i class="fa fa-check fa-2x green-text" aria-hidden="true"></i></td>
-
+<td>
+    {{$status}}
+</td>
 {{--==========[ More Button Dropdown ]========= --}}
 <td>
     <div class="Topbar_dropdown dropdown table_dropDown">

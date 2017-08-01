@@ -8,19 +8,29 @@
         </a>
     </div>
 
-    <div class="col-2">
-        <div class="Topbar_dropdown posts_dropdown dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                همه ی دسته بندی ها
-            </button>
-            <div data-dropdown-in="fadeIn" data-dropdown-out="fadeOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-user ml-2" aria-hidden="true"></i> پروفایل من</a>
-                <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-file-text-o ml-2" aria-hidden="true"></i> مدیران</a>
-                <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-download ml-2" aria-hidden="true"></i> نسخه پشتیبانی</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item text-right py-1" href="#"><i class="fa fa-power-off ml-2" aria-hidden="true"></i>خروج</a>
-            </div>
-        </div>
+    {{--<div class="col-2">--}}
+        {{--<div class="Topbar_dropdown posts_dropdown dropdown">--}}
+            {{--<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+                {{--همه ی دسته بندی ها--}}
+            {{--</button>--}}
+            {{--<div data-dropdown-in="fadeIn" data-dropdown-out="fadeOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">--}}
+                {{--<a class="dropdown-item text-right py-1" href="#"><i class="fa fa-user ml-2" aria-hidden="true"></i> پروفایل من</a>--}}
+                {{--<a class="dropdown-item text-right py-1" href="#"><i class="fa fa-file-text-o ml-2" aria-hidden="true"></i> مدیران</a>--}}
+                {{--<a class="dropdown-item text-right py-1" href="#"><i class="fa fa-download ml-2" aria-hidden="true"></i> نسخه پشتیبانی</a>--}}
+                {{--<div class="dropdown-divider"></div>--}}
+                {{--<a class="dropdown-item text-right py-1" href="#"><i class="fa fa-power-off ml-2" aria-hidden="true"></i>خروج</a>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+    <div id="commentDate">
+    <div class="col-2 btn-group-justified backupGroupButton">
+        <h6 class="card-title pt-2 backupExportCard_title">از:&nbsp;</h6>
+        <input name="from" type="text" class="backup_dateSelector backupSelect" id="start" value="{{isset($start) ? $start :''}}">
+    </div>
+    <div class="col-2 btn-group-justified backupGroupButton">
+        <h6 class="card-title pt-2 backupExportCard_title">&nbsp;&nbsp;تا:&nbsp;</h6>
+        <input name="till" type="text" class="backup_dateSelector backupSelect" id="end" value="{{isset($end) ? $end :''}}">
+    </div>
     </div>
 
     <div class="col-auto offset-6 text-right mr-2">
@@ -89,7 +99,13 @@
                         @slot('comment_date')
                             {{ $comment->created_at->format('y/m/d') }}
                         @endslot
-
+                        @slot('status')
+                            @if($comment->status==='not-checked')
+                            <i class="fa fa-times fa-2x red-text" aria-hidden="true"></i>
+                                @elseif($comment->status==='checked')
+                                    <i class="fa fa-check fa-2x green-text" aria-hidden="true"></i>
+                                @endif
+                        @endslot
                         @slot('trash')@endslot
                         @slot('settings')
                                 {{Form::open(['method'=>'POST','action'=>['CommentController@approve',$comment->id]])}}
@@ -113,7 +129,9 @@
 
 {{--============[ Pagination of Page ]===========--}}
 {{$comments->links()}}
-    <script>
+{{--{{$comments->render()}}--}}
+{{--{{$comments->appends(\Illuminate\Support\Facades\Input::query())->links()}}--}}
+   <script>
         $("#destroyComment").click(function (e) {
             e.preventDefault();
             var query = $('#searchCmt').val();
@@ -162,4 +180,12 @@ var checkboxes;
             });
 //            console.log(checkboxes);
         });
+//        $('#date').click( function() {
+//            console.log('kmasdkas');
+//        });
     </script>
+<script src="{{ asset('Hi_Framework/javascript/Time And Date Picker/Other Libraries/PersianDatePicker/persian-date.js') }}"></script>
+<script src="{{ asset('Hi_Framework/javascript/Time And Date Picker/Other Libraries/PersianDatePicker/persian-datepicker-0.4.5.js') }}"></script>
+<script src="{{asset('js/application.js')}}"></script>
+
+
