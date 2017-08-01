@@ -163,6 +163,7 @@ Route::resource('/todos','TodoController');
 Route::prefix('/gallery/photos')->group(function(){
     $this->get('','PhotoController@index')->name('photo.all');
     $this->post('','PhotoController@store')->name('photo.store');
+    $this->post('/multiDelete','PhotoController@multiDestroy')->name('photo.multi.delete');
 });
 
 //Route::post('/gallery', 'PhotoController@store')->name('gallery.store');

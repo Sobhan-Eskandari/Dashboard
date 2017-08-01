@@ -29,7 +29,7 @@
                         </div>
                         <div class="col-6">
                             <div class="btn-group pull-right mr-4" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-outline-danger mr-4">حذف</button>
+                                <button type="button" class="btn btn-outline-danger mr-4" id="multiDestroy">حذف</button>
                             </div>
                         </div>
                     </div>

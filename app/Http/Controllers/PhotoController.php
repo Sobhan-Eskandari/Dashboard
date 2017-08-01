@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class PhotoController extends Controller
 {
@@ -27,8 +28,6 @@ public function index(){
 }
 
 public function store(Request $request){
-//    dd($request->file('file'));
-//    return view('dashboard.posts.index');
     $image = $request->file('file');
     $imageName = time().$image->getClientOriginalName();
     $image->move(public_path('photos'),$imageName);
@@ -37,8 +36,17 @@ public function store(Request $request){
         'created_by'=>1
     ]);
     $photos = Photo::all();
-//    return response()->json(['success'=>$imageName]);
     return view('Includes.AllPhotos',compact('photos'));
 }
+public function multiDestroy(Request $request)
+{
+    foreach ($request->checkboxes as $id){
+        $photo = Photo::findOrFail($id);
+        File::delete('photos/'.$photo->name);
+        $photo->delete();
+    }
 
+    $photos = Photo::all();
+    return view('Includes.AllPhotos', compact('photos'));
+}
 }
