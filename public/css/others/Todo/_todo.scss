@@ -105,7 +105,7 @@
     }
   }
 
-  .check--label-box.checkBox:after{
+  .check--label-box.checkBoxDone:after{
     content: '';
     display: block;
     position: absolute;
@@ -121,6 +121,7 @@
   .check--label-text.checkDone:after {
     width: 85%;
   }
+
 
   #addTodo{
     margin: 10px auto;

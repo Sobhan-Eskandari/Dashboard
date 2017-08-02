@@ -9,6 +9,8 @@ class Photo extends Model
 {
     protected $fillable = [
         'name',
+        'order',
+        'position',
         'created_by',
     ];
 
