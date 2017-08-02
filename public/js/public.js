@@ -35,6 +35,10 @@ $(document).ready(function () {
 
     });
 
+    function closeModal() {
+        $('#galleryModal').modal('hide')
+    }
+
 });
 //////////////////////
 

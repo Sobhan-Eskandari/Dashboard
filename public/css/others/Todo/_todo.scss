@@ -105,7 +105,7 @@
     }
   }
 
-  .check--label-box.checkBoxDone:after{
+  .hidden-box:checked + .check--label .check--label-box.checkBoxDone:after{
     content: '';
     display: block;
     position: absolute;
