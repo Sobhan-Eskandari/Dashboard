@@ -25,10 +25,10 @@
 
     {{--============[ Row of Edit and dropdwon of roles ]===========--}}
     <div class="row">
-        <div class="col-6 text-center">
-            <a class="btn btn-secondary adminCard_btn hvr-sweep-to-top" href="{{ route('admins.edit', $id) }}">ویرایش</a>
+        <div class="col-5 text-center">
+            <a href="{{ route('admins.edit', $id) }}"><button class="btn btn-secondary adminCard_btn hvr-sweep-to-top ml-2">ویرایش</button></a>
         </div>
-        <div class="col-6 text-center">
+        <div class="col-7 text-center">
             {{--============[ Admin Roles Dropdown ]===========--}}
             <div class="dropdown">
                 {{--<select name="role" id="">--}}

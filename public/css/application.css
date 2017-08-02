@@ -5998,8 +5998,8 @@ g, path, circle, rect {
   align-self: center;
   position: relative;
   height: 20px;
-  width: 20px;
-  margin: 0 20px;
+  width: 12%;
+  margin: 0 11px;
   border: 2px solid #3AAF51;
   border-radius: 5px;
   cursor: pointer; }
@@ -6037,6 +6037,7 @@ g, path, circle, rect {
   width: 85%; }
 .TodoWidget .hidden-box:checked + .check--label .check--label-box.checkBoxDone:after {
   content: '';
+  background-color: #3AAF51;
   display: block;
   position: absolute;
   top: -1px;
@@ -7033,6 +7034,9 @@ body {
 .l-ltr {
   direction: ltr; }
 
+.l-flex {
+  display: flex; }
+
 .overflowBox {
   height: 300px;
   overflow: scroll; }
@@ -7646,7 +7650,7 @@ body {
   .hi-profileCard_PictureSelectorBox_selector .metro .selected,
   .hi-profileCard_PictureSelectorBox_selector .metro li {
     display: block;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1;
     color: #000;
     padding: 9px;
@@ -7704,7 +7708,8 @@ body {
   .hi-profileCard_PictureSelectorBox_selector .metro li {
     list-style: none;
     padding: 8px 12px;
-    text-align: center; }
+    text-align: center;
+    font-size: 12px !important; }
   .hi-profileCard_PictureSelectorBox_selector .metro li.focus {
     background: #3B4452;
     position: relative;

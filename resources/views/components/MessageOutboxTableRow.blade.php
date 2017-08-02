@@ -26,9 +26,12 @@
         <div data-dropdown-in="fadeIn" data-dropdown-out="fadeOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item text-right py-0" href="{{ route('outbox.show', $id) }}"><i class="fa fa-eye ml-2" aria-hidden="true"></i>مشاهده</a>
             <div class="dropdown-divider my-1"></div>
-            {!! Form::open(['method'=>'DELETE', 'action'=>['OutboxController@destroy', $id], 'class'=>'singleDestroy']) !!}
-                {!! Form::submit('حذف', ['id'=>'delete', 'style' => 'background: none; border: none;']) !!}
-            {!! Form::close() !!}
+            <button class="hi-button-btn1 dropdown-item py-0">
+                <i class="fa fa-trash py-0 "></i>
+                {!! Form::open(['method'=>'DELETE', 'action'=>['OutboxController@destroy', $id], 'class'=>'singleDestroy']) !!}
+                {!! Form::submit('حذف', ['id'=>'delete', 'class' => 'dropdown-item py-0 px-1']) !!}
+                {!! Form::close() !!}
+            </button>
             {{--<a class="dropdown-item text-right py-0 mt-1" href="#"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</a>--}}
         </div>
     </div>

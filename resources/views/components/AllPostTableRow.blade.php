@@ -30,7 +30,7 @@
             <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-eye ml-2" aria-hidden="true"></i>مشاهده</a>
             <a class="dropdown-item text-right py-0" href="{{ route('posts.edit', $id) }}"><i class="fa fa-pencil ml-2" aria-hidden="true"></i> ویرایش</a>
             {!! Form::open(['method'=>'DELETE', 'action'=>['PostController@destroy', $id], 'class'=>'singleDestroy']) !!}
-                <button type="submit" class="dropdown-item text-right py-0 mt-1" href="#"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</button>
+                <button type="submit" class="dropdown-item text-right hi-shadow-0 py-0 mt-1" href="#"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</button>
                 {{--{!! Form::submit('حذف', ['id'=>'single-' . $id ,'style' => 'background: none; border: none; color: #b32e2e; font-weight: bold;']) !!}--}}
             {!! Form::close() !!}
 

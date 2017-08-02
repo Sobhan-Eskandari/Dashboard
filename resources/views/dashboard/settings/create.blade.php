@@ -6,7 +6,8 @@
     @endcomponent
 @endsection
 @section('css_resources')
-    <script src="//cdn.ckeditor.com/4.7.0/full/ckeditor.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.css">
+    <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
 @endsection
 
 
@@ -52,44 +53,72 @@
 
                     </div>
 
+
                     <div class="row rowOfInputs">
+                        <div class="col-10">
+                            <div class="row pr-0 justify-content-around">
+                                <div class="col-6 pr-0 pt-3">
+                                    {!! Form::label('header', 'متن هدر را وارد کنید:', ['class' => 'pull-right createPostLabel mr-4']) !!}
+                                </div>
+                                <div class="col-6 pl-0">
+                                    <button type="button" data-toggle="modal" data-target="#galleryModal" class="btn btn-primary pull-left mb-2 ml-3 createPostAddFileButton">
+                                        <i class="fa fa-camera" aria-hidden="true"></i>
+                                        افزودن فایل
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
                         {{--============[ Right box without image ]===========--}}
                         <div class="col-10">
-                                @component('components.TextEditor')
-                                    @slot('textEditorLabel')
-                                        متن هدر را وارد کنید:
-                                    @endslot
-
-                                    @slot('name')
-                                        header
-                                    @endslot
-                                @endcomponent
-                                <br>
+                            {!! Form::textarea('header', null, ['class'=>'form-control writeCreatePostBox', 'rows'=>'10']) !!}
                         </div>
+                        <script>
+                            CKEDITOR.replace('header', {
+                                filebrowserUploadUrl : '{{ route('posts.imageUpload') }}',
+                                filebrowserImageUploadUrl : '{{ route('posts.imageUpload') }}'
+                            });
+                        </script>
+
+
                         {{--============[ image box ]===========--}}
                         <div class="col-2 pr-0">
-                            <br><br>
                             <img src="{{asset('images/nobody_m.original.jpg')}}" alt="در حال بارگذاری عکس" class="createPostImage mr-2">
                         </div>
                     </div>
 
-                    <div class="row rowOfInputs">
+                    {{--============[ About us ]===========--}}
+                    <div class="row rowOfInputs mt-5">
+                        <div class="col-10">
+                            <div class="row pr-0 justify-content-around">
+                                <div class="col-6 pr-0 pt-3">
+                                    {!! Form::label('aboutus', 'متن درباره ما را وارد کنید:', ['class' => 'pull-right createPostLabel mr-4']) !!}
+                                </div>
+                                <div class="col-6 pl-0">
+                                    <button type="button" data-toggle="modal" data-target="#galleryModal" class="btn btn-primary pull-left mb-2 ml-3 createPostAddFileButton">
+                                        <i class="fa fa-camera" aria-hidden="true"></i>
+                                        افزودن فایل
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
                         {{--============[ Right box without image ]===========--}}
                         <div class="col-10">
-                                @component('components.TextEditor')
-                                    @slot('textEditorLabel')
-                                        درباره ما:
-                                    @endslot
-
-                                    @slot('name')
-                                        about_us
-                                    @endslot
-                                @endcomponent
-                                <br>
+                            {!! Form::textarea('aboutus', null, ['class'=>'form-control writeCreatePostBox', 'rows'=>'10']) !!}
                         </div>
+                        <script>
+                            CKEDITOR.replace('aboutus', {
+                                filebrowserUploadUrl : '{{ route('posts.imageUpload') }}',
+                                filebrowserImageUploadUrl : '{{ route('posts.imageUpload') }}'
+                            });
+                        </script>
+
+
                         {{--============[ image box ]===========--}}
                         <div class="col-2 pr-0">
-                            <br><br>
                             <img src="{{asset('images/nobody_m.original.jpg')}}" alt="در حال بارگذاری عکس" class="createPostImage mr-2">
                         </div>
                     </div>
@@ -101,7 +130,18 @@
                                 <hr class="contactUsInfo_line">
 
                                 <label for="siteInfo" class="mt-3 hi-fontSize-18"><b>: درباره سایت</b></label>
-                                <textarea name="about_site" id="siteInfo" class="contactUsInfo_textarea"></textarea>
+
+                                <div class="row justify-content-end">
+                                    <div class="col-12">
+                                        {!! Form::textarea('aboutSite', null, ['class'=>'form-control writeCreatePostBox', 'rows'=>'10']) !!}
+                                    </div>
+                                </div>
+                                <script>
+                                    CKEDITOR.replace('aboutSite', {
+                                        filebrowserUploadUrl : '{{ route('posts.imageUpload') }}',
+                                        filebrowserImageUploadUrl : '{{ route('posts.imageUpload') }}'
+                                    });
+                                </script>
 
                                 {{--==========[ Row of Informations about site ]========= --}}
                                 <div class="row rowOfInputs mt-4" >
@@ -214,10 +254,32 @@
 
                         <div class="rulesAndGuidesInfo text-right mt-5">
                             <label for="contactInfo"><b>: قوانین و مقررات</b></label><br>
-                            <textarea name="terms" id="contactInfo" class="rulesAndGuidesInfo_textarea hi-shadow-1"></textarea>
+                            <div class="row justify-content-end">
+                                <div class="col-12">
+                                    {!! Form::textarea('rules', null, ['class'=>'form-control writeCreatePostBox', 'rows'=>'10']) !!}
+                                </div>
+                            </div>
+                            <script>
+                                CKEDITOR.replace('rules', {
+                                    filebrowserUploadUrl : '{{ route('posts.imageUpload') }}',
+                                    filebrowserImageUploadUrl : '{{ route('posts.imageUpload') }}'
+                                });
+                            </script>
+
                             <br>
+
                             <label for="siteInfo" class="mt-3"><b>: راهنما</b></label><br>
-                            <textarea name="guide" id="siteInfo" class="rulesAndGuidesInfo_textarea hi-shadow-1"></textarea>
+                            <div class="row justify-content-end">
+                                <div class="col-12">
+                                    {!! Form::textarea('guide', null, ['class'=>'form-control writeCreatePostBox', 'rows'=>'10']) !!}
+                                </div>
+                            </div>
+                            <script>
+                                CKEDITOR.replace('guide', {
+                                    filebrowserUploadUrl : '{{ route('posts.imageUpload') }}',
+                                    filebrowserImageUploadUrl : '{{ route('posts.imageUpload') }}'
+                                });
+                            </script>
                         </div>
 
                         <div class="row">
@@ -240,7 +302,26 @@
     </section>
 @endsection
 
-@section('js_resources')
-    <script src="{{ asset('Hi_Framework/javascript/other/dropzone.js') }}"></script>
-
+@section('javascript')
+    <script src="{{ asset('js/dashboard/CreatePostIndex.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.js"></script>
+    <script>
+        Dropzone.options.myAwesomeDropzone = {
+            init: function() {
+                this.on("success", function() {
+                    $.ajax({
+                        type: "GET",
+                        url: "/test",
+                        data: [],
+                        success: function (data) {
+                            $('#loadPhotos').html(data);
+                        },
+                        fail: function () {
+                            alert('مشکلی در آپلود تصویر مورد نظر ایجاد شد');
+                        }
+                    });
+                });
+            }
+        };
+    </script>
 @endsection

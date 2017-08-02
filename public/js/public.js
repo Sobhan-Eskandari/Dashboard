@@ -13,33 +13,16 @@ $(document).ready(function () {
 
             $(this).toggleClass('is-close is-open');
             $(this).closest('.menuDetector').next().find('.panel').slideDown();
-
         }
 
     });
-
-    $('.flip').click(function () {
-
-        //-----------[ Open and close the menu bu toggling between isopen and isclose class ] ------------
-        if ($(this).hasClass('is-open')){
-
-            $(this).toggleClass('is-open is-close');
-            $(this).closest('.menuDetector').next().find('.panel').slideUp();
-
-        }else if($(this).hasClass('is-close')){
-
-            $(this).toggleClass('is-close is-open');
-            $(this).closest('.menuDetector').next().find('.panel').slideDown();
-
-        }
-
-    });
-
-    function closeModal() {
-        $('#galleryModal').modal('hide')
-    }
 
 });
+
+function closeModal() {
+    $('#galleryModal').modal('hide')
+}
+
 //////////////////////
 
 $(".iconClose-2").hide();
@@ -67,7 +50,5 @@ $(document).ready(function () {
         $(this).parent().parent().find(".iconSearch-2").hide();
         $(this).parent().parent().find(".iconClose-2").hide();
     });
-
-
 });
 

@@ -18,7 +18,7 @@
     @if($status == 'not-checked')
         <i class="fa fa-times fa-2x red-text" aria-hidden="true"></i>
     @elseif($status == 'checking')
-        <i class="fa fa-hourglass-start fa-2x" aria-hidden="true"></i>
+        <i class="fa fa-clock-o fa-2x" aria-hidden="true"></i>
     @elseif($status == 'checked')
         <i class="fa fa-check fa-2x green-text" aria-hidden="true"></i>
     @endif
@@ -34,9 +34,12 @@
         <div data-dropdown-in="fadeIn" data-dropdown-out="fadeOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item text-right py-0" href="{{ route('inbox.show', $id) }}"><i class="fa fa-reply ml-2" aria-hidden="true"></i>پاسخ</a>
             <div class="dropdown-divider my-1"></div>
-            {!! Form::open(['method'=>'DELETE', 'action'=>['InboxController@destroy', $id], 'class'=>'singleDestroy']) !!}
-                {!! Form::submit('حذف', ['id'=>'delete', 'style' => 'background: none; border: none;']) !!}
-            {!! Form::close() !!}
+            <button class="hi-button-btn1 dropdown-item py-0">
+                <i class="fa fa-trash py-0 "></i>
+                {!! Form::open(['method'=>'DELETE', 'action'=>['InboxController@destroy', $id], 'class'=>'singleDestroy']) !!}
+                {!! Form::submit('حذف', ['id'=>'delete', 'class' => 'dropdown-item py-0 px-1']) !!}
+                {!! Form::close() !!}
+            </button>
         </div>
     </div>
 </td>

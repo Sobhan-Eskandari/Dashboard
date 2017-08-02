@@ -10,6 +10,10 @@ body {
   direction: ltr;
 }
 
+.l-flex{
+  display: flex;
+}
+
 .overflowBox{
   height: 300px;
   overflow: scroll;
@@ -396,6 +400,7 @@ body {
 .FAQ_card-block_tick_square-checkbox input[type="checkbox"] {
   display: none;
 }
+
 
 /* ============[ Custom Check boxes ]=========== */
 .pure-checkbox input[type="checkbox"] + label:before,

@@ -93,13 +93,13 @@
                         @slot('trash')@endslot
                         @slot('settings')
                                 {{Form::open(['method'=>'POST','action'=>['CommentController@approve',$comment->id]])}}
-                                <button class="dropdown-item text-right py-0" href="#"><i class="fa fa-check ml-2" aria-hidden="true"></i>تایید</button>
+                                <button class="dropdown-item text-right hi-shadow-0 py-0" href="#"><i class="fa fa-check ml-2" aria-hidden="true"></i>تایید</button>
                                 {{Form::close()}}
-                                <a class="dropdown-item text-right py-0" href="{{route('comments.edit',$comment->id)}}"><i class="fa fa-shower ml-2" aria-hidden="true"></i> ویرایش</a>
+                                <a class="dropdown-item text-right py-0" href="{{route('comments.edit',$comment->id)}}"><i class="fa fa-pencil ml-2" aria-hidden="true"></i> ویرایش</a>
                                 <a class="dropdown-item text-right py-0" href="{{route('comments.show',$comment->id)}}"><i class="fa fa-reply ml-2" aria-hidden="true"></i> پاسخ</a>
                                 <div class="dropdown-divider my-1"></div>
                                 {{Form::open(['method'=>'DELETE','action'=>['CommentController@destroy',$comment->id]])}}
-                                <button class="dropdown-item text-right py-0 mt-1" id="destroyComment" data-id="{{$comment->id}}"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</button>
+                                <button class="dropdown-item text-right hi-shadow-0 py-0 mt-1" id="destroyComment" data-id="{{$comment->id}}"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</button>
                                 {{Form::close()}}
                             @endslot
                     @endcomponent
