@@ -105,6 +105,19 @@
     }
   }
 
+  .check--label-box.checkBox:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: 4px;
+    width: 6px;
+    height: 12px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
   .check--label-text.checkDone:after {
     width: 85%;
   }

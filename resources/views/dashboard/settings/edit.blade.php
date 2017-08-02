@@ -29,6 +29,15 @@
 
                     <div class="row rowOfInputs">
                         <div class="col-2">
+                            @section('gallery')
+                                @component('components.galleryModal')
+                                    @slot('gallery')
+                                        <div class="row gallery_files l-rtl gallery_uploadedImage" id="loadPhotos">
+                                            @include('Includes.AllPhotos')
+                                        </div>
+                                    @endslot
+                                @endcomponent
+                            @endsection
                             <p class="mt-4"> لوگو : <button data-toggle="modal" data-target="#galleryModal" class="hi-button-simple"> آپلود <i class="fa fa-plus"></i></button> </p>
                         </div>
 
@@ -236,7 +245,30 @@
     </section>
 @endsection
 
-@section('js_resources')
-    <script src="{{ asset('Hi_Framework/javascript/other/dropzone.js') }}"></script>
+{{--@section('js_resources')--}}
+    {{--<script src="{{ asset('Hi_Framework/javascript/other/dropzone.js') }}"></script>--}}
 
+{{--@endsection--}}
+
+@section('javascript')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.js"></script>
+    <script>
+        Dropzone.options.myAwesomeDropzone = {
+            init: function() {
+                this.on("success", function() {
+                    $.ajax({
+                        type: "GET",
+                        url: "/test",
+                        data: [],
+                        success: function (data) {
+                            $('#loadPhotos').html(data);
+                        },
+                        fail: function () {
+                            alert('مشکلی در آپلود تصویر مورد نظر ایجاد شد');
+                        }
+                    });
+                });
+            }
+        };
+    </script>
 @endsection

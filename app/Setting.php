@@ -40,4 +40,8 @@ class Setting extends Model
     public function user() {
         return $this->belongsTo(User::class, 'created_by');
     }
+
+    public function photo() {
+        return $this->hasMany(Photo::class, 'created_by');
+    }
 }

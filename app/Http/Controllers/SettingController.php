@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Setting;
+use App\Photo;
 use App\Http\Requests\SettingStoreRequest;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -64,7 +65,8 @@ class settingController extends Controller
      */
     public function edit(Setting $setting)
     {
-        return view('dashboard.settings.edit', compact('setting'));
+        $photos = Photo::orderBy('created_at', 'desc')->get();
+        return view('dashboard.settings.edit', compact('setting', 'photos'));
     }
 
     /**

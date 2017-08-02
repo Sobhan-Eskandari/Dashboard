@@ -8,7 +8,7 @@ function task_done(id){
         url : '/todos/' + id,
         type : 'PATCH',
         data : { 'id': id},
-        success : function(response, textStatus, jqXhr) {
+        success : function(response) {
             if(response["response"] === 'done') {
                 console.log("done");
                 $("#todo_checkbox_" . id).addClass("checkDone");

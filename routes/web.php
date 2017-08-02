@@ -63,13 +63,7 @@ Route::post('comments-restore/{id}','CommentController@restore')->name('comments
 Route::Delete('comments-forceDelete/{id}','CommentController@forceDelete')->name('comments.forceDelete');
 Route::post('comments-multiForceDelete','CommentController@multiForceDelete')->name('comments.multiForceDelete');
 
-Route::get('/sliders', function () {
-    return view('dashboard.sliders.index');
-});
-
-Route::get('/create_slider', function (){
-    return view('dashboard.sliders.create');
-});
+Route::resource('sliders', 'SliderController');
 /**
  *  correct routes starts form here on
  */
