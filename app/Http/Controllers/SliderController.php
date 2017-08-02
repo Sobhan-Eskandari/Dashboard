@@ -2,12 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Admin;
 use App\Photo;
 use App\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class SliderController extends Controller
 {
+//    /**
+//     * SliderController constructor.
+//     */
+//    public function __construct()
+//    {
+//        $this->middleware('auth');
+//    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -37,7 +48,14 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request['created_by'] = 1;
+        $slider = Slider::create($request->all());
+
+        auth()->guard('admins')->storeSlider($slider);
+
+        Session::flash('success', "اسلایدر با موفقیت ذخیره شد.");
+
+        return redirect('/sliders');
     }
 
     /**

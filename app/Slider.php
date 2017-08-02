@@ -13,4 +13,8 @@ class Slider extends Model
     public function photos() {
         return $this->morphToMany(Photo::class, 'photoable');
     }
+
+    public function admin() {
+        return $this->belongsTo(Admin::class, 'created_by');
+    }
 }

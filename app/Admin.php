@@ -57,6 +57,10 @@ class Admin extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function sliders() {
+        return $this->hasMany(Slider::class, 'created_by');
+    }
+
     public function faqs()
     {
         return $this->hasMany('App\FAQ', 'created_by');
@@ -139,5 +143,14 @@ class Admin extends Authenticatable
 
         return $admins;
     }
+
+    //  Slider Methods Begins
+
+    public function storeSlider(Slider $slider) {
+        $this->sliders()->save($slider);
+    }
+
+//  Slider Methods End
+
 }
 

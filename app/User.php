@@ -99,6 +99,7 @@ class User extends Authenticatable
         $setting->update();
     }
 //    Setting Methods End
+
     public function toSearchableArray()
     {
         return [
