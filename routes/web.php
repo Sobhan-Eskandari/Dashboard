@@ -116,7 +116,7 @@ Route::resource('/settings','settingsController');
 Auth::routes();
 
 Route::get('user/logout','Auth\LoginController@userLogout')->name('user.logout');
-
+//Route::get('ad-login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
 Route::prefix('admins')->group(function()
 {
     Route::get('/', 'AdminController@index')->name('admins.index');
