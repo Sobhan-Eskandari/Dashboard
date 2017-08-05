@@ -27,7 +27,7 @@
         </button>
         {{--==========[ Dropdown Menu ]========= --}}
         <div data-dropdown-in="fadeIn" data-dropdown-out="fadeOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-eye ml-2" aria-hidden="true"></i>مشاهده</a>
+            <a class="dropdown-item text-right py-0" href="{{ route('posts.show', $slug) }}"><i class="fa fa-eye ml-2" aria-hidden="true"></i>مشاهده</a>
             <a class="dropdown-item text-right py-0" href="{{ route('posts.edit', $id) }}"><i class="fa fa-pencil ml-2" aria-hidden="true"></i> ویرایش</a>
             {!! Form::open(['method'=>'DELETE', 'action'=>['PostController@destroy', $id], 'class'=>'singleDestroy']) !!}
                 <button type="submit" class="dropdown-item text-right hi-shadow-0 py-0 mt-1" href="#"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</button>

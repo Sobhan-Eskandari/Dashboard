@@ -58,6 +58,7 @@ class PostController extends Controller
     public function store(PostCreateRequest $request)
     {
         $input = $request->all();
+        Auth::loginUsingId(1);
         $user = Auth::user()->id;
         $input['created_by'] = $user;
         $input['updated_by'] = $user;
@@ -86,9 +87,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $post = Post::whereSlug($slug)->get();
+        dd($post);
     }
 
     /**
