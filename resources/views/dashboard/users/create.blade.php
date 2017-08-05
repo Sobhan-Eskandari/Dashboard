@@ -18,7 +18,17 @@
         </div>
     </div>
     {{--<input type="submit" value="sdfbdsf" data-toggle="modal" data-target="#galleryModal">--}}
+@section('gallery')
+    @component('components.galleryModal')
+        @slot('gallery')
+            <div class="row gallery_files l-rtl gallery_uploadedImage" id="loadPhotos">
+{{--                @include('Includes.AllPhotos')--}}
+            </div>
+        @endslot
+    @endcomponent
+@endsection
 
+@section('content')
     {!! Form::open(['method'=>'POST','action'=>'API\UserController@store']) !!}
         <div class="row">
             <!-- about me -->
@@ -65,22 +75,22 @@ $('#uploadForm').submit(function(e){
     if(avatarId !== "") {
         formData.append('avatarId', avatarId);
     }
-    $.ajax({
-            type: 'POST',
-            url: '/photo',
-            processData: false,
-            contentType: false,
-            data: formData
-        }).done(function (data) {
-            $("#img").html(data);
-//            console.log(query);
-//            if(query === "") {
-//                window.history.pushState("", "", "http://dash.dev/users");
-//            }else {
-//                window.history.pushState(data, "Title", " /users?query=" + query);
-//            }
-        }).fail(function () {
-        });
+//    $.ajax({
+//            type: 'POST',
+//            url: '/photo',
+//            processData: false,
+//            contentType: false,
+//            data: formData
+//        }).done(function (data) {
+//            $("#img").html(data);
+////            console.log(query);
+////            if(query === "") {
+////                window.history.pushState("", "", "http://dash.dev/users");
+////            }else {
+////                window.history.pushState(data, "Title", " /users?query=" + query);
+////            }
+//        }).fail(function () {
+//        });
 });
 </script>
 @endsection

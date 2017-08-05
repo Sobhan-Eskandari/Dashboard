@@ -1,6 +1,6 @@
 
     <div class="hi-profileCard_PictureSelectorBox_pictureBox_hover" >
-    <figure>
+    <figure data-toggle="modal" data-target="#galleryModal">
     <img src="{{ isset($photo) ? asset('UserImage/'.$photo->address):asset('images/nobody_m.original.jpg') }}"
          class="hi-profileCard_PictureSelectorBox_picture img-fluid"
          alt="Responsive image" data-id=""></figure>
