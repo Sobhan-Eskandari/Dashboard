@@ -22,8 +22,7 @@ class CreateCommentsTable extends Migration
             $table->string('subject');
             $table->text('message');
             $table->boolean('seen')->default(false);
-            $table->tinyInteger('status')->default('0');
-//            $table->enum('status', ['not-checked', 'checking', 'checked'])->default('not-checked');
+            $table->enum('status', ['not-checked', 'checked', 'replied'])->default('not-checked');
             $table->uuid('tracking_code');
             $table->dateTime('answered_at')->nullable(true);
             $table->unsignedBigInteger('answered_by')->nullable(true);

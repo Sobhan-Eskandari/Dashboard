@@ -32,9 +32,10 @@
             if(collect['query'].length >=3 || e.keyCode===8){
                 $.ajax({
                     url: '/comments',
+                    dataType: 'text',
                     data: collect
                 }).done(function (data) {
-                    console.log(data);
+//                    console.log(data);
                     $('#categories').html(data);
                     window.history.pushState(data, "Title"," /comments?query="+collect['query']);
                 }).fail(function () {
@@ -45,5 +46,11 @@
 
         });
     </script>
+
+@endsection
+@section('javascript')
+    <script src="{{ asset('Hi_Framework/javascript/Time And Date Picker/Other Libraries/PersianDatePicker/persian-date.js') }}"></script>
+    <script src="{{ asset('Hi_Framework/javascript/Time And Date Picker/Other Libraries/PersianDatePicker/persian-datepicker-0.4.5.js') }}"></script>
+    {{--<script src="{{asset('js/application.js')}}"></script>--}}
 @endsection
 

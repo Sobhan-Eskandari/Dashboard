@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Comment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
 
 class CommentController extends Controller
 {
@@ -15,15 +17,31 @@ class CommentController extends Controller
      */
     public function index(Request $request)
     {
-        $comments = Comment::paginate(8);
-        if ($request->has('query')) {
-            $comments = Comment::search($request->input('query'))->paginate(8);
+        $comment = Comment::orderByRaw('updated_at desc')->get();
+        $commentsArray = [];
+        if ($request->has('query') && $request->query != null) {
+            $comment = Comment::search($request->input('query'))->paginate(8);
         }
+        if($request->has('start') || $request->has('end')){
+            $comments = $comment->where('created_at','>=',str_replace('/','-',$request->start));
+            $comment = $comments->where('created_at','<=',str_replace('/','-',$request->end));
+            $start = $request->start;
+            $end = $request->end;
+        }
+        foreach ($comment as $comments){
+            $commentsArray[] = $comments;
+        }
+        $comments = new LengthAwarePaginator(array_slice($commentsArray, 0, 8, true),
+            count($commentsArray),
+            8,
+            1,
+            ['path' => 'http://dash.dev/comments']
+        );
         if ($request->ajax()) {
-            return view('Includes.AllComments', compact('comments'));
+            return view('Includes.AllComments', compact('comments','start','end'));
         }
 //        dd($comments);
-        return view('dashboard.comments.index', compact('comments'));
+        return view('dashboard.comments.index', compact('comments','start','end'));
     }
 
     /**
@@ -145,9 +163,11 @@ class CommentController extends Controller
         return view('Includes.AllComments', compact('comments'))->render();
     }
 
-    public function approve(Request $request)
+    public function approve(Comment $comment)
     {
-        dd('jsndjfk');
+        $comment->status = 'checked';
+        $comment->save();
+        return redirect()->route('comments.index');
     }
 
     public function trash(Request $request)

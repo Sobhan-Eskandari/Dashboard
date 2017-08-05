@@ -7,17 +7,17 @@
 @endsection
 
 @section('content')
-    <div class="row">
-        {!! Form::open(['method'=>'POST','action'=>'API\UserController@photo','files'=>'true','id'=>'uploadForm']) !!}
-        {!! Form::file('avatar') !!}
-        {!! Form::submit('ارسال') !!}
-        {!! Form::close() !!}
-        <div class="col hi-subjectDashboardAdminProfile text-right" id="test">
+    {{--<div class="row">--}}
+        {{--{!! Form::open(['method'=>'POST','action'=>'API\UserController@photo','files'=>'true','id'=>'uploadForm']) !!}--}}
+        {{--{!! Form::file('avatar') !!}--}}
+        {{--{!! Form::submit('ارسال') !!}--}}
+        {{--{!! Form::close() !!}--}}
+        {{--<div class="col hi-subjectDashboardAdminProfile text-right" id="test">--}}
             {{--<h5 class="hi-subjectDashboardAdminProfile_h5">تاریخ ثبت نام<span> &nbsp;|&nbsp; </span>تاریخ آخرین ویرایش--}}
                 {{--اطلاعات : 1396/5/20</h5>--}}
-        </div>
-    </div>
-
+        {{--</div>--}}
+    {{--</div>--}}
+<button data-toggle="modal" data-target="#galleryModal"></button>
     {!! Form::model($user,['method'=>'POST','action'=>['API\UserController@update',$user->id]]) !!}
         <div class="row">
             <!-- about me -->

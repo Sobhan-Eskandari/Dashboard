@@ -8,15 +8,16 @@
 
 @section('content')
     <div class="row">
-        {!! Form::open(['method'=>'POST','action'=>'API\UserController@photo','files'=>'true','id'=>'uploadForm']) !!}
-        {!! Form::file('avatar') !!}
-        {!! Form::submit('ارسال') !!}
-        {!! Form::close() !!}
+        {{--{!! Form::open(['method'=>'POST','action'=>'API\UserController@photo','files'=>'true','id'=>'uploadForm']) !!}--}}
+        {{--{!! Form::file('avatar') !!}--}}
+        {{--{!! Form::submit('ارسال') !!}--}}
+        {{--{!! Form::close() !!}--}}
         <div class="col hi-subjectDashboardAdminProfile text-right" id="test">
-            {{--<h5 class="hi-subjectDashboardAdminProfile_h5">تاریخ ثبت نام<span> &nbsp;|&nbsp; </span>تاریخ آخرین ویرایش--}}
-                {{--اطلاعات : 1396/5/20</h5>--}}
+            <h5 class="hi-subjectDashboardAdminProfile_h5">تاریخ ثبت نام<span> &nbsp;|&nbsp; </span>تاریخ آخرین ویرایش
+                اطلاعات : 1396/5/20</h5>
         </div>
     </div>
+    {{--<input type="submit" value="sdfbdsf" data-toggle="modal" data-target="#galleryModal">--}}
 
     {!! Form::open(['method'=>'POST','action'=>'API\UserController@store']) !!}
         <div class="row">
