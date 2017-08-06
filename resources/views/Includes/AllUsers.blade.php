@@ -59,7 +59,7 @@
                             {{ $user->id }}
                         @endslot
                         @slot('avatar')
-                                <img class="rounded-circle Topbar_avatar" src="{{isset($user->photo) ? asset('UserImage/'.$user->photo->address) : asset('images/avatar.png') }}">
+                                <img class="rounded-circle Topbar_avatar" src="{{isset($user->photo) ? asset('photos/'.$user->photo->name) : asset('images/avatar.png') }}">
                             @endslot
                         @slot('user_username')
                             {{$user->username}}

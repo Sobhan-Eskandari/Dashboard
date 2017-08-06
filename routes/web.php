@@ -11,6 +11,11 @@
 |
 */
 
+use App\Comment;
+
+Route::get('tesst',function (){
+   return Comment::latest()->get();
+});
 Route::get('/home', 'HomeController@index')->name('home');;
 
 Route::get('/', function () {

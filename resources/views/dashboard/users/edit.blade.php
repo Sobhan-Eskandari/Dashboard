@@ -16,8 +16,18 @@
             {{--<h5 class="hi-subjectDashboardAdminProfile_h5">تاریخ ثبت نام<span> &nbsp;|&nbsp; </span>تاریخ آخرین ویرایش--}}
                 {{--اطلاعات : 1396/5/20</h5>--}}
         {{--</div>--}}
-    {{--</div>--}}
-<button data-toggle="modal" data-target="#galleryModal"></button>
+@section('gallery')
+    @component('components.galleryModal')
+        @slot('gallery')
+            <div class="row gallery_files l-rtl gallery_uploadedImage" id="photos">
+                @include('Includes.AllPhotosGallery')
+            </div>
+        @endslot
+    @endcomponent
+@endsection
+
+{{--</div>--}}
+{{--<button data-toggle="modal" data-target="#galleryModal"></button>--}}
     {!! Form::model($user,['method'=>'POST','action'=>['API\UserController@update',$user->id]]) !!}
         <div class="row">
             <!-- about me -->

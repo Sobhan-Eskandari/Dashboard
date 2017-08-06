@@ -21,8 +21,8 @@
 @section('gallery')
     @component('components.galleryModal')
         @slot('gallery')
-            <div class="row gallery_files l-rtl gallery_uploadedImage" id="loadPhotos">
-{{--                @include('Includes.AllPhotos')--}}
+            <div class="row gallery_files l-rtl gallery_uploadedImage" id="photos">
+                @include('Includes.AllPhotosGallery')
             </div>
         @endslot
     @endcomponent

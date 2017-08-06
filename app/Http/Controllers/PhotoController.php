@@ -36,7 +36,7 @@ public function store(Request $request){
         'created_by'=>1
     ]);
     $photos = Photo::all();
-    return view('Includes.AllPhotos',compact('photos'));
+    return view('Includes.AllPhotosGallery',compact('photos'));
 }
 public function multiDestroy(Request $request)
 {
@@ -47,6 +47,6 @@ public function multiDestroy(Request $request)
     }
 
     $photos = Photo::all();
-    return view('Includes.AllPhotos', compact('photos'));
+    return view('Includes.AllPhotosGallery', compact('photos'));
 }
 }

@@ -70,6 +70,8 @@ class UserController extends Controller
         return response()->json(['success' => $user], $this->successStatus);
     }
     public function index(Request $request){
+//        $user = User::find(1);
+//        dd($user->photo);
 //        $currentPage = 3; // You can set this to any page you want to paginate to
 //
 //        // Make sure that you call the static method currentPageResolver()
@@ -115,7 +117,8 @@ class UserController extends Controller
         return view('Includes.AllUsers', compact('users'))->render();
     }
     public function create(){
-        return view('dashboard.users.create',compact('users'));
+        $photos = Photo::all();
+        return view('dashboard.users.create',compact('users','photos'));
     }
     public function store(Request $request){
 //        dd($request->all());
@@ -127,25 +130,26 @@ class UserController extends Controller
         return redirect()->route('all.users');
     }
     public function photo(Request $request){
-        if ($request->has('avatarId')) {
-            $photo = Photo::findOrFail($request->input('avatarId'));
-            File::delete('UserImage/' . $photo->address);
-            $photo->forceDelete();
-        }
-        if ($file = $request->file('avatar')) {
-            $name = time() . $file->getClientOriginalName();
-            $file->move('UserImage', $name);
-            $photo = Photo::create(['address' => $name, 'created_by' => 1, 'position' => '1']);
-            return view('Includes.UserImage', compact('photo'));
-        }
+//        if ($request->has('avatarId')) {
+//            $photo = Photo::findOrFail($request->input('avatarId'));
+//            File::delete('UserImage/' . $photo->address);
+//            $photo->forceDelete();
+//        }
+//        if ($file = $request->file('avatar')) {
+//            $name = time() . $file->getClientOriginalName();
+//            $file->move('UserImage', $name);
+//            $photo = Photo::create(['address' => $name, 'created_by' => 1, 'position' => '1']);
+        $photo = Photo::find($request->checkboxes[0]);
+        return view('Includes.UserImage', compact('photo'));
+//        }
     }
     public function show(User $user){
-
         return view('dashboard.users.show', compact('user'));
     }
     public function edit(User $user){
         $photo = $user->photo;
-        return view('dashboard.users.edit', compact('user','photo'));
+        $photos = Photo::all();
+        return view('dashboard.users.edit', compact('user','photo','photos'));
     }
     public function update(Request $request,User $user){
         $input = $request->all();
