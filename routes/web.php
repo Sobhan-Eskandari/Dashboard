@@ -116,19 +116,9 @@ Route::resource('/settings','SettingController');
 Auth::routes();
 
 Route::get('user/logout','Auth\LoginController@userLogout')->name('user.logout');
-//Route::get('ad-login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+
 Route::prefix('admins')->group(function()
 {
-    Route::get('/', 'AdminController@index')->name('admins.index');
-    Route::get('/create', 'AdminController@create')->name('admins.create');
-    Route::post('/', 'AdminController@store')->name('admins.store');
-//    Route::post('/edit_profile_pic/{admin}', 'AdminController@edit_profile_pic')->name('admins.edit_profile_pic');
-//    Route::post('/create_profile_pic', 'AdminController@create_profile_pic')->name('admins.create_profile_pic');
-    Route::get('/{admin}', 'AdminController@show')->name('admins.show');
-    Route::get('/{admin}/edit', 'AdminController@edit')->name('admins.edit');
-    Route::put('/{admin}', 'AdminController@update')->name('admins.update');
-    Route::delete('/{admin}', 'AdminController@destroy')->name('admins.destroy');
-
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::get('/logout','Auth\AdminLoginController@logout')->name('admin.logout');
@@ -137,38 +127,44 @@ Route::prefix('admins')->group(function()
     Route::get('/password/reset','Auth\AdminForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
     Route::post('/password/reset','Auth\AdminResetPasswordController@reset');
     Route::get('/password/reset/{token}','Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
+
+    Route::prefix('trash')->group(function()
+    {
+        Route::get('/', 'AdminController@trash')->name('admins.trash');
+        Route::delete('/{admin}', 'AdminController@forceDestroy')->name('admins.forceDestroy');
+        Route::post('/forceMultiDestroy', 'AdminController@forceMultiDestroy')->name('admins.forceMultiDestroy');
+    });
+
+    Route::post('/restore/{admin}', 'AdminController@restore')->name('admins.restore');
 });
 
-Route::get('/admins-trash', 'AdminController@trash')->name('admins.trash');
-Route::delete('/admins-trash/{admin}', 'AdminController@forceDestroy')->name('admins.forceDestroy');
-Route::post('/admins-trash-forceMultiDestroy', 'AdminController@forceMultiDestroy')->name('admins.forceMultiDestroy');
-Route::post('/admins-restore/{admin}', 'AdminController@restore')->name('admins.restore');
+Route::resource('/admins', 'AdminController');
+
+Route::prefix('posts')->group(function()
+{
+    Route::prefix('trash')->group(function()
+    {
+        Route::get('/', 'PostController@trash')->name('posts.trash');
+        Route::delete('/{post}', 'PostController@forceDestroy')->name('posts.forceDestroy');
+        Route::post('/forceMultiDestroy', 'PostController@forceMultiDestroy')->name('posts.forceMultiDestroy');
+    });
+
+    Route::get('/drafts', 'PostController@draft')->name('posts.draft');
+    Route::post('/restore/{post}', 'PostController@restore')->name('posts.restore');
+    Route::post('/multiDestroy', 'PostController@multiDestroy')->name('posts.multiDestroy');
+    Route::post('/image_upload', 'PostController@imageUpload')->name('posts.imageUpload');
+});
 
 Route::resource('/posts', 'PostController');
-Route::get('/posts-trash', 'PostController@trash')->name('posts.trash');
-Route::get('/posts-drafts', 'PostController@draft')->name('posts.draft');
-Route::delete('/posts-trash/{post}', 'PostController@forceDestroy')->name('posts.forceDestroy');
-Route::post('/posts-restore/{post}', 'PostController@restore')->name('posts.restore');
-Route::post('/posts-multiDestroy', 'PostController@multiDestroy')->name('posts.multiDestroy');
-Route::post('/posts-trash-forceMultiDestroy', 'PostController@forceMultiDestroy')->name('posts.forceMultiDestroy');
-
-Route::post('/posts-image-upload', 'PostController@imageUpload')->name('posts.imageUpload');
 
 // Todo Routes
 Route::resource('/todos','TodoController');
 
-//Route::get('/gallery', function () {
-//    return view('dashboard.gallery.index');
-//});
 Route::prefix('/gallery/photos')->group(function(){
     $this->get('','PhotoController@index')->name('photo.all');
     $this->post('','PhotoController@store')->name('photo.store');
     $this->post('/multiDelete','PhotoController@multiDestroy')->name('photo.multi.delete');
 });
-
-//Route::post('/gallery', 'PhotoController@store')->name('gallery.store');
-
-Route::post('/admins-restore/{admin}', 'AdminController@restore')->name('admins.restore');
 
 Route::get('/test', function (\Illuminate\Http\Request $request){
     $photos = \App\Photo::orderBy('created_at', 'desc')->get();

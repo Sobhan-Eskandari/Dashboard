@@ -25,13 +25,6 @@
 
 @section('content')
 
-    {{--{!! Form::open(['method'=>'POST', 'action'=>'AdminController@create_profile_pic', 'files' => true, 'id'=>'uploadForm']) !!}--}}
-        {{--{!! Form::file('avatar') !!}--}}
-        {{--{!! Form::submit('آپلود', ['class'=>'btnSubmit', 'id'=>'uploadSubmit']) !!}--}}
-    {{--{!! Form::close() !!}--}}
-
-    {{--<div id="target"></div>--}}
-
     <nav dir="rtl">
         @component('components.errors') @endcomponent
     </nav>

@@ -22,31 +22,33 @@ class PhotoController extends Controller
 //            'created_by' => Auth::user()->id
 //        ]);
 //    }
-public function index(){
-    $photos = Photo::all();
-    return view('dashboard.gallery.index',compact('photos'));
-}
 
-public function store(Request $request){
-    $image = $request->file('file');
-    $imageName = time().$image->getClientOriginalName();
-    $image->move(public_path('photos'),$imageName);
-    Photo::create([
-        'name'=>$imageName,
-        'created_by'=>1
-    ]);
-    $photos = Photo::all();
-    return view('Includes.AllPhotosGallery',compact('photos'));
-}
-public function multiDestroy(Request $request)
-{
-    foreach ($request->checkboxes as $id){
-        $photo = Photo::findOrFail($id);
-        File::delete('photos/'.$photo->name);
-        $photo->delete();
+    public function index(){
+        $photos = Photo::all();
+        return view('dashboard.gallery.index',compact('photos'));
     }
 
-    $photos = Photo::all();
-    return view('Includes.AllPhotosGallery', compact('photos'));
-}
+    public function store(Request $request){
+        $image = $request->file('file');
+        $imageName = time().$image->getClientOriginalName();
+        $image->move(public_path('photos'),$imageName);
+        Photo::create([
+            'name'=>$imageName,
+            'created_by'=>1
+        ]);
+        $photos = Photo::all();
+        return view('Includes.AllPhotosGallery',compact('photos'));
+    }
+
+    public function multiDestroy(Request $request)
+    {
+        foreach ($request->checkboxes as $id){
+            $photo = Photo::findOrFail($id);
+            File::delete('photos/'.$photo->name);
+            $photo->delete();
+        }
+
+        $photos = Photo::all();
+        return view('Includes.AllPhotosGallery', compact('photos'));
+    }
 }

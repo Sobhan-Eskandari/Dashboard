@@ -17,16 +17,17 @@ class tagController extends Controller
      */
     public function index(Request $request)
     {
+        $referer = $request->header('referer');
         $tags = Tag::all();
         if($request->has('query')) {
-            if($request->header('referer') === 'http://dashboard.dev/posts/create'){
+            if(strpos($referer , 'create') || strpos($referer , 'edit')){
                 $tags = Tag::search($request->input('query'))->orderBy('created_at', 'desc')->get();
             }else {
                 $tags = Tag::search($request->input('query'))->get();
             }
         }
         if ($request->ajax()){
-            if($request->header('referer') === 'http://dashboard.dev/posts/create'){
+            if(strpos($referer , 'create') || strpos($referer , 'edit')){
                 return view('Includes.PostTags', compact('tags'))->render();
             }else {
                 return view('Includes.AllTags', compact('tags'));
@@ -53,13 +54,13 @@ class tagController extends Controller
      */
     public function store(Request $request)
     {
-
+        $referer = $request->header('referer');
         $input = $request->all();
         $input['created_by']=1;
         $tag = Tag::create($input);
         $msg = "تگ ساخته شد.";
         $token =csrf_token();
-        if($request->header('referer') === 'http://dashboard.dev/posts/create') {
+        if(strpos($referer , 'create') || strpos($referer , 'edit')){
             $tags = Tag::orderBy('created_at', 'desc')->get();
             return view('Includes.PostTags', compact('tags'))->render();
         }
@@ -108,9 +109,10 @@ class tagController extends Controller
      */
     public function destroy(Request $request, $id)
     {
+        $referer = $request->header('referer');
         $tag=Tag::find($id);
         $tag->forceDelete();
-        if($request->header('referer') === 'http://dashboard.dev/posts/create') {
+        if(strpos($referer , 'create') || strpos($referer , 'edit')){
             $tags = Tag::orderBy('created_at', 'desc')->get();
             return view('Includes.PostTags', compact('tags'))->render();
         }
