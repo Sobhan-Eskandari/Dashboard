@@ -10,9 +10,11 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Input;
 use Laravel\Passport\HasApiTokens;
 use Laravel\Scout\Searchable;
+use Laratrust\Traits\LaratrustUserTrait;
 
 class Admin extends Authenticatable
 {
+    use LaratrustUserTrait;
     use HasApiTokens;
     use Notifiable;
     use SoftDeletes;
@@ -128,7 +130,7 @@ class Admin extends Authenticatable
         $page = Input::get('page', 1); // Get the current page or default to 1
         $perPage = 8;
         $offset = ($page * $perPage) - $perPage;
-        $path = "http://dashboard.dev/admins-trash";
+        $path = "http://dashboard.dev/admins/trash";
 
         $admins = new LengthAwarePaginator(array_slice($adminsArray, $offset, $perPage, true),
             count($adminsArray),

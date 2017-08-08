@@ -11,33 +11,8 @@
 |
 */
 
-use App\Comment;
-
-Route::get('tesst',function (){
-   return Comment::latest()->get();
-});
 Route::get('/home', 'HomeController@index')->name('home');;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/layout', function () {
-    return view('layouts.main');
-});
-
-
-Route::get('/users', function () {
-    return view('dashboard.users.index');
-});
-
-Route::get('/users/trash', function () {
-    return view('dashboard.users.trash');
-});
-
-//Route::get('/users', function () {
-//    return view('dashboard.users.index');
-//});
 Route::get('users','API\UserController@index')->name('all.users');
 Route::Delete('users/delete/{user}','API\UserController@destroy')->name('users.destroy');
 Route::post('users/MultiDelete','API\UserController@multiDestroy')->name('user.multi.destroy');
@@ -52,12 +27,12 @@ Route::delete('users/forceDelete/{user}','API\UserController@forceDelete')->name
 Route::post('users/forceMultiDelete','API\UserController@forceMultiDelete')->name('user.force.multiDelete');
 Route::post('users/restore/{user}','API\UserController@restore')->name('user.restore');
 
-Route::get('/files', function () {
-    return view('dashboard.media.index');
-});
-Route::get('/files/trash', function () {
-    return view('dashboard.media.trash');
-});
+//Route::get('/files', function () {
+//    return view('dashboard.media.index');
+//});
+//Route::get('/files/trash', function () {
+//    return view('dashboard.media.trash');
+//});
 
 Route::resource('comments','CommentController');
 Route::post('comments-approve/{comment}','CommentController@approve')->name('approveComment');
@@ -75,41 +50,61 @@ Route::get('/sliders', function () {
 Route::get('/create_slider', function (){
     return view('dashboard.sliders.create');
 });
+
 /**
  *  correct routes starts form here on
  */
 
+Route::post('/categories/multiDestroy', 'CategoryController@multiDestroy')->name('categories.multiDestroy');
 Route::resource('/categories', 'CategoryController');
-Route::post('/categories-multiDestroy', 'CategoryController@multiDestroy')->name('categories.multiDestroy');
 
+Route::post('/faqs/multiDestroy', 'FaqController@multiDestroy')->name('faqs.multiDestroy');
 Route::resource('/faqs', 'FaqController');
-Route::post('/faqs-multiDestroy', 'FaqController@multiDestroy')->name('faqs.multiDestroy');
 
+Route::post('/friends/multiDestroy', 'FriendController@multiDestroy')->name('friends.multiDestroy');
 Route::resource('/friends', 'FriendController');
-Route::post('/friends-multiDestroy', 'FriendController@multiDestroy')->name('friends.multiDestroy');
+
+Route::prefix('inbox')->group(function()
+{
+    Route::prefix('trash')->group(function()
+    {
+        Route::get('/', 'InboxController@trash')->name('inbox.trash');
+        Route::delete('/{inbox}', 'InboxController@forceDestroy')->name('inbox.forceDestroy');
+        Route::post('/forceMultiDestroy', 'InboxController@forceMultiDestroy')->name('inbox.forceMultiDestroy');
+    });
+
+    Route::post('/restore/{inbox}', 'InboxController@restore')->name('inbox.restore');
+    Route::post('/multiDestroy', 'InboxController@multiDestroy')->name('inbox.multiDestroy');
+});
 
 Route::resource('/inbox', 'InboxController');
-Route::get('/inbox-trash', 'InboxController@trash')->name('inbox.trash');
-Route::delete('/inbox-trash/{inbox}', 'InboxController@forceDestroy')->name('inbox.forceDestroy');
-Route::post('/inbox-restore/{inbox}', 'InboxController@restore')->name('inbox.restore');
-Route::post('/inbox-multiDestroy', 'InboxController@multiDestroy')->name('inbox.multiDestroy');
-Route::post('/inbox-trash-forceMultiDestroy', 'InboxController@forceMultiDestroy')->name('inbox.forceMultiDestroy');
+
+
+Route::prefix('outbox')->group(function()
+{
+    Route::prefix('trash')->group(function () {
+        Route::get('/', 'OutboxController@trash')->name('outbox.trash');
+        Route::delete('/{outbox}', 'OutboxController@forceDestroy')->name('outbox.forceDestroy');
+        Route::post('/forceMultiDestroy', 'OutboxController@forceMultiDestroy')->name('outbox.forceMultiDestroy');
+    });
+
+    Route::post('/restore/{outbox}', 'OutboxController@restore')->name('outbox.restore');
+    Route::post('/multiDestroy', 'OutboxController@multiDestroy')->name('outbox.multiDestroy');
+});
 
 Route::resource('/outbox', 'OutboxController');
-Route::get('/outbox-trash', 'OutboxController@trash')->name('outbox.trash');
-Route::delete('/outbox-trash/{outbox}', 'OutboxController@forceDestroy')->name('outbox.forceDestroy');
-Route::post('/outbox-restore/{outbox}', 'OutboxController@restore')->name('outbox.restore');
-Route::post('/outbox-multiDestroy', 'OutboxController@multiDestroy')->name('outbox.multiDestroy');
-Route::post('/outbox-trash-forceMultiDestroy', 'OutboxController@forceMultiDestroy')->name('outbox.forceMultiDestroy');
 
 Route::resource('/tags','tagController');
 
-Route::get('/backups', 'BackupController@index')->name('backups.index');
-Route::get('/backups-posts', 'BackupController@posts')->name('backups.posts');
-Route::get('/backups-inboxes', 'BackupController@inboxes')->name('backups.inboxes');
-Route::get('/backups-users', 'BackupController@users')->name('backups.users');
-Route::get('/backups-comments', 'BackupController@comments')->name('backups.comments');
-Route::get('/backups-admins', 'BackupController@admins')->name('backups.admins');
+Route::prefix('backups')->group(function()
+{
+    Route::get('/', 'BackupController@index')->name('backups.index');
+    Route::get('/posts', 'BackupController@posts')->name('backups.posts');
+    Route::get('/inbox', 'BackupController@inbox')->name('backups.inbox');
+    Route::get('/users', 'BackupController@users')->name('backups.users');
+    Route::get('/comments', 'BackupController@comments')->name('backups.comments');
+    Route::get('/admins', 'BackupController@admins')->name('backups.admins');
+});
 
 Route::resource('/settings','SettingController');
 
@@ -138,7 +133,9 @@ Route::prefix('admins')->group(function()
     Route::post('/restore/{admin}', 'AdminController@restore')->name('admins.restore');
 });
 
-Route::resource('/admins', 'AdminController');
+//Route::middleware('role:SuperAdministrator|Administrator')->group(function() {
+    Route::resource('/admins', 'AdminController');
+//});
 
 Route::prefix('posts')->group(function()
 {

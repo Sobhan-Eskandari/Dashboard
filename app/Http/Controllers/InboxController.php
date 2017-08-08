@@ -163,7 +163,7 @@ class InboxController extends Controller
                 dd($exception->getMessage());
             }
 
-            $inboxes = Inbox::pagination("http://dashboard.dev/inbox-trash");
+            $inboxes = Inbox::pagination("http://dashboard.dev/inbox/trash");
             return view('Includes.AllInboxesTrash', compact('inboxes'))->render();
         }
     }
@@ -185,7 +185,7 @@ class InboxController extends Controller
                 dd($exception->getMessage());
             }
 
-            $inboxes = Inbox::pagination("http://dashboard.dev/inbox-trash");
+            $inboxes = Inbox::pagination("http://dashboard.dev/inbox/trash");
             return view('Includes.AllInboxesTrash', compact('inboxes'))->render();
         }
     }
@@ -205,7 +205,7 @@ class InboxController extends Controller
                 dd($exception->getMessage());
             }
 
-            $inboxes = Inbox::pagination("http://dashboard.dev/inbox-trash");
+            $inboxes = Inbox::pagination("http://dashboard.dev/inbox/trash");
             return view('Includes.AllInboxesTrash', compact('inboxes'))->render();
         }
     }

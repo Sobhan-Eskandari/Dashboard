@@ -164,7 +164,7 @@ class OutboxController extends Controller
                 dd($exception->getMessage());
             }
 
-            $outboxes = Outbox::pagination("http://dashboard.dev/outbox-trash");
+            $outboxes = Outbox::pagination("http://dashboard.dev/outbox/trash");
             return view('Includes.AllOutboxesTrash', compact('outboxes'))->render();
         }
     }
@@ -182,7 +182,7 @@ class OutboxController extends Controller
                 dd($exception->getMessage());
             }
 
-            $outboxes = Outbox::pagination("http://dashboard.dev/outbox-trash");
+            $outboxes = Outbox::pagination("http://dashboard.dev/outbox/trash");
             return view('Includes.AllOutboxesTrash', compact('outboxes'))->render();
         }
     }
@@ -203,7 +203,7 @@ class OutboxController extends Controller
                 dd($exception->getMessage());
             }
 
-            $outboxes = Outbox::pagination("http://dashboard.dev/outbox-trash");
+            $outboxes = Outbox::pagination("http://dashboard.dev/outbox/trash");
             return view('Includes.AllOutboxesTrash', compact('outboxes'))->render();
         }
     }

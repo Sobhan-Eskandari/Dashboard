@@ -31,7 +31,7 @@ class Post extends Model
 
     public static function pagination($path = "http://dashboard.dev/posts", $draft = 0)
     {
-        if ($path == "http://dashboard.dev/posts-trash"){
+        if ($path == "http://dashboard.dev/posts/trash"){
             $allPosts = Post::with(['updater', 'creator', 'categories', 'tags'])->onlyTrashed()->orderBy('updated_at', 'desc')->get();
         }else{
             $allPosts = Post::with(['updater', 'creator', 'categories', 'tags'])->where('draft', $draft)->orderBy('updated_at', 'desc')->get();
