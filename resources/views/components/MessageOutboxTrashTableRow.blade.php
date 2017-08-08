@@ -29,9 +29,12 @@
                 {!! Form::submit('بازگردانی', ['id'=>'restore', 'style' => 'background: none; border: none;']) !!}
             {!! Form::close() !!}
             <div class="dropdown-divider my-1"></div>
-            {!! Form::open(['method'=>'DELETE', 'action'=>['OutboxController@forceDestroy', $id], 'class'=>'singleDestroy']) !!}
-                {!! Form::submit('حذف', ['id'=>'delete', 'style' => 'background: none; border: none;']) !!}
-            {!! Form::close() !!}
+            <button class="hi-button-btn1 dropdown-item py-0">
+                <i class="fa fa-trash py-0 "></i>
+                {!! Form::open(['method'=>'DELETE', 'action'=>['OutboxController@forceDestroy', $id], 'class'=>'singleDestroy']) !!}
+                {!! Form::submit('حذف', ['id'=>'delete','class' => 'dropdown-item py-0 px-1']) !!}
+                {!! Form::close() !!}
+            </button>
             {{--<a class="dropdown-item text-right py-0 mt-1" href="#"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</a>--}}
         </div>
     </div>

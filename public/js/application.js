@@ -100,21 +100,21 @@ $( "body" ).delegate( ".deleteTag", "click", function(e) {
 
 // ============[ Wavejs Configuration ]===========
 
-Waves.attach('#dropdownMenuButton',['waves-button', 'waves-float', 'waves-light']);
-Waves.attach('.gallery_category_btn',['waves-block']);
-Waves.attach('button',['waves-float', 'waves-light']);
-Waves.attach('#home',['waves-float', 'waves-light','waves-button']);
-Waves.attach('#posts',['waves-float', 'waves-light','waves-button']);
-Waves.attach('#gallery',['waves-float', 'waves-light','waves-button']);
-Waves.attach('#messages',['waves-float', 'waves-light','waves-button']);
-Waves.attach('#users',['waves-float', 'waves-light','waves-button']);
-Waves.attach('#admins',['waves-float', 'waves-light','waves-button']);
-Waves.attach('#settings',['waves-float', 'waves-light','waves-button']);
-Waves.attach('#comments',['waves-float', 'waves-light','waves-button']);
-Waves.attach('#backup',['waves-float', 'waves-light','waves-button']);
-Waves.attach('.dropdown-item');
-Waves.attach('.gallery_category li',['waves-block']);
-Waves.init();
+// Waves.attach('#dropdownMenuButton',['waves-button', 'waves-float', 'waves-light']);
+// Waves.attach('.gallery_category_btn',['waves-block']);
+// Waves.attach('button',['waves-float', 'waves-light']);
+// Waves.attach('#home',['waves-float', 'waves-light','waves-button']);
+// Waves.attach('#posts',['waves-float', 'waves-light','waves-button']);
+// Waves.attach('#gallery',['waves-float', 'waves-light','waves-button']);
+// Waves.attach('#messages',['waves-float', 'waves-light','waves-button']);
+// Waves.attach('#users',['waves-float', 'waves-light','waves-button']);
+// Waves.attach('#admins',['waves-float', 'waves-light','waves-button']);
+// Waves.attach('#settings',['waves-float', 'waves-light','waves-button']);
+// Waves.attach('#comments',['waves-float', 'waves-light','waves-button']);
+// Waves.attach('#backup',['waves-float', 'waves-light','waves-button']);
+// Waves.attach('.dropdown-item');
+// Waves.attach('.gallery_category li',['waves-block']);
+// Waves.init();
 
 // ============[ Admin card dismissal button ]===========
 
@@ -131,6 +131,7 @@ $(".deleteRowBtn").click(function () {
 // ============[ Persian Date Picker ]===========
 $(document).ready(function() {
     $(".example1").pDatepicker();
+    $("#fullCalender").pDatepicker();
     $(".backup_dateSelector").pDatepicker({
         altField: '#observerAlt',
         altFormat: "YYYY MM DD HH:mm:ss",
@@ -418,27 +419,27 @@ $('body').on('keydown', 'input, select, textarea', function(e) {
 });
 
 
-var numberofTodos = 6;
-$("#addTodo_addBtn").click(function () {
-    addTodo();
-});
-$('#todoText').pressEnter(function(){
-   //addTodo();
-});
-function addTodo() {
-    var textOfTodo = $("#todoText").val();
-    $("#listOfTodos ul").prepend(`
-        <li class="list-item">
-            <input type="checkbox" class="hidden-box" id="todo[`+(numberofTodos)+`]"/>
-           <label for="todo[`+(numberofTodos)+`]" class="check--label">
-              <span class="check--label-box"></span>
-              <span class="check--label-text">`+textOfTodo+`</span>
-           </label>
-        </li>
-    `);
-    $(".list-item").animateCss('slideInDown');
-    $("#todoText").val('');
-}
+// var numberofTodos = 6;
+// $("#addTodo_addBtn").click(function () {
+//     addTodo();
+// });
+// $('#todoText').pressEnter(function(){
+//    //addTodo();
+// });
+// function addTodo() {
+//     var textOfTodo = $("#todoText").val();
+//     $("#listOfTodos ul").prepend(`
+//         <li class="list-item">
+//             <input type="checkbox" class="hidden-box" id="todo[`+(numberofTodos)+`]"/>
+//            <label for="todo[`+(numberofTodos)+`]" class="check--label">
+//               <span class="check--label-box"></span>
+//               <span class="check--label-text">`+textOfTodo+`</span>
+//            </label>
+//         </li>
+//     `);
+//     $(".list-item").animateCss('slideInDown');
+//     $("#todoText").val('');
+// }
 
 // =================[ Select All Comments Buttons  ]=====================
 // function selectAllCmnt() {

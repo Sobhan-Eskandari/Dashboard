@@ -11,6 +11,11 @@
 |
 */
 
+use App\Comment;
+
+Route::get('tesst',function (){
+   return Comment::latest()->get();
+});
 Route::get('/home', 'HomeController@index')->name('home');;
 
 Route::get('/', function () {
@@ -55,7 +60,7 @@ Route::get('/files/trash', function () {
 });
 
 Route::resource('comments','CommentController');
-Route::post('comments-approve','CommentController@approve')->name('approveComment');
+Route::post('comments-approve/{comment}','CommentController@approve')->name('approveComment');
 Route::post('comments/multiDestroy','CommentController@multiDestroy')->name('multiCommentsDelete');
 route::post('comments-answer','CommentController@answer')->name('answerComment');
 Route::get('comments-trash','CommentController@trash')->name('comments.trash');
@@ -105,7 +110,7 @@ Route::resource('/settings','SettingController');
 Auth::routes();
 
 Route::get('user/logout','Auth\LoginController@userLogout')->name('user.logout');
-
+//Route::get('ad-login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
 Route::prefix('admins')->group(function()
 {
     Route::get('/', 'AdminController@index')->name('admins.index');
@@ -146,11 +151,16 @@ Route::post('/posts-image-upload', 'PostController@imageUpload')->name('posts.im
 // Todo Routes
 Route::resource('/todos','TodoController');
 
-Route::get('/gallery', function () {
-    return view('dashboard.gallery.index');
+//Route::get('/gallery', function () {
+//    return view('dashboard.gallery.index');
+//});
+Route::prefix('/gallery/photos')->group(function(){
+    $this->get('','PhotoController@index')->name('photo.all');
+    $this->post('','PhotoController@store')->name('photo.store');
+    $this->post('/multiDelete','PhotoController@multiDestroy')->name('photo.multi.delete');
 });
 
-Route::post('/gallery', 'PhotoController@store')->name('gallery.store');
+//Route::post('/gallery', 'PhotoController@store')->name('gallery.store');
 
 Route::post('/admins-restore/{admin}', 'AdminController@restore')->name('admins.restore');
 

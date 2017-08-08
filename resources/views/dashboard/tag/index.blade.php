@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="row pr-1 pl-0">
-                    <button  id="addChips" class="btn hi-whiteCategoryDashboardBox_button light-blue darken-2">تایید</button>
+                    <button id="addChips" class="btn hi-whiteCategoryDashboardBox_button light-blue darken-2">تایید</button>
                 </div>
                 {!! Form::close() !!}
             </div>

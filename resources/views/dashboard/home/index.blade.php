@@ -91,9 +91,7 @@
             {{--==========[ Calender Widget in Home Page ]=========--}}
             <div class="col-12 col-md-3 col-lg-6 col-xl-3 grid-item mt-4">
                 <div class="homeCard">
-                    <div id="inlineDatepicker" class="col-xs-12 no-padding-side">
-
-                    </div>
+                    <div id="fullCalender" class="col-xs-12 no-padding-side"></div>
                 </div>
             </div>
 

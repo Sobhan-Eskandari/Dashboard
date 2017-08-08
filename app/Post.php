@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -10,6 +11,7 @@ use Laravel\Scout\Searchable;
 
 class Post extends Model
 {
+    use Sluggable;
     use SoftDeletes;
     use Searchable;
 
@@ -90,5 +92,24 @@ class Post extends Model
             'title' => $this->title,
             'body' => $this->body,
         ];
+    }
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
+
+    public function path()
+    {
+        return "/posts/$this->slug";
     }
 }

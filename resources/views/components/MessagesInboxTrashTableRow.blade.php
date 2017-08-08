@@ -37,9 +37,12 @@
             {!! Form::close() !!}
             {{--<a class="dropdown-item text-right py-0" href="{{ route('inbox.restore', $id) }}"><i class="fa fa-undo ml-2" aria-hidden="true"></i>بازگردانی</a>--}}
             <div class="dropdown-divider my-1"></div>
-            {!! Form::open(['method'=>'DELETE', 'action'=>['InboxController@forceDestroy', $id], 'class'=>'singleDestroy']) !!}
-                {!! Form::submit('حذف دائمی', ['id'=>'delete', 'style' => 'background: none; border: none;']) !!}
-            {!! Form::close() !!}
+            <button class="hi-button-btn1 dropdown-item py-0">
+                <i class="fa fa-trash py-0 "></i>
+                {!! Form::open(['method'=>'DELETE', 'action'=>['InboxController@forceDestroy', $id], 'class'=>'singleDestroy']) !!}
+                {!! Form::submit('حذف دائمی', ['id'=>'delete', 'class' => 'dropdown-item py-0 px-1']) !!}
+                {!! Form::close() !!}
+            </button>
         </div>
     </div>
 </td>

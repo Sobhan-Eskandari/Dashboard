@@ -211,7 +211,7 @@
   .metro .selected,
   .metro li {
     display: block;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1;
     color: #000;
     padding: 9px;
@@ -300,6 +300,7 @@
     list-style: none;
     padding: 8px 12px;
     text-align: center;
+    font-size: 12px !important;
   }
 
   /* .focus class is also added on hover */

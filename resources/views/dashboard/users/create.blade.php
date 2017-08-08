@@ -8,16 +8,27 @@
 
 @section('content')
     <div class="row">
-        {!! Form::open(['method'=>'POST','action'=>'API\UserController@photo','files'=>'true','id'=>'uploadForm']) !!}
-        {!! Form::file('avatar') !!}
-        {!! Form::submit('ارسال') !!}
-        {!! Form::close() !!}
+        {{--{!! Form::open(['method'=>'POST','action'=>'API\UserController@photo','files'=>'true','id'=>'uploadForm']) !!}--}}
+        {{--{!! Form::file('avatar') !!}--}}
+        {{--{!! Form::submit('ارسال') !!}--}}
+        {{--{!! Form::close() !!}--}}
         <div class="col hi-subjectDashboardAdminProfile text-right" id="test">
-            {{--<h5 class="hi-subjectDashboardAdminProfile_h5">تاریخ ثبت نام<span> &nbsp;|&nbsp; </span>تاریخ آخرین ویرایش--}}
-                {{--اطلاعات : 1396/5/20</h5>--}}
+            <h5 class="hi-subjectDashboardAdminProfile_h5">تاریخ ثبت نام<span> &nbsp;|&nbsp; </span>تاریخ آخرین ویرایش
+                اطلاعات : 1396/5/20</h5>
         </div>
     </div>
+    {{--<input type="submit" value="sdfbdsf" data-toggle="modal" data-target="#galleryModal">--}}
+@section('gallery')
+    @component('components.galleryModal')
+        @slot('gallery')
+            <div class="row gallery_files l-rtl gallery_uploadedImage" id="photos">
+                @include('Includes.AllPhotosGallery')
+            </div>
+        @endslot
+    @endcomponent
+@endsection
 
+@section('content')
     {!! Form::open(['method'=>'POST','action'=>'API\UserController@store']) !!}
         <div class="row">
             <!-- about me -->
@@ -64,22 +75,22 @@ $('#uploadForm').submit(function(e){
     if(avatarId !== "") {
         formData.append('avatarId', avatarId);
     }
-    $.ajax({
-            type: 'POST',
-            url: '/photo',
-            processData: false,
-            contentType: false,
-            data: formData
-        }).done(function (data) {
-            $("#img").html(data);
-//            console.log(query);
-//            if(query === "") {
-//                window.history.pushState("", "", "http://dash.dev/users");
-//            }else {
-//                window.history.pushState(data, "Title", " /users?query=" + query);
-//            }
-        }).fail(function () {
-        });
+//    $.ajax({
+//            type: 'POST',
+//            url: '/photo',
+//            processData: false,
+//            contentType: false,
+//            data: formData
+//        }).done(function (data) {
+//            $("#img").html(data);
+////            console.log(query);
+////            if(query === "") {
+////                window.history.pushState("", "", "http://dash.dev/users");
+////            }else {
+////                window.history.pushState(data, "Title", " /users?query=" + query);
+////            }
+//        }).fail(function () {
+//        });
 });
 </script>
 @endsection
