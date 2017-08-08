@@ -19,6 +19,7 @@
         "morilog/jalali": "^2.2",
         "mpdf/mpdf": "^6.1",
         "predis/predis": "^1.1",
+        "santigarcor/laratrust": "4.0.*",
         "teamtnt/laravel-scout-tntsearch-driver": "^3.0",
         "zarinpal/zarinpal": "^1.1"
     },

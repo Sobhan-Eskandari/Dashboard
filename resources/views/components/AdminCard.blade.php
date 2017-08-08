@@ -42,7 +42,7 @@
                     {{--<option value="4" {{ $role_id == '4' ? 'selected' : ''}}>مدیر گزارش گیری</option>--}}
                     {{--<option value="5" {{ $role_id == '5' ? 'selected' : ''}}>مدیر پاک سازی</option>--}}
                 {{--</select>--}}
-                <button class="btn btn-secondary adminCard_btn hvr-sweep-to-top" aria-haspopup="true" aria-expanded="false"> {{ $role }} </button>
+                {{--<button class="btn btn-secondary adminCard_btn hvr-sweep-to-top" aria-haspopup="true" aria-expanded="false"> {{ $role }} </button>--}}
 
                 {{--<div data-dropdown-in="fadeIn" data-dropdown-out="fadeOut" class="dropdown-menu adminCard_dropdown hi-shadow-1" aria-labelledby="dropdownMenuLink">--}}
                     {{--<a class="dropdown-item" href="#"> مدیر کل <i class="fa fa-user-circle-o ml-1" aria-hidden="true"></i></a>--}}

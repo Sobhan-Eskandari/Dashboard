@@ -38,7 +38,7 @@ class BackupController extends Controller
         })->export($input['type']);
     }
 
-    public function inboxes(Request $request)
+    public function inbox(Request $request)
     {
         $input = $request->all();
         $from = str_replace('/', '-', $input['from']) . ' 00:00:00';

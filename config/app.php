@@ -176,6 +176,7 @@ return [
         TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
         Laravel\Scout\ScoutServiceProvider::class,
         Cviebrock\EloquentSluggable\ServiceProvider::class,
+        Laratrust\LaratrustServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -239,6 +240,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'jDate' => Morilog\Jalali\Facades\jDate::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Laratrust'   => Laratrust\LaratrustFacade::class,
     ],
 
 ];
