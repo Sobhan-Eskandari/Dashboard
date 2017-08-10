@@ -104,7 +104,7 @@
                         {!! Form::open(['method'=>'POST', 'action'=>'CategoryController@store', 'class'=>'form-inline TodoWidget l-ltr', 'id'=>'createCategoryForm']) !!}
                             <div class="input-group" id="addTodo">
                                 <button type="submit" id="categorySubmit"><img class="img-fluid" src="{{asset('images/Add-icone.png')}}"></button>
-                                {!! Form::text('category', null, ['class' => 'form-control', 'id'=>'todoText', 'placeholder'=>'دسته بندی جدید']) !!}
+                                {!! Form::text('name', null, ['class' => 'form-control', 'id'=>'todoText', 'placeholder'=>'دسته بندی جدید']) !!}
                             </div>
                         {!! Form::close() !!}
                     @endslot

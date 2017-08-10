@@ -48,6 +48,7 @@ class ComposerStaticInitbd95230086835dd9af2e18ebe53b53a6
         ),
         'T' => 
         array (
+            'Traitor\\' => 8,
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
             'Tests\\' => 6,
             'TeamTNT\\TNTSearch\\' => 18,
@@ -96,6 +97,7 @@ class ComposerStaticInitbd95230086835dd9af2e18ebe53b53a6
             'Laravel\\Tinker\\' => 15,
             'Laravel\\Scout\\' => 14,
             'Laravel\\Passport\\' => 17,
+            'Laratrust\\' => 10,
         ),
         'I' => 
         array (
@@ -167,6 +169,10 @@ class ComposerStaticInitbd95230086835dd9af2e18ebe53b53a6
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Traitor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kkszymanowski/traitor/src',
         ),
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
@@ -299,6 +305,10 @@ class ComposerStaticInitbd95230086835dd9af2e18ebe53b53a6
         'Laravel\\Passport\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/passport/src',
+        ),
+        'Laratrust\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/santigarcor/laratrust/src/Laratrust',
         ),
         'Illuminate\\' => 
         array (
@@ -450,7 +460,6 @@ class ComposerStaticInitbd95230086835dd9af2e18ebe53b53a6
         'CreatePhotoablesTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_27_195421_create_photoables_table.php',
         'CreatePhotosTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_27_195414_create_photos_table.php',
         'CreatePostsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_27_195430_create_posts_table.php',
-        'CreateRolesTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_30_124528_create_roles_table.php',
         'CreateSettingsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_27_195441_create_settings_table.php',
         'CreateTaggablesTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_27_195702_create_taggables_table.php',
         'CreateTagsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_27_195450_create_tags_table.php',
@@ -539,6 +548,17 @@ class ComposerStaticInitbd95230086835dd9af2e18ebe53b53a6
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
         'INDIC' => __DIR__ . '/..' . '/mpdf/mpdf/classes/indic.php',
         'InboxTableSeeder' => __DIR__ . '/../..' . '/database/seeds/InboxTableSeeder.php',
+        'LaratrustSeeder' => __DIR__ . '/../..' . '/database/seeds/LaratrustSeeder.php',
+        'LaratrustSetupTables' => __DIR__ . '/../..' . '/database/migrations/2017_08_07_175607_laratrust_setup_tables.php',
+        'Laratrust\\AddLaratrustUserTraitUseCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/commands/AddLaratrustUserTraitUseCommand.php',
+        'Laratrust\\MakePermissionCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/commands/MakePermissionCommand.php',
+        'Laratrust\\MakeRoleCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/commands/MakeRoleCommand.php',
+        'Laratrust\\MakeSeederCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/commands/MakeSeederCommand.php',
+        'Laratrust\\MakeTeamCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/commands/MakeTeamCommand.php',
+        'Laratrust\\MigrationCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/commands/MigrationCommand.php',
+        'Laratrust\\SetupCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/commands/SetupCommand.php',
+        'Laratrust\\SetupTeamsCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/commands/SetupTeamsCommand.php',
+        'Laratrust\\UpgradeCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/commands/UpgradeCommand.php',
         'MYANMAR' => __DIR__ . '/..' . '/mpdf/mpdf/classes/myanmar.php',
         'Maatwebsite\\Excel\\Classes\\Cache' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Classes/Cache.php',
         'Maatwebsite\\Excel\\Classes\\FormatIdentifier' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Classes/FormatIdentifier.php',

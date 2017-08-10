@@ -21,8 +21,9 @@ class CategoryController extends Controller
      */
     public function index(Request $request)
     {
+        $referer = $request->header('referer');
         if($request->has('query')){
-            if($request->header('referer') === 'http://dashboard.dev/posts/create'){
+            if(strpos($referer , 'create') || strpos($referer , 'edit')){
                 $categories = Category::search($request->input('query'))->orderBy('created_at','desc')->get();
             }else{
                 $categories = Category::search($request->input('query'))->orderBy('updated_at','desc')->paginate(8);
@@ -32,7 +33,7 @@ class CategoryController extends Controller
         }
 
         if ($request->ajax()) {
-            if($request->header('referer') === 'http://dashboard.dev/posts/create'){
+            if(strpos($referer , 'create') || strpos($referer , 'edit')){
                 return view('Includes.PostCategories', compact('categories'))->render();
             }else{
                 return view('Includes.AllCategories', compact('categories'))->render();
@@ -60,6 +61,7 @@ class CategoryController extends Controller
      */
     public function store(CategoryRequest $request)
     {
+        $referer = $request->header('referer');
         if($request->ajax()){
             $input = $request->all();
             $user = Auth::user()->id;
@@ -71,7 +73,7 @@ class CategoryController extends Controller
                 dd($exception->getMessage());
             }
 
-            if($request->header('referer') === 'http://dashboard.dev/posts/create'){
+            if(strpos($referer , 'create') || strpos($referer , 'edit')){
                 $categories = Category::orderBy('created_at', 'desc')->get();
                 return view('Includes.PostCategories', compact('categories'))->render();
             }else{
@@ -135,6 +137,7 @@ class CategoryController extends Controller
      */
     public function destroy(Request $request, Category $category)
     {
+        $referer = $request->header('referer');
         if($request->ajax()){
             try {
                 $category->update(['updated_by' => Auth::user()->id]);
@@ -143,7 +146,7 @@ class CategoryController extends Controller
                 dd($exception->getMessage());
             }
 
-            if($request->header('referer') === 'http://dashboard.dev/posts/create'){
+            if(strpos($referer , 'create') || strpos($referer , 'edit')){
                 $categories = Category::orderBy('created_at', 'desc')->get();
                 return view('Includes.PostCategories', compact('categories'))->render();
             }else {
