@@ -23,13 +23,13 @@
         <div class="row mb-5">
             <div class="col-12">
                 <div class="container-fluid">
-                    {!! Form::open(['method'=>'POST', 'url' => '/settings']) !!}
+                    <form action="/settings" method="post" enctype="multipart/form-data">
+                        {{csrf_field()}}
 
                     {{--==========[ Sample Gallery Modal Lunch ]========= --}}
 
 
                     <div class="row rowOfInputs">
-                        <form>
                             <div class="col-2">
                                 <p class="mt-4"> لوگو :
                                     <img src="{{asset('images/nobody_m.original.jpg')}}" alt="در حال بارگذاری عکس" class="createPostImage mr-2">
@@ -43,13 +43,12 @@
                                         <div class="hi-button-simple blue">
                                             آپلود <i class="fa fa-plus"></i>
                                         </div>
-                                        <input name="upload-file" type="file" />
+                                        <input name="logo" type="file" />
                                     </div>
                                     {{--<button class="hi-button-simple blue"> آپلود <i class="fa fa-plus"></i></button>--}}
-                                    <button class="hi-button-simple red darken-2 mr-4"> حذف <i class="fa fa-trash"></i></button>
+                                    {{--<button class="hi-button-simple red darken-2 mr-4"> حذف <i class="fa fa-trash"></i></button>--}}
                                 </div>
                             </div>
-                        </form>
                         {{--============[ image box ]===========--}}
                         <div class="col-2 pr-0">
                             <img src="{{asset('images/nobody_m.original.jpg')}}" alt="در حال بارگذاری عکس" class="createPostImage mr-2">

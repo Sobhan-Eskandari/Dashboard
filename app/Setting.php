@@ -41,7 +41,7 @@ class Setting extends Model
         return $this->belongsTo(User::class, 'created_by');
     }
 
-    public function photo() {
-        return $this->hasMany(Photo::class, 'created_by');
+    public function photos() {
+        return $this->morphOne(Photo::class, 'photoable');
     }
 }

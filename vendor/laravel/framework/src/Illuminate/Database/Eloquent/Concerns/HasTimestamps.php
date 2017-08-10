@@ -3,7 +3,6 @@
 namespace Illuminate\Database\Eloquent\Concerns;
 
 use Carbon\Carbon;
-use Morilog\Jalali\Facades\jDate;
 
 trait HasTimestamps
 {
@@ -37,8 +36,7 @@ trait HasTimestamps
      */
     protected function updateTimestamps()
     {
-//        $time = $this->freshTimestamp();
-        $time = jDate::forge('now')->format('datetime', true);
+        $time = $this->freshTimestamp();
 
         if (! $this->isDirty(static::UPDATED_AT)) {
             $this->setUpdatedAt($time);

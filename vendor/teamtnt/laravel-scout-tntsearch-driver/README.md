@@ -8,6 +8,11 @@
 
 This package makes it easy to add full text search support to your models with Laravel 5.3/5.4.
 
+## Support us on Patreon
+
+- [Nenad Ticaric](https://www.patreon.com/nticaric)
+- [Sasa Tokic](https://www.patreon.com/stokic)
+
 ## Contents
 
 - [Installation](#installation)
@@ -66,6 +71,7 @@ In your `config/scout.php` add:
         'distance' => 2
     ],
     'asYouType' => false,
+    'searchBoolean' => env('TNTSEARCH_BOOLEAN', false),
 ],
 ```
 
@@ -118,17 +124,6 @@ If you have a lot of records and want to speed it up you can run:
 After that you can search your models with:
 
 `Post::search('Bugs Bunny')->get();`
-
-## Patreon
-
-- [Nenad Ticaric](https://www.patreon.com/nticaric)
-- [Sasa Tokic](https://www.patreon.com/stokic)
-
-## Support [![OpenCollective](https://opencollective.com/tntsearch/backers/badge.svg)](#backers) [![OpenCollective](https://opencollective.com/tntsearch/sponsors/badge.svg)](#sponsors)
-
-### Backers
-
-Support us with a monthly donation and help us continue our activities. [[Become a backer](https://opencollective.com/tntsearch#backer)]
 
 ## Sponsors
 

@@ -14,11 +14,12 @@ class Photo extends Model
         'created_by',
     ];
 
-    public function setting() {
-        return $this->belongsTo(Setting::class, 'created_by');
+    public function photoable()
+    {
+        return $this->morphTo();
     }
 
-    public function slider() {
-        return $this->morphToMany(Slider::class, 'photoable');
+    public function sliders() {
+        return $this->morphedByMany(Slider::class, 'photoable');
     }
 }

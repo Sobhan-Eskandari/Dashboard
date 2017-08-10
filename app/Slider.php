@@ -8,6 +8,7 @@ class Slider extends Model
 {
     protected $fillable = [
         'caption',
+        'created_by',
     ];
 
     public function photos() {
@@ -16,5 +17,9 @@ class Slider extends Model
 
     public function admin() {
         return $this->belongsTo(Admin::class, 'created_by');
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class, 'created_by');
     }
 }

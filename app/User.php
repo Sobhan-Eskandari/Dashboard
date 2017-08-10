@@ -76,6 +76,10 @@ class User extends Authenticatable
         return $this->hasOne(Setting::class, 'created_by');
     }
 
+    public function sliders() {
+        return $this->hasMany(Slider::class, 'created_by');
+    }
+
     public function todos() {
         return $this->hasMany(Todo::class);
     }

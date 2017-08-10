@@ -50,7 +50,10 @@ class settingController extends Controller
      */
     public function store(SettingStoreRequest $request)
     {
+        $logo = $request->file('logo');
+        $logo->move(public_path('photos'), 'logo' . $request->file('logo')->getClientOriginalExtension());
         $request['created_by'] = auth()->user()->getAuthIdentifier();
+        $request['logo'] = '/photos/logo'.$request->file('logo')->getClientOriginalExtension();
         $setting = Setting::create($request->all());
         auth()->user()->saveSetting($setting);
         Session::flash('success', 'تنظیمات با موفقیت ثبت شد.');

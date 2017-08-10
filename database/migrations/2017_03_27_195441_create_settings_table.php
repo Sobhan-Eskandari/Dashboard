@@ -26,6 +26,7 @@ class CreateSettingsTable extends Migration
             $table->char('mobile_number2', 11)->nullable(false);
             $table->char('zip', 10)->nullable(false);
             $table->text('address')->nullable(false);
+            $table->string('logo')->nullable(true)->default('/photos/logo.png');
             $table->string('instagram')->nullable(true)->default('https://www.instagram.com/');
             $table->string('telegram')->nullable(true)->default('https://telegram.org/');
             $table->string('facebook')->nullable(true)->default('https://www.facebook.com/');

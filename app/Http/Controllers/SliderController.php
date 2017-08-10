@@ -11,13 +11,13 @@ use Illuminate\Support\Facades\Session;
 
 class SliderController extends Controller
 {
-//    /**
-//     * SliderController constructor.
-//     */
-//    public function __construct()
-//    {
-//        $this->middleware('auth');
-//    }
+    /**
+     * SliderController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
 
     /**
@@ -27,7 +27,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-        return view('dashboard.sliders.index');
+        $sliders = Slider::get(['caption', 'created_at']);
+        return view('dashboard.sliders.index', compact('sliders'));
     }
 
     /**
@@ -49,7 +50,7 @@ class SliderController extends Controller
      */
     public function store(storeSlider $request)
     {
-        $request['created_by'] = 1;
+        $request['created_by'] = auth()->user()->getAuthIdentifier();
         Slider::create($request->all());
 
         return redirect()->action('SliderController@index')->with('success', "اسلایدر با موفقیت ذخیره شد.");
@@ -97,6 +98,8 @@ class SliderController extends Controller
      */
     public function destroy(Slider $slider)
     {
-        //
+        $slider->delete();
+
+        return back();
     }
 }

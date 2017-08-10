@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="col-auto ml-2 text-right">
-                            <button class="hi-button-simple hi-shadow-0 green darken-3">ایجاد</button>
+                            <a href="/sliders/create" class="hi-button-simple hi-shadow-0 green darken-3">ایجاد</a>
                         </div>
                     </div>
 
@@ -52,21 +52,21 @@
                                 </thead>
                                 <tbody>
 
-                                @for ($i = 0; $i < 4; $i++)
+                                @for ($i = 0; $i < count($sliders); $i++)
                                     <tr>
                                         {{--==========[ Gallery Table Row items ]========= --}}
                                         @component('components.SlidersTableRow')
 
                                             @slot('chk_name')
-                                                {{ $i }}
+                                                {{ $sliders[$i]->user->user_name }}
                                             @endslot
 
                                             @slot('slider_text')
-                                                این بخش نسبتا کوچک در میان سطح داخلی نئوکورتکس در مرکز مغز پنهان شده
+                                                {!! $sliders[$i]->caption !!}
                                             @endslot
 
                                             @slot('slider_edited')
-                                                توسط حمید وتر ایجاد شده در : ۹۶/۶/۶
+                                                توسط حمید وتر ایجاد شده در : {{jdate($sliders[$i]->created_at)->format('%d %B، %Y')}}
                                             @endslot
 
                                         @endcomponent

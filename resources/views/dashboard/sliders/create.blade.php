@@ -32,7 +32,7 @@
     {{--==========[ Submit Button ]========= --}}
     <div class="row">
         <div class="col-12 text-right mt-4 pr-0">
-            <button class="btn btn-primary hi-shadow-1 px-4 light-blue darken-2">
+            <button type="submit" class="btn btn-primary hi-shadow-1 px-4 light-blue darken-2">
                 انتشار
             </button>
         </div>

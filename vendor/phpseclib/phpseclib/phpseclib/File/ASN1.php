@@ -146,7 +146,7 @@ class ASN1
      *
      * Structured or unknown types are mapped to a \phpseclib\File\ASN1\Element.
      * Unambiguous types get the direct mapping (int/real/bool).
-     * others are mapped as a choice, with an extra indexing level.
+     * Others are mapped as a choice, with an extra indexing level.
      *
      * @var array
      * @access public
