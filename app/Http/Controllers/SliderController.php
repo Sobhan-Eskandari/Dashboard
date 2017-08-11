@@ -27,7 +27,7 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $sliders = Slider::get(['caption', 'created_at', 'created_by']);
+        $sliders = Slider::latest()->paginate(10);
         return view('dashboard.sliders.index', compact('sliders'));
     }
 
@@ -58,17 +58,6 @@ class SliderController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Slider  $slider
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Slider $slider)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Slider  $slider
@@ -76,7 +65,8 @@ class SliderController extends Controller
      */
     public function edit(Slider $slider)
     {
-        //
+        $photos = Photo::all();
+        return view('dashboard.sliders.edit', compact('slider', 'photos'));
     }
 
     /**
@@ -88,7 +78,9 @@ class SliderController extends Controller
      */
     public function update(Request $request, Slider $slider)
     {
-        //
+        $slider->update($request->all());
+        $slider->photos()->attach($request['indexPhoto']);
+        return redirect()->action('SliderController@index')->with('success', "اسلایدر با موفقیت ویرایش شد.");
     }
 
     /**
@@ -99,7 +91,8 @@ class SliderController extends Controller
      */
     public function destroy(Slider $slider)
     {
-        Slider::delete($slider);
+        $slider->photos()->detach();
+        $slider->delete();
 
         return back();
     }

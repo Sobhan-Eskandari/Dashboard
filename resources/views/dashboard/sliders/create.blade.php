@@ -3,7 +3,6 @@
 @section('css_resources')
     <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>
 @endsection
-@section('content')
 
 @section('gallery')
     @component('components.galleryModal')
@@ -15,6 +14,7 @@
     @endcomponent
 @endsection
 
+@section('content')
 <form action="/sliders" method="post">
     {{csrf_field()}}
     <div class="row direction_create_slider">
@@ -27,6 +27,7 @@
                     caption
                 @endslot
             @endcomponent
+            {!! Form::text('indexPhoto', null, ['style' => 'display: none;']) !!}
         </div>
     </div>
     {{--==========[ Submit Button ]========= --}}
@@ -42,7 +43,6 @@
 @endsection
 
 @section('javascript')
-    <script src="{{ asset('js/dashboard/CreateAdminUploadProfilePic.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.js"></script>
     <script>
         Dropzone.options.myAwesomeDropzone = {

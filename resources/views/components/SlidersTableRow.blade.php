@@ -12,7 +12,6 @@
             <p class="username mt-3"> {{$slider_text}} </p>
             <p class="grey-text hi-fontSize-12 text-right pr-2">{{$slider_edited}}</p>
         </div>
-
     </div>
 </td>
 
@@ -46,9 +45,13 @@
         </button>
         {{--==========[ Dropdown Menu ]========= --}}
         <div data-dropdown-in="fadeIn" data-dropdown-out="fadeOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item text-right py-0" href="#"><i class="fa fa-pencil ml-2" aria-hidden="true"></i>ویرایش</a>
+            <a class="dropdown-item text-right py-0" href="/sliders/{{$id}}/edit"><i class="fa fa-pencil ml-2" aria-hidden="true"></i>ویرایش</a>
             <div class="dropdown-divider my-1"></div>
-            <a class="dropdown-item text-right py-0 mt-1" href="#"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</a>
+            <form action="/sliders/{{$id}}" method="post">
+                {{csrf_field()}}
+                {{method_field("DELETE")}}
+                <button type="submit" class="dropdown-item text-right py-0 mt-1" href="#"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</button>
+            </form>
         </div>
     </div>
 </td>

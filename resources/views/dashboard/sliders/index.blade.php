@@ -22,6 +22,7 @@
                         </div>
 
                         <div class="col-auto offset-9 text-right mr-2">
+                            <form action="/sliders"></form>
                             <button class="hi-button-simple hi-shadow-0 red darken-3 text-right">حذف</button>
                         </div>
 
@@ -59,6 +60,10 @@
 
                                             @slot('chk_name')
                                                 {{ $i }}
+                                            @endslot
+
+                                            @slot('id')
+                                                {{ $sliders[$i]->id }}
                                             @endslot
 
                                             @slot('avatar')
