@@ -58,7 +58,11 @@
                                         @component('components.SlidersTableRow')
 
                                             @slot('chk_name')
-                                                {{ $sliders[$i]->user->user_name }}
+                                                {{ $i }}
+                                            @endslot
+
+                                            @slot('avatar')
+                                                {{ $sliders[$i]->user->avatar }}
                                             @endslot
 
                                             @slot('slider_text')
@@ -66,7 +70,7 @@
                                             @endslot
 
                                             @slot('slider_edited')
-                                                توسط حمید وتر ایجاد شده در : {{jdate($sliders[$i]->created_at)->format('%d %B، %Y')}}
+                                                توسط {{ $sliders[$i]->user->user_name }} ایجاد شده در : {{jdate($sliders[$i]->created_at)->format('%d %B، %Y')}}
                                             @endslot
 
                                         @endcomponent

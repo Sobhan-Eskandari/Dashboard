@@ -27,7 +27,7 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $sliders = Slider::get(['caption', 'created_at']);
+        $sliders = Slider::get(['caption', 'created_at', 'created_by']);
         return view('dashboard.sliders.index', compact('sliders'));
     }
 
@@ -51,8 +51,9 @@ class SliderController extends Controller
     public function store(storeSlider $request)
     {
         $request['created_by'] = auth()->user()->getAuthIdentifier();
-        Slider::create($request->all());
-
+//        dd($request);
+        $slider = Slider::create($request->all());
+        $slider->photos()->attach($request['indexPhoto']);
         return redirect()->action('SliderController@index')->with('success', "اسلایدر با موفقیت ذخیره شد.");
     }
 
@@ -98,7 +99,7 @@ class SliderController extends Controller
      */
     public function destroy(Slider $slider)
     {
-        $slider->delete();
+        Slider::delete($slider);
 
         return back();
     }

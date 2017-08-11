@@ -7,7 +7,7 @@
 </td>
 <td class="py-1 text-center">
     <div class="userInfoPlace">
-        <img class="rounded img-fluid hi-size-7" src="{{ asset('images/avatar.png') }}">
+        <img class="rounded img-fluid hi-size-7" src="{{ asset('images/' . $avatar) }}">
         <div>
             <p class="username mt-3"> {{$slider_text}} </p>
             <p class="grey-text hi-fontSize-12 text-right pr-2">{{$slider_edited}}</p>

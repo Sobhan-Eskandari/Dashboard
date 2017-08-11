@@ -15,13 +15,14 @@
     @endcomponent
 @endsection
 
-<form action="/sliders" method="post">
+<form action="/sliders/edit/{{$slider->id}}" method="post">
+    {{method_field('PATCH')}}
     {{csrf_field()}}
     <div class="row direction_create_slider">
         <div class="col-8 pull-right">
             @component('components.TextEditor')
                 @slot('textEditorLabel')
-                    متن اسلاید را وارد کنید:
+                   {!! $slider->caption !!}
                 @endslot
                 @slot('name')
                     caption
