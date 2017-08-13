@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\tagRequest;
 use App\Tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -51,9 +52,8 @@ class tagController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return array|\Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(tagRequest $request)
     {
-
         $input = $request->all();
         $input['created_by']=1;
         $tag = Tag::create($input);

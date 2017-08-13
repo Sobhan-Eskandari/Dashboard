@@ -20,9 +20,9 @@ $("#addChips").click(function (e) {
 
     var chipsText = $("#chipsText").val();
     var CSRF_TOKEN =$( "input[name*='_token']" ).val();
-    if(chipsText===""){
-        alert("is empty");
-    }else{
+    // if(chipsText===""){
+    //     alert("is empty");
+    // }else{
         $.ajax({
             type: 'POST',
             url: '/tags',
@@ -30,11 +30,14 @@ $("#addChips").click(function (e) {
         }).done(function (data) {
             addChips(data['tag'],data['token']);
             notify(data['message']);
-        }).fail(function () {
-            alert('Articles could not be loaded.');
+        }).fail(function (data) {
+            // alert('Articles could not be loaded.');
+            var errors = data.responseJSON;
+            $.each(errors, function(i, item) {
+                notify(item);
+            });
         });
-    }
-     // addChips();
+    // }
 });
 // $('#chipsText').pressEnter(function(e){
 //     e.preventDefault();
@@ -572,8 +575,7 @@ function notify(message) {
 
         // notice, warning, error, success
         // will add class ns-type-warning, ns-type-error or ns-type-success
-        type: 'success',
-
+        type: 'error',
         // if the user doesn´t close the notification then we remove it
         // after the following time
         ttl: 6000,

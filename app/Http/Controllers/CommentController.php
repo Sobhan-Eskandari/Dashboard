@@ -17,30 +17,29 @@ class CommentController extends Controller
      */
     public function index(Request $request)
     {
-        $comment = Comment::orderByRaw('updated_at desc')->get();
+        $comments = Comment::latest()->paginate(8);
         $commentsArray = [];
         if ($request->has('query') && $request->query != null) {
-            $comment = Comment::search($request->input('query'))->paginate(8);
+            $comments = Comment::search($request->input('query'))->paginate(8);
         }
-        if($request->has('start') || $request->has('end')){
-            $comments = $comment->where('created_at','>=',str_replace('/','-',$request->start));
-            $comment = $comments->where('created_at','<=',str_replace('/','-',$request->end));
-            $start = $request->start;
-            $end = $request->end;
-        }
-        foreach ($comment as $comments){
-            $commentsArray[] = $comments;
-        }
-        $comments = new LengthAwarePaginator(array_slice($commentsArray, 0, 8, true),
-            count($commentsArray),
-            8,
-            1,
-            ['path' => 'http://dash.dev/comments']
-        );
+//        if($request->has('start') || $request->has('end')){
+//            $comments = $comment->where('created_at','>=',str_replace('/','-',$request->start));
+//            $comment = $comments->where('created_at','<=',str_replace('/','-',$request->end));
+//            $start = $request->start;
+//            $end = $request->end;
+//        }
+//        foreach ($comment as $comments){
+//            $commentsArray[] = $comments;
+//        }
+//        $comments = new LengthAwarePaginator(array_slice($commentsArray, 0, 8, true),
+//            count($commentsArray),
+//            8,
+//            1,
+//            ['path' => 'http://dash.dev/comments']
+//        );
         if ($request->ajax()) {
             return view('Includes.AllComments', compact('comments','start','end'));
         }
-//        dd($comments);
         return view('dashboard.comments.index', compact('comments','start','end'));
     }
 
@@ -89,6 +88,7 @@ class CommentController extends Controller
         $input = $request->all();
         $input['full_name'] = 'admin';
         $input['user_id'] = 1;
+//        $input['']
         $input['tracking_code'] = 'jasndkajsdnasjdasdasdjkasd';
         $comments = Comment::create($input);
 //        dd($comments);
