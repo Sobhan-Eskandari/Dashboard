@@ -544,6 +544,14 @@ body {
   direction: rtl;
 }
 
+/* ============[ Sliders Page ]=========== */
+.multiselect-container{
+  min-width: 50px !important;
+  text-align: right;
+  label{
+    padding: 10px !important;
+  }
+}
 /* ============[ Settings page ]=========== */
 .upload-button input[type="file"] {
   display: block;
