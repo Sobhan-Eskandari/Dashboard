@@ -1,7 +1,7 @@
 {{--==========[ Gallery Table Row items ]========= --}}
 <td>
     <div class="pure-checkbox mt-2 mr-2">
-        <input id="sliders_checkbox-{{$chk_name}}" class="checkbox-{{$chk_name}}" onclick="selectCmntCheckbox(event)" name="sliders_checkbox-{{$chk_name}}" type="checkbox" >
+        <input id="sliders_checkbox-{{$chk_name}}" class="checkbox-{{$chk_name}}" value="{{$id}}" onclick="selectCmntCheckbox(event)" name="sliders[]" type="checkbox" >
         <label for="sliders_checkbox-{{$chk_name}}"></label>
     </div>
 </td>

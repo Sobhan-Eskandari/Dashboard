@@ -52,6 +52,7 @@ class SliderController extends Controller
     {
         $request['created_by'] = auth()->user()->getAuthIdentifier();
 //        dd($request);
+        auth()->guard('admin')->user();
         $slider = Slider::create($request->all());
         $slider->photos()->attach($request['indexPhoto']);
         return redirect()->action('SliderController@index')->with('success', "اسلایدر با موفقیت ذخیره شد.");
@@ -86,14 +87,16 @@ class SliderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Slider  $slider
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Slider $slider)
+    public function destroy(Request $request)
     {
-        $slider->photos()->detach();
-        $slider->delete();
-
-        return back();
+        $sliders = Slider::findOrFail($request['sliders']);
+        foreach ($sliders as $slider) {
+            $slider->photos()->detach();
+            $slider->delete();
+        }
+        return back()->with('success', "اسلایدر ها با موفقیت حذف شدند.");
     }
 }

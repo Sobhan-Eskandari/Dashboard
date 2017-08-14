@@ -7,7 +7,9 @@
 @endsection
 
 @section('content')
-
+    <form action="/sliders/destroy" method="post">
+    {{csrf_field()}}
+    {{method_field('DELETE')}}
     <section class="usersSection">
         <div class="row">
             <div class="col-12 bgCard hi-shadow-2">
@@ -100,5 +102,5 @@
             </div>
         </div>
     </section>
-
+</form>
 @endsection
