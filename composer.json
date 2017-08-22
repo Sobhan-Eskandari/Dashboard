@@ -20,7 +20,8 @@
         "mpdf/mpdf": "^6.1",
         "predis/predis": "^1.1",
         "teamtnt/laravel-scout-tntsearch-driver": "^3.0",
-        "zarinpal/zarinpal": "^1.1"
+        "zarinpal/zarinpal": "^1.1",
+        "ip2location/ip2location-laravel": "8.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
