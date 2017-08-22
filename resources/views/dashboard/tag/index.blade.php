@@ -37,23 +37,7 @@
 
         </div>
     </div>
-    <script>
-        var collect ={};
-        $('#searchTag').keyup(function(e){
-            collect['query'] = $('#searchTag').val();
-            if(collect['query'].length >=3 || e.keyCode===8){
-                $.ajax({
-                    url: '/tags',
-                    data: collect
-                }).done(function (data) {
-                    $('#boxOfTags').html(data);
-                    window.history.pushState(data, "Title"," /tags?query="+collect['query']);
-                }).fail(function () {
-                    alert('Articles could not be loaded.');
-                });
-            }
-        });
-    </script>
+    <script src="{{asset('/js/dashboard/tagIndex.js')}}"></script>
 @endsection
 
 
