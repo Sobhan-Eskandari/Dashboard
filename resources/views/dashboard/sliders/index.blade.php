@@ -73,7 +73,7 @@
                                             @endslot
 
                                             @slot('slider_text')
-                                                {!! $sliders[$i]->caption !!}
+                                                {!! substr($sliders[$i]->caption, 0, 100) . '...' !!}
                                             @endslot
 
                                             @slot('slider_edited')

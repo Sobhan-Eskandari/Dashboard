@@ -6,6 +6,7 @@ use App\Admin;
 use App\Http\Requests\storeSlider;
 use App\Photo;
 use App\Slider;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -17,6 +18,7 @@ class SliderController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        auth()->login(User::first());
     }
 
 
@@ -51,8 +53,7 @@ class SliderController extends Controller
     public function store(storeSlider $request)
     {
         $request['created_by'] = auth()->user()->getAuthIdentifier();
-//        dd($request);
-        auth()->guard('admin')->user();
+//        auth()->guard('admin')->user();
         $slider = Slider::create($request->all());
         $slider->photos()->attach($request['indexPhoto']);
         return redirect()->action('SliderController@index')->with('success', "اسلایدر با موفقیت ذخیره شد.");

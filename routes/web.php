@@ -14,7 +14,7 @@
 Route::get('/home', 'HomeController@index')->name('home');;
 
 Route::get('users','API\UserController@index')->name('all.users');
-Route::Delete('users/delete/{user}','API\UserController@destroy')->name('users.destroy');
+Route::delete('users/delete/{user}','API\UserController@destroy')->name('users.destroy');
 Route::post('users/MultiDelete','API\UserController@multiDestroy')->name('user.multi.destroy');
 Route::get('users/trash','API\UserController@trash')->name('user.trash');
 Route::get('users/create','API\UserController@create')->name('user.create');

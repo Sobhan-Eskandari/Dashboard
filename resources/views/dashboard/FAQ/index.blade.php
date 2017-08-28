@@ -75,7 +75,7 @@
 
         <div class="col-6">
             <div class="card" id="loadFaqs">
-                @include('includes.AllFaqs')
+                @include('Includes.AllFaqs')
             </div>
         </div>
     </div>

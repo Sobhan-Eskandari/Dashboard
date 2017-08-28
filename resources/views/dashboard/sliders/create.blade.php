@@ -19,6 +19,7 @@
     {{csrf_field()}}
     <div class="row direction_create_slider">
         <div class="col-8 pull-right">
+
             @component('components.TextEditor')
                 @slot('textEditorLabel')
                     متن اسلاید را وارد کنید:

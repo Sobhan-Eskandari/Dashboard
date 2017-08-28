@@ -47,9 +47,10 @@
         <div data-dropdown-in="fadeIn" data-dropdown-out="fadeOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item text-right py-0" href="/sliders/{{$id}}/edit"><i class="fa fa-pencil ml-2" aria-hidden="true"></i>ویرایش</a>
             <div class="dropdown-divider my-1"></div>
-            <form action="/sliders/{{$id}}" method="post">
+            <form action="/sliders/destroy" method="post">
                 {{csrf_field()}}
                 {{method_field("DELETE")}}
+                <input type="text" name="sliders[]" value="{{$id}}" hidden>
                 <button type="submit" class="dropdown-item text-right py-0 mt-1" href="#"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</button>
             </form>
         </div>

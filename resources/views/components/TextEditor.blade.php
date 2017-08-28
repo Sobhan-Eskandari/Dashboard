@@ -14,7 +14,7 @@
 </div>
 <div class="row">
     @if(isset($name))
-        <textarea name="{{$name}}" class="form-control writeCreatePostBox" rows="10">@if(isset($value)){!! $value !!}@endif</textarea>
+        <textarea name="{{$name}}" class="form-control writeCreatePostBox" rows="10">@if(isset($caption)){{$caption}}@endif</textarea>
     @endif
 </div>
 <script>
