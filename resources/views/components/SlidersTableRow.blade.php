@@ -17,24 +17,12 @@
 
 {{--==========[ Order of Slider Button ]========= --}}
 <td class="px-1">
-    <div class="Topbar_dropdown dropdown slider_table_dropDown">
-
-        <button class="btn btn-secondary dropdown-toggle py-0 px-0 pr-2 black-text" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            ۴
-            <i class="fa fa-chevron-down white-text grey py-1 px-1 mr-1 hi-fontSize-15" aria-hidden="true"></i>
-        </button>
-
-        {{--==========[ Dropdown Menu ]========= --}}
-        <div class="dropdown-menu hi-shadow-2 py-0 ml-2" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item text-right mt-1 py-1" href="#">۱</a>
-            <div class="dropdown-divider mb-1 mt-1"></div>
-            <a class="dropdown-item text-right my-0 py-1" href="#">۲</a>
-            <div class="dropdown-divider mb-1 mt-1"></div>
-            <a class="dropdown-item text-right my-0 py-1" href="#">۳</a>
-            <div class="dropdown-divider mb-1 mt-1"></div>
-            <a class="dropdown-item text-right my-0 py-1" href="#">۴</a>
-        </div>
-    </div>
+    <select class="slidersDropDown">
+        <option value="1">۱</option>
+        <option value="2">۲</option>
+        <option value="3">۳</option>
+        <option value="4">۴</option>
+    </select>
 </td>
 
 {{--==========[ More Button ]========= --}}

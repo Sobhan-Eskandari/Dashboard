@@ -104,3 +104,12 @@
     </section>
 </form>
 @endsection
+
+@section('js_resources')
+    <script src="{{ asset('js/bootstrap-multiselect.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('.slidersDropDown').multiselect();
+        });
+    </script>
+@endsection

@@ -7456,6 +7456,13 @@ body {
 .direction_create_slider {
   direction: rtl; }
 
+/* ============[ Sliders Page ]=========== */
+.multiselect-container {
+  min-width: 50px !important;
+  text-align: right; }
+  .multiselect-container label {
+    padding: 10px !important; }
+
 /* ============[ Settings page ]=========== */
 .upload-button input[type="file"] {
   display: block;
@@ -8144,8 +8151,7 @@ h6.card-header.backupMainTitleCard {
   background-color: #d9dfe9;
   border: 1px solid #d9dfe9; }
 
-a:focus, a:hover, a {
-  color: transparent;
+a:focus, a:hover {
   text-decoration: none; }
 
 .hi-roundedDashboardTagsTable thead td {

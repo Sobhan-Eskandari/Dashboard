@@ -25,27 +25,7 @@
         </div>
     </section>
 
-    <script>
-        var collect = {};
-        $('#searchCmt').keyup(function (e) {
-            collect['query'] = $('#searchCmt').val();
-            if(collect['query'].length >=3 || e.keyCode===8){
-                $.ajax({
-                    url: '/comments',
-                    dataType: 'text',
-                    data: collect
-                }).done(function (data) {
-//                    console.log(data);
-                    $('#categories').html(data);
-                    window.history.pushState(data, "Title"," /comments?query="+collect['query']);
-                }).fail(function () {
-                    alert('Articles could not be loaded.');
-                });
-            }
-//                window.history.pushState('', "Title"," /comments?query="+collect['query']);
-
-        });
-    </script>
+    <script src="{{asset('/js/dashboard/commentIndex')}}"></script>
 
 @endsection
 @section('javascript')
