@@ -43,6 +43,7 @@ Route::post('comments-restore/{id}','CommentController@restore')->name('comments
 Route::Delete('comments-forceDelete/{id}','CommentController@forceDelete')->name('comments.forceDelete');
 Route::post('comments-multiForceDelete','CommentController@multiForceDelete')->name('comments.multiForceDelete');
 
+Route::post('/sliders/order', 'SliderController@order');
 Route::resource('sliders', 'SliderController');
 /**
  *  correct routes starts form here on

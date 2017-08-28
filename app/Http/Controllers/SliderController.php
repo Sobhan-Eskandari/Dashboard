@@ -85,6 +85,11 @@ class SliderController extends Controller
         return redirect()->action('SliderController@index')->with('success', "اسلایدر با موفقیت ویرایش شد.");
     }
 
+    public function order(Request $request) {
+        dd($request);
+//        return redirect()->action('SliderController@index')->with('success', "اسلایدر با موفقیت ویرایش شد.");
+    }
+
     /**
      * Remove the specified resource from storage.
      *
