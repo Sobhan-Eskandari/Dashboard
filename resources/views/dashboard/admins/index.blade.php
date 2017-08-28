@@ -40,7 +40,7 @@
             </div>
 
             <div id="loadAdmins">
-                @include('Includes.AllAdmins')
+                @include('DashboardV2.resources.views.includes.admin.AllAdmins')
             </div>
         </div>
 

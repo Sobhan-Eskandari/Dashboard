@@ -68,6 +68,7 @@ return [
             'distance' => 2
         ],
         'asYouType' => false,
+        'searchBoolean' => env('TNTSEARCH_BOOLEAN', false),
     ],
 
 ];

@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-12 bgCard hi-shadow-2">
                 <div class="container-fluid" id="loadAdmins">
-                    @include('Includes.AllAdminsTrash')
+                    @include('DashboardV2.resources.views.includes.admin.AllAdminsTrash')
                 </div>
             </div>
         </div>
