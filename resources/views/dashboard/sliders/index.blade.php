@@ -7,6 +7,8 @@
 @endsection
 
 @section('content')
+    <form action="/sliders/modify" method="post">
+    {{csrf_field()}}
     <section class="usersSection">
         <div class="row">
             <div class="col-12 bgCard hi-shadow-2">
@@ -21,20 +23,13 @@
                         </div>
 
                         <div class="col-auto offset-9 text-right mr-2">
-                            <form action="/sliders/destroy" method="post">
-                                {{csrf_field()}}
-                                {{method_field('DELETE')}}
-                                <button type="submit" class="hi-button-simple hi-shadow-0 red darken-3 text-right">حذف</button>
-                            </form>
+                            <button class="hi-button-simple hi-shadow-0 red darken-3 text-right">حذف</button>
                         </div>
 
                         <div class="col-auto ml-2 text-right">
                             <a href="/sliders/create" class="hi-button-simple hi-shadow-0 green darken-3">ایجاد</a>
                         </div>
                     </div>
-
-                    <form action="/sliders/order" method="post">
-                    {{csrf_field()}}
 
                     {{--==========[ Table Of Users ]========= --}}
                     <div class="row mt-3">
@@ -67,6 +62,10 @@
                                                 {{ $i }}
                                             @endslot
 
+                                            @slot('count')
+                                                {{count($sliders)}}
+                                            @endslot
+
                                             @slot('id')
                                                 {{ $sliders[$i]->id }}
                                             @endslot
@@ -95,16 +94,17 @@
                     {{--==========[ Submit Button ]========= --}}
                     <div class="row">
                         <div class="col-12 text-right mt-3 pr-0">
-                            <button type="submit" class="btn btn-primary hi-shadow-1">
+                            <button class="btn btn-primary hi-shadow-1">
                                 تاییید
                             </button>
                         </div>
                     </div>
-                    </form>
+
                 </div>
             </div>
         </div>
     </section>
+</form>
 @endsection
 
 @section('js_resources')

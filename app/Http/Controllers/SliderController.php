@@ -86,8 +86,17 @@ class SliderController extends Controller
     }
 
     public function order(Request $request) {
-        dd($request);
-//        return redirect()->action('SliderController@index')->with('success', "اسلایدر با موفقیت ویرایش شد.");
+        foreach($request->orders as $key=>$order) {
+            $slider = Slider::find($key);
+            echo $key;
+            foreach ($slider->photos as $photo) {
+                $photo->order = $order;
+                $photo->update();
+            }
+//            dd($slider->photos);
+        }
+//        dd($slider->photos);
+        return redirect()->action('SliderController@index')->with('success', "اسلایدر با موفقیت ویرایش شد.");
     }
 
     /**
@@ -104,5 +113,15 @@ class SliderController extends Controller
             $slider->delete();
         }
         return back()->with('success', "اسلایدر ها با موفقیت حذف شدند.");
+    }
+
+    public function modify(Request $request) {
+//        dd($request);
+        if ($request->has('orders')) {
+            $this->order($request);
+//            return redirect()->action('SliderController@order');
+        } else {
+            return redirect()->action('SliderController@destroy');
+        }
     }
 }

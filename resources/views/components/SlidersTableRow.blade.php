@@ -17,11 +17,10 @@
 
 {{--==========[ Order of Slider Button ]========= --}}
 <td class="px-1">
-    <select class="slidersDropDown">
-        <option value="1">۱</option>
-        <option value="2">۲</option>
-        <option value="3">۳</option>
-        <option value="4">۴</option>
+    <select name="orders[{{$id}}]" class="slidersDropDown">
+        @for($option=0;$option<((int) $count);$option++)
+            <option value="{{$option}}">{{$option}}</option>
+        @endfor
     </select>
 </td>
 
@@ -35,12 +34,8 @@
         <div data-dropdown-in="fadeIn" data-dropdown-out="fadeOut" class="dropdown-menu hi-shadow-2" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item text-right py-0" href="/sliders/{{$id}}/edit"><i class="fa fa-pencil ml-2" aria-hidden="true"></i>ویرایش</a>
             <div class="dropdown-divider my-1"></div>
-            <form action="/sliders/destroy" method="post">
-                {{csrf_field()}}
-                {{method_field("DELETE")}}
                 <input type="text" name="sliders[]" value="{{$id}}" hidden>
                 <button type="submit" class="dropdown-item text-right py-0 mt-1" href="#"><i class="fa fa-trash ml-2" aria-hidden="true"></i>حذف</button>
-            </form>
         </div>
     </div>
 </td>
