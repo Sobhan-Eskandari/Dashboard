@@ -18,6 +18,7 @@
 {{--==========[ Order of Slider Button ]========= --}}
 <td class="px-1">
     <select name="orders[{{$id}}]" class="slidersDropDown">
+<<<<<<< HEAD
         <option value="1">۱</option>
     </select>
 </td>

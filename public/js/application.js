@@ -131,6 +131,8 @@ $(".deleteRowBtn").click(function () {
      $(this).parent().parent().fadeOut();
 });
 
+
+
 // ============[ Persian Date Picker ]===========
 $(document).ready(function() {
     $(".example1").pDatepicker();

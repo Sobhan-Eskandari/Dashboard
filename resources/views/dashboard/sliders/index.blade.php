@@ -111,7 +111,14 @@
     <script src="{{ asset('js/bootstrap-multiselect.js') }}"></script>
     <script>
         $(document).ready(function() {
+//
+
+            var rowCount = $('.sliders_table tr').length;
+            for (let i = 0; i<rowCount-1;i++){
+                $(`<option value="${i}">${i}</option>`).appendTo( ".slidersDropDown" );
+            }
             $('.slidersDropDown').multiselect();
         });
+
     </script>
 @endsection
