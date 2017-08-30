@@ -18,9 +18,7 @@
 {{--==========[ Order of Slider Button ]========= --}}
 <td class="px-1">
     <select name="orders[{{$id}}]" class="slidersDropDown">
-        @for($option=0;$option<((int) $count);$option++)
-            <option value="{{$option}}">{{$option}}</option>
-        @endfor
+        <option value="1">۱</option>
     </select>
 </td>
 

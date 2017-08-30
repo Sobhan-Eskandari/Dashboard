@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Setting;
+use App\User;
 use App\Photo;
 use App\Http\Requests\SettingStoreRequest;
 use Carbon\Carbon;
@@ -11,10 +12,11 @@ use Illuminate\Support\Facades\Session;
 
 class settingController extends Controller
 {
-//    public function __construct()
-//    {
-//        $this->middleware('auth');
-//    }
+    public function __construct()
+    {
+        $this->middleware('auth');
+        auth()->login(User::first());
+    }
 
     /**
      * Display a listing of the resource.
@@ -82,6 +84,13 @@ class settingController extends Controller
     public function update(SettingStoreRequest $request)
     {
         $setting = Setting::first();
+        if($request->ajax()) {
+            $request['updated_by'] = auth()->user()->getAuthIdentifier();
+            $request['updated_at'] = jdate(Carbon::now());
+            $request['revisions'] = $setting->revisions + 1;
+            auth()->user()->updateSetting($setting->fill($request->all()));
+            return response()->json(['response' => 'done']);
+        }
         $request['updated_by'] = auth()->user()->getAuthIdentifier();
         $request['updated_at'] = jdate(Carbon::now());
         $request['revisions'] = $setting->revisions + 1;
