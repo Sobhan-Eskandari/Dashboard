@@ -306,20 +306,22 @@
 @endsection
 
 @section('javascript')
-    <script src="{{ asset('js/dashboard/CreatePostIndex.js') }}"></script>
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
     <script type="text/javascript">
-        $(document).ready(function() {
-            $('.upload-button').click( function()
-            {
-                $("#preview").html('');
-                $("#preview").html('<p class="mt-4"> لوگو : <img id="avatar" src="/photos/logo.png" alt="در حال بارگذاری عکس" class="createPostImage mr-2"></p>');
-                $("#update_form").ajaxForm(function () {
-                    target: '#preview'
-                }).submit();
-                console.log('done');
-            });
+        $('.upload-button').click( function() {
+            $("#preview").html('');
+            $("#preview").html('<p class="mt-4"> لوگو : <img id="avatar" src="/photos/logo.png" alt="در حال بارگذاری عکس" class="createPostImage mr-2"></p>');
+            $("#update_form").ajaxForm(function () {
+                target: '#preview'
+            }).submit();
+            console.log('done');
         });
     </script>
+    <script src="{{ asset('js/dashboard/CreatePostIndex.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.js"></script>
     <script>
         Dropzone.options.myAwesomeDropzone = {

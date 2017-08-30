@@ -174,3 +174,7 @@ Route::post('/test', 'PhotoController@store');
 //    }
 //    return view('test', compact('photos'));
 //});
+//
+//Route::get('/setttings/edit', function () {
+//    return view('dashboard.settings.edit');
+//});
